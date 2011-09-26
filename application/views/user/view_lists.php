@@ -29,7 +29,9 @@
 		</tbody>
 	</table>
 
-	<input type="button" class="btn primary" value="New list" onclick="location.href='/list/add'"/>
+	<div class="well">
+		<input type="button" class="btn primary" value="New list" onclick="location.href='/list/add'"/>
+	</div>
 
 
 

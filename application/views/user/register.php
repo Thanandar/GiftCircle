@@ -29,6 +29,16 @@
 				<label>Terms &amp; Conditions</label>
 				<div class="input"><input type="checkbox" value="accept" /> Accept</div>
 			</div>
+
+
+			<?php
+			if (!empty($errors)) {
+				echo '<div class="alert-message error"><p>';
+				echo $errors;
+				echo '</p></div>';
+			}
+			?>
+
 			<div class="actions">
 				<input type="submit" value="Create my account" class="btn primary" />
 			</div>
@@ -41,10 +51,6 @@
 </div>
 
 
-<?php
-if (!empty($errors)) {
-	echo $errors;
-}
-?>
+
 
 <?php echo View::factory('page/footer'); ?>

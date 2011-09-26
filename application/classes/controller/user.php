@@ -3,20 +3,23 @@
 class Controller_User extends Controller {
 
 	public function action_register() {
-		// must be not logged in
-		$this->response->body(View::factory('user/register'));
-		//$this->response->body('register. <a href="/user/register_success">submit</a>');
-		//$this->response->body(View::factory('helloworld'));
+		$view = View::factory('user/register');
+		if ($_POST) {
+			if (arr::get($_POST, 'email')) {
+				Request::current()->redirect('user/register_success');
+			}
+			$view->errors = 'Please supply an email address';
+		}
+		$this->response->body($view);
 	}
 
 	public function action_register_success() {
-		$this->response->body('you can now log in <a href="/">home</a>');
+		Request::current()->redirect('home/index');
+		//$this->response->body('you can now log in <a href="/">home</a>');
 		//$this->response->body(View::factory('helloworld'));
 	}
 
 	public function action_login() {
-		$this->response->body('<a href="/user/login_success">login</a>');
-
 		$view = View::factory('user/login');
 
 		if ($_POST) {
