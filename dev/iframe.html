@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Gift Circle</title>
+</head>
+<body>
+
+<style>
+.overlay {
+	width: 100%;
+	height: 600px;
+	background: rgba(100, 100, 100, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 200px;
+}
+.overlay div {
+	background:#fff;
+	width: 400px;
+	height: 100px;
+}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script>
+function test() {
+	try {
+		alert('' + $('iframe')[0].contentWindow.location);
+	} catch (e) {
+		alert(e);
+	}
+}
+
+function overlay() {
+	$('iframe')
+		.after('<div class="overlay"><div>Overlay<div></div>')
+		.next().click(function() {
+			$(this).remove();
+		});
+}
+</script>
+
+
+<div>
+	<input type="button" onclick="$('iframe').attr('src', 'empty.html')" value="Same domain" />
+	<input type="button" onclick="$('iframe').attr('src', 'http://amazon.co.uk')" value="Amazon" />
+	<input type="button" onclick="$('iframe').attr('src', '//google.co.uk')" value="Google" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="button" onclick="test()" value="Get URL!">
+	<input type="button" onclick="overlay()" value="Overlay">
+</div>
+
+<iframe src="http://amazon.co.uk" width="100%" height="500" />
+
+</body>
+</html>
