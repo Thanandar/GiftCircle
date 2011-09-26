@@ -36,13 +36,6 @@
         margin: -20px -20px 20px;
       }
 
-      /* Give a quick and non-cross-browser friendly divider */
-      .content .span4 {
-        margin-left: 0;
-        padding-left: 19px;
-        border-left: 1px solid #eee;
-      }
-
       .topbar .btn {
         border: 0;
       }
