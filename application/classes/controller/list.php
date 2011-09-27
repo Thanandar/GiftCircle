@@ -9,9 +9,21 @@ class Controller_List extends Controller {
 	}
 
 	public function action_add() {
-		//$id = $this->request->param('id');
-		$this->response->body('creating a list');
-		//$this->response->body(View::factory('helloworld'));
+		$view = View::factory('list/add');
+
+		if ($_POST) {
+			if (arr::get($_POST, 'name')) {
+				Request::current()->redirect('list/mine/1');
+			}
+			$view->errors = 'Please enter a list name';
+		}
+		$this->response->body($view);
+	}
+
+	public function action_mine() {
+		$view = View::factory('list/mine');
+		$view->list_id = $this->request->param('id');
+		$this->response->body($view);
 	}
 
 }

@@ -1,12 +1,17 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Home extends Controller {
+class Controller_Gift extends Controller {
 
-	public function action_index()
-	{
-		$id = $this->request->param('id');
-		$this->response->body('hello, world!' . $id);
-		//$this->response->body(View::factory('helloworld'));
+	public function action_add() {
+		$view = View::factory('gift/add');
+
+		if ($_POST) {
+			if (arr::get($_POST, 'title')) {
+				Request::current()->redirect('list/mine/2');
+			}
+			$view->errors = 'Please enter a product title';
+		}
+		$this->response->body($view);
 	}
 
-} // End Welcome
+} 
