@@ -1,8 +1,10 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_User extends Controller {
+class Controller_User extends Controller_Page {
 
 	public function action_register() {
+		$this->template->title = 'Register';
+
 		$view = View::factory('user/register');
 		if ($_POST) {
 			if (arr::get($_POST, 'email')) {
@@ -10,16 +12,16 @@ class Controller_User extends Controller {
 			}
 			$view->errors = 'Please supply an email address';
 		}
-		$this->response->body($view);
+
+		$this->template->content = $view;
 	}
 
 	public function action_register_success() {
 		Request::current()->redirect('home/index');
-		//$this->response->body('you can now log in <a href="/">home</a>');
-		//$this->response->body(View::factory('helloworld'));
 	}
 
 	public function action_login() {
+		$this->template->title = 'Login';
 		$view = View::factory('user/login');
 
 		if ($_POST) {
@@ -34,10 +36,7 @@ class Controller_User extends Controller {
 			$view->errors = 'Invalid email or password';
 		}
 
-		$this->response->body($view);
-
-
-		//$this->response->body(View::factory('helloworld'));
+		$this->template->content = $view;
 	}
 
 	public function action_login_success() {
@@ -46,8 +45,9 @@ class Controller_User extends Controller {
 	}
 
 	public function action_view_lists() {
-		// must be logged in
-		$this->response->body(View::factory('user/view_lists'));
+		$this->template->title = 'Home';
+
+		$this->template->content = View::factory('user/view_lists');
 	}
 
 

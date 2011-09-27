@@ -1,4 +1,3 @@
-<?php echo View::factory('page/header'); ?>
 
 <div class="span10">
 
@@ -76,4 +75,3 @@
 
 </div>
 
-<?php echo View::factory('page/footer'); ?>

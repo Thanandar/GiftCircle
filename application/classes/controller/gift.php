@@ -1,8 +1,9 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Gift extends Controller {
+class Controller_Gift extends Controller_Page {
 
 	public function action_add() {
+		$this->template->title = 'Add gift';
 		$view = View::factory('gift/add');
 
 		if ($_POST) {
@@ -11,10 +12,11 @@ class Controller_Gift extends Controller {
 			}
 			$view->errors = 'Please enter a product title';
 		}
-		$this->response->body($view);
+		$this->template->content = $view;
 	}
 
 	public function action_edit() {
+		$this->template->title = 'Edit gift';
 		$view = View::factory('gift/edit');
 
 		$view->gift_id = $this->request->param('id');
@@ -26,21 +28,23 @@ class Controller_Gift extends Controller {
 			}
 			$view->errors = 'Please enter a product title';
 		}
-		$this->response->body($view);
+		$this->template->content = $view;
 	}
 
 
 	public function action_browse() {
+		$this->template->title = 'Browse for a gift';
 		$view = View::factory('gift/browse');
 
-		$this->response->body($view);
+		$this->template->content = $view;
 	}
 
 	public function action_buy() {
+		$this->template->title = 'Buy a gift';
 		$view = View::factory('gift/buy');
 		$view->gift_id = $this->request->param('id');
 
-		$this->response->body($view);
+		$this->template->content = $view;
 	}
 
 } 

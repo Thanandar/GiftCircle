@@ -1,4 +1,3 @@
-<?php echo View::factory('page/header'); ?>
 
 
 
@@ -36,4 +35,3 @@
 	<p>Lorem!</p>
 </div>
 
-<?php echo View::factory('page/footer'); ?>

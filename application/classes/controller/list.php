@@ -1,14 +1,16 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_List extends Controller {
+class Controller_List extends Controller_Page {
 
-	public function action_view() {
+	/*public function action_view() {
 		$id = $this->request->param('id');
 		$this->response->body('viewing list id:' . $id);
 		//$this->response->body(View::factory('helloworld'));
-	}
+	}*/
 
 	public function action_add() {
+		$this->template->title = 'Add a list';
+
 		$view = View::factory('list/add');
 
 		if ($_POST) {
@@ -17,16 +19,20 @@ class Controller_List extends Controller {
 			}
 			$view->errors = 'Please enter a list name';
 		}
-		$this->response->body($view);
+		$this->template->content = $view;
 	}
 
 	public function action_mine() {
+		$this->template->title = 'View my list';
+
 		$view = View::factory('list/mine');
 		$view->list_id = $this->request->param('id');
-		$this->response->body($view);
+		$this->template->content = $view;
 	}
 
 	public function action_friend() {
+		$this->template->title = 'View my friend\'s list';
+
 		$view = View::factory('list/friend');
 
 		if ($_POST) {
@@ -37,7 +43,23 @@ class Controller_List extends Controller {
 		}
 
 		$view->list_id = $this->request->param('id');
-		$this->response->body($view);
+		$this->template->content = $view;
+	}
+
+	public function action_add_friend() {
+		$this->template->title = 'Add a friend to my list';
+
+		$view = View::factory('list/add_friend');
+
+		if ($_POST) {
+			if (arr::get($_POST, 'id')) {
+				Request::current()->redirect('list/mine/1');
+			}
+			$view->errors = 'Please select some friends to add';
+		}
+
+		$view->list_id = $this->request->param('id');
+		$this->template->content = $view;
 	}
 
 }
