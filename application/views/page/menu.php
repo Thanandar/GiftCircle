@@ -1,13 +1,11 @@
 <?php 
 
-$session = Session::instance();
-//print_r($session);
+$logged_in = Auth::instance()->logged_in();
 
-$role = ORM::factory('role')->where('name', '=', 'admin')->find();
-$users = $role->users->order_by('username', 'DESC')->find_all();
-foreach ($users as $user) {
-	//print_r($user);
+if ($logged_in) {
+	$username = Auth::instance()->get_user()->username;
 }
+
 ?>
 <div class="topbar">
 	<div class="fill">
@@ -15,18 +13,21 @@ foreach ($users as $user) {
 			<a class="brand" href="/">Gift Circle</a>
 			<ul class="nav">
 				<li><a href="/">Home</a></li>
-				<li><a href="/user/view_lists">Gift Lists</a></li>
-				<li><a href="/friend/list">My Friends</a></li>
+				<?php if ($logged_in) { ?>
+					<li><a href="/user/view_lists">Gift Lists</a></li>
+					<li><a href="/friend/list">My Friends</a></li>
+				<?php } else { ?>
+				<?php } ?>
 				<li><a href="/home/features">Features</a></li>
 				<li><a href="/home/support">Support</a></li>
 				<li><a href="/home/faqs">FAQs</a></li>
 			</ul>
 
-			<?php if (Auth::instance()->logged_in()) { ?>
+			<?php if ($logged_in) { ?>
 				<form class="pull-right">
 					<span class="currently-logged-in">Logged in as <strong>
-					<?php echo Auth::instance()->get_user()->username; ?>
-					</strong></span>
+					<?php echo $username; ?>
+					</strong></span>&nbsp;
 					<button onclick="location.href='/user/logout'" class="btn" type="button">Logout</button>
 				</form>
 			<?php } else { ?>
