@@ -47,9 +47,9 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>Xmas</td>
+				<td><a href="/list/friend/1">Xmas</a></td>
 				<td>10</td>
-				<td>Bob</td>
+				<td><a href="/friend/view/1">Bob</a></td>
 			</tr>
 		</tbody>
 	</table>

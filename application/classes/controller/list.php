@@ -26,4 +26,18 @@ class Controller_List extends Controller {
 		$this->response->body($view);
 	}
 
+	public function action_friend() {
+		$view = View::factory('list/friend');
+
+		if ($_POST) {
+			if (arr::get($_POST, 'reserve')) {
+				Request::current()->redirect('gift/buy/1');
+			}
+			$view->errors = 'Please select some gifts to reserve';
+		}
+
+		$view->list_id = $this->request->param('id');
+		$this->response->body($view);
+	}
+
 }

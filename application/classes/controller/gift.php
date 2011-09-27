@@ -36,4 +36,11 @@ class Controller_Gift extends Controller {
 		$this->response->body($view);
 	}
 
+	public function action_buy() {
+		$view = View::factory('gift/buy');
+		$view->gift_id = $this->request->param('id');
+
+		$this->response->body($view);
+	}
+
 } 
