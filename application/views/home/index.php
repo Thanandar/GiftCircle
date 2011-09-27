@@ -35,17 +35,9 @@
 
 		</div>
 		<div class="span6">
-			<h3>Testimonials</h3>
+			<?php echo View::factory('sidebar/testimonials'); ?>
 			
-			<blockquote>
-				<p>Gift Circle is great!</p>
-				<small>Bob</small>
-			</blockquote>
-
-			<h3>Tweets about us</h3>
-			<ul>
-				<li><a href="#">@bob</a>: I just used @GiftCircle</li>
-			</ul>
+			<?php echo View::factory('sidebar/tweets'); ?>
 		</div>
 	</div>
 

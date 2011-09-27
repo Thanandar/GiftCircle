@@ -2,11 +2,9 @@
 
 class Controller_List extends Controller_Page {
 
-	/*public function action_view() {
-		$id = $this->request->param('id');
-		$this->response->body('viewing list id:' . $id);
-		//$this->response->body(View::factory('helloworld'));
-	}*/
+	public function action_index() {
+		Request::current()->redirect('');
+	}
 
 	public function action_add() {
 		$this->template->title = 'Add a list';

@@ -2,6 +2,10 @@
 
 class Controller_User extends Controller_Page {
 
+	public function action_index() {
+		Request::current()->redirect('');
+	}
+	
 	public function action_register() {
 		$this->template->title = 'Register';
 
@@ -17,7 +21,7 @@ class Controller_User extends Controller_Page {
 	}
 
 	public function action_register_success() {
-		Request::current()->redirect('home/index');
+		Request::current()->redirect('');
 	}
 
 	public function action_login() {
@@ -41,7 +45,7 @@ class Controller_User extends Controller_Page {
 
 	public function action_login_success() {
 		// TODO: set login session stuff
-		Request::current()->redirect('home/index');
+		Request::current()->redirect('');
 	}
 
 	public function action_view_lists() {

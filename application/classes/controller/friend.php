@@ -4,9 +4,6 @@ class Controller_Friend extends Controller_Page {
 
 	public function action_index() {
 		Request::current()->redirect('friend/list');
-		$id = $this->request->param('id');
-		$this->response->body('hello, world!' . $id);
-		//$this->response->body(View::factory('helloworld'));
 	}
 
 	public function action_list() {

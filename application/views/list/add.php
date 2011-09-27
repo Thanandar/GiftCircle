@@ -42,9 +42,9 @@
 		</fieldset>
 	</form>
 </div>
+
 <div class="span4">
-	<h3>FAQs</h3>
-	<p>Lorem...</p>
+	<?php echo View::factory('sidebar/faqs'); ?>
 </div>
 
 

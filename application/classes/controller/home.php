@@ -4,8 +4,6 @@ class Controller_Home extends Controller_Page {
 
 	public function action_index() {
 		//$id = $this->request->param('id');
-		//$this->response->body('hello, world!' . $id);
-		//$this->response->body(View::factory('home/index'));
 		$this->template->title = 'Home';
 		$this->template->content = View::factory('home/index');
 	}

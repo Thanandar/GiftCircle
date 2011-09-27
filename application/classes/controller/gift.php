@@ -2,6 +2,10 @@
 
 class Controller_Gift extends Controller_Page {
 
+	public function action_index() {
+		Request::current()->redirect('');
+	}
+	
 	public function action_add() {
 		$this->template->title = 'Add gift';
 		$view = View::factory('gift/add');

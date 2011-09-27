@@ -31,7 +31,6 @@
 </div>
 
 <div class="span4">
-	<h3>Testimonials</h3>
-	<p>Lorem!</p>
+	<?php echo View::factory('sidebar/testimonials'); ?>
 </div>
 
