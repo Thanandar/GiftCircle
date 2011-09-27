@@ -12,6 +12,21 @@ class Controller_User extends Controller_Page {
 		$view = View::factory('user/register');
 		if ($_POST) {
 			if (arr::get($_POST, 'email')) {
+
+
+				// $model = ORM::factory('user');
+				// $model->values(array(
+				//    'username' => 'user@examnple.com',
+				//    'email' => 'user@examnple.com',
+				//    'password' => 'password',
+				//    'password_confirm' => 'password',
+				// ));
+				// $model->save();
+				// // remember to add the login role AND the admin role
+				// // add a role; add() executes the query immediately
+				// $model->add('roles', ORM::factory('role')->where('name', '=', 'login')->find());
+				// //$model->add('roles', ORM::factory('role')->where('name', '=', 'admin')->find());
+
 				Request::current()->redirect('user/register_success');
 			}
 			$view->errors = 'Please supply an email address';
@@ -37,23 +52,39 @@ class Controller_User extends Controller_Page {
 
 		if ($_POST) {
 			// Try to login
-			// if (Auth::instance()->login(arr::get($_POST, 'username'), arr::get($_POST, 'password'))) {
-			// 	Request::current()->redirect('user/action_login_success');
-			// }
-			if (arr::get($_POST, 'email')) {
-				Request::current()->redirect('user/login_success');
-				die();
+
+			$pass = arr::get($_POST, 'password');
+			$user = arr::get($_POST, 'email');
+
+			if (!$pass) {
+				$view->errors = 'Please enter your password';
 			}
 
-			$view->errors = 'Invalid email or password';
+			if (!$user) {
+				$view->errors = 'Please enter a valid email';
+			}
+
+			if (empty($view->errors)) {
+				if ( Auth::instance()->login($user, $pass)) {
+					Request::current()->redirect('user/login_success');
+				} else {
+					$view->errors = 'Invalid email or password';
+				}
+			}
+
+			// if (arr::get($_POST, 'email') && arr::get($_POST, 'password')) {
+				
+			// 	Request::current()->redirect('user/login_success');
+			// }
+
 		}
 
 		$this->template->content = $view;
 	}
 
 	public function action_login_success() {
-		$auth = Auth::instance();
-		$auth->force_login('admin');
+		//$auth = Auth::instance();
+		//$auth->force_login('admin');
 		// TODO: set login session stuff
 		//var_dump(Auth::instance()->get_user());die();
 		Request::current()->redirect('');
