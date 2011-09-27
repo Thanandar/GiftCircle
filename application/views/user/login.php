@@ -1,18 +1,39 @@
 <?php echo View::factory('page/header'); ?>
 
 
-<h2>Login</h2>
-<form method="post">
-	<label>Email <input name="email"></label>
-	<label>Password <input name="password" type="password"></label>
-	<input type="submit" value="Login" />
-</form>
 
+<div class="span12">
 
-<?php
-if (!empty($errors)) {
-	echo $errors;
-}
-?>
+	<form method="post">
+		<fieldset>
+			<legend>Login</legend>
+			<div class="clearfix">
+				<label>Email</label>
+				<div class="input"><input name="email"></div>
+			</div>
+			<div class="clearfix">
+				<label>Password</label>
+				<div class="input"><input name="password" type="password"></div>
+			</div>
+
+			<?php
+			if (!empty($errors)) {
+				echo '<div class="alert-message error"><p>';
+				echo $errors;
+				echo '</p></div>';
+			}
+			?>
+
+			<div class="actions">
+				<input type="submit" value="Login" class="btn primary large" />
+			</div>
+		</fieldset>
+	</form>
+</div>
+
+<div class="span4">
+	<h3>Testimonials</h3>
+	<p>Lorem!</p>
+</div>
 
 <?php echo View::factory('page/footer'); ?>

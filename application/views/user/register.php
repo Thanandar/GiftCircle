@@ -47,7 +47,7 @@
 			?>
 
 			<div class="actions">
-				<input type="submit" value="Create my account" class="btn primary" />
+				<input type="submit" value="Create my account" class="btn primary large" />
 			</div>
 		</fieldset>
 	</form>
