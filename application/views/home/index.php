@@ -3,9 +3,9 @@
 <div class="span16">
 
 	<div class="row">
-		<div class="span6">
+		<div class="span7">
 
-			<img src="http://placehold.it/250x100&text=Logo" alt="" />
+			<img src="http://placehold.it/400x160&text=Logo" alt="" />
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 
@@ -16,8 +16,8 @@
 			</div>
 		</div>
 		
-		<div class="span10">
-			<img src="http://placehold.it/580x320&text=Video" alt="" />
+		<div class="span9">
+			<img src="http://placehold.it/520x290&text=Video" alt="" />
 		</div>
 	</div>
 
