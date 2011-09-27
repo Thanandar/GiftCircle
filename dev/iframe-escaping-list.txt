@@ -1,0 +1,27 @@
+List of shopping sites that (currently) do/don't escape iframes:
+
+Escape iframes:
+
+Wal-Mart - NO
+Play - NO
+NewEgg - NO
+
+Do not escape iframes:
+
+Amazon - YES
+Ebay- YES
+IKEA - YES
+Target - YES
+Groupon - YES
+Abercromie and Fitch - YES
+Argos - YES
+NET-A-PORTER - YES
+Urban Outfitters - YES
+Marks & Spencer - YES
+Game - YES
+Firebox - YES
+Threadless - YES
+BestBuy - YES
+Barnes & Noble - YES
+Waterstones - YES
+Gap - YES
