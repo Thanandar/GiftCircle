@@ -15,13 +15,13 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>COD MW3</td>
+				<td><a href="/gift/edit/1">COD MW3</a></td>
 				<td>&pound;50.99</td>
 				<td>Games</td>
 				<td>✘</td>
 			</tr>
 			<tr>
-				<td>barbie</td>
+				<td><a href="/gift/edit/2">barbie</a></td>
 				<td>&pound;35.99</td>
 				<td>Toys</td>
 				<td>✘</td>

@@ -14,6 +14,21 @@ class Controller_Gift extends Controller {
 		$this->response->body($view);
 	}
 
+	public function action_edit() {
+		$view = View::factory('gift/edit');
+
+		$view->gift_id = $this->request->param('id');
+
+
+		if ($_POST) {
+			if (arr::get($_POST, 'title')) {
+				Request::current()->redirect('list/mine/2');
+			}
+			$view->errors = 'Please enter a product title';
+		}
+		$this->response->body($view);
+	}
+
 
 	public function action_browse() {
 		$view = View::factory('gift/browse');
