@@ -14,7 +14,10 @@
 			</div>
 			<div class="clearfix">
 				<label>Email</label>
-				<div class="input"><input name="email"></div>
+				<div class="input">
+					<input name="email">
+					<span class="help-inline">This will be your username</span>
+				</div>
 			</div>
 			<div class="clearfix">
 				<label>Password</label>

@@ -4,6 +4,10 @@ class Controller_Home extends Controller_Page {
 
 	public function action_index() {
 		//$id = $this->request->param('id');
+		if (Auth::instance()->logged_in()) {
+			Request::current()->redirect('user/view_lists');
+		}
+
 		$this->template->title = 'Home';
 		$this->template->content = View::factory('home/index');
 	}

@@ -10,18 +10,23 @@ if ($logged_in) {
 <div class="topbar">
 	<div class="fill">
 		<div class="container">
-			<a class="brand" href="/">Gift Circle</a>
-			<ul class="nav">
-				<li><a href="/">Home</a></li>
-				<?php if ($logged_in) { ?>
+			<?php if ($logged_in) { ?>
+				<a class="brand" href="/user/view_lists">Gift Circle</a>
+				<ul class="nav">
 					<li><a href="/user/view_lists">Gift Lists</a></li>
 					<li><a href="/friend/list">My Friends</a></li>
-				<?php } else { ?>
-				<?php } ?>
-				<li><a href="/home/features">Features</a></li>
-				<li><a href="/home/support">Support</a></li>
-				<li><a href="/home/faqs">FAQs</a></li>
-			</ul>
+					<li><a href="/home/features">Features</a></li>
+					<li><a href="/home/support">Support</a></li>
+					<li><a href="/home/faqs">FAQs</a></li>
+				</ul>
+			<?php } else { ?>
+			<a class="brand" href="/">Gift Circle</a>
+				<ul class="nav">
+					<li><a href="/home/features">Features</a></li>
+					<li><a href="/home/support">Support</a></li>
+					<li><a href="/home/faqs">FAQs</a></li>
+				</ul>
+			<?php } ?>
 
 			<?php if ($logged_in) { ?>
 				<form class="pull-right">
