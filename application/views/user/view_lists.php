@@ -15,13 +15,13 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>30th birthday</td>
+				<td><a href="/list/mine/1">30th birthday</a></td>
 				<td>0</td>
 				<td>8</td>
 				<td><a href="#" onclick="return confirm('Are you sure you want to delete this list?')"><span class="label important">✘</span></a></td>
 			</tr>
 			<tr>
-				<td>31st birthday</td>
+				<td><a href="/list/mine/2">31st birthday</a></td>
 				<td>1</td>
 				<td>2</td>
 				<td><a href="#" onclick="return confirm('Are you sure you want to delete this list?')"><span class="label important">✘</span></a></td>
