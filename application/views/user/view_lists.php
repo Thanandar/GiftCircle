@@ -18,13 +18,13 @@
 				<td>30th birthday</td>
 				<td>0</td>
 				<td>8</td>
-				<td>✘</td>
+				<td><a href="#" onclick="return confirm('Are you sure you want to delete this list?')"><span class="label important">✘</span></a></td>
 			</tr>
 			<tr>
 				<td>31st birthday</td>
 				<td>1</td>
 				<td>2</td>
-				<td>✘</td>
+				<td><a href="#" onclick="return confirm('Are you sure you want to delete this list?')"><span class="label important">✘</span></a></td>
 			</tr>
 		</tbody>
 	</table>
@@ -72,7 +72,10 @@
 				<td>Coat</td>
 				<td>&pound;50</td>
 				<td>Bobby</td>
-				<td>✔ ✘</td>
+				<td>
+					<a href="#" onclick="return confirm('Mark this item as bought?')"><span class="label success">✔</span></a> 
+					<a href="#" onclick="return confirm('Are you sure you want to delete this product?')"><span class="label important">✘</span></a>
+				</td>
 			</tr>
 		</tbody>
 	</table>

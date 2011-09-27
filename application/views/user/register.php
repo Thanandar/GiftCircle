@@ -22,12 +22,19 @@
 				<div class="input"><input name="password" type="password"></div>
 			</div>
 			<div class="clearfix">
-				<label>Confirm passwprd</label>
+				<label>Confirm password</label>
 				<div class="input"><input name="confirm" type="password"></div>
 			</div>
 			<div class="clearfix">
 				<label>Terms &amp; Conditions</label>
-				<div class="input"><input type="checkbox" value="accept" /> Accept</div>
+				<div class="input">
+					<ul class="inputs-list">
+						<li><label>
+							<input type="checkbox" value="accept" />
+							<span>Accept</span>
+						</label></li>
+					</ul>
+				</div>
 			</div>
 
 
