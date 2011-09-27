@@ -14,4 +14,11 @@ class Controller_Gift extends Controller {
 		$this->response->body($view);
 	}
 
+
+	public function action_browse() {
+		$view = View::factory('gift/browse');
+
+		$this->response->body($view);
+	}
+
 } 

@@ -49,9 +49,15 @@
 		</fieldset>
 	</form>
 </div>
+
 <div class="span4">
-	<h3>FAQs</h3>
-	<p>Lorem...</p>
+	<h3>On your list</h3>
+	<ul>
+		<li>COD MW3</li>
+		<li>Barbie</li>
+		<li>Starwars lego</li>
+		<li>The Rock DVD</li>
+	</ul>
 </div>
 
 
