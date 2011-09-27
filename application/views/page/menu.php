@@ -5,7 +5,7 @@
 			<ul class="nav">
 				<li><a href="/">Home</a></li>
 				<li><a href="/user/view_lists">Gift Lists</a></li>
-				<li><a href="/user/friends">My Friends</a></li>
+				<li><a href="/friend/list">My Friends</a></li>
 				<li><a href="/home/features">Features</a></li>
 				<li><a href="/home/support">Support</a></li>
 				<li><a href="/home/faqs">FAQs</a></li>

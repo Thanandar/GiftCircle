@@ -50,9 +50,6 @@ class Controller_User extends Controller {
 		$this->response->body(View::factory('user/view_lists'));
 	}
 
-	public function action_friends() {
-		// must be logged in
-		$this->response->body(View::factory('user/friends'));
-	}
+
 
 }
