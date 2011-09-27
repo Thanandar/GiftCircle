@@ -32,3 +32,5 @@ body {
 .topbar .btn {
   border: 0;
 }
+
+.currently-logged-in {color: #fff;}

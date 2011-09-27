@@ -24,6 +24,13 @@ class Controller_User extends Controller_Page {
 		Request::current()->redirect('');
 	}
 
+	public function action_logout() {
+		$auth = Auth::instance();
+		$auth->logout();
+		Message::add('alert-message success', 'You have been logged out');
+		Request::current()->redirect('');
+	}
+
 	public function action_login() {
 		$this->template->title = 'Login';
 		$view = View::factory('user/login');
@@ -35,6 +42,7 @@ class Controller_User extends Controller_Page {
 			// }
 			if (arr::get($_POST, 'email')) {
 				Request::current()->redirect('user/login_success');
+				die();
 			}
 
 			$view->errors = 'Invalid email or password';
@@ -44,7 +52,10 @@ class Controller_User extends Controller_Page {
 	}
 
 	public function action_login_success() {
+		$auth = Auth::instance();
+		$auth->force_login('admin');
 		// TODO: set login session stuff
+		//var_dump(Auth::instance()->get_user());die();
 		Request::current()->redirect('');
 	}
 

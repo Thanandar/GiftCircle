@@ -14,12 +14,14 @@
 		<div class="page-header">
 			<h1>
 				<img src="http://placehold.it/80x50&text=Logo" alt="Logo" style="vertical-align:middle" />
-				Gift Circle
-				<small>Where gifts are in circles</small>
+				<?php echo $title ?>
+				<small>Gift Circle</small>
 			</h1>
 		</div>
+		<?php echo Message::output(); ?>
 		<div class="row">
 <!-- end of header -->
+
 
 <?php echo $content ?>
 
