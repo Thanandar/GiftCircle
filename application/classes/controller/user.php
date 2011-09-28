@@ -1,6 +1,8 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_User extends Controller_Page {
+class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
+
+	public $template = 'template';
 
 	public function action_index() {
 		Request::current()->redirect('');
