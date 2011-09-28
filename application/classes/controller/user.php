@@ -9,32 +9,11 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 	}
 	
 	public function action_register() {
-		$this->template->title = 'Register';
-
-		$view = View::factory('user/register');
-		if ($_POST) {
-			if (arr::get($_POST, 'email')) {
-
-
-				// $model = ORM::factory('user');
-				// $model->values(array(
-				//    'username' => 'user@examnple.com',
-				//    'email' => 'user@examnple.com',
-				//    'password' => 'password',
-				//    'password_confirm' => 'password',
-				// ));
-				// $model->save();
-				// // remember to add the login role AND the admin role
-				// // add a role; add() executes the query immediately
-				// $model->add('roles', ORM::factory('role')->where('name', '=', 'login')->find());
-				// //$model->add('roles', ORM::factory('role')->where('name', '=', 'admin')->find());
-
-				Request::current()->redirect('user/register_success');
-			}
-			$view->errors = 'Please supply an email address';
+		if (!empty($_POST['email'])) {
+			$_POST['username'] = $_POST['email'];
 		}
+		parent::action_register();
 
-		$this->template->content = $view;
 	}
 
 	public function action_register_success() {
@@ -48,7 +27,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 		Request::current()->redirect('');
 	}
 
-	public function action_login() {
+	public function xaction_login() {
 		$this->template->title = 'Login';
 		$view = View::factory('user/login');
 

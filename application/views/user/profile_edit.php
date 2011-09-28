@@ -1,3 +1,5 @@
+<div class="span16">
+
 <?php
 $form = new Appform();
 if(isset($errors)) {
@@ -9,9 +11,7 @@ if(isset($data)) {
 }
 echo $form->open('user/profile_edit');
 ?>
-<div class="block">
-   <h1><?php echo __('Edit profile'); ?></h1>
-   <div class="content">
+
    <ul>
       <li><label><?php echo __('Username'); ?></label></li>
       <?php echo $form->input('username', null, array('info' => __('Length between 4-32 characters. Letters, numbers, dot and underscore are allowed characters.'))); ?>
@@ -21,8 +21,11 @@ echo $form->open('user/profile_edit');
       <?php echo $form->password('password', null, array('info' => __('Password should be between 6-42 characters.'))) ?>
       <li><label><?php echo __('Re-type Password'); ?></label></li>
       <?php echo $form->password('password_confirm') ?>
+      
+
+      <?php /*
       <li><h2><?php echo __('Roles'); ?></h2></li>
-      <li><table class="content">
+      <table class="content">
          <tr class="heading"><td><?php echo __('Role'); ?></td><td><?php echo __('Description'); ?></td></tr>
      <?php
          $i = 0;
@@ -37,13 +40,13 @@ echo $form->open('user/profile_edit');
             $i++;
          }
       ?>
-            </table>
-      </li>
+            </table> */ ?>
    </ul>
-   <br>
+   <div class="actions">
+      <input type="submit" class="btn primary large" value="Update" />
+   </div>
 <?php
-echo $form->submit(NULL, __('Save'));
 echo $form->close();
 ?>
-   </div>
+
 </div>

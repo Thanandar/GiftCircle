@@ -1,46 +1,95 @@
+<div class="span12">
 
-<div class="block">
-   <h1><?php echo __('Register'); ?></h1>
-   <div class="content">
-      <div class="info" style="width: 415px;"><small><?php echo __('Already have a user account?').' '.Html::anchor('user/login', __('Log in here.')); ?></small></div>
-      <br>
-      <p><?php echo __('Fill in the information below to register.'); ?></p>
+	<p>Already have a user account? <a href="/user/login">Log in here</a>.</p>
 
 <?php
 $form = new Appform();
 if(isset($errors)) {
-   $form->errors = $errors;
+	$form->errors = $errors;
 }
 if(isset($defaults)) {
-   $form->defaults = $defaults;
+	$form->defaults = $defaults;
 } else {
-   unset($_POST['password']);
-   unset($_POST['password_confirmation']);
-   $form->defaults = $_POST;
+	unset($_POST['password']);
+	unset($_POST['password_confirmation']);
+	$form->defaults = $_POST;
 }
-echo $form->open('user/register');
+echo $form->open('');
 ?>
 
-<ul>
-   <li><label><?php echo __('Username'); ?></label></li>
-   <?php echo $form->input('username', null, array('info' => __('Length between 1-32 characters. Letters, numbers, dot and underscore are allowed characters.'))); ?>
-   <li><label><?php echo __('Email address'); ?></label></li>
-   <?php echo $form->input('email') ?>
-   <li><label><?php echo __('Password'); ?></label></li>
-   <?php echo $form->password('password', null, array('info' => __('Password should be between 6-42 characters.'))) ?>
-   <li><label><?php echo __('Re-type Password'); ?></label></li>
-   <?php echo $form->password('password_confirm') ?>
-   <?php if(isset($captcha_enabled) && $captcha_enabled) { ?>
-   <li>
-       <?php echo $recaptcha_html; ?>
-       <br/>
-   </li>
-   <?php } ?>
-   <li><?php echo $form->submit(NULL, __('Register new account')); ?></li>
-</ul>
-<br style="clear:both;">
+
+<fieldset>
+
+   <div class="clearfix">
+      <label>First name</label>
+      <div class="input"><?php echo $form->input('firstname'); ?></div>
+   </div>
+   <div class="clearfix">
+      <label>Surname</label>
+      <div class="input"><?php echo $form->input('surname'); ?></div>
+   </div>
+
+   <div class="clearfix<?php if (isset($errors['email']) || isset($errors['username'])) echo ' error'; ?>">
+      <label>Email address</label>
+      <div class="input"><?php echo $form->input('email'); ?></div>
+   </div>   
+
+   <div class="clearfix<?php if (isset($errors['password'])) echo ' error'; ?>">
+      <label>Password</label>
+      <div class="input">
+         <?php echo $form->password('password'); ?>
+         <?php if (!isset($errors['password'])) { ?>
+         <span class="help-inline">Password must be at least 6 characters long</span>
+         <?php } ?>
+      </div>
+   </div>   
+
+	<div class="clearfix<?php if (isset($errors['password_confirm'])) echo ' error'; ?>">
+		<label>Confirm password</label>
+		<div class="input">
+			<?php echo $form->password('password_confirm'); ?>
+		</div>
+	</div>	
+
+   <div class="clearfix">
+      <label>Terms &amp; Conditions</label>
+      <div class="input">
+         <ul class="inputs-list">
+            <li><label>
+               <input type="checkbox" value="accept" />
+               <span>Accept</span>
+            </label></li>
+         </ul>
+      </div>
+   </div>
+
+	<?php if(isset($captcha_enabled) && $captcha_enabled) { ?>
+		 <?php echo $recaptcha_html; ?>
+	<?php } ?>
+
+   <?php
+   if (!empty($errors)) {
+      echo '<div class="xalert-message xerror"><pre>';
+      print_r($errors);
+      echo '</pre></div>';
+   }
+   ?>
+
+
+   <div class="actions">
+      <input type="submit" value="Create my account" class="btn primary large" />
+   </div>
+
+
+
+</fieldset>
 <?php
 echo $form->close();
 ?>
-   </div>
 </div>
+
+<div class="span4">
+	<?php echo View::factory('sidebar/testimonials'); ?>
+</div>
+
+

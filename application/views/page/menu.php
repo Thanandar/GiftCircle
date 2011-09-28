@@ -30,9 +30,9 @@ if ($logged_in) {
 
 			<?php if ($logged_in) { ?>
 				<form class="pull-right">
-					<span class="currently-logged-in">Logged in as <strong>
-					<?php echo $username; ?>
-					</strong></span>&nbsp;
+					<span class="currently-logged-in">Logged in as 
+						<a href="/user/profile"><strong><?php echo $username; ?></strong></a>
+					</span>&nbsp;
 					<button onclick="location.href='/user/logout'" class="btn" type="button">Logout</button>
 				</form>
 			<?php } else { ?>

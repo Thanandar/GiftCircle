@@ -1,77 +1,89 @@
 <?php
 $form = new Appform();
 if(isset($errors)) {
-   $form->errors = $errors;
+	//$form->errors = $errors;
 }
 if(isset($username)) {
-   $form->values['username'] = $username;
+	$form->values['username'] = $username;
 }
 // set custom classes to get labels moved to bottom:
 $form->error_class = 'error block';
 $form->info_class = 'info block';
-
 ?>
-<div id="box">
-   <div class="block">
-      <h1><?php echo __('Login'); ?></h1>
-      <div class="content">
+<div class="span12">
+	<form method="post" action="" accept-charset="utf-8">
+		<fieldset>
+			<div class="clearfix">
+				<?php echo $form->label('username', __('Email')); ?>
+				<div class="input"><?php echo $form->input('username'); ?></div>
+			</div>			
+
+			<div class="clearfix">
+				<?php echo $form->label('password', __('Password')); ?>
+				<div class="input">
+					<?php echo $form->password('password'); ?>
+					<span class="help-inline"><?php echo Html::anchor('user/forgot', __('Forgot your password?')); ?></span>
+				</div>
+			</div>			
+
+			<?php
+			if (!empty($errors['password'])) {
+				echo '<div class="alert-message error"><p>';
+				echo $errors['password'];
+				echo '</p></div>';
+			}
+			?>
+
 <?php
-echo $form->open('user/login');
-echo '<table><tr><td style="vertical-align: top;">';
-echo '<ul>';
-
-echo '<li>'.$form->label('username', __('Email or Username')).'</li>';
-echo $form->input('username', null, array('class' => 'text twothirds'));
-
-echo '<li>'.$form->label('password', __('Password'),array('style'=>'display: inline; margin-right:10px;')).
-     '<small> '.Html::anchor('user/forgot', __('Forgot your password?')).'<br></small>'.
-     '</li>';
-echo $form->password('password', null, array('class' => 'text twothirds'));
 
 
 $authClass = new ReflectionClass(get_class(Auth::instance()));
-if($authClass->hasMethod('auto_login'))
-{
-echo '<li>'.Kohana_Form::checkbox('remember','remember',false,array('style'=>'margin-right: 10px','id'=>'remember')).
-            $form->label('remember', __('Remember me'),array('style'=>'display: inline')).
-            $form->submit(NULL, __('Login'),array('style'=>'float: right;')).
-     '</li>';
-    echo '</ul>';
+if($authClass->hasMethod('auto_login')) {
+	?>
+			<div class="clearfix">
+				<?php echo $form->label('remember', __('Remember me')); ?>
+				<div class="input">
+					<ul class="inputs-list">
+						<li>
+							<?php echo $form->checkbox('remember'); ?>
+						</li>
+					</ul>
+				</div>
+			</div>	
+	<?php
 }
-else
-{
-    echo '</ul>';
-    echo $form->submit(NULL, __('Login'));
-}
-echo $form->close();
-echo '</td><td width="5" style="border-right: 1px solid #DDD;">&nbsp;</td><td><td style="padding-left: 2px; vertical-align: top;">';
+?>
+			<div class="actions">
+				<input type="submit" value="Login" class="btn primary large" />
+				or
+				<a href="/user/register">Register a new account</a>
+			</div>
 
-echo '<ul>';
-echo '<li style="height: 61px">'.__('Don\'t have an account?').' '.Html::anchor('user/register', __('Register a new account')).'.</li>';
+</form>
+<?php
+
 $options = array_filter(Kohana::$config->load('useradmin.providers'));
 if(!empty($options)) {
-   echo '<li style="padding-bottom: 8px;"><label>'.__('To register / log in using another account, please click your provider').':</label></li>';
-   echo '<li>';
-   if(isset($options['facebook']) && $options['facebook']) {
-      echo '<a class="login_provider" style="background: #FFF url(/img/facebook.png) no-repeat center center" href="'.URL::site('/user/provider/facebook').'"></a>';
-   }
-   if(isset($options['twitter']) && $options['twitter']) {
-      echo '<a class="login_provider" style="background: #FFF url(/img/twitter.png) no-repeat center center" href="'.URL::site('/user/provider/twitter').'"></a>';
-   }
-   if(isset($options['google']) && $options['google']) {
-      echo '<a class="login_provider" style="background: #FFF url(/img/google.gif) no-repeat center center" href="'.URL::site('/user/provider/google').'"></a>';
-   }
-   if(isset($options['yahoo']) && $options['yahoo']) {
-      echo '<a class="login_provider" style="background: #FFF url(/img/yahoo.gif) no-repeat center center" href="'.URL::site('/user/provider/yahoo').'"></a>';
-   }
-   echo '<br style="clear: both;">
-   </li>';
+	?><h3>To register / log in using another account, please click your provider</h3><?php
+	if(isset($options['facebook']) && $options['facebook']) {
+		echo '<a class="login_provider" style="background: #FFF url(/img/facebook.png) no-repeat center center" href="'.URL::site('/user/provider/facebook').'">Facebook</a>';
+	}
+	if(isset($options['twitter']) && $options['twitter']) {
+		echo '<a class="login_provider" style="background: #FFF url(/img/twitter.png) no-repeat center center" href="'.URL::site('/user/provider/twitter').'">Twitter</a>';
+	}
+	if(isset($options['google']) && $options['google']) {
+		echo '<a class="login_provider" style="background: #FFF url(/img/google.gif) no-repeat center center" href="'.URL::site('/user/provider/google').'">Google</a>';
+	}
+	if(isset($options['yahoo']) && $options['yahoo']) {
+		echo '<a class="login_provider" style="background: #FFF url(/img/yahoo.gif) no-repeat center center" href="'.URL::site('/user/provider/yahoo').'">Yahoo</a>';
+	}
 }
-echo '</ul>';
-echo '</td></tr></table>';
 ?>
-      </div>
-   </div>
+
 </div>
 
+
+<div class="span4">
+	<?php echo View::factory('sidebar/testimonials'); ?>
+</div>
 

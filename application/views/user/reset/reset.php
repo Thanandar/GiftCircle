@@ -1,23 +1,25 @@
-<div class="block">
-   <h1><?php echo __('Password reset'); ?></h1>
-   <div class="content">
+<div class="span16">
 <?php
 echo Form::open('user/reset');
 ?>
-<ul>
-   <li>
-      <label><?php echo __('Account email address'); ?>:</label>
-      <?php echo Form::input('reset_email', '', array('class' => 'text')) ?>
-   </li>
-   <li>
-      <label><?php echo __('Password reset token'); ?>:</label>
-      <?php echo Form::input('reset_token', '', array('class' => 'text')) ?>
-   </li>
-</ul>
-<br style="clear:both;">
-<?php echo Form::submit(NULL, __('Reset password')); ?>
+   <fieldset>
+         <div class="clearfix">
+            <label><?php echo __('Email address'); ?></label>
+            <div class="input"><?php echo Form::input('reset_email', ''); ?></div>
+         </div>
+         <div class="clearfix">
+            <label><?php echo __('Password reset token'); ?></label>
+            <div class="input"><?php echo Form::input('reset_token', ''); ?></div>
+         </div>
+   
+
+         <div class="actions">
+            <input type="submit" value="Reset password" class="btn primary large" />
+         </div>
+
+   </fieldset>
+
 
 <?php echo Form::close() ?>
 
-   </div>
 </div>
