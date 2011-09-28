@@ -55,6 +55,19 @@ class Controller_Gift extends Controller_Page {
 		$this->template->content = $view;
 	}
 
+	public function action_delete() {
+		$gift_id = $this->request->param('id');
+		$gift = new Model_Gift($gift_id);
+
+		if ($gift->list->owner->id != $this->me()->id) {
+			Request::current()->redirect('user/noaccess');
+		}
+		
+		$list_id = $gift->list->id;
+		$gift->delete();		
+		Message::add('success', 'Gift deleted.');
+		Request::current()->redirect('list/mine/' . $list_id);
+	}
 
 	public function action_browse() {
 		$this->template->title = 'Browse for a gift';

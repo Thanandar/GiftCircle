@@ -1,7 +1,7 @@
 
 <div class="span10">
 
-<h2>Current list: <?php echo Kohana_HTML::chars($list->name); ?></h2>
+<h2>Current list: "<?php echo Kohana_HTML::chars($list->name); ?>"</h2>
 	
 	<?php if (count($gifts)) { ?>
 	<table class="zebra-striped">
@@ -19,7 +19,11 @@
 				<td><a href="/gift/edit/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a></td>
 				<td>&pound;<?php echo $gift->price; ?></td>
 				<td><?php echo $gift->category_id; ?></td>
-				<td>✘</td>
+				<td>
+					<span class="label important">
+						<a onclick="return confirm('Are you sure you want to delete this gift?')" href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
+					</span>
+				</td>
 			</tr>
 			<?php } ?>
 		</tbody>
@@ -31,7 +35,7 @@
 	<?php } ?>
 
 	<div class="well">
-		<input type="button" class="btn primary" value="Add gifts to this list" onclick="location.href='/gift/add/<?php echo $list->id; ?>'"/>
+		<input type="button" class="btn primary" value="Add a gift to this list" onclick="location.href='/gift/add/<?php echo $list->id; ?>'"/>
 	</div>
 
 

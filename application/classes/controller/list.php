@@ -51,8 +51,11 @@ class Controller_List extends Controller_Page {
 	public function action_mine() {
 		$this->template->title = 'View my list';
 
-		// TODO: check you own the list
 		$list = new Model_List($this->request->param('id'));
+		if ($list->owner->id != $this->me()->id) {
+			Request::current()->redirect('user/noaccess');
+		}
+
 		$gifts = ORM::factory('gift')
 			->where('list_id', '=', $list)
 			->find_all();

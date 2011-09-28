@@ -35,6 +35,11 @@ body {
 
 .currently-logged-in {color: #fff;}
 
+/* delete crosses*/
+.label a {
+  color: #fff;
+}
+
 /* LOGIN PAGE */
 a.login_provider {
    text-indent: -9999em;
