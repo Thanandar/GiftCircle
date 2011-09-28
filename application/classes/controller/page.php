@@ -4,6 +4,9 @@ class Controller_Page extends Controller_Template {
 
 	public $template = 'template';
 
+	protected function me() {
+		return Auth::instance()->get_user();
+	}
 
 	/**
 	 * The before() method is called before your controller action.

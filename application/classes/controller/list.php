@@ -6,6 +6,29 @@ class Controller_List extends Controller_Page {
 		Request::current()->redirect('');
 	}
 
+	private function all_my_lists() {
+		$lists = ORM::factory('list')
+			->where('owner_id', '=', $this->me())
+			->find_all();
+		
+		return $lists;
+	}
+
+
+	public function action_all() {
+		$this->template->title = 'Home';
+
+		$view = View::factory('list/all');
+		$view->all_mine = View::factory('list/all-mine')
+			->set('lists', $this->all_my_lists());
+
+		$view->all_friends = View::factory('list/all-friends');
+		$view->all_shopping = View::factory('list/all-shopping');
+
+		$this->template->content = $view;
+	}
+
+
 	public function action_add() {
 		$this->template->title = 'Add a list';
 
@@ -13,7 +36,12 @@ class Controller_List extends Controller_Page {
 
 		if ($_POST) {
 			if (arr::get($_POST, 'name')) {
-				Request::current()->redirect('list/mine/1');
+				$list = new Model_List;
+				$list->owner_id = $this->me()->id;
+				$list->name = arr::get($_POST, 'name');
+				$list->save();
+				Message::add('success', __('List added.'));
+				Request::current()->redirect('list/mine/' . $list->id);
 			}
 			$view->errors = 'Please enter a list name';
 		}
@@ -23,8 +51,16 @@ class Controller_List extends Controller_Page {
 	public function action_mine() {
 		$this->template->title = 'View my list';
 
+		// TODO: check you own the list
+		$list = new Model_List($this->request->param('id'));
+		$gifts = ORM::factory('gift')
+			->where('list_id', '=', $list)
+			->find_all();
+
 		$view = View::factory('list/mine');
-		$view->list_id = $this->request->param('id');
+		$view->list = $list;
+		$view->gifts = $gifts;
+		
 		$this->template->content = $view;
 	}
 
@@ -35,6 +71,7 @@ class Controller_List extends Controller_Page {
 
 		if ($_POST) {
 			if (arr::get($_POST, 'reserve')) {
+				Message::add('success', __('Gifts reserved.'));
 				Request::current()->redirect('gift/buy/1');
 			}
 			$view->errors = 'Please select some gifts to reserve';
@@ -59,5 +96,6 @@ class Controller_List extends Controller_Page {
 		$view->list_id = $this->request->param('id');
 		$this->template->content = $view;
 	}
+
 
 }

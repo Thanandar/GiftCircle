@@ -5,9 +5,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 	public $template = 'template';
 
 	public function action_view_lists() {
-		$this->template->title = 'Home';
-
-		$this->template->content = View::factory('user/view_lists');
+		Request::current()->redirect('list/all');
 	}
 
 

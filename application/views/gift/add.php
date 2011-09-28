@@ -1,7 +1,7 @@
 
 <div class="span12">
 
-	<h2>Add item to 30th Birthday</h2>
+	<h2>Add item to your list "<?php echo Kohana_HTML::chars($list->name); ?>"</h2>
 
 	<div class="well">
 		<input type="button" value="Browse for your item" class="btn primary" onclick="location.href='/gift/browse'" />
@@ -15,7 +15,7 @@
 			<div class="clearfix<?php if (!empty($errors)) {echo ' error';} ?>">
 				<label>Product Title: </label>
 				<div class="input">
-					<input name="title">
+					<input name="name">
 					<?php if (!empty($errors)) {
 						echo '<span class="help-inline">' . $errors . '</span>';
 					} ?>
@@ -23,27 +23,34 @@
 			</div>
 			<div class="clearfix">
 				<label>Product Price: </label>
-				<div class="input"><input name="price"></div>
+				<div class="input">
+					<input name="price">
+					<span class="help-inline">Optional</span>
+				</div>
 			</div>
 			<div class="clearfix">
 				<label>Product Category: </label>
 				<div class="input">
-					<select>
+					<select name="category_id">
 						<option value="">Please select...</option>
-						<option value="">Games</option>
-						<option value="">Toys</option>
+						<option value="1">Games</option>
+						<option value="2">Toys</option>
+						<option value="3">Other</option>
 					</select>
 				</div>
 			</div>
 			<div class="clearfix">
 				<label>Product Link: </label>
-				<div class="input"><input name="url"></div>
+				<div class="input">
+					<input name="url">
+					<span class="help-inline">Optional</span>
+				</div>
 			</div>			
 
 
 			<div class="actions">
 				<input type="submit" value="Add item" class="btn primary" /> or
-				<a href="/list/mine/1">cancel</a>
+				<a href="/list/mine/<?php echo $list->id; ?>">cancel</a>
 			</div>
 		</fieldset>
 	</form>

@@ -1,8 +1,9 @@
 
 <div class="span10">
 
-<h2>Current list: 30th Birthday (ID: <?php echo $list_id; ?>)</h2>
-
+<h2>Current list: <?php echo Kohana_HTML::chars($list->name); ?></h2>
+	
+	<?php if (count($gifts)) { ?>
 	<table class="zebra-striped">
 		<thead>
 			<tr>
@@ -13,23 +14,24 @@
 			</tr>
 		</thead>
 		<tbody>
+			<?php foreach ($gifts as $gift) { ?>
 			<tr>
-				<td><a href="/gift/edit/1">COD MW3</a></td>
-				<td>&pound;50.99</td>
-				<td>Games</td>
+				<td><a href="/gift/edit/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a></td>
+				<td>&pound;<?php echo $gift->price; ?></td>
+				<td><?php echo $gift->category_id; ?></td>
 				<td>✘</td>
 			</tr>
-			<tr>
-				<td><a href="/gift/edit/2">barbie</a></td>
-				<td>&pound;35.99</td>
-				<td>Toys</td>
-				<td>✘</td>
-			</tr>
+			<?php } ?>
 		</tbody>
 	</table>
+	<?php } else { ?>
+
+	<p>This list currently has no gifts</p>
+
+	<?php } ?>
 
 	<div class="well">
-		<input type="button" class="btn primary" value="Add gifts to this list" onclick="location.href='/gift/add'"/>
+		<input type="button" class="btn primary" value="Add gifts to this list" onclick="location.href='/gift/add/<?php echo $list->id; ?>'"/>
 	</div>
 
 
