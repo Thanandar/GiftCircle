@@ -13,8 +13,10 @@ echo $form->open('user/profile_edit');
 ?>
 
    <ul>
-      <li><label><?php echo __('Username'); ?></label></li>
-      <?php echo $form->input('username', null, array('info' => __('Length between 4-32 characters. Letters, numbers, dot and underscore are allowed characters.'))); ?>
+      <li><label><?php echo __('Firstname'); ?></label></li>
+      <?php echo $form->input('firstname'); ?>
+      <li><label><?php echo __('Surname'); ?></label></li>
+      <?php echo $form->input('surname'); ?>
       <li><label><?php echo __('Email address'); ?></label></li>
       <?php echo $form->input('email') ?>
       <li><label><?php echo __('Password'); ?></label></li>

@@ -3,7 +3,8 @@
 $logged_in = Auth::instance()->logged_in();
 
 if ($logged_in) {
-	$username = Auth::instance()->get_user()->username;
+	$user = Auth::instance()->get_user();
+	$name = htmlspecialchars($user->firstname . ' ' . $user->surname);
 }
 
 ?>
@@ -31,7 +32,7 @@ if ($logged_in) {
 			<?php if ($logged_in) { ?>
 				<form class="pull-right">
 					<span class="currently-logged-in">Logged in as 
-						<a href="/user/profile"><strong><?php echo $username; ?></strong></a>
+						<a href="/user/profile"><strong><?php echo $name; ?></strong></a>
 					</span>&nbsp;
 					<button onclick="location.href='/user/logout'" class="btn" type="button">Logout</button>
 				</form>
