@@ -1,7 +1,7 @@
 
 <div class="span10">
 
-<h2>Current list: "<?php echo Kohana_HTML::chars($list->name); ?>"</h2>
+<h2>Current list: "<?php echo HTML::chars($list->name); ?>"</h2>
 	
 	<?php if (count($gifts)) { ?>
 	<table class="zebra-striped">

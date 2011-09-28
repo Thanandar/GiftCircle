@@ -19,7 +19,7 @@ if (count($lists)) {
 		<tr>
 			<td>
 				<a href="/list/mine/<?php echo $list->id; ?>">
-					<?php echo Kohana_HTML::chars($list->name); ?>
+					<?php echo HTML::chars($list->name); ?>
 				</a>
 			</td>
 			<td></td>

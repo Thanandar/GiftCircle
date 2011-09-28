@@ -1,8 +1,7 @@
 
 <div class="span12">
 
-	<h2>Edit item on 30th Birthday (ID <?php echo $gift_id; ?>)</h2>
-
+	<h2>Edit gift "<?php echo HTML::chars($gift->name); ?>"</h2>
 
 
 	<form method="post">
@@ -11,7 +10,7 @@
 			<div class="clearfix<?php if (!empty($errors)) {echo ' error';} ?>">
 				<label>Product Title: </label>
 				<div class="input">
-					<input name="title" value="COD MW3">
+					<input name="title" value="<?php echo HTML::chars($gift->name); ?>">
 					<?php if (!empty($errors)) {
 						echo '<span class="help-inline">' . $errors . '</span>';
 					} ?>
