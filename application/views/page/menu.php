@@ -5,6 +5,9 @@ $logged_in = Auth::instance()->logged_in();
 if ($logged_in) {
 	$user = Auth::instance()->get_user();
 	$name = htmlspecialchars($user->firstname . ' ' . $user->surname);
+	if (!strlen(trim($name))) {
+		$name = $user->email;
+	}
 }
 
 ?>
@@ -12,9 +15,9 @@ if ($logged_in) {
 	<div class="fill">
 		<div class="container">
 			<?php if ($logged_in) { ?>
-				<a class="brand" href="/user/view_lists">Gift Circle</a>
+				<a class="brand" href="/list/all">Gift Circle</a>
 				<ul class="nav">
-					<li><a href="/user/view_lists">Gift Lists</a></li>
+					<li><a href="/list/all">Gift Lists</a></li>
 					<li><a href="/friend/list">My Friends</a></li>
 					<li><a href="/home/features">Features</a></li>
 					<li><a href="/home/support">Support</a></li>

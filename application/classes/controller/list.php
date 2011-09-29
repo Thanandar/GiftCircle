@@ -2,6 +2,13 @@
 
 class Controller_List extends Controller_Page {
 
+	public function before() {
+		if (!$this->me()->id) {
+			Request::current()->redirect('');
+		}		
+		parent::before();
+	}
+
 	public function action_index() {
 		Request::current()->redirect('');
 	}
@@ -146,10 +153,28 @@ class Controller_List extends Controller_Page {
 		$this->template->content = $view;
 	}
 
+	private function redirect_if_not_on_list() {
+		$list = new Model_List($this->request->param('id'));
+		$friends = $list->friends
+			->where('email', '=', $this->me()->email)
+			->where('list_id', '=', $list)
+			->find_all();
+
+		if (!count($friends)) {
+			Request::current()->redirect('user/noaccess');
+		}
+	}
+
 	public function action_friend() {
+		$this->redirect_if_not_on_list();
+
 		$this->template->title = 'View my friend\'s list';
+		$list = new Model_List($this->request->param('id'));
 
 		$view = View::factory('list/friend');
+		$view->list = $list;
+		$view->gifts = $list->gifts->find_all();
+		$view->friends = $list->friends->find_all();
 
 		if ($_POST) {
 			if (arr::get($_POST, 'reserve')) {

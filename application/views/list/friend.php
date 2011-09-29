@@ -1,10 +1,13 @@
 
 <div class="span10">
 
-	<h2>Bob: Xmas (ID: <?php echo $list_id; ?>)</h2>
+	<h2>
+		<?php echo HTML::chars($list->owner->firstname . ' ' . $list->owner->surname) ?>'s list: 
+		<?php echo HTML::chars($list->name) ?></h2>
 
 	<form action="" method="post">
 
+		<?php if (count($gifts)) { ?>
 		<table class="zebra-striped">
 			<thead>
 				<tr>
@@ -16,27 +19,15 @@
 				</tr>
 			</thead>
 			<tbody>
+				<?php foreach ($gifts as $gift) { ?>
 				<tr>
-					<td><input type="checkbox" name="reserve[]" value="1" /></td>
-					<td>Shoes</a></td>
-					<td>&pound;50</td>
-					<td>Clothes</td>
-					<td>Up for grabs</td>
+					<td><input type="checkbox" name="reserve[]" value="<?php echo $gift->id; ?>" /></td>
+					<td><?php echo HTML::chars($gift->name) ?></td>
+					<td>&pound;<?php echo HTML::chars($gift->price) ?></td>
+					<td><?php echo HTML::chars($gift->category_id) ?></td>
+					<td>reserved:<?php echo HTML::chars($gift->reserved) ?> bought:<?php echo HTML::chars($gift->bought) ?></td>
 				</tr>
-				<tr>
-					<td></td>
-					<td>Barbie</a></td>
-					<td>&pound;10</td>
-					<td>Toys</td>
-					<td>Harry</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="reserve[]" value="2"  /></td>
-					<td>Barbie</a></td>
-					<td>&pound;10</td>
-					<td>Toys</td>
-					<td>Up for grabs</td>
-				</tr>
+				<?php } ?>
 			</tbody>
 		</table>
 
@@ -55,6 +46,17 @@
 			<a href="/">cancel</a>
 		</div>
 	
+		<?php } else { ?>
+
+		<p>There are no gifts in this list</p>
+
+		<div class="well">
+			<a class="btn primary" href="/">Go back</a>
+		</div>
+
+
+		<?php } ?>
+
 	</form>
 
 </div>
@@ -65,11 +67,15 @@
 
 	<div class="well">
 
+		<?php if (count($friends)) { ?>
 		<table>
-			<tr><td>Tom</td></tr>
-			<tr><td>Dick</td></tr>
-			<tr><td>Harry</td></tr>
+			<?php foreach ($friends as $friend) { ?>
+			<tr><td><?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?></td></tr>
+			<?php } ?>
 		</table>
+		<?php } else { ?>
+		<p>There are no friends in this circle</p>
+		<?php } ?>
 
 	</div>
 
