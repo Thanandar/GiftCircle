@@ -25,7 +25,7 @@
 					<td><?php echo HTML::chars($gift->name) ?></td>
 					<td>&pound;<?php echo HTML::chars($gift->price) ?></td>
 					<td><?php echo HTML::chars($gift->category_id) ?></td>
-					<td>reserved:<?php echo HTML::chars($gift->reserved) ?> bought:<?php echo HTML::chars($gift->bought) ?></td>
+					<td>reserved:<?php echo HTML::chars($gift->reserver_id) ?> bought:<?php echo HTML::chars($gift->buyer_id) ?></td>
 				</tr>
 				<?php } ?>
 			</tbody>
@@ -41,7 +41,7 @@
 		?>
 
 		<div class="well">
-			<input name="confirm" type="submit" class="btn primary" value="Confirm your selection" />
+			<input name="confirm" type="submit" class="btn primary" value="Reserve gifts" />
 			or
 			<a href="/">cancel</a>
 		</div>

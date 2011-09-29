@@ -178,8 +178,25 @@ class Controller_List extends Controller_Page {
 
 		if ($_POST) {
 			if (arr::get($_POST, 'reserve')) {
-				Message::add('success', __('Gifts reserved.'));
-				Request::current()->redirect('gift/buy/1');
+				$reserved = 0;
+				foreach (arr::get($_POST, 'reserve') as $gift_id) {
+					// TODO: check gift is on a list you're allowed to access
+					// TOOD: check gift has not been reserved by someone else
+
+					// add this gift to me
+					$me = new Model_Owner($this->me()->id);
+					$gift = new Model_Gift((int) $gift_id);
+					$gift->reserver_id = $me;
+					$gift->save();
+					
+					// this should work
+					//$gift->add('reserver', $me);
+					//$me->add('reservations', $gift);
+					$reserved++;
+				}
+
+				Message::add('success', __('Reserved ' . $reserved . ' gifts.'));
+				Request::current()->redirect('gift/buy');
 			}
 			$view->errors = 'Please select some gifts to reserve';
 		}
