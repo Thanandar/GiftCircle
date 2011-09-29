@@ -76,6 +76,16 @@ class Controller_List extends Controller_Page {
 		}
 	}
 
+	private function my_shopping_list($include_bought = true) {
+		$gifts = ORM::factory('gift')
+			->where('reserver_id', '=', $this->me()->id);
+
+		if (!$include_bought) {
+			$gifts->where('buyer_id', '=', '0');
+		}
+		
+		return $gifts->find_all();
+	}
 
 	public function action_all() {
 		if (!$this->me()->id) {
@@ -91,7 +101,8 @@ class Controller_List extends Controller_Page {
 		$view->all_friends = View::factory('list/all-friends')
 			->set('lists', $this->friends_lists());
 
-		$view->all_shopping = View::factory('list/all-shopping');
+		$view->all_shopping = View::factory('list/all-shopping')
+			->set('gifts', $this->my_shopping_list());
 
 		$this->template->content = $view;
 	}

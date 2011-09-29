@@ -166,7 +166,7 @@ class Controller_Gift extends Controller_Page {
 		$gift->buyer_id = $gift->reserver_id;
 		$gift->save();
 
-		$this->template->title = 'Bought git';
+		$this->template->title = 'Bought gift';
 		$view = View::factory('gift/bought');
 		$view->gift = $gift;
 
@@ -176,6 +176,26 @@ class Controller_Gift extends Controller_Page {
 			->find_all();
 
 		$this->template->content = $view;
+	}
+
+	public function action_unreserve() {
+		$gift = new Model_Gift((int) $this->request->param('id'));
+
+		if ($gift->reserver_id != $this->me()->id) {
+			Message::add('danger', __('You have not reserved this gift.'));
+			Request::current()->redirect('');
+		} 
+
+		if ($gift->buyer_id) {
+			Message::add('success', __('This gift has already been bought.'));
+			Request::current()->redirect('');
+		}
+
+		$gift->reserver_id = 0;
+		$gift->save();
+
+		Message::add('success', __('Successfully un-reserved a gift.'));
+		Request::current()->redirect('');
 	}
 
 
