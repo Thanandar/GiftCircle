@@ -4,7 +4,7 @@
 	<h2>Add item to your list "<?php echo HTML::chars($list->name); ?>"</h2>
 
 	<div class="well">
-		<input type="button" value="Browse for your item" class="btn primary" onclick="location.href='/gift/browse'" />
+		<input type="button" value="Browse for your item" class="btn primary" onclick="location.href='/gift/browse/<?php echo $list->id; ?>'" />
 	</div>
 
 	<h2>&mdash; or &mdash;</h2>

@@ -87,9 +87,14 @@ class Controller_Gift extends Controller_Page {
 	}
 
 	public function action_browse() {
+		$list = new Model_List($this->request->param('id'));
+		if ($list->owner_id != $this->me()->id) {
+			Request::current()->redirect('user/noaccess');
+		}
+
 		$this->template->title = 'Browse for a gift';
 		$view = View::factory('gift/browse');
-
+		$view->list = $list;
 		$this->template->content = $view;
 	}
 
