@@ -14,6 +14,15 @@ class Controller_List extends Controller_Page {
 		return $lists;
 	}
 
+	private function redirect_if_not_owner() {
+		$list_id = $this->request->param('id');
+		$list = new Model_List($list_id);
+
+		if ($list->owner->id != $this->me()->id) {
+			Request::current()->redirect('user/noaccess');
+		}
+	}
+
 
 	public function action_all() {
 		$this->template->title = 'Home';
@@ -99,6 +108,21 @@ class Controller_List extends Controller_Page {
 		$view->list_id = $this->request->param('id');
 		$this->template->content = $view;
 	}
+
+	public function action_delete() {
+		$list_id = $this->request->param('id');
+		$list = new Model_List($list_id);
+
+		$this->redirect_if_not_owner();
+
+		// TODO: maybe delete all gifts
+
+		$list->delete();		
+		Message::add('success', 'List deleted.');
+		Request::current()->redirect('list/all');
+	}
+
+
 
 
 }
