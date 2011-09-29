@@ -38,7 +38,7 @@ if ($logged_in) {
 				</form>
 			<?php } else { ?>
 				<form class="pull-right" action="/user/login" method="post">
-					<input name="email" class="input-small" type="text" placeholder="Email" />
+					<input name="username" class="input-small" type="text" placeholder="Email" />
 					<input name="password" class="input-small" type="password" placeholder="Password" />
 					<button class="btn" type="submit">Login</button>
 					<button onclick="location.href='/user/register'" class="btn primary" type="button">Register</button>
