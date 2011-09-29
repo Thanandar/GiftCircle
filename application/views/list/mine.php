@@ -55,8 +55,6 @@
 		<table>
 			<?php foreach ($friends as $friend) { ?>
 			<tr><td><?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?></td><td>✘</td></tr>
-			<tr><td>Dick</td><td>✘</td></tr>
-			<tr><td>Harry</td><td>✘</td></tr>
 			<?php } ?>
 		</table>
 		<?php } else { ?>

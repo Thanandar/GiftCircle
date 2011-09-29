@@ -145,8 +145,17 @@ class Controller_List extends Controller_Page {
 			$added = 0;
 			//print_r(arr::get($_POST, 'firstname'));
 			if (arr::get($_POST, 'id')) {
-				// TODO: add friends to list
-				$added++;
+				foreach (arr::get($_POST, 'id') as $friend_id) {
+					
+					$friend = new Model_Friend((int) $friend_id);
+					if (!$friend->loaded()) {
+						$view->errors[] = 'Could not find your friend.';
+						break;
+					}
+
+					$friend->add('lists', $list);
+					$added++;
+				}
 			}
 
 			$i = 0;
@@ -176,8 +185,10 @@ class Controller_List extends Controller_Page {
 				$friend->surname   = $surname;
 				$friend->email     = $email;
 				$friend->save();
+
+				$friend->add('lists', $list);
 				$added++;
-				// TODO: add friend to list
+				
 			}
 
 			if ($added) {
