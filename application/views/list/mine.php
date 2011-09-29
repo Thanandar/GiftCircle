@@ -54,7 +54,16 @@
 		<?php if (count($friends)) { ?>
 		<table>
 			<?php foreach ($friends as $friend) { ?>
-			<tr><td><?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?></td><td>✘</td></tr>
+			<tr>
+				<td>
+					<?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?>
+				</td>
+				<td>
+					<span class="label important">
+						<a onclick="return confirm('Are you sure you want to remove this friend from this circle?')" href="/list/delete_friend/<?php echo $friend->id; ?>">✘</a>
+					</span>
+				</td>
+			</tr>
 			<?php } ?>
 		</table>
 		<?php } else { ?>
