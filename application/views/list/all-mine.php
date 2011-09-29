@@ -22,8 +22,8 @@ if (count($lists)) {
 					<?php echo HTML::chars($list->name); ?>
 				</a>
 			</td>
-			<td></td>
-			<td></td>
+			<td><?php echo HTML::chars($list->total_items); ?></td>
+			<td><?php echo HTML::chars($list->total_friends); ?></td>
 			<td><a href="/list/delete/<?php echo $list->id; ?>" onclick="return confirm('Are you sure you want to delete this list?')"><span class="label important">✘</span></a></td>
 		</tr>
 		<?php } ?>

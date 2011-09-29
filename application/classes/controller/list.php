@@ -11,7 +11,20 @@ class Controller_List extends Controller_Page {
 			->where('owner_id', '=', $this->me())
 			->find_all();
 		
-		return $lists;
+		$r = array();
+
+		foreach ($lists as $list) {
+			$total_items = $list->gifts->count_all();
+			$total_friends = $list->friends->count_all();
+
+			$list = $list->as_array();
+			$list['total_items'] = $total_items;
+			$list['total_friends'] = $total_friends;
+
+			$r[] = (object) $list;
+		}
+
+		return $r;
 	}
 
 	private function redirect_if_not_owner() {
@@ -81,21 +94,17 @@ class Controller_List extends Controller_Page {
 	}
 
 	public function action_mine() {
+		$this->redirect_if_not_owner();
+
 		$this->template->title = 'View my list';
 
 		$list = new Model_List($this->request->param('id'));
-		if ($list->owner->id != $this->me()->id) {
-			Request::current()->redirect('user/noaccess');
-		}
-
-		$gifts = ORM::factory('gift')
-			->where('list_id', '=', $list)
-			->find_all();
 
 		$view = View::factory('list/mine');
 		$view->list = $list;
-		$view->gifts = $gifts;
-		
+		$view->gifts = $list->gifts->find_all();
+		$view->friends = $list->friends->find_all();
+
 		$this->template->content = $view;
 	}
 
@@ -117,18 +126,68 @@ class Controller_List extends Controller_Page {
 	}
 
 	public function action_add_friend() {
-		$this->template->title = 'Add a friend to my list';
+		$this->redirect_if_not_owner();
+
+		$this->template->title = 'Add friends to my list';
 
 		$view = View::factory('list/add_friend');
+		$list = new Model_List($this->request->param('id'));
+		$view->list = $list;
+
+		$me = new Model_Owner($this->me()->id);
+		$view->friends = $me->friends->find_all();
+		
+		$view->circle = $list->friends->find_all();
+		
+		$view->errors = array();
 
 		if ($_POST) {
+			$added = 0;
+			//print_r(arr::get($_POST, 'firstname'));
 			if (arr::get($_POST, 'id')) {
-				Request::current()->redirect('list/mine/1');
+				// TODO: add friends to list
+				$added++;
 			}
-			$view->errors = 'Please select some friends to add';
+
+			$i = 0;
+			$firstnames = arr::get($_POST, 'firstname', array());
+			$surnames   = arr::get($_POST, 'surname',   array());
+			$emails     = arr::get($_POST, 'email',     array());
+			
+			foreach ($firstnames as $firstname) {
+				// would be nice if PHP could traverse multiple arrays in one foreach
+				$surname = $surnames[$i];
+				$email = $emails[$i];
+				$i++;
+
+				if (!strlen($firstname.$surname.$email)) {
+					continue;
+				}
+
+				// TODO: validate stuff, including dupes
+				if (empty($firstname) || empty($surname) || empty($email)) {
+					$view->errors[] = 'Please enter all friend details.';
+					continue;
+				}
+
+				$friend = new Model_Friend;
+				$friend->creator   = $this->me();
+				$friend->firstname = $firstname;
+				$friend->surname   = $surname;
+				$friend->email     = $email;
+				$friend->save();
+				$added++;
+				// TODO: add friend to list
+			}
+
+			if ($added) {
+				Message::add('success', __('Added ' . $added . ' friends.'));
+				Request::current()->redirect('list/mine/' . $list->id);
+			}
+
+			$view->errors[] = 'Please add some friends.';
 		}
 
-		$view->list_id = $this->request->param('id');
 		$this->template->content = $view;
 	}
 

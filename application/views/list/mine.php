@@ -51,13 +51,19 @@
 
 	<div class="well">
 
+		<?php if (count($friends)) { ?>
 		<table>
-			<tr><td>Tom</td><td>✘</td></tr>
+			<?php foreach ($friends as $friend) { ?>
+			<tr><td><?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?></td><td>✘</td></tr>
 			<tr><td>Dick</td><td>✘</td></tr>
 			<tr><td>Harry</td><td>✘</td></tr>
+			<?php } ?>
 		</table>
+		<?php } else { ?>
+		<p>You have no friends in this circle</p>
+		<?php } ?>
 
-		<input type="button" class="btn primary" value="Add a friend" onclick="location.href='/list/add_friend'"/>
+		<input type="button" class="btn primary" value="Add a friend" onclick="location.href='/list/add_friend/<?php echo $list->id; ?>'"/>
 
 	</div>
 
