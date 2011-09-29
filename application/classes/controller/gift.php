@@ -2,6 +2,14 @@
 
 class Controller_Gift extends Controller_Page {
 
+	// make sure user is logged in
+	public function before() {
+		if (!$this->me()->id) {
+			Request::current()->redirect('');
+		}		
+		parent::before();
+	}
+
 	private function redirect_if_not_owner() {
 		$gift_id = $this->request->param('id');
 		$gift = new Model_Gift($gift_id);
@@ -98,10 +106,45 @@ class Controller_Gift extends Controller_Page {
 		$this->template->content = $view;
 	}
 
+	private function get_my_first_gift() {
+		$gifts = new Model_Gift;
+		$gifts
+			->where('reserver_id', '=', $this->me()->id)
+			->where('buyer_id', '=', '0');
+		return $gifts->find_all();
+	}
+
 	public function action_buy() {
+		if (!$this->request->param('id')) {
+			$gifts = $this->get_my_first_gift();
+			if (count($gifts)) {
+				Request::current()->redirect('gift/buy/' . $gifts[0]->id);
+			}
+
+			Message::add('danger', __('You have no gifts to buy.'));
+			Request::current()->redirect('');
+		} else {
+			$gift = new Model_Gift((int) $this->request->param('id'));
+		}
+
+		if ($gift->reserver_id != $this->me()->id) {
+			Message::add('danger', __('You have not reserved this gift.'));
+			Request::current()->redirect('');
+		} 
+
+		if ($gift->buyer_id) {
+			Message::add('success', __('This gift has already been bought.'));
+			Request::current()->redirect('');
+		}
+
+
 		$this->template->title = 'Buy a gift';
 		$view = View::factory('gift/buy');
-		$view->gift_id = $this->request->param('id');
+		$view->gift = $gift;
+		$view->shopping_list = ORM::factory('gift')
+			->where('reserver_id', '=', $this->me()->id)
+			->where('buyer_id', '=', '0')
+			->find_all();
 
 		$this->template->content = $view;
 	}

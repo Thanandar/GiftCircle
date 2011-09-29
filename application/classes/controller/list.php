@@ -2,6 +2,7 @@
 
 class Controller_List extends Controller_Page {
 
+	// make sure user is logged in
 	public function before() {
 		if (!$this->me()->id) {
 			Request::current()->redirect('');
