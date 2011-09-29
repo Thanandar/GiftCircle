@@ -37,6 +37,7 @@ class Controller_Gift extends Controller_Page {
 				$gift->price       = arr::get($_POST, 'price');
 				$gift->url         = arr::get($_POST, 'url');
 				$gift->category_id = arr::get($_POST, 'category_id');
+				$gift->details     = arr::get($_POST, 'details');
 				$gift->save();
 				
 				Message::add('success', __('Gift added.'));
@@ -58,7 +59,13 @@ class Controller_Gift extends Controller_Page {
 		$view->gift = $gift;
 
 		if ($_POST) {
-			if (arr::get($_POST, 'title')) {
+			if (arr::get($_POST, 'name')) {
+				$gift->name        = arr::get($_POST, 'name');
+				$gift->price       = arr::get($_POST, 'price');
+				$gift->url         = arr::get($_POST, 'url');
+				$gift->category_id = arr::get($_POST, 'category_id');
+				$gift->details     = arr::get($_POST, 'details');
+				$gift->save();
 				Message::add('success', __('Gift updated.'));
 				Request::current()->redirect('list/mine/' . $gift->list->id);
 			}

@@ -24,8 +24,11 @@
 			<div class="clearfix">
 				<label>Product Price: </label>
 				<div class="input">
-					<input name="price">
-					<span class="help-inline">Optional</span>
+					<div class="input-prepend">
+						<span class="add-on">&pound;</span>
+						<input name="price">
+						<span class="help-inline">Optional</span>					
+					</div>
 				</div>
 			</div>
 			<div class="clearfix">
@@ -45,8 +48,14 @@
 					<input name="url">
 					<span class="help-inline">Optional</span>
 				</div>
-			</div>			
-
+			</div>
+			<div class="clearfix">
+				<label>Product Description: </label>
+				<div class="input">
+					<textarea class="xxlarge" rows="3" name="details" placeholder="e.g. Don't mind the colour, as long as they have the powerlaces."></textarea>
+					<span class="help-inline">Optional</span>
+				</div>
+			</div>	
 
 			<div class="actions">
 				<input type="submit" value="Add item" class="btn primary" /> or
