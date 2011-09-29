@@ -57,6 +57,29 @@ class Controller_List extends Controller_Page {
 		$this->template->content = $view;
 	}
 
+	public function action_edit() {
+		$this->redirect_if_not_owner();
+
+		$list_id = $this->request->param('id');
+		$list = new Model_List($list_id);
+
+
+		$this->template->title = 'Edit list';
+		$view = View::factory('list/edit');
+		$view->list = $list;
+
+		if ($_POST) {
+			if (arr::get($_POST, 'name')) {
+				$list->name = arr::get($_POST, 'name');
+				$list->save();
+				Message::add('success', __('List updated.'));
+				Request::current()->redirect('list/mine/' . $list->id);
+			}
+			$view->errors = 'Please enter a list name';
+		}
+		$this->template->content = $view;
+	}
+
 	public function action_mine() {
 		$this->template->title = 'View my list';
 
