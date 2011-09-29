@@ -141,6 +141,7 @@ class Controller_Gift extends Controller_Page {
 		$this->template->title = 'Buy a gift';
 		$view = View::factory('gift/buy');
 		$view->gift = $gift;
+		
 		$view->shopping_list = ORM::factory('gift')
 			->where('reserver_id', '=', $this->me()->id)
 			->where('buyer_id', '=', '0')
@@ -148,5 +149,36 @@ class Controller_Gift extends Controller_Page {
 
 		$this->template->content = $view;
 	}
+
+	public function action_bought() {
+		$gift = new Model_Gift((int) $this->request->param('id'));
+
+		if ($gift->reserver_id != $this->me()->id) {
+			Message::add('danger', __('You have not reserved this gift.'));
+			Request::current()->redirect('');
+		} 
+
+		if ($gift->buyer_id) {
+			Message::add('success', __('This gift has already been bought.'));
+			Request::current()->redirect('');
+		}
+
+		$gift->buyer_id = $gift->reserver_id;
+		$gift->save();
+
+		$this->template->title = 'Bought git';
+		$view = View::factory('gift/bought');
+		$view->gift = $gift;
+
+		$view->shopping_list = ORM::factory('gift')
+			->where('reserver_id', '=', $this->me()->id)
+			->where('buyer_id', '=', '0')
+			->find_all();
+
+		$this->template->content = $view;
+	}
+
+
+
 
 } 
