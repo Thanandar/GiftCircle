@@ -5,7 +5,13 @@ class Controller_Page extends Controller_Template {
 	public $template = 'template';
 
 	protected function me() {
-		return Auth::instance()->get_user();
+		$user = Auth::instance()->get_user();
+		if (!$user) {
+			$user = (object) array(
+				'id' => null,
+			);
+		}
+		return $user;
 	}
 
 	/**
