@@ -227,9 +227,11 @@ class Controller_List extends Controller_Page {
 		$view->list = $list;
 
 		$me = new Model_Owner($this->me()->id);
-		$view->friends = $me->friends->find_all();
 		
 		$view->circle = $list->friends->find_all();
+		$view->friends = $me->friends
+			->where('id', 'NOT IN', $view->circle->as_array('id'))
+			->find_all();
 		
 		$view->errors = array();
 
