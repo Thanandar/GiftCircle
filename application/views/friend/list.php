@@ -30,7 +30,7 @@ Would be nice to have:
 			<tr>
 				<td><a href="/friend/edit/1">Tom</a></td>
 				<td>tom@example.com</td>
-				<td>01/01/1999</td>
+				<td>there's nowhere to add birthdays when adding friends</td>
 				<td>✘</td>
 			</tr>
 			<tr>

@@ -110,8 +110,11 @@ class Controller_List extends Controller_Page {
 
 	public function action_add() {
 		$this->template->title = 'Add a list';
+		
+		$me = new Model_Owner($this->me()->id);
 
 		$view = View::factory('list/add');
+		$view->friends = $me->friends->find_all();
 
 		if ($_POST) {
 			if (arr::get($_POST, 'name')) {
@@ -119,7 +122,11 @@ class Controller_List extends Controller_Page {
 				$list->owner_id = $this->me()->id;
 				$list->name = arr::get($_POST, 'name');
 				$list->save();
-				Message::add('success', __('List added.'));
+
+				$added = $this->add_existing_friends_from_post($view, $list);
+				$added += $this->add_new_friends_from_post($view, $list);
+
+				Message::add('success', __('Created new list with ' . $added . ' friends.'));
 				Request::current()->redirect('list/mine/' . $list->id);
 			}
 			$view->errors = 'Please enter a list name';
