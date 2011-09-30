@@ -43,7 +43,11 @@
 						<?php } ?>
 					</td>
 					<td>
+						<?php if ($reserver->id == $me->id && $buyer->id != $me->id) { ?>
+						<a href="/gift/buy/<?php echo $gift->id; ?>"><?php echo HTML::chars($gift->name) ?></a>
+						<?php } else { ?>
 						<?php echo HTML::chars($gift->name) ?>
+						<?php } ?>
 					</td>
 					<td>
 						&pound;<?php echo HTML::chars($gift->price) ?>

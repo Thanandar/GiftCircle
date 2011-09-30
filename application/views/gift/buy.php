@@ -10,7 +10,7 @@
 
 	<hr />
 
-	<h3>Categoty &gt; <?php echo $gift->category_id; ?></h3>
+	<h3>Category &gt; <?php echo $gift->category->name; ?></h3>
 
 	<ul class="media-grid">
 		<li>
