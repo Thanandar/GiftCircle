@@ -309,7 +309,23 @@ class Controller_List extends Controller_Page {
 		Request::current()->redirect('list/all');
 	}
 
+	public function action_delete_friend() {
+		@list($list_id, $friend_id) = explode('-', $this->request->param('id'));
 
+		if (!$list_id || !$friend_id) {
+			Request::current()->redirect('user/noaccess');
+		}
+
+		$list = new Model_List($list_id);
+		$friend = new Model_Friend($friend_id);
+		$friend->remove('lists', $list);
+
+		// TODO: maybe delete their reservations or purchases
+
+		Message::add('success', 'Friend removed from list.');
+		Request::current()->redirect('list/mine/' . $list->id);
+
+	}
 
 
 }
