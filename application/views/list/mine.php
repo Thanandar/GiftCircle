@@ -18,7 +18,7 @@
 			<tr>
 				<td><a href="/gift/edit/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a></td>
 				<td>&pound;<?php echo $gift->price; ?></td>
-				<td><?php echo $gift->category_id; ?></td>
+				<td><?php echo HTML::chars($gift->category->name); ?></td>
 				<td>
 					<span class="label important">
 						<a onclick="return confirm('Are you sure you want to delete this gift?')" href="/gift/delete/<?php echo $gift->id; ?>">✘</a>

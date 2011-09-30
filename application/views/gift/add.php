@@ -34,12 +34,10 @@
 			<div class="clearfix">
 				<label>Product Category: </label>
 				<div class="input">
-					<select name="category_id">
-						<option value="">Please select...</option>
-						<option value="1">Games</option>
-						<option value="2">Toys</option>
-						<option value="3">Other</option>
-					</select>
+					<?php
+					Arr::unshift($categories, '', '&mdash; SELECT &mdash;');
+					echo Form::select('category_id', $categories);
+					?>
 				</div>
 			</div>
 			<div class="clearfix">

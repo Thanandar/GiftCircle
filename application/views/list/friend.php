@@ -49,7 +49,7 @@
 						&pound;<?php echo HTML::chars($gift->price) ?>
 					</td>
 					<td>
-						<?php echo HTML::chars($gift->category_id) ?>
+						<?php echo HTML::chars($gift->category->name) ?>
 					</td>
 					<td>
 						<?php 

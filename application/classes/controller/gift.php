@@ -37,6 +37,10 @@ class Controller_Gift extends Controller_Page {
 		$view = View::factory('gift/add');
 		$view->list = $list;
 
+		$view->categories = ORM::factory('category')
+			->find_all()
+			->as_array('id', 'name');
+
 		if ($_POST) {
 			if (arr::get($_POST, 'name')) {
 				$gift              = new Model_Gift;
@@ -65,6 +69,10 @@ class Controller_Gift extends Controller_Page {
 		$view = View::factory('gift/edit');
 
 		$view->gift = $gift;
+
+		$view->categories = ORM::factory('category')
+			->find_all()
+			->as_array('id', 'name');
 
 		if ($_POST) {
 			if (arr::get($_POST, 'name')) {
