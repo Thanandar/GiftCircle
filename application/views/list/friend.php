@@ -1,5 +1,5 @@
 
-<div class="span10">
+<div class="span12">
 
 	<h2>
 		<?php echo HTML::chars($list->owner->firstname . ' ' . $list->owner->surname) ?>'s list: 
@@ -61,7 +61,10 @@
 							if ($buyer->id == $me->id) {
 								echo '<em>You\'ve bought this</em>';
 							} else {
-								echo '<em>You\'ve reserved this</em>';
+								?>
+								<a title="Mark as bought" href="/gift/bought/<?php echo $gift->id; ?>" onclick="return confirm('Mark this item as bought?')"><span class="label success">✔</span></a>
+								<a title="Un-reserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to un-reserve this product?')"><span class="label important">✘</span></a>
+								<?php
 							}
 						} else {
 							if ($reserver->id) {
@@ -107,7 +110,7 @@
 
 </div>
 
-<div class="span6">
+<div class="span4">
 
 	<h2>Friends in this circle</h2>
 
