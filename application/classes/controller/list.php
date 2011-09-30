@@ -303,14 +303,26 @@ class Controller_List extends Controller_Page {
 	}
 
 	public function action_delete() {
+		// delete a list, its gifts and related friends
+		$this->redirect_if_not_owner();
+
 		$list_id = $this->request->param('id');
 		$list = new Model_List($list_id);
 
 		$this->redirect_if_not_owner();
 
-		// TODO: maybe delete all gifts
+		$gifts = $list->gifts->find_all();
+		foreach ($gifts as $gift) {
+			$gift->delete();
+		}
+
+		$friends = $list->friends->find_all();
+		foreach ($friends as $friend) {
+			$friend->delete();
+		}
 
 		$list->delete();		
+
 		Message::add('success', 'List deleted.');
 		Request::current()->redirect('list/all');
 	}
