@@ -1,0 +1,3 @@
+<?php 
+// simples
+echo $content;

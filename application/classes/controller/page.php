@@ -3,6 +3,9 @@
 class Controller_Page extends Controller_Template {
 
 	public $template = 'template';
+	
+	// whether to add CSS and JS
+	public $template_extras = true;
 
 	protected function me() {
 		$user = Auth::instance()->get_user();
@@ -40,7 +43,7 @@ class Controller_Page extends Controller_Template {
 	 * is rendered.
 	 */
 	public function after() {
-		if ($this->auto_render) {
+		if ($this->auto_render && $this->template_extras) {
 			$styles = array(
 				'static/css/bootstrap.min.css' => 'screen',
 				'static/css/theme.css' => 'screen',
