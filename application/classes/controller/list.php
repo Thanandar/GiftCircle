@@ -228,10 +228,16 @@ class Controller_List extends Controller_Page {
 
 		$me = new Model_Owner($this->me()->id);
 		
+		// friends already on the list
 		$view->circle = $list->friends->find_all();
-		$view->friends = $me->friends
-			->where('id', 'NOT IN', $view->circle->as_array('id'))
-			->find_all();
+		$circle_ids = $view->circle->as_array('id');
+
+		// friends not yet on the list
+		$friends = $me->friends;
+		if (count($circle_ids)) {
+			$friends->where('id', 'NOT IN', $view->circle->as_array('id'));
+		}
+		$view->friends = $friends->find_all();
 		
 		$view->errors = array();
 
