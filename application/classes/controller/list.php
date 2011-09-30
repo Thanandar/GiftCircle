@@ -81,11 +81,12 @@ class Controller_List extends Controller_Page {
 			->where('reserver_id', '=', $this->me()->id);
 
 		if (!$include_bought) {
-			$gifts->where('buyer_id', '=', '0');
+			$gifts->where('buyer_id', '=', 0);
 		}
 		
 		return $gifts->find_all();
 	}
+
 
 	public function action_all() {
 		if (!$this->me()->id) {
@@ -217,7 +218,66 @@ class Controller_List extends Controller_Page {
 		$this->template->content = $view;
 	}
 
+	private function add_existing_friends_from_post(&$view, $list) {
+		$added = 0;
+
+		if (arr::get($_POST, 'id')) {
+			foreach (arr::get($_POST, 'id') as $friend_id) {
+				
+				$friend = new Model_Friend((int) $friend_id);
+				if (!$friend->loaded()) {
+					$view->errors[] = 'Could not find your friend.';
+					break;
+				}
+
+				$friend->add('lists', $list);
+				$added++;
+			}
+		}
+
+		return $added;
+	}
+
+	private function add_new_friends_from_post(&$view, $list) {
+		$added = 0;
+
+		$i = 0;
+		$firstnames = arr::get($_POST, 'firstname', array());
+		$surnames   = arr::get($_POST, 'surname',   array());
+		$emails     = arr::get($_POST, 'email',     array());
+		
+		foreach ($firstnames as $firstname) {
+			// would be nice if PHP could traverse multiple arrays in one foreach
+			$surname = $surnames[$i];
+			$email = $emails[$i];
+			$i++;
+
+			if (!strlen($firstname.$surname.$email)) {
+				continue;
+			}
+
+			// TODO: validate stuff, including dupes
+			if (empty($firstname) || empty($surname) || empty($email)) {
+				$view->errors[] = 'Please enter all friend details.';
+				continue;
+			}
+
+			$friend = new Model_Friend;
+			$friend->creator   = $this->me();
+			$friend->firstname = $firstname;
+			$friend->surname   = $surname;
+			$friend->email     = $email;
+			$friend->save();
+
+			$friend->add('lists', $list);
+			$added++;
+		}
+
+		return $added;
+	}
+
 	public function action_add_friend() {
+
 		$this->redirect_if_not_owner();
 
 		$this->template->title = 'Add friends to my list';
@@ -242,54 +302,8 @@ class Controller_List extends Controller_Page {
 		$view->errors = array();
 
 		if ($_POST) {
-			$added = 0;
-			//print_r(arr::get($_POST, 'firstname'));
-			if (arr::get($_POST, 'id')) {
-				foreach (arr::get($_POST, 'id') as $friend_id) {
-					
-					$friend = new Model_Friend((int) $friend_id);
-					if (!$friend->loaded()) {
-						$view->errors[] = 'Could not find your friend.';
-						break;
-					}
-
-					$friend->add('lists', $list);
-					$added++;
-				}
-			}
-
-			$i = 0;
-			$firstnames = arr::get($_POST, 'firstname', array());
-			$surnames   = arr::get($_POST, 'surname',   array());
-			$emails     = arr::get($_POST, 'email',     array());
-			
-			foreach ($firstnames as $firstname) {
-				// would be nice if PHP could traverse multiple arrays in one foreach
-				$surname = $surnames[$i];
-				$email = $emails[$i];
-				$i++;
-
-				if (!strlen($firstname.$surname.$email)) {
-					continue;
-				}
-
-				// TODO: validate stuff, including dupes
-				if (empty($firstname) || empty($surname) || empty($email)) {
-					$view->errors[] = 'Please enter all friend details.';
-					continue;
-				}
-
-				$friend = new Model_Friend;
-				$friend->creator   = $this->me();
-				$friend->firstname = $firstname;
-				$friend->surname   = $surname;
-				$friend->email     = $email;
-				$friend->save();
-
-				$friend->add('lists', $list);
-				$added++;
-				
-			}
+			$added = $this->add_existing_friends_from_post($view, $list);
+			$added += $this->add_new_friends_from_post($view, $list);
 
 			if ($added) {
 				Message::add('success', __('Added ' . $added . ' friends.'));
