@@ -1,17 +1,25 @@
 
+Email notifications for unregistered people:
+	Someone added you to a list 
+		- "Join today and buy them stuff"
+		- the 1st time someone clicks "notify" on each list
+
+Email notifications for registered users:
+	Someone added you to a list 
+		- "Buy them stuff"
+		- the 1st time someone clicks "notify" on each list
+
+	Someone updated their list
+		- every time someone clicks "notify" on each list
+
+=== FUTURE ===
+
+Reminder emails:
+	You haven't logged in for a while
+
 Registration:
 	Thank you for registering
 
 On-site notifications:
 	Someone added you to a list
-
-Email notifications for unregistered people:
-	Someone added you to a list - "Join today and buy them stuff"
-
-Email notifications for registered users:
-	Someone added you to a list - "Buy them stuff"
-	Someone updated their list
-
-Reminder emails:
-	You haven't logged in for a while
 

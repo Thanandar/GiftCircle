@@ -56,7 +56,6 @@ class Controller_List extends Controller_Page {
 				$total_items = $list->gifts->count_all();
 				$owner = $list->owner;
 
-
 				$list = $list->as_array();
 				$list['total_items'] = $total_items;				
 				$list['owner'] = $owner;
