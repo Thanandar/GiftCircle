@@ -63,8 +63,8 @@ CREATE TABLE `gifts` (
   `price` varchar(255) NOT NULL,
   `url` text NOT NULL,
   `details` text NOT NULL,
-  `reserver_id` int(10) DEFAULT NULL,
-  `buyer_id` int(10) DEFAULT NULL,
+  `reserver_id` int(10) NOT NULL,
+  `buyer_id` int(10) NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
