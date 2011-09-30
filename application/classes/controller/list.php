@@ -178,6 +178,7 @@ class Controller_List extends Controller_Page {
 		}
 	}
 
+	// view a freind's list
 	public function action_friend() {
 		$this->redirect_if_not_on_list();
 
@@ -188,6 +189,7 @@ class Controller_List extends Controller_Page {
 		$view->list = $list;
 		$view->gifts = $list->gifts->find_all();
 		$view->friends = $list->friends->find_all();
+		$view->me = $this->me();
 
 		if ($_POST) {
 			if (arr::get($_POST, 'reserve')) {

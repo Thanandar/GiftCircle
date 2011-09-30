@@ -70,7 +70,9 @@
 		<p>You have no friends in this circle</p>
 		<?php } ?>
 
-		<input type="button" class="btn primary" value="Add a friend" onclick="location.href='/list/add_friend/<?php echo $list->id; ?>'"/>
+		<input type="button" class="btn primary" value="Add friends" onclick="location.href='/list/add_friend/<?php echo $list->id; ?>'"/>
+		
+		<input type="button" class="btn" value="Notify friends of changes" onclick="alert('This will spam your friends. Should it be limited to x updates?'); return false"/>
 
 	</div>
 

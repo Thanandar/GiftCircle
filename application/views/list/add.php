@@ -13,6 +13,7 @@
 				<div class="input">
 					<ul class="inputs-list">
 						<li><label><input type="checkbox" /> <span>Select everyone</span></label></li>
+						THIS IS NOT FINISHED!
 						<li><label><input type="checkbox" /> <span>Tom</span></label></li>
 						<li><label><input type="checkbox" /> <span>Dick</span></label></li>
 						<li><label><input type="checkbox" /> <span>Harry</span></label></li>

@@ -3,7 +3,8 @@ Circles of gifts
 Random:
 * how to "confirm a list" so that GC emails friends?
 * friend email and login email will have to match to auth lists
-
+* can you delete a list if someone's bought/reserved something from it?
+* what happens when you remove a friend who's bought/reserved something?
 
 Competitors:
 * http://lifehacker.com/5414134/five-best-wishlist-tools

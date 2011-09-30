@@ -23,10 +23,6 @@
 							</li>
 						<?php } ?>
 					</ul>
-					<span class="help-block">
-						As soon as you've confirmed your new list,
-						we'll email these guys to invite them to see it
-					</span>
 				</div>
 			</div>
 		</fieldset>
@@ -68,7 +64,7 @@
 
 <div class="span4">
 
-	<h2>Friends in this circle</h2>
+	<h2>Friends currently in this circle</h2>
 
 	<div class="well">
 
@@ -81,8 +77,6 @@
 		<?php } else { ?>
 		<p>You have no friends in this circle</p>
 		<?php } ?>
-
-		<input type="button" class="btn primary" value="Add a friend" onclick="location.href='/list/add_friend/<?php echo $list->id; ?>'"/>
 
 	</div>
 

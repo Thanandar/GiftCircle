@@ -20,12 +20,54 @@
 			</thead>
 			<tbody>
 				<?php foreach ($gifts as $gift) { ?>
+				<?php
+
+					if ($gift->reserver_id) {
+						$reserver = new Model_Owner($gift->reserver_id);
+					} else {
+						$reserver = new Model_Owner;
+					}
+
+					if ($gift->buyer_id) {
+						$buyer = new Model_Owner($gift->reserver_id);
+					} else {
+						$buyer = new Model_Owner;
+					}
+
+				?>
+
 				<tr>
-					<td><input type="checkbox" name="reserve[]" value="<?php echo $gift->id; ?>" /></td>
-					<td><?php echo HTML::chars($gift->name) ?></td>
-					<td>&pound;<?php echo HTML::chars($gift->price) ?></td>
-					<td><?php echo HTML::chars($gift->category_id) ?></td>
-					<td>reserved:<?php echo HTML::chars($gift->reserver_id) ?> bought:<?php echo HTML::chars($gift->buyer_id) ?></td>
+					<td>
+						<?php if (!$reserver->id) { ?>
+						<input type="checkbox" name="reserve[]" value="<?php echo $gift->id; ?>" />
+						<?php } ?>
+					</td>
+					<td>
+						<?php echo HTML::chars($gift->name) ?>
+					</td>
+					<td>
+						&pound;<?php echo HTML::chars($gift->price) ?>
+					</td>
+					<td>
+						<?php echo HTML::chars($gift->category_id) ?>
+					</td>
+					<td>
+						<?php 
+						if ($reserver->id == $me->id) {
+							if ($buyer->id == $me->id) {
+								echo '<em>You\'ve bought this</em>';
+							} else {
+								echo '<em>You\'ve reserved this</em>';
+							}
+						} else {
+							if ($reserver->id) {
+								echo HTML::chars($reserver->firstname . ' ' . $reserver->surname);
+							} else {
+								echo '<em>Up for grabs</em>';
+							}
+						}
+						?>
+					</td>
 				</tr>
 				<?php } ?>
 			</tbody>
@@ -41,7 +83,7 @@
 		?>
 
 		<div class="well">
-			<input name="confirm" type="submit" class="btn primary" value="Reserve gifts" />
+			<input name="confirm" type="submit" class="btn primary" value="Reserve selected gifts" />
 			or
 			<a href="/">cancel</a>
 		</div>

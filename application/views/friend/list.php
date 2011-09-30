@@ -4,7 +4,18 @@
 
 	<h2>My friends</h2>
 
+<pre>
+THIS IS NOT IMPLEMENTED.
 
+We're not adding birthdays.
+
+Would be nice to have:
+- see which of your own lists your friends are on (and remove them)
+- see what lists yor friends have
+- update a friend
+- way to tell if a friend is registered
+- message about friends having to register with the same email
+</pre>
 
 	<table class="zebra-striped">
 		<thead>
