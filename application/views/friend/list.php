@@ -48,11 +48,8 @@
 <div class="span4">
 
 	<h2>On my shopping list</h2>
-
-	<ul>
-		<li><a href="/gift/buy/1">Barbie</a></li>
-		<li><a href="/gift/buy/2">Made in Chelsea DVD</a></li>
-	</ul>
-
+	
+	<?php echo Request::factory('gift/to_buy')->execute() ?>
+	
 </div>
 
