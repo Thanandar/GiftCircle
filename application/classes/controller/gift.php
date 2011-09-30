@@ -107,18 +107,15 @@ class Controller_Gift extends Controller_Page {
 	}
 
 	private function get_my_first_gift() {
-		$gifts = new Model_Gift;
-		$gifts
-			->where('reserver_id', '=', $this->me()->id)
-			->where('buyer_id', '=', '0');
-		return $gifts->find_all();
+		$gifts = $this->shopping_list();
+		return count($gifts) ? $gifts[0] : null;
 	}
 
 	public function action_buy() {
 		if (!$this->request->param('id')) {
-			$gifts = $this->get_my_first_gift();
-			if (count($gifts)) {
-				Request::current()->redirect('gift/buy/' . $gifts[0]->id);
+			$gift = $this->get_my_first_gift();
+			if ($gift) {
+				Request::current()->redirect('gift/buy/' . $gift->id);
 			}
 
 			Message::add('danger', __('You have no gifts to buy.'));
@@ -142,10 +139,7 @@ class Controller_Gift extends Controller_Page {
 		$view = View::factory('gift/buy');
 		$view->gift = $gift;
 		
-		$view->shopping_list = ORM::factory('gift')
-			->where('reserver_id', '=', $this->me()->id)
-			->where('buyer_id', '=', '0')
-			->find_all();
+		$view->shopping_list = $this->shopping_list();
 
 		$this->template->content = $view;
 	}
@@ -170,10 +164,7 @@ class Controller_Gift extends Controller_Page {
 		$view = View::factory('gift/bought');
 		$view->gift = $gift;
 
-		$view->shopping_list = ORM::factory('gift')
-			->where('reserver_id', '=', $this->me()->id)
-			->where('buyer_id', '=', '0')
-			->find_all();
+		$view->shopping_list = $this->shopping_list();
 
 		$this->template->content = $view;
 	}
@@ -199,6 +190,27 @@ class Controller_Gift extends Controller_Page {
 	}
 
 
+	public function action_to_buy() {
+		$this->template_extras = false;
+		$this->template = View::factory('template/empty');
 
+		$this->template->title = 'My shopping list';
+
+		$gifts = $this->shopping_list();
+
+		$view = View::factory('gift/to_buy')
+			->set('gifts', $gifts);
+		
+		$this->template->content = $view;
+		//$this->request->response = $view;
+	}
+
+
+	private function shopping_list() {
+		return ORM::factory('gift')
+			->where('reserver_id', '=', $this->me()->id)
+			->where('buyer_id', '=', 0)
+			->find_all();
+	}
 
 } 
