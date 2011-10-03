@@ -3,6 +3,14 @@
 
 	<h2>Edit gift "<?php echo HTML::chars($gift->name); ?>"</h2>
 
+	<?php if ($gift->reserver_id) { ?>
+
+	<div class="alert-message block-message error">
+		<p>Someone has reserved or bought this gift so you are unable to edit it.</p>
+		<p><input type="button" class="btn" value="Go back" /></p>
+	</div>
+
+	<?php } else { ?>
 
 	<form method="post">
 		<fieldset>
@@ -57,6 +65,10 @@
 			</div>
 		</fieldset>
 	</form>
+
+	<?php } ?>
+
+
 </div>
 
 <div class="span4">
