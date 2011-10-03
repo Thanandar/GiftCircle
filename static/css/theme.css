@@ -87,3 +87,12 @@ background: #FFF url(/img/small/yahoo_gray.png) no-repeat center center;
 a.yahoo:hover {
 background: #FFF url(/img/small/yahoo.png) no-repeat center center;
 }
+
+/* buy a gift page */
+
+.shop-logos li { /*media-grid*/
+  display: inline-block;
+  width: 116px;
+}
+
+

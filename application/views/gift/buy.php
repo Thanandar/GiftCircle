@@ -32,37 +32,15 @@
 
 	<h3>Category &gt; <?php echo HTML::chars($gift->category->name); ?></h3>
 
-	<ul class="media-grid">
+	<ul class="media-grid shop-logos">
+		<?php foreach ($shops as $shop) { ?>
 		<li>
-			<a href="http://tesco.com" target="_blank">
-				<img src="http://placehold.it/150x100&amp;text=Tesco" alt="Tesco" />
+			<a href="<?php echo HTML::chars($shop->url); ?>" target="_blank">
+				<!--<img src="http://placehold.it/150x100&amp;text=<?php echo HTML::chars($shop->name); ?>" alt="<?php echo HTML::chars($shop->name); ?>" />-->
+				<img src="<?php echo HTML::chars($shop->logo); ?>" alt="<?php echo HTML::chars($shop->name); ?>" title="<?php echo HTML::chars($shop->name); ?>" />
 			</a>
 		</li>
-		<li>
-			<a href="http://tesco.com" target="_blank">
-				<img src="http://placehold.it/150x100&amp;text=Tesco" alt="Tesco" />
-			</a>
-		</li>
-		<li>
-			<a href="http://tesco.com" target="_blank">
-				<img src="http://placehold.it/150x100&amp;text=Tesco" alt="Tesco" />
-			</a>
-		</li>
-		<li>
-			<a href="http://tesco.com" target="_blank">
-				<img src="http://placehold.it/150x100&amp;text=Tesco" alt="Tesco" />
-			</a>
-		</li>
-		<li>
-			<a href="http://tesco.com" target="_blank">
-				<img src="http://placehold.it/150x100&amp;text=Tesco" alt="Tesco" />
-			</a>
-		</li>
-		<li>
-			<a href="http://tesco.com" target="_blank">
-				<img src="http://placehold.it/150x100&amp;text=Tesco" alt="Tesco" />
-			</a>
-		</li>
+		<?php } ?>
 	</ul>
 
 </div>
