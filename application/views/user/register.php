@@ -3,6 +3,18 @@
 	<p>Already have a user account? <a href="/user/login">Log in here</a>.</p>
 
 <?php
+
+if (@$_GET['firstname'] && !@$_POST['firstname']) {
+   $_POST['firstname'] = $_GET['firstname'];
+}
+if (@$_GET['surname'] && !@$_POST['surname']) {
+   $_POST['surname'] = $_GET['surname'];
+}
+if (@$_GET['email'] && !@$_POST['email']) {
+   $_POST['email'] = $_GET['email'];
+}
+
+
 $form = new Appform();
 if(isset($errors)) {
 	$form->errors = $errors;

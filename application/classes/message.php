@@ -31,4 +31,18 @@ class Message extends Useradmin_Message {
 
 		return call_user_func_array('sprintf', $args);
 	}
+
+	public static function t($file, $key, $args, $escape = true) {
+		if ($escape) {
+			$args = array_map(array('HTML', 'chars'), $args);
+		}
+
+		$s = Kohana::message($file, $key);
+		
+		$keys = array_map(function($k) {
+			return '{'.$k.'}';
+		}, array_keys($args));
+
+		return str_replace($keys, $args, $s);
+	}
 }
