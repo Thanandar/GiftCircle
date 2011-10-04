@@ -1,7 +1,7 @@
 
 <div class="span12">
 
-	<h2>Edit friend (ID <?php echo $friend_id; ?>)</h2>
+	<h2>Edit friend "<?php echo HTML::chars($friend->firstname.' '.$friend->surname) ?>"</h2>
 
 
 

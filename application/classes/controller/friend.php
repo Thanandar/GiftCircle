@@ -50,11 +50,12 @@ class Controller_Friend extends Controller_Page {
 			->find_all();
 
 		
-		// $view->my_lists = ORM::factory('list')
-		// 	->where('owner_id', '=', $this->me())
-		// 	->where_related('owner_id', '=', $this->me())
+		// $view->friends_lists = ORM::factory('list')
+		// 	->where('owner_id', '=', $user->id)
 		// 	->find_all();
 
+		// $view->friends_lists = $friends_lists;
+		
 
 		$view->friend_user = count($user) ? $user : null;
 		
@@ -65,8 +66,15 @@ class Controller_Friend extends Controller_Page {
 	public function action_edit() {
 		$this->template->title = 'Edit friend';
 
+		$friend = new Model_Friend($this->request->param('id'));
+
+		if ($friend->creator_id != $this->me()->id) {
+			Message::add('error', 'You are not friends with this person');
+			Request::current()->redirect('friend/list');
+		}
+
 		$view = View::factory('friend/edit');
-		$view->friend_id = $this->request->param('id');
+		$view->friend = $friend;
 
 		if ($_POST) {
 			if (arr::get($_POST, 'email')) {
