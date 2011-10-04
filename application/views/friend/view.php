@@ -26,7 +26,7 @@ $fullname = HTML::chars($friend->firstname . ' ' . $friend->surname);
 
 	<?php if ($friend_user) { ?>
 
-	<h2><?php echo $fullname; ?>'s lists that you're on</h2>
+	<h2><?php echo $fullname; ?>'s lists <!-- that you're on --></h2>
 
 	<div class="warning alert-message">
 		You're not on any of <b><?php echo $fullname; ?></b>'s lists yet.
