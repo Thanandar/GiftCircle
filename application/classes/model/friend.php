@@ -51,10 +51,14 @@ class Model_Friend extends ORM {
 			'email' => $this->email,
 			'surname' => $this->surname,
 			'firstname' => $this->firstname,
-			'register_link' => URL::base('http') . 'user/register?firstname=' . $this->firstname . '&surname=' . $this->surname . '&email=' . $this->email,
+			'register_link' => URL::base('http') . 'user/register' . URL::query(array(
+				'firstname' => $this->firstname,
+				'surname' => $this->surname,
+				'email' => $this->email,
+			), false),
 		), false);
 
 		Email::send($to, $from, $subject, $message);
-
+		// LOG!
 	}
 }
