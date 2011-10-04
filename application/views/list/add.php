@@ -9,6 +9,14 @@
 				<div class="input"><input name="name" placeholder="eg '30th Birthday'"></div>
 			</div>
 
+			<div class="clearfix">
+				<label>Expiry date</label>
+				<div class="input">
+					<input name="expiry" placeholder="eg '25/12/2012'">
+					<span class="help-inline">Optional</span>
+				</div>
+			</div>
+
 
 			<?php if (count($friends)) { ?>
 			<fieldset>

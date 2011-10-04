@@ -121,6 +121,7 @@ class Controller_List extends Controller_Page {
 				$list = new Model_List;
 				$list->owner_id = $this->me()->id;
 				$list->name = arr::get($_POST, 'name');
+				$list->expiry = arr::get($_POST, 'expiry');
 				$list->save();
 
 				$added = $this->add_existing_friends_from_post($view, $list);
@@ -148,6 +149,7 @@ class Controller_List extends Controller_Page {
 		if ($_POST) {
 			if (arr::get($_POST, 'name')) {
 				$list->name = arr::get($_POST, 'name');
+				$list->expiry = arr::get($_POST, 'expiry');
 				$list->save();
 				Message::add('success', __('List updated.'));
 				Request::current()->redirect('list/mine/' . $list->id);
