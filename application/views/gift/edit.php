@@ -7,7 +7,7 @@
 
 	<div class="alert-message block-message error">
 		<p>Someone has reserved or bought this gift so you are unable to edit it.</p>
-		<p><input type="button" class="btn" value="Go back" /></p>
+		<p><input type="button" class="btn" value="Go back" onclick="history.go(-1)" /></p>
 	</div>
 
 	<?php } else { ?>
