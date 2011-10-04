@@ -56,7 +56,7 @@
 			<?php foreach ($friends as $friend) { ?>
 			<tr>
 				<td>
-					<?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?>
+					<?php echo HTML::anchor('friend/view/' . $friend->id, HTML::chars($friend->firstname . ' ' . $friend->surname)) ?>
 				</td>
 				<td>
 					<span class="label important">
@@ -72,8 +72,6 @@
 
 		<input type="button" class="btn primary" value="Add friends" onclick="location.href='/list/add_friend/<?php echo $list->id; ?>'"/>
 		
-		<input type="button" class="btn" value="Notify friends of changes" onclick="alert('This will spam your friends. Should it be limited to x updates?'); return false"/>
-
 	</div>
 
 </div>
