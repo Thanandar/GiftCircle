@@ -55,6 +55,23 @@ ini_set('unserialize_callback_func', 'spl_autoload_call');
  */
 I18n::lang('en-us');
 
+
+/**
+ * Set the environment status by the domain.
+ */
+switch($_SERVER['HTTP_HOST']) {
+	case 'gift-circle.dh.devba.se':
+		Kohana::$environment = Kohana::DEVELOPMENT;
+		break;
+	case 'giftcircle.base-dev.com':
+		Kohana::$environment = Kohana::STAGING;
+		break;
+	default:
+		Kohana::$environment = Kohana::PRODUCTION;
+		error_reporting(E_ALL ^ E_NOTICE ^ E_STRICT);
+}
+ 
+
 /**
  * Set Kohana::$environment if a 'KOHANA_ENV' environment variable has been supplied.
  *
@@ -120,3 +137,15 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'home',
 		'action'     => 'index',
 	));
+
+
+$environments = array(
+    Kohana::PRODUCTION  => 'production',
+    Kohana::STAGING     => 'staging',
+    Kohana::TESTING     => 'testing',
+    Kohana::DEVELOPMENT => 'development',
+);
+
+// from http://forum.kohanaframework.org/discussion/9562/how-to-choose-database-config-in-bootstraps/p1
+Database::$default = $environments[Kohana::$environment];
+
