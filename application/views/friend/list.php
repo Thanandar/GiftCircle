@@ -48,11 +48,6 @@ Would be nice to have:
 		</tbody>
 	</table>
 
-	<div class="well">
-		<input type="button" class="btn primary" value="Add a friend" onclick="location.href='/friend/add'"/>
-	</div>
-
-
 
 </div>
 
