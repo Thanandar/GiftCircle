@@ -22,7 +22,7 @@ class Controller_Friend extends Controller_Page {
 		$friend = new Model_Friend($this->request->param('id'));
 
 		if ($friend->creator_id != $this->me()->id) {
-			Message::add('error', 'You are not friends with this person');
+			Message::add('error', Kohana::message('friend', 'not-friends'));
 			Request::current()->redirect('friend/list');
 		}
 
@@ -38,7 +38,7 @@ class Controller_Friend extends Controller_Page {
 		$friend = new Model_Friend($this->request->param('id'));
 
 		if ($friend->creator_id != $this->me()->id) {
-			Message::add('error', 'You are not friends with this person');
+			Message::add('error', Kohana::message('friend', 'not-friends'));
 			Request::current()->redirect('friend/list');
 		}
 
@@ -69,7 +69,7 @@ class Controller_Friend extends Controller_Page {
 		$friend = new Model_Friend($this->request->param('id'));
 
 		if ($friend->creator_id != $this->me()->id) {
-			Message::add('error', 'You are not friends with this person');
+			Message::add('error', Kohana::message('friend', 'not-friends'));
 			Request::current()->redirect('friend/list');
 		}
 
@@ -80,7 +80,7 @@ class Controller_Friend extends Controller_Page {
 			if (arr::get($_POST, 'email')) {
 				Request::current()->redirect('friend/list');
 			}
-			$view->errors = 'Please supply an email address';
+			$view->errors = Kohana::message('friend', 'email-required');
 		}
 		$this->template->content = $view;
 	}
@@ -94,7 +94,7 @@ class Controller_Friend extends Controller_Page {
 			if (arr::get($_POST, 'email')) {
 				Request::current()->redirect('friend/list');
 			}
-			$view->errors = 'Please supply an email address';
+			$view->errors = Kohana::message('friend', 'email-required');
 		}
 		$this->template->content = $view;
 	}

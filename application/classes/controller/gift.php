@@ -52,10 +52,10 @@ class Controller_Gift extends Controller_Page {
 				$gift->details     = arr::get($_POST, 'details');
 				$gift->save();
 				
-				Message::add('success', __('Gift added.'));
+				Message::add('success', Kohana::message('gift', 'added'));
 				Request::current()->redirect('list/mine/' . $list->id);
 			}
-			$view->errors = 'Please enter a product title';
+			$view->errors = Kohana::message('gift', 'title-required');
 		}
 		$this->template->content = $view;
 	}
@@ -82,10 +82,10 @@ class Controller_Gift extends Controller_Page {
 				$gift->category_id = arr::get($_POST, 'category_id');
 				$gift->details     = arr::get($_POST, 'details');
 				$gift->save();
-				Message::add('success', __('Gift updated.'));
+				Message::add('success', Kohana::message('gift', 'updated'));
 				Request::current()->redirect('list/mine/' . $gift->list->id);
 			}
-			$view->errors = 'Please enter a product title';
+			$view->errors = Kohana::message('gift', 'title-required');
 		}
 		$this->template->content = $view;
 	}
@@ -98,7 +98,7 @@ class Controller_Gift extends Controller_Page {
 
 		$list_id = $gift->list->id;
 		$gift->delete();		
-		Message::add('success', 'Gift deleted.');
+		Message::add('success', Kohana::message('gift', 'deleted'));
 		Request::current()->redirect('list/mine/' . $list_id);
 	}
 
