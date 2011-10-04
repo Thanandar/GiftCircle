@@ -15,6 +15,7 @@ $fullname = HTML::chars($friend->firstname . ' ' . $friend->surname);
 
 	<div class="well">
 		<input type="button" class="btn primary" onclick="location.href='/friend/edit/<?php echo $friend->id; ?>'" value="Edit" />
+		<input type="button" class="btn danger" onclick="if (confirm('Are you sure you want to delete this friend?\n\nThis will remove them from all your lists too.')){location.href='/friend/delete/<?php echo $friend->id; ?>'}" value="Delete" />
 	</div>
 
 	<!-- <h2>Your lists that <?php echo $fullname; ?> is on</h2>
@@ -44,13 +45,9 @@ $fullname = HTML::chars($friend->firstname . ' ' . $friend->surname);
 </div>
 
 <div class="span4">
-	<h3>On your shopping list</h3>
-	<ul>
-		<li>COD MW3</li>
-		<li>Barbie</li>
-		<li>Starwars lego</li>
-		<li>The Rock DVD</li>
-	</ul>
+	<h2>On my shopping list</h2>
+	
+	<?php echo Request::factory('gift/to_buy')->execute() ?>
 </div>
 
 

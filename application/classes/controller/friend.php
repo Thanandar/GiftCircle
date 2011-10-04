@@ -9,7 +9,27 @@ class Controller_Friend extends Controller_Page {
 	public function action_list() {
 		$this->template->title = 'My Friends';
 
-		$this->template->content = View::factory('friend/list');
+		$view = View::factory('friend/list');
+		$view->friends = ORM::factory('friend')
+			->where('creator_id', '=', $this->me()->id)
+			->find_all();
+
+		$this->template->content = $view;
+	}
+
+	public function action_delete() {
+		
+		$friend = new Model_Friend($this->request->param('id'));
+
+		if ($friend->creator_id != $this->me()->id) {
+			Message::add('error', 'You are not friends with this person');
+			Request::current()->redirect('friend/list');
+		}
+
+		$friend->delete();
+		Message::add('success', 'Friend deleted');
+		Request::current()->redirect('friend/list');
+
 	}
 
 	public function action_view() {
