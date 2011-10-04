@@ -6,17 +6,17 @@
 	<div class="well">
 		
 		<ol>
-			<li>
+			<!-- <li>
 				If you don't have it already, drag this button to your bookmarks toolbar:
 
 				<a href="javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='<?php echo URL::base('http'); ?>static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();" class="btn" onclick="alert('Drag this button to your bookmarks toolbar');return false">Add to GiftCircle</a>
 				
 				<a href="#" onclick="alert('Just drag and drop');return false">Show me how</a>
-			</li>
+			</li> -->
 
 			<li>Start browsing using the logos below (links will open in a new window).</li>
 
-			<li>When you've found a gift, click on the "Add to GiftCircle" button on your bookmarks toolbar or manually copy the details <a href="/gift/add/<?php echo $list->id; ?>">here</a>.</li>
+			<li>When you've found a gift<!-- , click on the "Add to GiftCircle" button on your bookmarks toolbar or --> manually copy the details <a href="/gift/add/<?php echo $list->id; ?>">here</a>.</li>
 
 		</ol>
 
