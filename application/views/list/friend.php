@@ -126,6 +126,13 @@
 		<p>There are no friends in this circle</p>
 		<?php } ?>
 
+		<p>
+			Subscribe to this list
+			<input type="button" class="btn" value="Unsubscribe" />
+			<input type="button" class="btn" value="Subscribe" />
+		</p>
+
+
 	</div>
 
 </div>
