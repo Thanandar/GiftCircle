@@ -1,0 +1,56 @@
+Development notes
+v1.1
+04/10/11
+
+User A creates a list. 
+
+User A populates list with products.
+	User browses the internet then fills in the form with the required details. 
+		System will notify via email all confirmed, subscribed friends of the changes one hour after last product add/edit/delete – the system will only notify friends of changes or products that no one has marked as reserved or bought.
+
+Add a new friend to a list, using friend’s email address.
+	System will send an email to the user B:
+		Not registered user B:” User A would like to add you to their list, click here to sign up.”
+			User B signs up
+			User B accepts invite.
+		Registered users: “User A would to add you as a friend, click here to accept.” 
+			User B Logs in and accepts invite
+		Add existing friend: "User A has added you to a new list".
+
+Changes to your list
+	If a user has marked this item as reserved or bought, then User A is warned that someone may have already purchased this item.
+	If User A continues to edit or delete this item, then User B is sent an email (immediately) to let them know that User A has either edited or removed this item from their list. 
+	If no user has marked an item as reserved or bought, a user may continue to edit or delete without warning.
+
+Marking a product as bought
+	User B marks a product from User A’s list as reserved and then bought, the system will offer User B the opportunity to opt in to continue receiving further updates from User A’s List
+
+Subscriptions
+	Users are opted into list notifications by default
+	Users can opt out of notifications on a per list basis
+	- subscribe / unsubscribe option on list page itself
+
+Removing a user from a list
+	User A removes user B from a list:
+		Confirmation required.
+		If user B has marked an item as reserved or bought show message (Are you sure, this user might have already bought you something?)
+		No email notification is sent to user B
+		Item stays in existing state and stays on user A’s list marked as unavailable or available
+
+Deleting friends
+	User A removes user B from system:
+		Confirmation required.
+		If user B has marked any item as reserved or bought on any list show message (Are you sure, this user might have bought you something?)
+		No email notification is sent to user B
+		Any items stay in existing state and stays on user A’s list marked as unavailable or available
+
+Deleting a list
+	User A removes a list:
+		Confirmation required.
+		No email notification is sent to circle (including user B)
+		User B’s, who had reserved an item from the list, shopping list does not display item any longer
+
+Deleting account
+	User A removes user A from system:
+		Confirmation required.
+		User B’s, who had reserved an item from one of your lists, shopping list does not display item any longer
