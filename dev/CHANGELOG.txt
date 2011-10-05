@@ -1,0 +1,4 @@
+Version 0.1
+
+- Tue 4th Oct 2011
+- Launched on http://giftcircle.base-dev.com/
