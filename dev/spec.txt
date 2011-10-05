@@ -67,7 +67,7 @@ Forget password
 	* Logged in
 
 Accept friend request
-	- Login, see pending friend requests
+	* Login, see pending friend requests
 	- Click accept
 	- Unconfirmed friend becomes Confirmed friend
 	- Friends are on eachother's Friend lists
@@ -76,7 +76,7 @@ Accept friend request
 	- Notification goes
 
 Cancel friend request
-	- Login, see pending friend requests
+	* Login, see pending friend requests
 	- Click cancel
 	- You get removed from all Unconfirmed friend's Circles
 	- Unconfirmed friend gets removed from all your Circles
@@ -94,10 +94,10 @@ Add a new friend to a list, using friend's email address.
 		- Warning: "Friend is already on your list"
 	Unregistered user:
 		- Delayed notification: "User A would like to add you to their list, click here to sign up."
-		+ Added to your Friend list as pending
+		* Added to your Friend list as pending
 	Registered user:
 		- Delayed notification: "User A would like to add you to their list, click here to accept or cancel friendship."
-		+ Added to your Friend list as pending
+		* Added to your Friend list as pending
 
 Add existing friend to a list, from Friend list
 	Unregistered user:
@@ -107,7 +107,7 @@ Add existing friend to a list, from Friend list
 			- Delayed notification: "User A would like to add you to ANOTHER list, click here to accept or cancel friendship."
 		Confirmed friend:
 			- Delayed notification: "User A has added you to their list. Click here to see it and manage your subscription"
-			+ User is automatically subscribed to list
+			* User is automatically subscribed to list
 
 Edit a gift
 	Avilable gift:
