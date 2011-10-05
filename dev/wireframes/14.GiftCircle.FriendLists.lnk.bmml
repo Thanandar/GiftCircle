@@ -1,0 +1,116 @@
+<mockup version="1.0" skin="sketch" measuredW="1405" measuredH="974" mockupW="1151" mockupH="928">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="244" y="36" w="1151" h="928" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>www.giftcircle.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Image" x="452" y="117" w="218" h="45" measuredW="77" measuredH="79" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Logo</text>
+      </controlProperties>
+    </control>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::Label" x="455" y="313" w="289" h="29" measuredW="234" measuredH="29" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kathryn%3A%20%27My%20Christmas%20List%27</text>
+        <size>16</size>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::HRule" x="249" y="293" w="1143" h="-1" measuredW="100" measuredH="5" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::Label" x="1010" y="363" w="-1" h="-1" measuredW="86" measuredH="25" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Matt%20Morgan</text>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::Label" x="1010" y="387" w="-1" h="-1" measuredW="72" measuredH="25" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pete%20Evans</text>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::Label" x="1010" y="411" w="-1" h="-1" measuredW="88" measuredH="25" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Joe%20Thwaites</text>
+      </controlProperties>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::Button" x="483" y="482" w="184" h="-1" measuredW="163" measuredH="28" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Confirm%20your%20selection</text>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::SubTitle" x="458" y="180" w="-1" h="-1" measuredW="118" measuredH="40" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Gift%20Lists</text>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::CheckBox" x="456" y="366" w="-1" h="-1" measuredW="25" measuredH="22" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::CheckBox" x="456" y="412" w="-1" h="-1" measuredW="25" measuredH="22" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::CheckBox" x="456" y="434" w="-1" h="-1" measuredW="25" measuredH="22" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::Icon" x="456" y="475" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CursorIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::Label" x="1010" y="435" w="-1" h="-1" measuredW="67" measuredH="25" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tom%20Quay</text>
+      </controlProperties>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::Switch" x="1153" y="553" w="-1" h="-1" measuredW="68" measuredH="28" zOrder="23" locked="false" isInGroup="-1"/>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::Canvas" x="992" y="343" w="251" h="195" measuredW="100" measuredH="70" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Label" x="995" y="313" w="189" h="29" measuredW="166" measuredH="29" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Friends%20in%20this%20circle</text>
+        <size>16</size>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::Label" x="1017" y="556" w="-1" h="-1" measuredW="132" measuredH="25" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Suscribe%20to%20this%20list</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::HRule" x="454" y="869" w="785" h="-1" measuredW="100" measuredH="5" zOrder="5" locked="false" isInGroup="-1"/>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Label" x="463" y="878" w="-1" h="-1" measuredW="205" measuredH="25" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Copyright%202011%20%7C%20GiftCircle%20Ltd</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::VRule" x="966" y="344" w="-1" h="337" measuredW="5" measuredH="100" zOrder="7" locked="false" isInGroup="-1"/>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::Paragraph" x="457" y="225" w="316" h="53" measuredW="200" measuredH="140" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lipsum%20dolor%20sit%20amet%2C%20consectetur%20adipisicing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.%20%0A%20%0ADuis%20aute%20irure%20dolor%20in%20reprehenderit%20in%20voluptate%20velit%20esse%20cillum%20dolore%20eu%20fugiat%20nulla%20pariatur.%20Excepteur%20sint%20occaecat%20cupidatat%20non%20proident%2C%20sunt%20in%20culpa%20qui%20officia%20deserunt%20mollit%20anim%20id%20est%20laborum.Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetuer%20adipiscing%20elit.%20%0A%20%0ADuis%20tincidunt%20erat%20in%20purus%20ullamcorper%20ultricies.%20Duis%20lacinia%20aliquet%20dolor.%20Maecenas%20velit%20enim%2C%20eleifend%20a%2C%20tempor%20eu%2C%20mattis%20in%2C%20nisl.%20Maecenas%20ut%20orci.%20Sed%20egestas%20auctor%20sem.%20Curabitur%20vitae%20pede%20vel%20nisl%20tristique%20commodo.%20Phasellus%20ut%20nisl.%20Cras%20massa.%20Suspendisse%20potenti.%20Vestibulum%20vitae%20augue.%20Mauris%20mauris%20sapien%2C%20aliquet%20vitae%2C%20tincidunt%20ac%2C%20volutpat%20eu%2C%20ante.%20Nunc%20sed%20quam.</text>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::MenuBar" x="847" y="122" w="297" h="29" measuredW="303" measuredH="29" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>1</selectedIndex>
+        <text>Home%2C%20My%20Lists%2C%20My%20Friends%2C%20FAQs</text>
+      </controlProperties>
+    </control>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::Button" x="1164" y="123" w="-1" h="-1" measuredW="64" measuredH="28" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Logout</text>
+      </controlProperties>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::DataGrid" x="453" y="345" w="508" h="120" measuredW="492" measuredH="116" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>-1</selectedIndex>
+        <vLines>true</vLines>
+        <rowHeight>16</rowHeight>
+        <hLines>false</hLines>
+        <text>%2CProduct%20Name%2C%20Approx.%20Price%2C%20Category%2C%20Who%27s%20buying%3F%0A%2CKath%20Kidston%20Shoes%2C%20%A350%2C%20Clothes%2C%20Up%20for%20grabs%0A%2C%5BBarbie%20House%5D%2C%20%A340%2C%20Toys%2C%20%5BJoe%20Thwaites%5D%0A%2CBlack%20Cardigan%2C%20%A320%2C%20Clothes%2C%20Up%20for%20grabs%0A%2C%5BMade%20In%20Chelsea%20%231%20DVD%5D%2C%20%A325%2C%20DVD%2C%20Up%20for%20grabs</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

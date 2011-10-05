@@ -1,0 +1,82 @@
+<mockup version="1.0" skin="sketch" measuredW="1322" measuredH="894" mockupW="1103" mockupH="833">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="209" y="51" w="1103" h="833" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Image" x="218" y="170" w="1087" h="684" measuredW="989" measuredH="600" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <filter>true</filter>
+        <text/>
+        <src>./assets/Call%2520of%2520Duty-%2520Modern%2520Warfare%25203-%2520Amazon.co.uk-%2520PC%2520%26%2520Video%2520Games_1315406097448.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="__group__" x="556" y="395" w="-1" h="-1" measuredW="448" measuredH="233" zOrder="10" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="57" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="448" h="233" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="66"/>
+        <control controlID="58" controlTypeID="com.balsamiq.mockups::Label" x="16" y="30" w="93" h="25" measuredW="93" measuredH="25" zOrder="1" locked="false" isInGroup="66">
+          <controlProperties>
+            <text>Product%20Title%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="59" controlTypeID="com.balsamiq.mockups::Canvas" x="132" y="27" w="260" h="32" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="66"/>
+        <control controlID="60" controlTypeID="com.balsamiq.mockups::Label" x="16" y="70" w="95" h="25" measuredW="95" measuredH="25" zOrder="3" locked="false" isInGroup="66">
+          <controlProperties>
+            <text>Product%20Price%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="61" controlTypeID="com.balsamiq.mockups::Canvas" x="132" y="67" w="260" h="32" measuredW="100" measuredH="70" zOrder="4" locked="false" isInGroup="66"/>
+        <control controlID="62" controlTypeID="com.balsamiq.mockups::Button" x="112" y="170" w="119" h="-1" measuredW="81" measuredH="28" zOrder="5" locked="false" isInGroup="66">
+          <controlProperties>
+            <text>Add%20this%21</text>
+          </controlProperties>
+        </control>
+        <control controlID="63" controlTypeID="com.balsamiq.mockups::Label" x="13" y="112" w="118" h="25" measuredW="118" measuredH="25" zOrder="6" locked="false" isInGroup="66">
+          <controlProperties>
+            <text>Product%20Category%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="64" controlTypeID="com.balsamiq.mockups::ComboBox" x="133" y="108" w="256" h="-1" measuredW="113" measuredH="25" zOrder="7" locked="false" isInGroup="66">
+          <controlProperties>
+            <text>Please%20select</text>
+          </controlProperties>
+        </control>
+        <control controlID="65" controlTypeID="com.balsamiq.mockups::Label" x="237" y="173" w="63" h="25" measuredW="63" measuredH="25" zOrder="8" locked="false" isInGroup="66">
+          <controlProperties>
+            <text>or%20%5Bcancel%5D</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::Label" x="945" y="135" w="-1" h="-1" measuredW="81" measuredH="25" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Quick%20links%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Canvas" x="218" y="171" w="1087" h="683" measuredW="100" measuredH="70" zOrder="6" locked="true" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.5</backgroundAlpha>
+        <color>10066329</color>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Image" x="224" y="127" w="63" h="35" measuredW="77" measuredH="79" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Logo</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::HRule" x="216" y="166" w="1081" h="-1" measuredW="100" measuredH="5" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::ComboBox" x="1032" y="132" w="129" h="-1" measuredW="77" measuredH="25" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Amazon</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::VRule" x="1186" y="130" w="-1" h="30" measuredW="5" measuredH="100" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::ModalScreen" x="213" y="120" w="1094" h="737" measuredW="320" measuredH="240" zOrder="9" locked="false" isInGroup="-1"/>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Button" x="1216" y="130" w="-1" h="-1" measuredW="81" measuredH="28" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Add%20this%21</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
