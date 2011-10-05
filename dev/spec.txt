@@ -101,10 +101,10 @@ Add a new friend to a list, using friend's email address.
 
 Add existing friend to a list, from Friend list
 	Unregistered user:
-		- Delayed notification: "User A would like to add you to ANOTHER list, click here to sign up."
+		* No email sent
 	Registered user:
 		Unconfirmed friend:
-			- Delayed notification: "User A would like to add you to ANOTHER list, click here to accept or cancel friendship."
+			* No email sent
 		Confirmed friend:
 			- Delayed notification: "User A has added you to their list. Click here to see it and manage your subscription"
 			* User is automatically subscribed to list
@@ -125,6 +125,9 @@ Delete a gift
 		- Immediate notification: "User A has deleted a gift you have reserved/bought"
 		* Gift removed from User B's shopping list (if reserved)
 		* Gift is deleted
+
+View friend
+	- See their lists that you're on
 
 View friends' lists
 	* See list of gifts
