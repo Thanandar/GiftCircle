@@ -1,56 +1,200 @@
-Development notes
-v1.1
-04/10/11
+------------------------------
+Development Spec v1.2 05/10/11
+For Version 1 of GiftCircle
+------------------------------
+
+----------------
+=== GLOSSARY ===
+----------------
+
+Available gift
+	A gift which has not been reserved or bought by anyone
+Unavailable gift
+	A gift which has been reserved or bought
+Friend list
+	List of all confirmed and unconfirmed friends
+Circle
+	Friends who have been added to a list (whether registered, confirmed or not)
+Confirmed friend
+	Either someone who you have invited and has accepted a friend request or vice versa
+Unconfirmed friend
+	Someone who you have invited but has not confirmed the friend request. Either registered or not
+Subscribed friend
+	Someone who has confirmed your friendship and is subscribed to a list's notifications
+Unsubscribed friend
+	Someone who has confirmed your friendship but has unsubscribed to a list's notifications. They can still log in and see the list.
+Changes to a list
+	Update to list name or expiry date
+	Any available gifts added, updated or deleted on the list
+Delayed notification
+	An email that is sent 1 hour after an event
+Immediate notification
+	An email that is sent immediately after an event
+
+
+----------------
+=== ACTIONS ===
+----------------
+
+Register
+	Fill in form
+	No email sent
+	Automatically logged in
+
+Login
+	Fill in form
+	Logged in
+
+Log out
+	Logged out
+	Taken to homepage
+
+Forget password
+	Fill in form
+	Email sent
+	Click link in email
+	Taken to password-reset page
+	Enter form
+	Password changed
+	Logged in
+
+Accept friend request
+	Login, see pending friend requests
+	Click accept
+	Unconfirmed friend becomes Confirmed friend
+	Friends are on eachother's Friend lists
+	Friends are subscribed to eachother's lists
+	Friends can see each others Lists where they are in the Circle
+	Notification goes
+
+Cancel friend request
+	Login, see pending friend requests
+	Click cancel
+	You get removed from all Unconfirmed friend's Circles
+	Unconfirmed friend gets removed from all your Circles
+	Notification goes
 
 User A creates a list. 
+	List is visible in "My lists" and "Friends lists" of Circle
 
-User A populates list with products.
-	User browses the internet then fills in the form with the required details. 
-		System will notify via email all confirmed, subscribed friends of the changes one hour after last product add/edit/delete – the system will only notify friends of changes or products that no one has marked as reserved or bought.
+Add a gift to list.
+	User finds a gift (browsing affiliates, Google, etc)
+	User manually enteres gift details
 
-Add a new friend to a list, using friend’s email address.
-	System will send an email to the user B:
-		Not registered user B:” User A would like to add you to their list, click here to sign up.”
-			User B signs up
-			User B accepts invite.
-		Registered users: “User A would to add you as a friend, click here to accept.” 
-			User B Logs in and accepts invite
-		Add existing friend: "User A has added you to a new list".
+Add a new friend to a list, using friend's email address.
+	Email already added to one of your lists:
+		Warning: "Friend is already on your list"
+	Unregistered user:
+		Delayed notification: "User A would like to add you to their list, click here to sign up."
+		Added to your Friend list as pending
+	Registered user:
+		Delayed notification friend:
+			Notification: "User A would like to add you to their list, click here to accept or cancel friendship."
+			Added to your Friend list as pending
 
-Changes to your list
-	If a user has marked this item as reserved or bought, then User A is warned that someone may have already purchased this item.
-	If User A continues to edit or delete this item, then User B is sent an email (immediately) to let them know that User A has either edited or removed this item from their list. 
-	If no user has marked an item as reserved or bought, a user may continue to edit or delete without warning.
+Add existing friend to a list, from Friend list
+	Unregistered user:
+		Delayed notification: "User A would like to add you to ANOTHER list, click here to sign up."
+	Registered user:
+		Unconfirmed friend:
+			Delayed notification: "User A would like to add you to ANOTHER list, click here to accept or cancel friendship."
+		Confirmed friend:
+			Delayed notification: "User A has added you to their list. Click here to see it and manage your subscription"
+			User is automatically subscribed to list
 
-Marking a product as bought
-	User B marks a product from User A’s list as reserved and then bought, the system will offer User B the opportunity to opt in to continue receiving further updates from User A’s List
+Edit a gift
+	Avilable gift:
+		Gift is edited
+	Unavilable gift:
+		Warning: "Someone may have already purchased this gift"
+		Gift is edited
+		Immediate notification: "User A has edited a gift you have reserved/bought"
 
-Subscriptions
-	Users are opted into list notifications by default
-	Users can opt out of notifications on a per list basis
-	- subscribe / unsubscribe option on list page itself
+Delete a gift
+	Avilable gift:
+		Gift is deleted
+	Unavilable gift:
+		Warning: "Someone may have already purchased this gift"
+		Gift is deleted
+		Immediate notification: "User A has deleted a gift you have reserved/bought"
+
+View friends' lists
+	See whether subscribed or not on each list
+	Option to subscribe/unsubscribe on individual list page
+
+Reserve a gift from User A's list
+	User B reserves gift
+	Gift is shown as "Taken" when User C tries to views it
+	Gift added to User B's shopping list
+
+Unreserving a gift
+	User B unreserves gift
+	Gift is shown as "Available" when User C tries to views it
+	Gift removed from User B's shopping list
+
+Buy a gift from shopping list
+	User B buys gift
+	User B automatically unsubscribed from Circle
+	user B given option to re-subscribe to Circle
 
 Removing a user from a list
-	User A removes user B from a list:
-		Confirmation required.
-		If user B has marked an item as reserved or bought show message (Are you sure, this user might have already bought you something?)
-		No email notification is sent to user B
-		Item stays in existing state and stays on user A’s list marked as unavailable or available
+	User A removes User B from a list:
+		If User B has not reserved/bought a gift from the list:
+			Basic confirmation required.
+		If User B has reserved/bought gifts from the list:
+			Confirmation: "Are you sure, this user might have already bought you something?"
+			No email notifications sent
+			Gift reserved:
+				Gift removed from User B's shopping list
+				Gift stays "Taken" (reserved) on A's list
+			Gift bought:
+				Gift stays "Taken" (bought) on A's list
+		User B removed longer on User A's list
 
-Deleting friends
-	User A removes user B from system:
-		Confirmation required.
-		If user B has marked any item as reserved or bought on any list show message (Are you sure, this user might have bought you something?)
-		No email notification is sent to user B
-		Any items stay in existing state and stays on user A’s list marked as unavailable or available
-
+Deleting User B from User A's Friend list
+	Confirmed friend:
+		If User B has ever reserved/bought any of User A's gifts
+			Warning: "This will remove User B from all your lists and remove you from all User B's lists. Are you sure, this user might have bought you something?"
+			Gift removed from User B's shopping list
+			Gift stays "Taken" on A's list
+		If User B has never reserved/bought any of User A's gifts
+			Warning: "Are you sure? This will remove User B from all your lists and remove you from all User B's lists."
+		If User A has ever reserved/bought any of User B's gifts
+			Gift removed from User A's shopping list
+			Gift stays "Taken" on B's list
+		User B removed from all User A's lists
+		User A removed from all User B's lists
+	Unconfirmed friend (registered or unregistered):
+		Warning: "Are you sure?"
+		Removed from pending friend list
+	No emails sent
+		
 Deleting a list
-	User A removes a list:
-		Confirmation required.
-		No email notification is sent to circle (including user B)
-		User B’s, who had reserved an item from the list, shopping list does not display item any longer
+	Confirmation required.
+	No emails sent
+	If any gifts are reserved:
+		Gift is removed from reserver's shopping list
 
 Deleting account
-	User A removes user A from system:
-		Confirmation required.
-		User B’s, who had reserved an item from one of your lists, shopping list does not display item any longer
+	Confirmation required.
+	No emails sent
+	All gifts that user has bought or reserved stay "Taken"	on their friends' lists
+	Any of gifts that have been reserved by friends get removed from their shopping list
+
+Server runs cron script
+	At any time, if any Subscribed friends on a list have not been notified of any changes to the list that happened over 60 minutes ago:
+		Email notification sent saying a list has been updated (not detailing changes)
+
+
+------------------------
+=== NOT IN VERSION 1 ===
+------------------------
+
+Gifts that I've bought
+Treating lists differently based on list date
+Admin area for users
+Admin area for shops, logos, departments and links
+Bookmarklet
+Scraping pages to extract gift information
+Tracking outbound links
+
