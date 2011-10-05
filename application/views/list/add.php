@@ -17,7 +17,7 @@
 				</div>
 			</div>
 
-
+			<!--
 			<?php if (count($friends)) { ?>
 			<fieldset>
 				<legend>Add existing friends to your list</legend>
@@ -62,6 +62,7 @@
 				</ol>
 
 			</fieldset>
+			-->
 
 			<?php
 			if (!empty($errors)) {
