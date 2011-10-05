@@ -24,8 +24,8 @@
 			</td>
 			<td><?php echo HTML::chars($friend->email) ?></td>
 			<td>
-				<input type="button" class="btn success" value="Accept" onclick="location.href='/friend/accept/<?php echo $friend->id; ?>'" />
-				<input type="button" class="btn danger" value="Cancel" onclick="location.href='/friend/cancel/<?php echo $friend->id; ?>'" />
+				<input type="button" class="btn success" value="Accept" onclick="location.href='/friend/request_accept/<?php echo $friend->id; ?>'" />
+				<input type="button" class="btn danger" value="Cancel" onclick="location.href='/friend/request_cancel/<?php echo $friend->id; ?>'" />
 			</td>
 		</tr>
 		<?php } ?>

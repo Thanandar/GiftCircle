@@ -99,4 +99,14 @@ class Controller_Friend extends Controller_Page {
 		$this->template->content = $view;
 	}
 
+	public function action_request_accept() {
+		echo 'accept friend request from user id ' . $this->request->param('id');
+		die();
+	}
+
+	public function action_request_cancel() {
+		echo 'cancel friend request from user id ' . $this->request->param('id');
+		die();
+	}
+
 } // End Welcome
