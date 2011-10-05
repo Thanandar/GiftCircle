@@ -34,13 +34,14 @@ class Model_Friend extends ORM {
 	 * A confirmation of a freind request is your friend having you on their 
 	 * friend list.
 	 */
-	private function is_confirmed() {
+	public function is_confirmed() {
 		$user = $this->get_user();
 
 		$my_email = Auth::instance()->get_user()->email;
 
-		return $user->friends
+		return ORM::factory('friend')
 			->where('email', '=', $my_email)
+			->where('creator_id', '=', $user->id)
 			->find_all()->count();
 	}
 

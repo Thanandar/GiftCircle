@@ -56,7 +56,11 @@
 			<?php foreach ($friends as $friend) { ?>
 			<tr>
 				<td>
+					<?php if ($friend->is_confirmed()) { ?>
 					<?php echo HTML::anchor('friend/view/' . $friend->id, HTML::chars($friend->firstname . ' ' . $friend->surname)) ?>
+					<?php } else { ?>
+					<?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?>
+					<?php } ?>
 				</td>
 				<td width="18">
 					<span class="label important">
