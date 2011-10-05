@@ -1,6 +1,11 @@
 
 <div class="span12">
 
+	<?php 
+	echo View::factory('friend/pending')
+		->set('pending', $pending);
+	?>
+
 	<h2>My lists</h2>
 	<?php echo $all_mine; ?>
 	<div class="well">

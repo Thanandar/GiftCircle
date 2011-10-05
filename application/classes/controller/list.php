@@ -95,6 +95,10 @@ class Controller_List extends Controller_Page {
 		$this->template->title = 'Home';
 
 		$view = View::factory('list/all');
+
+		$view->pending = ORM::factory('owner', $this->me()->id)
+			->pending_friend_requests();
+
 		$view->all_mine = View::factory('list/all-mine')
 			->set('lists', $this->all_my_lists());
 
