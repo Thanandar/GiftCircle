@@ -58,7 +58,7 @@
 				<td>
 					<?php echo HTML::anchor('friend/view/' . $friend->id, HTML::chars($friend->firstname . ' ' . $friend->surname)) ?>
 				</td>
-				<td>
+				<td width="18">
 					<span class="label important">
 						<a onclick="return confirm('Are you sure you want to remove this friend from this circle?')" href="/list/delete_friend/<?php echo $list->id; ?>-<?php echo $friend->id; ?>">✘</a>
 					</span>
