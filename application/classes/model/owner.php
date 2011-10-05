@@ -39,5 +39,37 @@ class Model_Owner extends Model_User {
 		return $pending;
 	}
 
-	
+	/**
+	 * See if $user is on $this' friends list
+	 */
+	public function is_on_my_friends_list(Model_Owner $user) {
+		$my_friend = new Model_Friend(array(
+			'email'      => $user->email,
+			'creator_id' => $this->id,
+		));
+
+		return $my_friend->loaded();
+	}
+
+	/**
+	 * See if $this is on $user's friends list
+	 */
+	public function is_on_friends_friends_list(Model_Owner $user) {
+		$friends_friend = new Model_Friend(array(
+			'email'      => $this->email,
+			'creator_id' => $user->id,
+		));
+
+		return $friends_friend->loaded();
+	}
+
+	/**
+	 * See if $this and $user are both on each other's friends list
+	 */
+	public function is_friends_with(Model_Owner $user) {
+		return ($this->is_on_my_friends_list($user) 
+			&& $this->is_on_friends_friends_list($user));
+	}
+
+
 }
