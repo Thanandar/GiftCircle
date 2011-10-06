@@ -150,4 +150,29 @@ class Model_Owner extends Model_User {
 			->find_all();
 	}
 
+	public function subscribe_to_list(Model_List $list) {
+		$friendlist = $this->get_friendlist($list);
+		$friendlist->subscribe();
+	}
+
+	public function unsubscribe_from_list(Model_List $list) {
+		$friendlist = $this->get_friendlist($list);
+		$friendlist->unsubscribe();
+	}
+
+	private function get_friendlist(Model_List $list) {
+		$friendlists = $list->friendlists
+			->join('friends')
+				->on('friends.id', '=', 'friendlist.friend_id')
+			->where('friends.email', '=', $this->email)
+			->find_all();
+		
+		if (!count($friendlists)) {
+			throw new Exception('Cannot find connection to list');
+		}
+
+		return $friendlists[0];
+	}
+
+
 }

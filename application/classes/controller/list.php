@@ -201,6 +201,7 @@ class Controller_List extends Controller_Page {
 		$view->list = $list;
 		$view->gifts = $list->gifts->find_all();
 		$view->friends = $list->friends->find_all();
+		$view->subscribed = $list->is_user_subscribed($this->me());
 		$view->me = $this->me();
 
 		if ($_POST) {
@@ -373,5 +374,38 @@ class Controller_List extends Controller_Page {
 
 	}
 
+	public function action_unsubscribe() {
+		$list_id = $this->request->param('id');
+		$list = new Model_List($list_id);
+		$this->redirect_if_not_on_list();
+
+		if (!$list->is_user_subscribed($this->me())) {
+			Message::add('danger', 'You are already unsubscribed from this list');
+			Request::current()->redirect('list/friend/' . $list->id);
+		}
+
+		$me = new Model_Owner($this->me()->id);
+
+		$me->unsubscribe_from_list($list);
+		Message::add('success', 'Unsubscribed from this list');
+		Request::current()->redirect('list/friend/' . $list->id);
+	}
+
+	public function action_subscribe() {
+		$list_id = $this->request->param('id');
+		$list = new Model_List($list_id);
+		$this->redirect_if_not_on_list();
+
+		if ($list->is_user_subscribed($this->me())) {
+			Message::add('danger', 'You are already subscribed to this list');
+			Request::current()->redirect('list/friend/' . $list->id);
+		}
+
+		$me = new Model_Owner($this->me()->id);
+
+		$me->subscribe_to_list($list);
+		Message::add('success', 'Subscribed to this list');
+		Request::current()->redirect('list/friend/' . $list->id);
+	}
 
 }

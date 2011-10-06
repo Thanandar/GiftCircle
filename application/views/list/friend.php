@@ -128,9 +128,13 @@
 		<?php } ?>
 
 		<p>
+			<?php if ($subscribed) { ?>
+			You are subscribed to this list
+			<input type="button" class="btn" value="Unsubscribe" onclick="location.href='/list/unsubscribe/<?php echo $list->id ?>'" />
+			<?php } else { ?>
 			Subscribe to this list
-			<input type="button" class="btn" value="Unsubscribe" />
-			<input type="button" class="btn" value="Subscribe" />
+			<input type="button" class="btn" value="Subscribe" onclick="location.href='/list/subscribe/<?php echo $list->id ?>'" />
+			<?php } ?>
 		</p>
 
 
