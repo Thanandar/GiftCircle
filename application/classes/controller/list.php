@@ -14,6 +14,26 @@ class Controller_List extends Controller_Page {
 		Request::current()->redirect('');
 	}
 
+
+	public function action_my() {
+		if (!$this->me()->id) {
+			Request::current()->redirect('');
+		}
+
+		$this->template->title = 'My Lists';
+
+		$view = View::factory('list/my');
+		$me = ORM::factory('owner', $this->me()->id);
+
+		$view->my_lists = $me->lists
+			// TODO: this should be by created date
+			->order_by('name', 'ASC')
+			->find_all();
+		
+		$this->template->content = $view;
+	}
+
+
 	private function all_my_lists() {
 		// get an array of all my lists, their total items and how many friends
 		// they have
@@ -90,7 +110,6 @@ class Controller_List extends Controller_Page {
 	public function action_all() {
 		Request::current()->redirect('home/dashboard');
 	}
-
 
 
 	public function action_add() {
