@@ -68,7 +68,8 @@
 							}
 						} else {
 							if ($reserver->id) {
-								echo HTML::chars($reserver->firstname . ' ' . $reserver->surname);
+								echo '<em>Taken</em>';
+								//echo HTML::chars($reserver->firstname . ' ' . $reserver->surname);
 							} else {
 								echo '<em>Up for grabs</em>';
 							}
