@@ -11,5 +11,14 @@ class Model_List extends ORM {
 		'friends' => array('through' => 'friends_lists'),
 	);
 
+	public function contains_me() {
+		$my_email = Auth::instance()->get_user()->email;
+		$friends = $this->friends;
+		$me = $friends->where('email', '=', $my_email)->find_all();
+		count($me);
+		print_r($me);
+		return count($friends->where('email', '=', $my_email));
+	}
+
 }
 	

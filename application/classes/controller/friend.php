@@ -10,9 +10,9 @@ class Controller_Friend extends Controller_Page {
 		$this->template->title = 'My Friends';
 
 		$view = View::factory('friend/list');
-		$view->friends = ORM::factory('friend')
-			->where('creator_id', '=', $this->me()->id)
-			->find_all();
+		
+		$me = new Model_Owner($this->me()->id);
+		$view->friends = $me->confirmed_friends();
 
 		$this->template->content = $view;
 	}
@@ -45,16 +45,21 @@ class Controller_Friend extends Controller_Page {
 		$view = View::factory('friend/view');
 		$view->friend = $friend;
 		
-		$user = ORM::factory('owner')
-			->where('email', '=', $friend->email)
-			->find_all();
+		$user = new Model_Owner(array(
+			'email' => $friend->email,
+		));
+		
 
 		
-		// $view->friends_lists = ORM::factory('list')
-		// 	->where('owner_id', '=', $user->id)
-		// 	->find_all();
+		$friends_lists = ORM::factory('list')
+			->where('owner_id', '=', $user->id)
+			->find_all();
 
-		// $view->friends_lists = $friends_lists;
+		foreach ($friends_lists as $list) {
+			echo($list->name . $list->contains_me());
+		}
+
+		$view->friends_lists = $friends_lists;
 		
 
 		$view->friend_user = count($user) ? $user : null;

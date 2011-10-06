@@ -72,4 +72,29 @@ class Model_Owner extends Model_User {
 	}
 
 
+	/**
+	 * Get all friends that also have $this as a friend
+	 * 
+	 * @return {Model_Friend} friends that are friends with you
+	 */
+	public function confirmed_friends() {
+		return ORM::factory('friend')
+			// get all my friends
+			->where('friend.creator_id', '=', $this->id)
+			
+			// // get my friends user accounts
+			->join('users')
+				->on('users.email', '=', 'friend.email')
+			
+			// get all their friends
+			->join(array('friends', 'friends_friends'))
+				->on('friends_friends.creator_id', '=', 'users.id')
+			
+			// get only their friends that are me
+			->where('friends_friends.email', '=', $this->email)
+			->find_all();		
+	}
+
+
+
 }
