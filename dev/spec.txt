@@ -66,9 +66,15 @@ Forget password
 	* Password changed
 	* Logged in
 
+View dashboard
+	* See friend requests
+	* See my lists
+	* See friends' lists
+	* See my shopping list
+
 Accept friend request
 	* Login, see pending friend requests
-	- Click accept
+	* Click accept
 	- Unconfirmed friend becomes Confirmed friend
 	- Friends are on eachother's Friend lists
 	- Friends are subscribed to eachother's lists
@@ -77,17 +83,17 @@ Accept friend request
 
 Cancel friend request
 	* Login, see pending friend requests
-	- Click cancel
+	* Click cancel
 	- You get removed from all Unconfirmed friend's Circles
 	- Unconfirmed friend gets removed from all your Circles
 	- Notification goes
 
 User A creates a list. 
-	+ List is visible in "My lists" and "Friends lists" of Circle
+	* List is visible in "My lists" and "Friends lists" of Circle
 
 Add a gift to list.
 	+ User finds a gift (browsing affiliates, Google, etc)
-	+ User manually enteres gift details
+	+ User manually enters gift details
 
 Add a new friend to a list, using friend's email address.
 	Email already added to one of your lists:
@@ -127,18 +133,18 @@ Delete a gift
 		* Gift is deleted
 
 View friend
-	- See their lists that you're on
+	* See their lists that you're on
 
 View friends' lists
 	* See list of gifts
-	+ See which gifts are taken / available
+	* See which gifts are taken / available
 	- See whether subscribed or not on each list
 	- Option to subscribe/unsubscribe on individual list page
 
 Reserve a gift from User A's list
 	* User B reserves gift
 	* Gift added to User B's shopping list
-	+ Gift is shown as "Taken" when User C tries to views it
+	* Gift is shown as "Taken" when User C tries to views it
 
 Unreserving a gift
 	* User B unreserves gift
@@ -149,7 +155,7 @@ Buy a gift from shopping list
 	+ User B browses for gift
 	* User B marks gift as bought
 	- User B automatically unsubscribed from Circle
-	- user B given option to re-subscribe to Circle
+	- User B given option to re-subscribe to Circle
 
 Removing User B from a gift list
 	If User B has not reserved/bought a gift from the list:
@@ -161,7 +167,7 @@ Removing User B from a gift list
 			* Gift removed from User B's shopping list
 			* Gift stays "Taken" (reserved) on A's list
 		Gift bought:
-			+Gift stays "Taken" (bought) on A's list
+			* Gift stays "Taken" (bought) on A's list
 	* User B removed longer on User A's list
 
 Deleting User B from User A's Friend list
@@ -177,6 +183,8 @@ Deleting User B from User A's Friend list
 			* Gift stays "Taken" on B's list
 		+ User B removed from all User A's lists
 		- User A removed from all User B's lists
+		* User B no longer User A's friend
+		- User A no longer User B's friend
 	Unconfirmed friend (registered or unregistered):
 		* Warning: "Are you sure?"
 		- Removed from pending friend list
