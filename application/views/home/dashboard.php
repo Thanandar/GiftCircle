@@ -31,6 +31,13 @@
 	echo View::factory('list/all-shopping')
 		->set('gifts', $my_shopping_list);
 	?>
+
+	<div class="well">
+		<a class="btn" href="/gift/shopping">View all gifts on shopping list</a>
+	</div>
+
+
+
 </div>
 
 <div class="span4">

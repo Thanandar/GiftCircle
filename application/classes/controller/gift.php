@@ -10,6 +10,22 @@ class Controller_Gift extends Controller_Page {
 		parent::before();
 	}
 
+	public function action_shopping() {
+		if (!$this->me()->id) {
+			Request::current()->redirect('');
+		}
+
+		$this->template->title = 'My Shopping List';
+
+		$view = View::factory('gift/shopping');
+		$me = ORM::factory('owner', $this->me()->id);
+
+		$view->my_shopping_list = $me->shopping_list();
+		
+		$this->template->content = $view;
+	}
+
+
 	private function redirect_if_not_owner() {
 		$gift_id = $this->request->param('id');
 		$gift = new Model_Gift($gift_id);
