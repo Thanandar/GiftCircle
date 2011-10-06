@@ -217,6 +217,7 @@ class Controller_Gift extends Controller_Page {
 
 
 	private function shopping_list() {
+		// TODO: this should be in the model
 		return ORM::factory('gift')
 			->where('reserver_id', '=', $this->me()->id)
 			->where('buyer_id', '=', 0)

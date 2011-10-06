@@ -88,28 +88,9 @@ class Controller_List extends Controller_Page {
 
 
 	public function action_all() {
-		if (!$this->me()->id) {
-			Request::current()->redirect('');
-		}
-
-		$this->template->title = 'Home';
-
-		$view = View::factory('list/all');
-
-		$view->pending = ORM::factory('owner', $this->me()->id)
-			->pending_friend_requests();
-
-		$view->all_mine = View::factory('list/all-mine')
-			->set('lists', $this->all_my_lists());
-
-		$view->all_friends = View::factory('list/all-friends')
-			->set('lists', $this->friends_lists());
-
-		$view->all_shopping = View::factory('list/all-shopping')
-			->set('gifts', $this->my_shopping_list());
-
-		$this->template->content = $view;
+		Request::current()->redirect('home/dashboard');
 	}
+
 
 
 	public function action_add() {

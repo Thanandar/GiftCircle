@@ -15,16 +15,17 @@ if ($logged_in) {
 	<div class="fill">
 		<div class="container">
 			<?php if ($logged_in) { ?>
-				<a class="brand" href="/list/all">Gift Circle</a>
+				<a class="brand" href="/home/dashboard">Gift Circle</a>
 				<ul class="nav">
-					<li><a href="/list/all">Gift Lists</a></li>
+					<li><a href="/home/dashboard">Dashboard</a></li>
+					<li><a href="/list/my">My Lists</a></li>
+					<li><a href="/gift/shopping">My Shopping List</a></li>
 					<li><a href="/friend/list">My Friends</a></li>
-					<li><a href="/home/features">Features</a></li>
 					<li><a href="/home/support">Support</a></li>
 					<li><a href="/home/faqs">FAQs</a></li>
 				</ul>
 			<?php } else { ?>
-			<a class="brand" href="/">Gift Circle</a>
+				<a class="brand" href="/">Gift Circle</a>
 				<ul class="nav">
 					<li><a href="/home/features">Features</a></li>
 					<li><a href="/home/support">Support</a></li>

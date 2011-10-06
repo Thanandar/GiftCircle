@@ -71,7 +71,7 @@
 		<?php if (count($circle)) { ?>
 		<table>
 			<?php foreach ($circle as $friend) { ?>
-			<tr><td><?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?></td><td>✘</td></tr>
+			<tr><td><?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?></tr>
 			<?php } ?>
 		</table>
 		<?php } else { ?>

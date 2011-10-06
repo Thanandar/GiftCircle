@@ -27,5 +27,33 @@ class Controller_Home extends Controller_Page {
 		$this->template->content = View::factory('home/faqs');
 	}
 
+	public function action_dashboard() {
+		if (!$this->me()->id) {
+			Request::current()->redirect('');
+		}
+
+		$config = Kohana::$config->load('giftcircle.dashboard');
+
+		$this->template->title = 'Dashboard';
+
+		$view = View::factory('home/dashboard');
+		$me = ORM::factory('owner', $this->me()->id);
+
+		$view->pending = $me->pending_friend_requests();
+		
+		$view->my_lists = $me->lists
+			// TODO: this should be by creted date
+			->order_by('name', 'ASC')
+			->limit($config['my-lists'])
+			->find_all();
+		
+		$view->friends_lists = $me->friends_lists();
+		
+		$view->my_shopping_list = $me->shopping_list();
+
+		$this->template->content = $view;
+	}
+
+
 
 }

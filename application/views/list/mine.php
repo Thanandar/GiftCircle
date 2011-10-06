@@ -39,7 +39,7 @@
 		<input type="button" class="btn" value="Edit this list" onclick="location.href='/list/edit/<?php echo $list->id; ?>'"/>
 		<input type="button" class="btn danger" a href="" onclick="if (confirm('Are you sure you want to delete this list?\n\nThis will remove all gifts on this list too.')) {location.href='/list/delete/<?php echo $list->id; ?>'}" value="Delete this list" />
 		or
-		<a href="/list/all">back to all lists</a>
+		<a href="/list/my">back to all lists</a>
 	</div>
 
 

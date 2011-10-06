@@ -43,6 +43,10 @@
 	</tbody>
 </table>
 
+<div class="well">
+	<a class="btn" href="/gift/to_buy">View all gifts on shopping list</a>
+</div>
+
 
 <?php } else { ?>
 	

@@ -24,5 +24,9 @@ class Model_List extends ORM {
 		return count($this->gifts->find_all());
 	}
 
+	public function total_friends() {
+		return count($this->friends->find_all());
+	}
+
 }
 	
