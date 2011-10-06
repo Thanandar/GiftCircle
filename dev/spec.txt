@@ -82,7 +82,7 @@ Accept friend request
 	* Click accept
 	* Unconfirmed friend becomes Confirmed friend
 	* Friends are on eachother's Friend lists
-	- Friends are subscribed to eachother's lists
+	* Friends are subscribed to eachother's lists
 	* Friends can see each others Lists where they are in the Circle
 	* Notification goes
 
@@ -142,8 +142,8 @@ View friend
 View friends' lists
 	* See list of gifts
 	* See which gifts are taken / available
-	- See whether subscribed or not on each list
-	- Option to subscribe/unsubscribe on individual list page
+	* See whether subscribed or not on each list
+	* Option to subscribe/unsubscribe on individual list page
 
 Reserve a gift from User A's list
 	* User B reserves gift
@@ -193,7 +193,7 @@ Deleting User B from User A's Friend list
 		* Warning: "Are you sure?"
 		- Removed from pending friend list
 	* No emails sent
-		
+
 Deleting a list
 	* Confirmation required.
 	* No emails sent
