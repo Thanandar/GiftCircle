@@ -18,8 +18,8 @@ class Model_Friend extends ORM {
 		parent::save($validation);
 	}
 
-	private function get_user() {
-		return new Model_User(array(
+	public function get_user() {
+		return new Model_Owner(array(
 			'email' => $this->email,
 		));
 	}

@@ -35,17 +35,42 @@ $fullname = HTML::chars($friend->firstname . ' ' . $friend->surname);
 
 	<?php if ($friend_user) { ?>
 
-	<h2><?php echo $fullname; ?>'s lists <!-- that you're on --></h2>
+		<h2><?php echo $fullname; ?>'s lists <!-- that you're on --></h2>
+		<?php if (count($friends_lists)) { ?>
+			
+			<table class="zebra-striped">
+				<thead>
+					<tr>
+						<th>List name</th>
+						<th>Total gifts</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($friends_lists as $list) { ?>
+					<tr>
+						<td>
+							<a href="/list/friend/<?php echo $list->id; ?>">
+								<?php echo HTML::chars($list->name); ?>
+							</a>
+						</td>
+						<td><?php echo HTML::chars($list->total_gifts()); ?></td>
+					</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+			
+		<?php } else { ?>
 
-	<div class="warning alert-message">
-		<?php echo Message::e('friend', 'not-on-any-lists', $fullname) ?>
-	</div>
+			<div class="warning alert-message">
+				<?php echo Message::e('friend', 'not-on-any-lists', $fullname) ?>
+			</div>
+		<?php } ?>
 
 	<?php } else { ?>
 
-	<div class="warning alert-message">
-		<?php echo Message::e('friend', 'not-registered', $fullname) ?>
-	</div>
+		<div class="warning alert-message">
+			<?php echo Message::e('friend', 'not-registered', $fullname) ?>
+		</div>
 
 	<?php } ?>
 

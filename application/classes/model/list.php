@@ -20,5 +20,9 @@ class Model_List extends ORM {
 		return count($friends->where('email', '=', $my_email));
 	}
 
+	public function total_gifts() {
+		return count($this->gifts->find_all());
+	}
+
 }
 	

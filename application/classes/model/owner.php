@@ -78,9 +78,8 @@ class Model_Owner extends Model_User {
 	 * @return {Model_Friend} friends that are friends with you
 	 */
 	public function confirmed_friends() {
-		return ORM::factory('friend')
-			// get all my friends
-			->where('friend.creator_id', '=', $this->id)
+		// get all my friends
+		return $this->friends
 			
 			// // get my friends user accounts
 			->join('users')
@@ -95,6 +94,22 @@ class Model_Owner extends Model_User {
 			->find_all();		
 	}
 
+	public function lists_containing_email($email) {
+		return $this->lists
 
+			// get their lists
+			->join('friends_lists')
+				->on('friends_lists.list_id', '=', 'list.id')
+			
+			// get their friends
+			->join('friends')
+				->on('friends.id', '=', 'friends_lists.friend_id')			 
+			
+			// get only their friends that are me
+			->where('friends.email', '=', $email)
+			
+			->find_all()
+		;
+	}
 
 }
