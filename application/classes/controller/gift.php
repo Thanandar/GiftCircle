@@ -53,6 +53,8 @@ class Controller_Gift extends Controller_Page {
 		$view = View::factory('gift/add');
 		$view->list = $list;
 
+		$view->other_gifts = $list->gifts->find_all();
+
 		$view->categories = ORM::factory('category')
 			->find_all()
 			->as_array('id', 'name');
@@ -85,6 +87,8 @@ class Controller_Gift extends Controller_Page {
 		$view = View::factory('gift/edit');
 
 		$view->gift = $gift;
+
+		$view->other_gifts = $gift->list->gifts->find_all();
 
 		$view->categories = ORM::factory('category')
 			->find_all()
