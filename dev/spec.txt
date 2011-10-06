@@ -72,6 +72,11 @@ View dashboard
 	* See friends' lists
 	* See my shopping list
 
+View my shopping list
+	* See gifts I've reserved but not bought
+	* Click on gift to start buying it
+
+
 Accept friend request
 	* Login, see pending friend requests
 	* Click accept
