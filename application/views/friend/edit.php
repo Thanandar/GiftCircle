@@ -43,15 +43,10 @@
 </div>
 
 <div class="span4">
-	<h3>On your shopping list</h3>
-	<ul>
-		<li>COD MW3</li>
-		<li>Barbie</li>
-		<li>Starwars lego</li>
-		<li>The Rock DVD</li>
-	</ul>
+	<h2><?php echo Message::e('shopping', 'my-list') ?></h2>
+	
+	<?php echo Request::factory('gift/to_buy')->execute() ?>
 </div>
-
 
 
 

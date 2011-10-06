@@ -132,6 +132,8 @@ class Controller_Gift extends Controller_Page {
 		$view = View::factory('gift/browse');
 		$view->list = $list;
 		$view->shops = ORM::factory('shop')->find_all();
+		$view->other_gifts = $list->gifts->find_all();
+
 		$this->template->content = $view;
 	}
 

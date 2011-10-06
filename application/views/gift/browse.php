@@ -38,10 +38,11 @@
 <div class="span4">
 	<h3>On your list</h3>
 	<ul>
-		<li>COD MW3</li>
-		<li>Barbie</li>
-		<li>Starwars lego</li>
-		<li>The Rock DVD</li>
+		<?php foreach ($other_gifts as $gift) { ?>
+		<li>
+			<?php echo HTML::chars($gift->name) ?>
+		</li>
+		<?php } ?>
 	</ul>
 </div>
 
