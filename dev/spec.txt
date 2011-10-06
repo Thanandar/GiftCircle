@@ -75,18 +75,17 @@ View dashboard
 Accept friend request
 	* Login, see pending friend requests
 	* Click accept
-	- Unconfirmed friend becomes Confirmed friend
-	- Friends are on eachother's Friend lists
+	* Unconfirmed friend becomes Confirmed friend
+	* Friends are on eachother's Friend lists
 	- Friends are subscribed to eachother's lists
-	- Friends can see each others Lists where they are in the Circle
-	- Notification goes
+	* Friends can see each others Lists where they are in the Circle
+	* Notification goes
 
 Cancel friend request
 	* Login, see pending friend requests
 	* Click cancel
-	- You get removed from all Unconfirmed friend's Circles
-	- Unconfirmed friend gets removed from all your Circles
-	- Notification goes
+	* You get removed from all Unconfirmed friend's Circles
+	* Notification goes
 
 User A creates a list. 
 	* List is visible in "My lists" and "Friends lists" of Circle

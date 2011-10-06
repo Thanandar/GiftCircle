@@ -93,13 +93,55 @@ class Controller_Friend extends Controller_Page {
 	}
 
 	public function action_request_accept() {
-		echo 'accept friend request from user id ' . $this->request->param('id');
-		die();
+		
+		$friend = new Model_Owner($this->request->param('id'));
+
+		if (!$friend->is_on_my_friends_list($this->me())) {
+			Message::add('error', 'This person does not want to be your friend.');
+			Request::current()->redirect('');
+		}
+
+		if ($friend->is_on_friends_friends_list($this->me())) {
+			Message::add('error', 'You are already friends with this person.');
+			Request::current()->redirect('');
+		}
+
+		$new_friend = new Model_Friend;
+		$new_friend->creator_id = $this->me()->id;
+		$new_friend->firstname  = $friend->firstname;
+		$new_friend->surname    = $friend->surname;
+		$new_friend->email      = $friend->email;
+		$new_friend->save();
+
+		Message::add('success', 'Confirmed friendship');
+		Request::current()->redirect('');
+
 	}
 
 	public function action_request_cancel() {
-		echo 'cancel friend request from user id ' . $this->request->param('id');
-		die();
+
+		$friend_user = new Model_Owner($this->request->param('id'));
+
+		if (!$friend_user->is_on_my_friends_list($this->me())) {
+			Message::add('error', 'This person does not want to be your friend.');
+			Request::current()->redirect('');
+		}
+
+		if ($friend_user->is_on_friends_friends_list($this->me())) {
+			Message::add('error', 'You are already friends with this person.');
+			Request::current()->redirect('');
+		}
+
+		$mes = $friend_user->friends
+			->where('email', '=', $this->me()->email)
+			->find_all();
+
+		foreach ($mes as $me) {
+			$me->delete();
+		}
+
+		Message::add('success', 'Cancelled friendship');
+		Request::current()->redirect('');
 	}
 
 } // End Welcome
