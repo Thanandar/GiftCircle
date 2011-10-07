@@ -126,9 +126,8 @@ Edit a gift
 	Avilable gift:
 		+ Gift is edited
 	Unavilable gift:
-		- Warning: "Someone may have already purchased this gift"
-		- Immediate notification: "User A has edited a gift you have reserved/bought"
-		+ Gift is edited
+		* Warning: "Someone has reserved or bought this gift so you are unable to edit it."
+		* Gift cannot be edited
 
 Delete a gift
 	Avilable gift:

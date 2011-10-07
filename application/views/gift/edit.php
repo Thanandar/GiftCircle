@@ -61,7 +61,7 @@
 
 			<div class="actions">
 				<input type="submit" value="Update item" class="btn primary" /> or
-				<a href="/list/mine/1">cancel</a>
+				<a href="/list/mine/<?php echo $gift->list->id; ?>">cancel</a>
 			</div>
 		</fieldset>
 	</form>
