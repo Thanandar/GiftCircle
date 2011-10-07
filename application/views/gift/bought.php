@@ -3,6 +3,16 @@
 
 	<h2>You have bought '<?php echo HTML::chars($gift->name); ?>'</h2>
 
+	<?php if ($previously_subscribed) { ?>
+	<div class="alert-message info">
+		<p>
+			You have been automatically unsubscribed from the list "<?php echo HTML::chars($gift->list->name) ?>".
+
+			<input class="btn" type="button" value="Subscribe" onclick="location.href='/list/subscribe/<?php echo $gift->list->id; ?>'" />
+		</p>
+	</div>
+	<?php } ?>
+
 	<div class="well">
 		<input type="button" class="btn" value="Back to my lists" onclick="location.href='/'" />
 	</div>

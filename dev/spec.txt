@@ -158,8 +158,8 @@ Unreserving a gift
 Buy a gift from shopping list
 	+ User B browses for gift
 	* User B marks gift as bought
-	- User B automatically unsubscribed from Circle
-	- User B given option to re-subscribe to Circle
+	* User B automatically unsubscribed from Circle
+	* User B given option to re-subscribe to Circle
 
 Removing User B from a gift list
 	If User B has not reserved/bought a gift from the list:

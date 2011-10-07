@@ -196,6 +196,14 @@ class Controller_Gift extends Controller_Page {
 		$view = View::factory('gift/bought');
 		$view->gift = $gift;
 
+		$view->list = $gift->list;
+
+		$view->previously_subscribed = $view->list->is_logged_in_user_subscribed();
+
+		// automnatically unsubscribe from list
+		$me = new Model_Owner($this->me()->id);
+		$me->unsubscribe_from_list($view->list);
+
 		$view->shopping_list = $this->shopping_list();
 
 		$this->template->content = $view;

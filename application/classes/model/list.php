@@ -42,5 +42,9 @@ class Model_List extends ORM {
 		return $friendlists[0]->is_subscribed();
 	}
 
+	public function is_logged_in_user_subscribed() {
+		return $this->is_user_subscribed(Auth::instance()->get_user());
+	}
+
 }
 	
