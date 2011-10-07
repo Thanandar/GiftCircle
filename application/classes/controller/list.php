@@ -227,6 +227,11 @@ class Controller_List extends Controller_Page {
 					'email'      => $email,
 					'creator_id' => $this->me()->id,
 				));
+
+				if ($friend->is_on_list($list)) {
+					Message::add('warning', $friend->firstname . ' ' . $friend->surname . ' is already on this list.');
+					continue;
+				}
 			} else {
 				$friend = new Model_Friend;
 				$friend->creator   = $this->me();

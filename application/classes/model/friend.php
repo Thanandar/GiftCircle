@@ -128,4 +128,11 @@ class Model_Friend extends ORM {
 		Email::send($to, $from, $subject, $message);
 	}
 
+	public function is_on_list(Model_List $list) {
+		return ORM::factory('friendlist', array(
+				'friend_id' => $this->id,
+				'list_id' => $list->id,
+			))->loaded();
+	}
+
 }

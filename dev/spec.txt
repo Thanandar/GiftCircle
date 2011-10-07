@@ -103,8 +103,8 @@ Add a new friend to a list, using friend's email address.
 	Email already your friend:
 		Not on current list
 			* Existing friend is added to your list
-		Already on list
-			- Warning "User B is already on your list"
+		Already on list:
+			* Warning "User B is already on your list"
 	Unregistered user:
 		- Delayed notification: "User A would like to add you to their list, click here to sign up."
 		* Added to your Friend list as pending
