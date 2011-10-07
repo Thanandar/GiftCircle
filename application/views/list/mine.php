@@ -21,7 +21,11 @@
 				<td><?php echo HTML::chars($gift->category->name); ?></td>
 				<td>
 					<span class="label important">
-						<a onclick="return confirm('Are you sure you want to delete this gift?')" href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
+						<?php if ($gift->reserver_id) { ?>
+							<a onclick="return confirm('Are you sure you want to delete this gift?\n\nSomeone may have already purchased this gift.')" href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
+						<?php } else { ?>
+							<a onclick="return confirm('Are you sure you want to delete this gift?')" href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
+						<?php } ?>
 					</span>
 				</td>
 			</tr>

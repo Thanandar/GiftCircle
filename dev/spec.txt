@@ -133,7 +133,7 @@ Delete a gift
 	Avilable gift:
 		* Gift is deleted
 	Unavilable gift:
-		- Warning: "Someone may have already purchased this gift"
+		* Warning: "Someone may have already purchased this gift"
 		- Immediate notification: "User A has deleted a gift you have reserved/bought"
 		* Gift removed from User B's shopping list (if reserved)
 		* Gift is deleted
