@@ -12,7 +12,9 @@ class Model_Gift extends ORM {
 	public function save(Validation $validation = NULL) {
 		if (!$this->loaded()) {
 			// creating a new gift
-			$this->url = $this->add_tracking_to_url($this->url);
+			if ($this->url) {
+				$this->url = $this->add_tracking_to_url($this->url);
+			}
 		}
 
 
@@ -20,6 +22,7 @@ class Model_Gift extends ORM {
 	}
 
 	private function add_tracking_to_url($url) {
+		// This needs moving to another class and making work properly
 		return 'http://www.awin1.com/cread.php?awinmid=530&awinaffid=125132&clickref=&p=' . urlencode($url);
 	}
 

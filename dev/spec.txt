@@ -105,7 +105,7 @@ Add a gift to list.
 	* User browses web normally
 	- User chooses product category and browses affiliate link [GIFTCIRCLE-57]
 	+ User manually enters gift details
-	- Affiliate tracking is added to link [GIFTCIRCLE-62]
+	- If supplied URL: Affiliate tracking is added to link [GIFTCIRCLE-62]
 
 Add a new friend to a list, using friend's email address.
 	Email already your friend:
