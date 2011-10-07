@@ -33,59 +33,6 @@ class Controller_List extends Controller_Page {
 		$this->template->content = $view;
 	}
 
-
-	private function all_my_lists() {
-		// get an array of all my lists, their total items and how many friends
-		// they have
-
-		$lists = ORM::factory('list')
-			->where('owner_id', '=', $this->me())
-			->find_all();
-		
-		$r = array();
-
-		foreach ($lists as $list) {
-			$total_items = $list->gifts->count_all();
-			$total_friends = $list->friends->count_all();
-
-			$list = $list->as_array();
-			$list['total_items'] = $total_items;
-			$list['total_friends'] = $total_friends;
-
-			$r[] = (object) $list;
-		}
-
-		return $r;
-	}
-
-	private function friends_lists() {
-		// get all the lists your email is on
-
-		$email = $this->me()->email;
-		$all_lists = array();
-		
-		// find all the "frriend" instances that you are
-		$friends = ORM::factory('friend')
-			->where('email', '=', $email)
-			->find_all();
-
-
-		foreach ($friends as $friend) {
-			$lists = $friend->lists->find_all();
-			foreach ($lists as $list) {
-				$total_items = $list->gifts->count_all();
-				$owner = $list->owner;
-
-				$list = $list->as_array();
-				$list['total_items'] = $total_items;				
-				$list['owner'] = $owner;
-				$all_lists[] = (object) $list;
-			}
-		}
-
-		return $all_lists;
-	}
-
 	private function redirect_if_not_owner() {
 		$list_id = $this->request->param('id');
 		$list = new Model_List($list_id);
@@ -94,18 +41,6 @@ class Controller_List extends Controller_Page {
 			Request::current()->redirect('user/noaccess');
 		}
 	}
-
-	private function my_shopping_list($include_bought = true) {
-		$gifts = ORM::factory('gift')
-			->where('reserver_id', '=', $this->me()->id);
-
-		if (!$include_bought) {
-			$gifts->where('buyer_id', '=', 0);
-		}
-		
-		return $gifts->find_all();
-	}
-
 
 	public function action_all() {
 		Request::current()->redirect('home/dashboard');
