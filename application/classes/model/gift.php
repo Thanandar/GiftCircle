@@ -9,6 +9,20 @@ class Model_Gift extends ORM {
 	);
 
 
+	public function save(Validation $validation = NULL) {
+		if (!$this->loaded()) {
+			// creating a new gift
+			$this->url = $this->add_tracking_to_url($this->url);
+		}
+
+
+		parent::save($validation);
+	}
+
+	private function add_tracking_to_url($url) {
+		return 'http://www.awin1.com/cread.php?awinmid=530&awinaffid=125132&clickref=&p=' . urlencode($url);
+	}
+
 	public function delete() {
 
 		// inform the reserver that the gift has been deleted
