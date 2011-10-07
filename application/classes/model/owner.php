@@ -62,7 +62,7 @@ class Model_Owner extends Model_User {
 	 * 
 	 * @param {mixed} $user Model_User or Model_Friend
 	 */
-	public function is_on_my_friends_list(object $user) {
+	public function is_on_my_friends_list($user) {
 		return $this->has_friend_with_email($user->email);
 	}
 
