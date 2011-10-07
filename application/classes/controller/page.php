@@ -7,13 +7,26 @@ class Controller_Page extends Controller_Template {
 	// whether to add CSS and JS
 	public $template_extras = true;
 
-	protected function me() {
+	/**
+	 * Get the currently logged in user
+	 * 
+	 * @param {string} $model Optional, return a different model instead of
+	 * 						  Model_User.
+	 * 
+	 * @return {mixed} stdClass if not logged in, Model_User or $model
+	 */
+	protected function me($model = null) {
 		$user = Auth::instance()->get_user();
-		if (!$user) {
+		if ($user) {
+			if ($model) {
+				$user = ORM::factory($model, $user->id);
+			}
+		} else {
 			$user = (object) array(
 				'id' => null,
 			);
 		}
+
 		return $user;
 	}
 

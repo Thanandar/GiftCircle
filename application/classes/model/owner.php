@@ -40,15 +40,30 @@ class Model_Owner extends Model_User {
 	}
 
 	/**
-	 * See if $user is on $this' friends list
+	 * See if $this has a friend with $email
+	 * 
+	 * @param {string} $email Friend's email
+	 * 
+	 * @return {bool} Whether they're a friend
 	 */
-	public function is_on_my_friends_list(Model_User $user) {
+	public function has_friend_with_email($email) {
 		$my_friend = new Model_Friend(array(
-			'email'      => $user->email,
+			'email'      => $email,
 			'creator_id' => $this->id,
 		));
 
 		return $my_friend->loaded();
+	}
+
+	/**
+	 * See if $user is on $this' friends list.
+	 * 
+	 * Uses $user->email to check
+	 * 
+	 * @param {mixed} $user Model_User or Model_Friend
+	 */
+	public function is_on_my_friends_list(object $user) {
+		return $this->has_friend_with_email($user->email);
 	}
 
 	/**

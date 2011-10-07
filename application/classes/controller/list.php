@@ -181,10 +181,13 @@ class Controller_List extends Controller_Page {
 			foreach (arr::get($_POST, 'id') as $friend_id) {
 				
 				$friend = new Model_Friend((int) $friend_id);
+
 				if (!$friend->loaded()) {
 					$view->errors[] = 'Could not find your friend.';
 					break;
 				}
+
+				// TODO: make sure you created your friends
 
 				$friend->add('lists', $list);
 				$added++;
@@ -218,12 +221,20 @@ class Controller_List extends Controller_Page {
 				continue;
 			}
 
-			$friend = new Model_Friend;
-			$friend->creator   = $this->me();
-			$friend->firstname = $firstname;
-			$friend->surname   = $surname;
-			$friend->email     = $email;
-			$friend->save();
+			// already got a friend with this email
+			if ($this->me('owner')->has_friend_with_email($email)) {
+				$friend = new Model_Friend(array(
+					'email'      => $email,
+					'creator_id' => $this->me()->id,
+				));
+			} else {
+				$friend = new Model_Friend;
+				$friend->creator   = $this->me();
+				$friend->firstname = $firstname;
+				$friend->surname   = $surname;
+				$friend->email     = $email;
+				$friend->save();
+			}
 
 			$friend->add('lists', $list);
 			$added++;
