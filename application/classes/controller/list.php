@@ -125,6 +125,33 @@ class Controller_List extends Controller_Page {
 		}
 	}
 
+	private function reserve_items(View &$view) {
+		if (!arr::get($_POST, 'reserve')) {
+			$view->errors = 'Please select some gifts to reserve';
+			return;	
+		}
+
+		$reserved = 0;
+		foreach (arr::get($_POST, 'reserve') as $gift_id) {
+			// TODO: check gift is on a list you're allowed to access
+			// TOOD: check gift has not been reserved by someone else
+
+			// add this gift to me
+			$me = new Model_Owner($this->me()->id);
+			$gift = new Model_Gift((int) $gift_id);
+			$gift->reserver_id = $me;
+			$gift->save();
+			
+			// this should work
+			//$gift->add('reserver', $me);
+			//$me->add('reservations', $gift);
+			$reserved++;
+		}
+
+		Message::add('success', __('Reserved ' . $reserved . ' gifts.'));
+		Request::current()->redirect('gift/buy');
+	}
+
 	// view a freind's list
 	public function action_friend() {
 		$this->redirect_if_not_on_list();
@@ -140,28 +167,7 @@ class Controller_List extends Controller_Page {
 		$view->me = $this->me();
 
 		if ($_POST) {
-			if (arr::get($_POST, 'reserve')) {
-				$reserved = 0;
-				foreach (arr::get($_POST, 'reserve') as $gift_id) {
-					// TODO: check gift is on a list you're allowed to access
-					// TOOD: check gift has not been reserved by someone else
-
-					// add this gift to me
-					$me = new Model_Owner($this->me()->id);
-					$gift = new Model_Gift((int) $gift_id);
-					$gift->reserver_id = $me;
-					$gift->save();
-					
-					// this should work
-					//$gift->add('reserver', $me);
-					//$me->add('reservations', $gift);
-					$reserved++;
-				}
-
-				Message::add('success', __('Reserved ' . $reserved . ' gifts.'));
-				Request::current()->redirect('gift/buy');
-			}
-			$view->errors = 'Please select some gifts to reserve';
+			$this->reserve_items($view);
 		}
 
 		$view->list_id = $this->request->param('id');
