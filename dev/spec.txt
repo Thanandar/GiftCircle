@@ -44,13 +44,19 @@ Immediate notification
 === ACTIONS ===
 ----------------
 
+View any page
+	- Track page view on Google Analytics [GIFTCIRCLE-78]
+	- User stays logged in for a period of time [GIFTCIRLCE-46]
+	- Pages look nice [GIFTCIRCLE-51] [GIFTCIRCLE-60]
+	- On live site [GIFTCIRLCE-52]
+
 Register
-	+ Fill in form
+	+ Fill in form [GIFTCIRCLE-32] [GIFTCIRCLE-11]
 	* No email sent
 	* Automatically logged in
 
 Login
-	+ Fill in form
+	+ Fill in form [GIFTCIRCLE-14]
 	* Logged in
 
 Log out
@@ -96,8 +102,10 @@ User A creates a list.
 	* List is visible in "My lists" and "Friends lists" of Circle
 
 Add a gift to list.
-	+ User finds a gift (browsing affiliates, Google, etc)
+	* User browses web normally
+	- User chooses product category and browses affiliate link [GIFTCIRCLE-57]
 	+ User manually enters gift details
+	- Affiliate tracking is added to link [GIFTCIRCLE-62]
 
 Add a new friend to a list, using friend's email address.
 	Email already your friend:
@@ -106,10 +114,10 @@ Add a new friend to a list, using friend's email address.
 		Already on list:
 			* Warning "User B is already on your list"
 	Unregistered user:
-		- Delayed notification: "User A would like to add you to their list, click here to sign up."
+		- Delayed notification: "User A would like to add you to their list, click here to sign up." [GIFTCIRCLE-67]
 		* Added to your Friend list as pending
 	Registered user:
-		- Delayed notification: "User A would like to add you to their list, click here to accept or cancel friendship."
+		- Delayed notification: "User A would like to add you to their list, click here to accept or cancel friendship." [GIFTCIRCLE-67]
 		* Added to your Friend list as pending
 
 Add existing friend to a list, from Friend list
@@ -119,7 +127,7 @@ Add existing friend to a list, from Friend list
 		Unconfirmed friend:
 			* No email sent
 		Confirmed friend:
-			- Delayed notification: "User A has added you to their list. Click here to see it and manage your subscription"
+			- Delayed notification: "User A has added you to their list. Click here to see it and manage your subscription" [GIFTCIRCLE-67]
 			* User is automatically subscribed to list
 
 Edit a gift
@@ -158,7 +166,8 @@ Unreserving a gift
 	* Gift removed from User B's shopping list
 
 Buy a gift from shopping list
-	+ User B browses for gift
+	* User B buys gift using user-supplied URL
+	+ User B browses for gift from list of shops in product category [GIFTCIRCLE-57]
 	* User B marks gift as bought
 	* User B automatically unsubscribed from Circle
 	* User B given option to re-subscribe to Circle
@@ -180,20 +189,19 @@ Deleting User B from User A's Friend list
 	Confirmed friend:
 		If User B has ever reserved/bought any of User A's gifts
 			- Warning: "This will remove User B from all your lists and remove you from all User B's lists. Are you sure, this user might have bought you something?"
-			- Gift removed from User B's shopping list
+			- Gift removed from User B's shopping list [GIFTCIRCLE-79]
 			* Gift stays "Taken" on A's list
 		If User B has never reserved/bought any of User A's gifts
 			- Warning: "Are you sure? This will remove User B from all your lists and remove you from all User B's lists."
 		If User A has ever reserved/bought any of User B's gifts
-			- Gift removed from User A's shopping list
+			- Gift removed from User A's shopping list [GIFTCIRCLE-79]
 			* Gift stays "Taken" on B's list
 		+ User B removed from all User A's lists
-		- User A removed from all User B's lists
+		- User A removed from all User B's lists [GIFTCIRCLE-80]
 		* User B no longer User A's friend
-		- User A no longer User B's friend
+		- User A no longer User B's friend [GIFTCIRCLE-81]
 	Unconfirmed friend (registered or unregistered):
-		* Warning: "Are you sure?"
-		- Removed from pending friend list
+		* Not possible as no way to view unconfirmed friends
 	* No emails sent
 
 Deleting a list
@@ -206,11 +214,12 @@ Deleting account
 	* Confirmation required.
 	* No emails sent
 	* All gifts that user has bought or reserved stay "Taken" on their friends' lists
-	- Any of gifts that have been reserved by friends get removed from their shopping list
+	- Any of gifts that have been reserved by friends get removed from their shopping list [GIFTCIRCLE-79]
+	- User is removed from all friends' lists (including unconfirmed friends)
 
 Server runs cron script
 	At any time, if any Subscribed friends on a list have not been notified of any changes to the list that happened over 60 minutes ago:
-		- Email notification sent saying a list has been updated (not detailing changes)
+		- Email notification sent saying a list has been updated (not detailing changes) [GIFTCIRCLE-64] [GIFTCIRCLE-52]
 
 
 ------------------------
