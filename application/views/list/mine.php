@@ -68,7 +68,7 @@
 				</td>
 				<td width="18">
 					<span class="label important">
-						<a onclick="return confirm('Are you sure you want to remove this friend from this circle?')" href="/list/delete_friend/<?php echo $list->id; ?>-<?php echo $friend->id; ?>">✘</a>
+						<a onclick="return confirm('Are you sure, this friend might have already bought you something?')" href="/list/delete_friend/<?php echo $list->id; ?>-<?php echo $friend->id; ?>">✘</a>
 					</span>
 				</td>
 			</tr>
