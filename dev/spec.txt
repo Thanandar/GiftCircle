@@ -48,7 +48,7 @@ View any page
 	- Track page view on Google Analytics [GIFTCIRCLE-78]
 	- User stays logged in for a period of time [GIFTCIRLCE-46]
 	- Pages look nice [GIFTCIRCLE-51] [GIFTCIRCLE-60]
-	- On live site [GIFTCIRLCE-52]
+	- On live site [GIFTCIRCLE-52]
 
 Register
 	+ Fill in form [GIFTCIRCLE-32] [GIFTCIRCLE-11]
@@ -74,14 +74,13 @@ Forget password
 
 View dashboard
 	* See friend requests
-	* See my lists
+	+ See my lists, order by creation [GIFTCIRCLE-83]
 	* See friends' lists
 	* See my shopping list
 
 View my shopping list
-	* See gifts I've reserved but not bought
+	+ See gifts I've reserved but not bought [GIFTCIRCLE-84]
 	* Click on gift to start buying it
-
 
 Accept friend request
 	* Login, see pending friend requests
@@ -103,7 +102,7 @@ User A creates a list.
 
 Add a gift to list.
 	* User browses web normally
-	- User chooses product category and browses affiliate link [GIFTCIRCLE-57]
+	- User chooses product category and browses affiliate link [GIFTCIRCLE-57] [GIFTCIRCLE-86]
 	+ User manually enters gift details
 	- If supplied URL: Affiliate tracking is added to link [GIFTCIRCLE-62]
 
@@ -135,16 +134,17 @@ Edit a gift
 		+ Gift is edited
 	Unavilable gift:
 		* Warning: "Someone has reserved or bought this gift so you are unable to edit it."
-		* Gift cannot be edited
+		* Immediate notification: "User A has edited a gift you have reserved/bought"
+		* Gift is edited
 
 Delete a gift
 	Avilable gift:
-		* Gift is deleted
+		+ Gift is deleted [GIFTCIRCLE-85]
 	Unavilable gift:
 		* Warning: "Someone may have already purchased this gift"
+		+ Gift is deleted [GIFTCIRCLE-85]
 		* Immediate notification: "User A has deleted a gift you have reserved/bought"
 		* Gift removed from User B's shopping list (if reserved)
-		* Gift is deleted
 
 View friend
 	* See their lists that you're on
@@ -168,15 +168,15 @@ Unreserving a gift
 Buy a gift from shopping list
 	* User B buys gift using user-supplied URL
 	+ User B browses for gift from list of shops in product category [GIFTCIRCLE-57]
-	* User B marks gift as bought
+	+ User B marks gift as bought [GIFTCIRCLE-85]
 	* User B automatically unsubscribed from Circle
 	* User B given option to re-subscribe to Circle
 
 Removing User B from a gift list
 	If User B has not reserved/bought a gift from the list:
-		* Confirmation: "Are you sure, this user might have already bought you something?"
+		+ Confirmation: "Are you sure, this user might have already bought you something?" [GIFTCIRCLE-85]
 	If User B has reserved/bought gifts from the list:
-		* Confirmation: "Are you sure, this user might have already bought you something?"
+		+ Confirmation: "Are you sure, this user might have already bought you something?" [GIFTCIRCLE-85]
 		* No email notifications sent
 		Gift reserved:
 			* Gift removed from User B's shopping list
@@ -188,12 +188,13 @@ Removing User B from a gift list
 Deleting User B from User A's Friend list
 	Confirmed friend:
 		If User B has ever reserved/bought any of User A's gifts
-			- Warning: "This will remove User B from all your lists and remove you from all User B's lists. Are you sure, this user might have bought you something?"
+			- Warning: "This will remove User B from all your lists and remove you from all User B's lists. Are you sure, this user might have bought you something?" [GIFTCIRCLE-85]
 			- Gift removed from User B's shopping list [GIFTCIRCLE-79]
 			* Gift stays "Taken" on A's list
 		If User B has never reserved/bought any of User A's gifts
-			- Warning: "Are you sure? This will remove User B from all your lists and remove you from all User B's lists."
+			- Warning: "Are you sure? This will remove User B from all your lists and remove you from all User B's lists." [GIFTCIRCLE-85]
 		If User A has ever reserved/bought any of User B's gifts
+			- Warning: "This will remove User B from all your lists and remove you from all User B's lists. Are you sure, this user might have bought you something?" [GIFTCIRCLE-85]
 			- Gift removed from User A's shopping list [GIFTCIRCLE-79]
 			* Gift stays "Taken" on B's list
 		+ User B removed from all User A's lists
@@ -205,13 +206,15 @@ Deleting User B from User A's Friend list
 	* No emails sent
 
 Deleting a list
-	* Confirmation required.
+	+ Confirmation required. [GIFTCIRCLE-85]
 	* No emails sent
 	If any gifts are reserved:
 		* Gift is removed from reserver's shopping list
+	If any gifts have been reserved or bought:
+		- Immediate email to buyer/reserver saying a gift has been deleted
 
 Deleting account
-	* Confirmation required.
+	+ Confirmation required. [GIFTCIRCLE-85]
 	* No emails sent
 	* All gifts that user has bought or reserved stay "Taken" on their friends' lists
 	- Any of gifts that have been reserved by friends get removed from their shopping list [GIFTCIRCLE-79]
