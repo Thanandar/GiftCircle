@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title><?php echo $title ?> &mdash; GiftCircle</title>
 <?php foreach ($styles as $file => $type) echo "\t" . HTML::style($file, array('media' => $type)), PHP_EOL ?>
+<?php foreach ($scripts as $file) echo "\t" . HTML::script($file), PHP_EOL ?>
 </head>
 <body>
 
@@ -26,7 +27,6 @@
 <?php echo $content ?>
 
 
-<?php foreach ($scripts as $file) echo "\t" . HTML::script($file), PHP_EOL ?>
 
 <!-- footer -->
 		</div><!-- .row -->
