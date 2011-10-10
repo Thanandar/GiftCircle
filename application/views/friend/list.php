@@ -12,7 +12,6 @@
 				<th>Friend</th>
 				<th>Email</th>
 				<!-- <th>Birthday</th> -->
-				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -26,9 +25,6 @@
 				</td>
 				<td><?php echo HTML::chars($friend->email) ?></td>
 				<!-- <td>there's nowhere to add birthdays when adding friends</td> -->
-				<td>
-					<a href="/friend/delete/<?php echo $friend->id; ?>" onclick="return confirm('Are you sure you want to delete this friend?\n\nThis will remove them from all your lists too.')"><span class="label important">✘</span></a>
-				</td>
 			</tr>
 			<?php } ?>
 		</tbody>
