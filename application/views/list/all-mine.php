@@ -11,7 +11,6 @@ if (count($lists)) {
 			<th>List name</th>
 			<th>Total gifts</th>
 			<th>Friends in my circle</th>
-			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -24,7 +23,6 @@ if (count($lists)) {
 			</td>
 			<td><?php echo HTML::chars($list->total_gifts()); ?></td>
 			<td><?php echo HTML::chars($list->total_friends()); ?></td>
-			<td><a href="/list/delete/<?php echo $list->id; ?>" onclick="return confirm('Are you sure you want to delete this list?\n\nThis will remove all gifts on this list too.')"><span class="label important">✘</span></a></td>
 		</tr>
 		<?php } ?>
 	</tbody>
