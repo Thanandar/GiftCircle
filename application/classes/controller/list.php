@@ -149,7 +149,7 @@ class Controller_List extends Controller_Page {
 		}
 
 		Message::add('success', __('Reserved ' . $reserved . ' gifts.'));
-		Request::current()->redirect('gift/buy');
+		Request::current()->redirect('gift/shopping');
 	}
 
 	// view a freind's list
