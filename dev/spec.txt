@@ -10,6 +10,7 @@ For Version 1 of GiftCircle
 - To do
 + Working
 * Complete
+[GIFTCIRCLE-x] Internal open issue in Jira: http://jira.devba.se/browse/GIFTCIRCLE-x
 
 ----------------
 === GLOSSARY ===
@@ -51,7 +52,7 @@ View any page
 	- On live site [GIFTCIRCLE-52]
 
 Register
-	+ Fill in form [GIFTCIRCLE-32] [GIFTCIRCLE-11]
+	+ Fill in form [GIFTCIRCLE-35] [GIFTCIRCLE-11]
 	* No email sent
 	* Automatically logged in
 
@@ -79,7 +80,7 @@ View dashboard
 	* See my shopping list
 
 View my shopping list
-	+ See gifts I've reserved but not bought [GIFTCIRCLE-84]
+	* See gifts I've reserved but not bought
 	* Click on gift to start buying it
 
 Accept friend request
@@ -158,6 +159,7 @@ View friends' lists
 Reserve a gift from User A's list
 	* User B reserves gift
 	* Gift added to User B's shopping list
+	- User B redirected to their shopping list [GIFTCIRCLE-90]
 	* Gift is shown as "Taken" when User C tries to views it
 
 Unreserving a gift
@@ -236,4 +238,8 @@ Admin area for shops, logos, departments and links
 Bookmarklet
 Scraping pages to extract gift information
 Tracking outbound links
-
+Import friends from 3rd party sites (eg Facebook)
+Welcome email
+Let people see what I've bought
+Move gifts between lists
+Sign in with 3rd party account (eg Facebook)
