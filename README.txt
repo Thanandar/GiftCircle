@@ -8,7 +8,8 @@ Random:
 
 Competitors:
 * http://lifehacker.com/5414134/five-best-wishlist-tools
-
+* https://chrome.google.com/webstore/search?category=ext&q=wishlist
+* https://addons.mozilla.org/en-US/firefox/search/es?q=wishlist
 
 == MODELS ==
 
