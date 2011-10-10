@@ -33,7 +33,7 @@
 			<td>
 				<?php if (!$bought) { ?>
 					<a class="btn success" title="Mark as bought" href="/gift/bought/<?php echo $gift->id; ?>" onclick="return confirm('Mark this item as bought?')">Mark as bought</a>
-					<a class="btn danger"  title="Unreserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to unreserve this product?')">Un-reserve</a>
+					<a class="btn danger"  title="Unreserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to unreserve this product?')">Unreserve</a>
 				<?php } else { ?>
 				unbuy?
 				<?php } ?>
