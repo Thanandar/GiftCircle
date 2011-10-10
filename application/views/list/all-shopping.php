@@ -32,8 +32,8 @@
 			<td><?php echo HTML::chars($list->name) ?></td>
 			<td>
 				<?php if (!$bought) { ?>
-					<a title="Mark as bought" href="/gift/bought/<?php echo $gift->id; ?>" onclick="return confirm('Mark this item as bought?')"><span class="label success">✔</span></a>
-					<a title="Un-reserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to un-reserve this product?')"><span class="label important">✘</span></a>
+					<a class="btn success" title="Mark as bought" href="/gift/bought/<?php echo $gift->id; ?>" onclick="return confirm('Mark this item as bought?')">Mark as bought</a>
+					<a class="btn danger"  title="Unreserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to unreserve this product?')">Un-reserve</a>
 				<?php } else { ?>
 				unbuy?
 				<?php } ?>
