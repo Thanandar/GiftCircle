@@ -3,11 +3,6 @@
 
 	<h2>Add item to your list "<?php echo HTML::chars($list->name); ?>"</h2>
 
-	<div class="well">
-		<input type="button" value="Browse for your item" class="btn primary" onclick="location.href='/gift/browse/<?php echo $list->id; ?>'" />
-	</div>
-
-	<h2>&mdash; or &mdash;</h2>
 
 	<form method="post">
 		<fieldset>
@@ -61,6 +56,17 @@
 			</div>
 		</fieldset>
 	</form>
+
+
+	<?php 
+	echo View::factory('gift/browse')
+		->set('categories', $categories)
+		->set('shops', $shops)
+		->set('list', $list);
+	?>
+
+
+
 </div>
 
 <div class="span4">
@@ -71,7 +77,6 @@
 		<?php } ?>
 	</ul>
 </div>
-
 
 
 

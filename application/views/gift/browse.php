@@ -1,51 +1,95 @@
 
-<div class="span12">
+	<h2>Browse for a gift</h2>
 
-	<h2>Browse for your item online (for '<?php echo HTML::chars($list->name); ?>')</h2>
-	
 	<div class="well">
-		
-		<ol>
-			<!-- <li>
-				If you don't have it already, drag this button to your bookmarks toolbar:
+		<form>
+			<div class="clearfix">
+				<label>Category: </label>
+				<div class="input" id="category_changer">
+					<?php
+					echo Form::select('category_id', $categories);
+					?>
+				</div>
+			</div>
+		</form>
 
-				<a href="javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='<?php echo URL::base('http'); ?>static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();" class="btn" onclick="alert('Drag this button to your bookmarks toolbar');return false">Add to GiftCircle</a>
-				
-				<a href="#" onclick="alert('Just drag and drop');return false">Show me how</a>
-			</li> -->
+	</div>
+	
+	<div class="merchants">
 
-			<li>Start browsing using the logos below (links will open in a new window).</li>
+		<?php foreach ($categories as $cat_id => $category) { ?>
+		<div id="cat-<?php echo $cat_id; ?>" style="display:none">
+		<h2><?php echo HTML::chars($category) ?></h2>
+		<!-- <ul class="media-grid shop-logos">
+			<?php $i = 0; foreach ($shops as $shop) { if (++$i < $cat_id || $i > 50) continue; ?>
+			<li>
+				<a href="<?php echo HTML::chars($shop->url); ?>" target="_blank">
+					<img src="<?php echo HTML::chars($shop->logo); ?>" alt="<?php echo HTML::chars($shop->name); ?>" title="<?php echo HTML::chars($shop->name); ?>" />
+				</a>
+			</li>
+			<?php } ?>
+		</ul> -->
+		</div>
+		<?php } ?>
 
-			<li>When you've found a gift<!-- , click on the "Add to GiftCircle" button on your bookmarks toolbar or --> manually copy the details <a href="/gift/add/<?php echo $list->id; ?>">here</a>.</li>
-
-		</ol>
 
 	</div>
 
-	<ul class="media-grid shop-logos">
-		<?php foreach ($shops as $shop) { ?>
-		<li>
-			<a href="<?php echo HTML::chars($shop->url); ?>" target="_blank">
-				<!--<img src="http://placehold.it/150x100&amp;text=<?php echo HTML::chars($shop->name); ?>" alt="<?php echo HTML::chars($shop->name); ?>" />-->
-				<img src="<?php echo HTML::chars($shop->logo); ?>" alt="<?php echo HTML::chars($shop->name); ?>" title="<?php echo HTML::chars($shop->name); ?>" />
-			</a>
-		</li>
-		<?php } ?>
-	</ul>
+<script>
+$(function() {
+	
+	/**
+	 * Replace an element's HTML with the content of its first comment
+	 */
+	$.fn.commentToHTML = function() {
+		var d = 'extracted-comments';
 
-</div>
+		return this.each(function(i, el) {
+			var $el = $(this);
 
-<div class="span4">
-	<h3>On your list</h3>
-	<ul>
-		<?php foreach ($other_gifts as $gift) { ?>
-		<li>
-			<?php echo HTML::chars($gift->name) ?>
-		</li>
-		<?php } ?>
-	</ul>
-</div>
+			if ($el.data(d)) {
+				// comments have already been extracted
+				// no need to do it again
+				return;
+			}
+
+			var node = el.firstChild;
+			while (node) {
+				// found a HTML comment
+				if (node.nodeType === 8) {
+					this.innerHTML = node.nodeValue;
+					$el.data(d, true);
+
+					break;
+				}
+				node = node.nextSibling;
+			}
+		});
+	}
+
+	/**
+	 * Replace an element's DOM nodes with a comment containing their HTML
+	 */
+	$.fn.deDOMify = function() {
+		return this.each(function(i, el) {
+			// TODO: this will break on HTML comments
+			this.innerHTML = '<!--' + this.innerHTML + '-->';
+		});
+	}
+
+	$('#category_changer select').change(function() {
+		$('.merchants > div:visible').hide();
+		$('#cat-' + $(this).val())
+			.show()
+			.commentToHTML();
+		//alert($(this).val());
+	});
 
 
+	setTimeout(function() {
+		//$('.merchants').commentToHTML();
+	}, 500);
+});
 
+</script>
 

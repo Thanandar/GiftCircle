@@ -59,6 +59,8 @@ class Controller_Gift extends Controller_Page {
 			->find_all()
 			->as_array('id', 'name');
 
+		$view->shops = ORM::factory('shop')->find_all();
+
 		if ($_POST) {
 			if (arr::get($_POST, 'name')) {
 				$gift              = new Model_Gift;
@@ -122,6 +124,9 @@ class Controller_Gift extends Controller_Page {
 		Request::current()->redirect('list/mine/' . $list_id);
 	}
 
+	/**
+	 * @deprecated Merged into action_add()
+	 */
 	public function action_browse() {
 		$list = new Model_List($this->request->param('id'));
 		if ($list->owner_id != $this->me()->id) {

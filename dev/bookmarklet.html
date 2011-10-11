@@ -12,5 +12,7 @@
 
 <p>Added the bookmarklet? Now add a product: <a href="http://amazon.co.uk">Amazon</p>
 
+<a href="javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='<?php echo URL::base('http'); ?>static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();" class="btn" onclick="alert('Drag this button to your bookmarks toolbar');return false">Add to GiftCircle</a>
+
 </body>
 </html>

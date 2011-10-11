@@ -159,7 +159,7 @@ View friends' lists
 Reserve a gift from User A's list
 	* User B reserves gift
 	* Gift added to User B's shopping list
-	- User B redirected to their shopping list [GIFTCIRCLE-90]
+	* User B redirected to their shopping list
 	* Gift is shown as "Taken" when User C tries to views it
 
 Unreserving a gift
