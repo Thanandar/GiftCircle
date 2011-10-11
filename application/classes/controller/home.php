@@ -43,7 +43,7 @@ class Controller_Home extends Controller_Page {
 		
 		$view->my_lists = $me->lists
 			// TODO: this should be by creted date
-			->order_by('name', 'ASC')
+			->order_by('updated', 'DESC')
 			->limit($config['my-lists'])
 			->find_all();
 		

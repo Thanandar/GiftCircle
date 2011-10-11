@@ -26,8 +26,7 @@ class Controller_List extends Controller_Page {
 		$me = ORM::factory('owner', $this->me()->id);
 
 		$view->my_lists = $me->lists
-			// TODO: this should be by created date
-			->order_by('name', 'ASC')
+			->order_by('updated', 'DESC')
 			->find_all();
 		
 		$this->template->content = $view;

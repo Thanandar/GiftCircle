@@ -130,6 +130,7 @@ class Model_Owner extends Model_User {
 	public function shopping_list() {
 		return $this->reservations
 			->where('buyer_id', '=', 0)
+			->order_by('name', 'ASC')
 			->find_all();
 	}
 
@@ -161,6 +162,8 @@ class Model_Owner extends Model_User {
 
 			// check i'm friends with them
 			->where('my_friends.creator_id', '=', $this->id)
+
+			->order_by('updated', 'DESC')
 
 			->find_all();
 	}

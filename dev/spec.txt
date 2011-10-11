@@ -75,7 +75,7 @@ Forget password
 
 View dashboard
 	* See friend requests
-	+ See my lists, order by creation [GIFTCIRCLE-83]
+	* See my lists, order by creation
 	* See friends' lists
 	* See my shopping list
 
