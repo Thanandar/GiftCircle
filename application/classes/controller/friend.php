@@ -71,7 +71,14 @@ class Controller_Friend extends Controller_Page {
 
 		if ($_POST) {
 			if (arr::get($_POST, 'email')) {
-				Request::current()->redirect('friend/list');
+				$friend->firstname = arr::get($_POST, 'firstname');
+				$friend->surname   = arr::get($_POST, 'surname');
+				$friend->email     = arr::get($_POST, 'email');
+				$friend->birthday  = arr::get($_POST, 'birthday');
+				$friend->address   = arr::get($_POST, 'address');
+				$friend->save();
+				Message::add('success', 'Updated friend.');
+				Request::current()->redirect('friend/view/' . $friend->id);
 			}
 			$view->errors = Kohana::message('friend', 'email-required');
 		}

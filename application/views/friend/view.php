@@ -11,6 +11,10 @@ $fullname = HTML::chars($friend->firstname . ' ' . $friend->surname);
 	<dl>
 		<dt>Email</dt>
 		<dd><?php echo HTML::chars($friend->email) ?></dd>
+		<dt>Birthday</dt>
+		<dd><?php echo HTML::chars($friend->birthday) ?></dd>
+		<dt>Address</dt>
+		<dd><?php echo nl2br(HTML::chars($friend->address)) ?></dd>
 		<dt>Friendship</dt>
 		<dd><?php 
 			if ($friend->is_confirmed()) {
