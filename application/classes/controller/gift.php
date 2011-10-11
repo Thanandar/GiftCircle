@@ -59,6 +59,9 @@ class Controller_Gift extends Controller_Page {
 			->find_all()
 			->as_array('id', 'name');
 
+		$view->departments = ORM::factory('category')
+			->find_all();
+
 		$view->shops = ORM::factory('shop')->find_all();
 
 		if ($_POST) {

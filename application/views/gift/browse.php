@@ -17,21 +17,22 @@
 	
 	<div class="merchants">
 
-		<?php foreach ($categories as $cat_id => $category) { ?>
-		<div id="cat-<?php echo $cat_id; ?>" style="display:none">
-		<h2><?php echo HTML::chars($category) ?></h2>
-		<!-- <ul class="media-grid shop-logos">
-			<?php $i = 0; foreach ($shops as $shop) { if (++$i < $cat_id || $i > 50) continue; ?>
+		<?php foreach ($departments as $department) { ?>
+		<div id="cat-<?php echo $department->id; ?>" xstyle="display:none">
+		<!-- 
+		<h2><?php echo HTML::chars($department->name) ?></h2>
+		<ul class="media-grid shop-logos">
+			<?php foreach ($department->shops->find_all() as $shop) { ?>
 			<li>
 				<a href="<?php echo HTML::chars($shop->url); ?>" target="_blank">
 					<img src="<?php echo HTML::chars($shop->logo); ?>" alt="<?php echo HTML::chars($shop->name); ?>" title="<?php echo HTML::chars($shop->name); ?>" />
 				</a>
 			</li>
 			<?php } ?>
-		</ul> -->
+		</ul>
+		-->
 		</div>
 		<?php } ?>
-
 
 	</div>
 

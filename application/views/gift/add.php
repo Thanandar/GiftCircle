@@ -61,6 +61,7 @@
 	<?php 
 	echo View::factory('gift/browse')
 		->set('categories', $categories)
+		->set('departments', $departments)
 		->set('shops', $shops)
 		->set('list', $list);
 	?>
