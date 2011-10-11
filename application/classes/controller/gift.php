@@ -177,7 +177,7 @@ class Controller_Gift extends Controller_Page {
 		$this->template->title = 'Buy a gift';
 		$view = View::factory('gift/buy');
 		$view->gift = $gift;
-		$view->shops = ORM::factory('shop')->find_all();
+		$view->shops = $gift->category->shops->find_all();
 		
 		$view->shopping_list = $this->shopping_list();
 

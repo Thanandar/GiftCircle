@@ -103,7 +103,7 @@ User A creates a list.
 
 Add a gift to list.
 	* User browses web normally
-	- User chooses product category and browses affiliate link [GIFTCIRCLE-57] [GIFTCIRCLE-86]
+	* User chooses product category and browses affiliate link
 	+ User manually enters gift details
 	- If supplied URL: Affiliate tracking is added to link [GIFTCIRCLE-62]
 
@@ -169,7 +169,7 @@ Unreserving a gift
 
 Buy a gift from shopping list
 	* User B buys gift using user-supplied URL
-	+ User B browses for gift from list of shops in product category [GIFTCIRCLE-57]
+	* User B browses for gift from list of shops in product category
 	+ User B marks gift as bought [GIFTCIRCLE-85]
 	* User B automatically unsubscribed from Circle
 	* User B given option to re-subscribe to Circle
