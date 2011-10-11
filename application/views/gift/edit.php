@@ -5,12 +5,11 @@
 
 	<?php if ($gift->reserver_id) { ?>
 
-	<div class="alert-message block-message error">
-		<p>Someone has reserved or bought this gift so you are unable to edit it.</p>
-		<p><input type="button" class="btn" value="Go back" onclick="history.go(-1)" /></p>
+	<div class="alert-message warning">
+		<p>Someone has reserved or bought this gift.</p>
 	</div>
 
-	<?php } else { ?>
+	<?php } ?>
 
 	<form method="post">
 		<fieldset>
@@ -66,7 +65,6 @@
 		</fieldset>
 	</form>
 
-	<?php } ?>
 
 
 </div>

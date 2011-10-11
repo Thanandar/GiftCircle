@@ -104,7 +104,7 @@ User A creates a list.
 Add a gift to list.
 	* User browses web normally
 	* User chooses product category and browses affiliate link
-	+ User manually enters gift details
+	* User manually enters gift details
 	- If supplied URL: Affiliate tracking is added to link [GIFTCIRCLE-62]
 
 Add a new friend to a list, using friend's email address.
@@ -132,9 +132,9 @@ Add existing friend to a list, from Friend list
 
 Edit a gift
 	Avilable gift:
-		+ Gift is edited
+		* Gift is edited
 	Unavilable gift:
-		* Warning: "Someone has reserved or bought this gift so you are unable to edit it."
+		* Warning: "Someone has reserved or bought this gift."
 		* Immediate notification: "User A has edited a gift you have reserved/bought"
 		* Gift is edited
 

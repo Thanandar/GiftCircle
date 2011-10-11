@@ -33,5 +33,14 @@ Log in to your account on GiftCircle:
 Just to keep you in the loop, {owner_name} has just deleted a gift you\'ve reserved on GiftCircle.
 '
 	),
+
+	// sent to someone who's reserved/bought a gift you've edited
+	'edited_gift' => array(
+		'subject' => '{owner_name} has just edited a gift you\'ve reserved on GiftCircle',
+		'plain'   => 'Hello  {reserver_firstname} {reserver_surname},
+
+Just to keep you in the loop, {owner_name} has just edited a gift you\'ve reserved on GiftCircle.
+'
+	),
 );
 

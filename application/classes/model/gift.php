@@ -10,6 +10,39 @@ class Model_Gift extends ORM {
 
 
 	public function save(Validation $validation = NULL) {
+
+		// inform the reserver that the gift has been edited
+		if ($this->reserver_id) {
+			$config = Kohana::$config->load('giftcircle');
+
+			$reserver = $this->reserver;
+			$gift_owner = $this->list->owner;
+
+			$subject = Message::t('email', 'edited_gift.subject', array(
+				'owner_name' => $gift_owner->firstname.' '.$gift_owner->surname,
+			));
+			
+			$message = Message::t('email', 'edited_gift.plain', array(
+				'url'                => URL::base('http'),
+				'reserver_email'     => $reserver->email,
+				'reserver_firstname' => $reserver->firstname,
+				'reserver_surname'   => $reserver->surname,
+				'owner_name'         => $gift_owner->firstname.' '.$gift_owner->surname,
+			), false);
+
+
+			$to = array($reserver->email, $reserver->firstname.' '.$reserver->surname);
+			
+			$from = array(
+				$config->get('email-from'),
+				$config->get('email-from-name')
+			);
+
+			Email::send($to, $from, $subject, $message);
+
+		}
+
+
 		if (!$this->loaded()) {
 			// creating a new gift
 			if ($this->url) {
