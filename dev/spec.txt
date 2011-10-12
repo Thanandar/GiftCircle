@@ -216,7 +216,7 @@ Deleting a list
 		* Immediate email to buyer/reserver saying a gift has been deleted
 
 Deleting account
-	+ Confirmation required. [GIFTCIRCLE-85]
+	* Confirmation required
 	* No emails sent
 	* All gifts that user has bought or reserved stay "Taken" on their friends' lists
 	- Any of gifts that have been reserved by friends get removed from their shopping list [GIFTCIRCLE-79]

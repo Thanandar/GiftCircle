@@ -1,6 +1,5 @@
-<div class="block">
+<div class="span16">
    <h1>Confirm removing your user account</h1>
-   <div class="content">
 <?php
 
 echo Form::open('user/unregister/'.$id, array('style' => 'display: inline;'));
@@ -19,5 +18,4 @@ echo Form::open('user/profile', array('style' => 'display: inline; padding-left:
 echo Form::submit(NULL, 'Cancel');
 echo Form::close();
 ?>
-   </div>
 </div>
