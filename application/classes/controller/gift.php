@@ -122,9 +122,16 @@ class Controller_Gift extends Controller_Page {
 		$this->redirect_if_not_owner();
 
 		$list_id = $gift->list->id;
-		$gift->delete();		
-		Message::add('success', Kohana::message('gift', 'deleted'));
-		Request::current()->redirect('list/mine/' . $list_id);
+
+		if (arr::get($_POST, 'delete')) {
+			$gift->delete();		
+			Message::add('success', Kohana::message('gift', 'deleted'));
+			Request::current()->redirect('list/mine/' . $list_id);
+		}
+
+		$view = View::factory('gift/delete');
+		$view->gift = $gift;
+		$this->template->content = $view;
 	}
 
 	/**

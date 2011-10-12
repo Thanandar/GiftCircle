@@ -22,9 +22,9 @@
 				<td>
 					<span class="label important">
 						<?php if ($gift->reserver_id) { ?>
-							<a onclick="return confirm('Are you sure you want to delete this gift?\n\nSomeone may have already purchased this gift.')" href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
+							<a href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
 						<?php } else { ?>
-							<a onclick="return confirm('Are you sure you want to delete this gift?')" href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
+							<a href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
 						<?php } ?>
 					</span>
 				</td>
