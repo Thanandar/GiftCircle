@@ -296,20 +296,25 @@ class Controller_List extends Controller_Page {
 
 		$this->redirect_if_not_owner();
 
-		$gifts = $list->gifts->find_all();
-		foreach ($gifts as $gift) {
-			$gift->delete();
+		if (arr::get($_POST, 'delete')) {
+			$gifts = $list->gifts->find_all();
+			foreach ($gifts as $gift) {
+				$gift->delete();
+			}
+
+			$friends = $list->friends->find_all();
+			foreach ($friends as $friend) {
+				$friend->delete();
+			}
+
+			$list->delete();		
+			Message::add('success', 'List deleted.');
+			Request::current()->redirect('list/all');
 		}
 
-		$friends = $list->friends->find_all();
-		foreach ($friends as $friend) {
-			$friend->delete();
-		}
-
-		$list->delete();		
-
-		Message::add('success', 'List deleted.');
-		Request::current()->redirect('list/all');
+		$view = View::factory('list/delete');
+		$view->list = $list;
+		$this->template->content = $view;		
 	}
 
 	public function action_delete_friend() {

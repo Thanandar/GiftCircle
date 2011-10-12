@@ -140,10 +140,10 @@ Edit a gift
 
 Delete a gift
 	Avilable gift:
-		+ Gift is deleted [GIFTCIRCLE-85]
+		* Gift is deleted
 	Unavilable gift:
 		* Warning: "Someone may have already purchased this gift"
-		+ Gift is deleted [GIFTCIRCLE-85]
+		 Gift is deleted
 		* Immediate notification: "User A has deleted a gift you have reserved/bought"
 		* Gift removed from User B's shopping list (if reserved)
 
@@ -208,12 +208,12 @@ Deleting User B from User A's Friend list
 	* No emails sent
 
 Deleting a list
-	+ Confirmation required. [GIFTCIRCLE-85]
+	* Confirmation required.
 	* No emails sent
 	If any gifts are reserved:
 		* Gift is removed from reserver's shopping list
 	If any gifts have been reserved or bought:
-		- Immediate email to buyer/reserver saying a gift has been deleted
+		* Immediate email to buyer/reserver saying a gift has been deleted
 
 Deleting account
 	+ Confirmation required. [GIFTCIRCLE-85]
