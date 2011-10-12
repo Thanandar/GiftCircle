@@ -191,7 +191,7 @@ class Controller_Gift extends Controller_Page {
 		$this->template->content = $view;
 	}
 
-	public function action_bought() {
+	public function action_mark_as_bought() {
 		$gift = new Model_Gift((int) $this->request->param('id'));
 
 		if ($gift->reserver_id != $this->me()->id) {
@@ -204,8 +204,37 @@ class Controller_Gift extends Controller_Page {
 			Request::current()->redirect('');
 		}
 
-		$gift->buyer_id = $gift->reserver_id;
-		$gift->save();
+		if (arr::get($_POST, 'bought')) {
+			$gift->buyer_id = $gift->reserver_id;
+			$gift->save();
+
+			// automnatically unsubscribe from list
+			$me = new Model_Owner($this->me()->id);
+			$me->unsubscribe_from_list($gift->list);
+			
+			Message::add('success', __('This gift has been marked as bought.'));
+			Request::current()->redirect('gift/bought/' . $gift->id);
+		}
+
+		$this->template->title = 'Buy gift';
+		$view = View::factory('gift/mark-as-bought');
+		$view->gift = $gift;
+		$this->template->content = $view;
+	}
+
+	public function action_bought() {
+		$gift = new Model_Gift((int) $this->request->param('id'));
+
+		if ($gift->reserver_id != $this->me()->id) {
+			Message::add('danger', __('You have not reserved this gift.'));
+			Request::current()->redirect('');
+		} 
+
+		if ($gift->buyer_id != $this->me()->id) {
+			Message::add('success', __('This gift has not been bought.'));
+			Request::current()->redirect('');
+		}
+
 
 		$this->template->title = 'Bought gift';
 		$view = View::factory('gift/bought');
@@ -215,9 +244,6 @@ class Controller_Gift extends Controller_Page {
 
 		$view->previously_subscribed = $view->list->is_logged_in_user_subscribed();
 
-		// automnatically unsubscribe from list
-		$me = new Model_Owner($this->me()->id);
-		$me->unsubscribe_from_list($view->list);
 
 		$view->shopping_list = $this->shopping_list();
 

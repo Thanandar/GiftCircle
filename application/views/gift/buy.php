@@ -25,7 +25,7 @@
 		
 		<?php } ?>
 
-		<input type="button" class="btn" value="Mark as bought" onclick="location.href='/gift/bought/<?php echo $gift->id; ?>'" />
+		<input type="button" class="btn" value="Mark as bought" onclick="location.href='/gift/mark_as_bought/<?php echo $gift->id; ?>'" />
 	</div>
 
 	<hr />

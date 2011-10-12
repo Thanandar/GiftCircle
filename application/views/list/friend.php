@@ -62,8 +62,8 @@
 								echo '<em>You\'ve bought this</em>';
 							} else {
 								?>
-								<a title="Mark as bought" href="/gift/bought/<?php echo $gift->id; ?>" onclick="return confirm('Mark this item as bought?')"><span class="label success">✔</span></a>
-								<a title="Un-reserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to un-reserve this product?')"><span class="label important">✘</span></a>
+								<a class="btn success" title="Mark as bought" href="/gift/mark_as_bought/<?php echo $gift->id; ?>">Mark as bought</a>
+								<a class="btn danger" title="Un-reserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to un-reserve this product?')">Unreserve</a>
 								<?php
 							}
 						} else {
