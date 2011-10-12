@@ -39,6 +39,13 @@ class Model_Owner extends Model_User {
 		return $pending;
 	}
 
+	public function get_friend_from_user($user) {
+		return new Model_Friend(array(
+			'email'      => $user->email,
+			'creator_id' => $this->id,
+		));
+	}
+
 	/**
 	 * See if $this has a friend with $email
 	 * 

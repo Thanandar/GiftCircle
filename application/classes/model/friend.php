@@ -19,8 +19,43 @@ class Model_Friend extends ORM {
 	}
 
 	public function delete() {
+		// delete friend from all your lists
 		$this->remove('lists');
-		parent::delete();
+
+		if ($this->is_confirmed()) {
+			// friend is friends with you 
+			// (as well as you being friends with friend)
+
+			// get "you" as seen from your friend's friend list
+			$friends_friend = $this->get_reverse_friend();
+
+			// delete friend from your friend list
+			// can't do this too soon or we'll loose IDs
+			$ret = parent::delete();
+
+			// delete you from friend's friend list
+			// (which also deletes you from all friend's lists)
+			// this has to be done after $this is deleted
+			// othewise we'd get U.N.F.R.I.E.N.D.C.E.P.T.I.O.N.
+			// That many dreams within dreams is too unstable! 
+			try {
+				$friends_friend->delete();
+			} catch (Kohana_Exception $e) {
+				// you're not your friend's friend for some reason
+			}
+			
+			
+		} else {
+			// delete friend from your friend list
+			$ret = parent::delete();
+		}
+
+		return $ret;
+	}
+
+	private function get_reverse_friend() {
+		$me = Auth::instance()->get_user();
+		return  $this->get_user()->get_friend_from_user($me);
 	}
 
 	public function get_user() {

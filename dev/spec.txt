@@ -189,17 +189,17 @@ Removing User B from a gift list
 
 Deleting User B from User A's Friend list
 	Confirmed friend:
-		- Warning: "This will remove User B from all your lists and remove you from all User B's lists. Are you sure, this user might have bought you something?" [GIFTCIRCLE-85]
+		* Warning: "This will remove User B from all your lists and remove you from all User B's lists. Are you sure, this user might have bought you something?"
 		If User B has ever reserved/bought any of User A's gifts
 			- Gift removed from User B's shopping list [GIFTCIRCLE-79]
 			* Gift stays "Taken" on A's list
 		If User A has ever reserved/bought any of User B's gifts
 			- Gift removed from User A's shopping list [GIFTCIRCLE-79]
 			* Gift stays "Taken" on B's list
-		+ User B removed from all User A's lists
-		- User A removed from all User B's lists [GIFTCIRCLE-80]
+		* User B removed from all User A's lists
+		* User A removed from all User B's lists
 		* User B no longer User A's friend
-		- User A no longer User B's friend [GIFTCIRCLE-81]
+		* User A no longer User B's friend
 	Unconfirmed friend (registered or unregistered):
 		* Not possible as no way to view unconfirmed friends
 	* No emails sent

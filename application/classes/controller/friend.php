@@ -2,6 +2,14 @@
 
 class Controller_Friend extends Controller_Page {
 
+	// make sure user is logged in
+	public function before() {
+		if (!$this->me()->id) {
+			Request::current()->redirect('');
+		}		
+		parent::before();
+	}
+
 	public function action_index() {
 		Request::current()->redirect('friend/list');
 	}
@@ -26,10 +34,15 @@ class Controller_Friend extends Controller_Page {
 			Request::current()->redirect('friend/list');
 		}
 
-		$friend->delete();
-		Message::add('success', 'Friend deleted');
-		Request::current()->redirect('friend/list');
+		if (arr::get($_POST, 'delete')) {
+			$friend->delete();
+			Message::add('success', 'Friend deleted');
+			Request::current()->redirect('friend/list');
+		}
 
+		$view = View::factory('friend/delete');
+		$view->friend = $friend;
+		$this->template->content = $view;
 	}
 
 	public function action_view() {
@@ -50,8 +63,6 @@ class Controller_Friend extends Controller_Page {
 		$view->friend_user = $user->loaded() ? $user : null;
 		
 		$view->friends_lists = $user->lists_containing_email($this->me()->email);
-
-		
 
 		$this->template->content = $view;
 	}

@@ -27,7 +27,7 @@ $fullname = HTML::chars($friend->firstname . ' ' . $friend->surname);
 
 	<div class="well">
 		<input type="button" class="btn primary" onclick="location.href='/friend/edit/<?php echo $friend->id; ?>'" value="Edit" />
-		<input type="button" class="btn danger" onclick="if (confirm('<?php echo HTML::chars(Kohana::message('friend', 'delete')) ?>')){location.href='/friend/delete/<?php echo $friend->id; ?>'}" value="Delete" />
+		<input type="button" class="btn danger" onclick="location.href='/friend/delete/<?php echo $friend->id; ?>'" value="Delete" />
 	</div>
 
 	<!-- <h2>Your lists that <?php echo $fullname; ?> is on</h2>
