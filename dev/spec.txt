@@ -189,14 +189,11 @@ Removing User B from a gift list
 
 Deleting User B from User A's Friend list
 	Confirmed friend:
+		- Warning: "This will remove User B from all your lists and remove you from all User B's lists. Are you sure, this user might have bought you something?" [GIFTCIRCLE-85]
 		If User B has ever reserved/bought any of User A's gifts
-			- Warning: "This will remove User B from all your lists and remove you from all User B's lists. Are you sure, this user might have bought you something?" [GIFTCIRCLE-85]
 			- Gift removed from User B's shopping list [GIFTCIRCLE-79]
 			* Gift stays "Taken" on A's list
-		If User B has never reserved/bought any of User A's gifts
-			- Warning: "Are you sure? This will remove User B from all your lists and remove you from all User B's lists." [GIFTCIRCLE-85]
 		If User A has ever reserved/bought any of User B's gifts
-			- Warning: "This will remove User B from all your lists and remove you from all User B's lists. Are you sure, this user might have bought you something?" [GIFTCIRCLE-85]
 			- Gift removed from User A's shopping list [GIFTCIRCLE-79]
 			* Gift stays "Taken" on B's list
 		+ User B removed from all User A's lists
