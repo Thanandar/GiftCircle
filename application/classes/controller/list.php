@@ -326,13 +326,18 @@ class Controller_List extends Controller_Page {
 
 		$list = new Model_List($list_id);
 		$friend = new Model_Friend($friend_id);
-		$friend->remove('lists', $list);
 
-		// TODO: maybe delete their reservations or purchases
+		if (arr::get($_POST, 'delete')) {
+			$friend->remove('lists', $list);
 
-		Message::add('success', 'Friend removed from list.');
-		Request::current()->redirect('list/mine/' . $list->id);
+			Message::add('success', 'Friend removed from list.');
+			Request::current()->redirect('list/mine/' . $list->id);
+		}
 
+		$view = View::factory('list/delete-friend');
+		$view->list = $list;
+		$view->friend = $friend;
+		$this->template->content = $view;		
 	}
 
 	public function action_unsubscribe() {

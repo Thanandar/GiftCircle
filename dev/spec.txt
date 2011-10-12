@@ -176,9 +176,9 @@ Buy a gift from shopping list
 
 Removing User B from a gift list
 	If User B has not reserved/bought a gift from the list:
-		+ Confirmation: "Are you sure, this user might have already bought you something?" [GIFTCIRCLE-85]
+		* Confirmation: "Are you sure, this user might have already bought you something?"
 	If User B has reserved/bought gifts from the list:
-		+ Confirmation: "Are you sure, this user might have already bought you something?" [GIFTCIRCLE-85]
+		* Confirmation: "Are you sure, this user might have already bought you something?"
 		* No email notifications sent
 		Gift reserved:
 			* Gift removed from User B's shopping list
