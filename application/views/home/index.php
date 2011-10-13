@@ -22,7 +22,7 @@
 
 	<div class="row">
 		<div class="span10">
-			<h3>Why user Gift Circle?</h3>
+			<h3>Why use Gift Circle?</h3>
 
 			<div class="row">
 				<div class="span5">
