@@ -13,7 +13,7 @@ class Model_Gift extends ORM {
 
 		// inform the reserver that the gift has been edited
 		// if it's not the current user that's just marked it as bought
-		if ($this->reserver_id && $this->reserver_id != Auth::instance()->get_user()) {
+		if ($this->reserver_id && $this->reserver_id != Auth::instance()->get_user()->id) {
 			$config = Kohana::$config->load('giftcircle');
 
 			$reserver = $this->reserver;
