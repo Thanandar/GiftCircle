@@ -297,16 +297,6 @@ class Controller_List extends Controller_Page {
 		$this->redirect_if_not_owner();
 
 		if (arr::get($_POST, 'delete')) {
-			$gifts = $list->gifts->find_all();
-			foreach ($gifts as $gift) {
-				$gift->delete();
-			}
-
-			$friends = $list->friends->find_all();
-			foreach ($friends as $friend) {
-				$friend->delete();
-			}
-
 			$list->delete();		
 			Message::add('success', 'List deleted.');
 			Request::current()->redirect('list/all');

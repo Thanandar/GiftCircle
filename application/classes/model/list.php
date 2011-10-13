@@ -46,5 +46,21 @@ class Model_List extends ORM {
 		return $this->is_user_subscribed(Auth::instance()->get_user());
 	}
 
+	public function delete() {
+		// delete gifts on the list
+		$gifts = $this->gifts->find_all();
+		foreach ($gifts as $gift) {
+			$gift->delete();
+		}
+
+		// // delete friends on the list
+		$friends = $this->friends->find_all();
+		foreach ($friends as $friend) {
+			$friend->delete();
+		}
+
+		return parent::delete();
+	}
+
 }
 	
