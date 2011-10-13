@@ -41,9 +41,9 @@ if ($logged_in) {
 					<button onclick="location.href='/user/logout'" class="btn" type="button">Logout</button>
 				</form>
 			<?php } else { ?>
-				<form class="pull-right" action="/user/login" method="post">
-					<input name="username" class="input-small" type="text" placeholder="Email" />
-					<input name="password" class="input-small" type="password" placeholder="Password" />
+				<form class="pull-right login" action="/user/login" method="post">
+					<input required="required" name="username" class="input-small" type="email" placeholder="Email" />
+					<input required="required" name="password" class="input-small" type="password" placeholder="Password" />
 					<button class="btn" type="submit">Login</button>
 					<button onclick="location.href='/user/register'" class="btn primary" type="button">Register</button>
 				</form>

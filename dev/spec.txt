@@ -52,12 +52,12 @@ View any page
 	- On live site [GIFTCIRCLE-52]
 
 Register
-	+ Fill in form [GIFTCIRCLE-35] [GIFTCIRCLE-11]
+	+ Fill in form [GIFTCIRCLE-11]
 	* No email sent
 	* Automatically logged in
 
 Login
-	+ Fill in form [GIFTCIRCLE-14]
+	* Fill in form (in header or separate login page)
 	* Logged in
 
 Log out

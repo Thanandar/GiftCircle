@@ -15,13 +15,25 @@ $form->info_class = 'info block';
 		<fieldset>
 			<div class="clearfix">
 				<?php echo $form->label('username', __('Email')); ?>
-				<div class="input"><?php echo $form->input('username'); ?></div>
+				<div class="input">
+					<?php 
+					echo $form->input('username', null, array(
+						'type' => 'email',
+						'required' => 'required',
+						'placeholder' => 'you@example.com',
+					)); 
+					?>
+				</div>
 			</div>			
 
 			<div class="clearfix">
 				<?php echo $form->label('password', __('Password')); ?>
 				<div class="input">
-					<?php echo $form->password('password'); ?>
+					<?php 
+					echo $form->password('password', null, array(
+						'required' => 'required',
+					)); 
+					?>
 					<span class="help-inline"><?php echo Html::anchor('user/forgot', __('Forgot your password?')); ?></span>
 				</div>
 			</div>			
