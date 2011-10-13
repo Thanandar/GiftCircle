@@ -34,24 +34,34 @@ echo $form->open('');
 
    <div class="clearfix">
       <label>First name</label>
-      <div class="input"><?php echo $form->input('firstname'); ?></div>
+      <div class="input"><?php echo $form->input('firstname', null, array(
+         'required' => 'required',
+)); ?></div>
    </div>
    <div class="clearfix">
       <label>Surname</label>
-      <div class="input"><?php echo $form->input('surname'); ?></div>
+      <div class="input"><?php echo $form->input('surname', null, array(
+         'required' => 'required',
+)); ?></div>
    </div>
 
    <div class="clearfix<?php if (isset($errors['email']) || isset($errors['username'])) echo ' error'; ?>">
       <label>Email address</label>
-      <div class="input"><?php echo $form->input('email'); ?></div>
+      <div class="input"><?php echo $form->input('email', null, array(
+         'type' => 'email',
+         'placeholder' => 'you@example.com',
+         'required' => 'required',
+)); ?></div>
    </div>   
 
    <div class="clearfix<?php if (isset($errors['password'])) echo ' error'; ?>">
       <label>Password</label>
       <div class="input">
-         <?php echo $form->password('password'); ?>
+         <?php echo $form->password('password', null, array(
+         'required' => 'required',
+         'required' => 'required',
+)); ?>
          <?php if (!isset($errors['password'])) { ?>
-         <span class="help-inline">Password must be at least 6 characters long</span>
          <?php } ?>
       </div>
    </div>   
@@ -59,7 +69,10 @@ echo $form->open('');
 	<div class="clearfix<?php if (isset($errors['password_confirm'])) echo ' error'; ?>">
 		<label>Confirm password</label>
 		<div class="input">
-			<?php echo $form->password('password_confirm'); ?>
+			<?php echo $form->password('password_confirm', null, array(
+         'required' => 'required',
+         'oninput' => "if(this.setCustomValidity)this.setCustomValidity((this.value != $('#password').val())?'Please enter a matching password.':'')",
+)); ?>
 		</div>
 	</div>	
 

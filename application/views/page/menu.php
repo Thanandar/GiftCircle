@@ -48,8 +48,6 @@ if ($logged_in) {
 					<button onclick="location.href='/user/register'" class="btn primary" type="button">Register</button>
 				</form>
 			<?php } ?>
-				<ul>
-				</ul>
 			</nav>
 		</div>
 	</div>
