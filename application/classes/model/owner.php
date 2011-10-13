@@ -134,9 +134,32 @@ class Model_Owner extends Model_User {
 		;
 	}
 
+	/**
+	 * Get all Gifts that I've reserved
+	 * 
+	 * The 3 joins and the where are the end are to make sure
+	 * that $this is on the Gift's List's circle
+	 */
 	public function shopping_list() {
 		return $this->reservations
+			// gifts that have not been bought
 			->where('buyer_id', '=', 0)
+
+			// get the gift list
+			->join('lists')
+				->on('lists.id', '=', 'gift.list_id')
+			
+			// get the list's circle of friends
+			->join('friends_lists')
+				->on('lists.id', '=', 'friends_lists.list_id')
+			
+			// get friends from circle
+			->join('friends')
+				->on('friends.id', '=', 'friends_lists.friend_id')
+
+			// make sure $this is in the circle
+			->where('friends.email', '=', $this->email)
+
 			->order_by('name', 'ASC')
 			->find_all();
 	}

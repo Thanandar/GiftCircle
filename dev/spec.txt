@@ -170,7 +170,7 @@ Unreserving a gift
 Buy a gift from shopping list
 	* User B buys gift using user-supplied URL
 	* User B browses for gift from list of shops in product category
-	+ User B marks gift as bought [GIFTCIRCLE-85]
+	* User B marks gift as bought
 	* User B automatically unsubscribed from Circle
 	* User B given option to re-subscribe to Circle
 
@@ -191,10 +191,10 @@ Deleting User B from User A's Friend list
 	Confirmed friend:
 		* Warning: "This will remove User B from all your lists and remove you from all User B's lists. Are you sure, this user might have bought you something?"
 		If User B has ever reserved/bought any of User A's gifts
-			- Gift removed from User B's shopping list [GIFTCIRCLE-79]
+			* Gift removed from User B's shopping list
 			* Gift stays "Taken" on A's list
 		If User A has ever reserved/bought any of User B's gifts
-			- Gift removed from User A's shopping list [GIFTCIRCLE-79]
+			* Gift removed from User A's shopping list
 			* Gift stays "Taken" on B's list
 		* User B removed from all User A's lists
 		* User A removed from all User B's lists
@@ -216,7 +216,7 @@ Deleting account
 	* Confirmation required
 	* No emails sent
 	* All gifts that user has bought or reserved stay "Taken" on their friends' lists
-	- Any of gifts that have been reserved by friends get removed from their shopping list [GIFTCIRCLE-79]
+	- Any gifts that have been reserved by friends get removed from their shopping list [GIFTCIRCLE-79]
 	- User is removed from all friends' lists (including unconfirmed friends)
 
 Server runs cron script
