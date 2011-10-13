@@ -64,6 +64,7 @@ class Controller_Page extends Controller_Template {
 			);
 
 			$scripts = array(
+				//'http://zeptojs.com/javascripts/zepto.min.js',
 				'http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js',
 			);
 
