@@ -37,6 +37,8 @@ class Model_Friendlist extends ORM {
 	 * 
 	 * @param {int} $debouncetime Ignore changes new than this number
 	 *                            of seconds ago.
+	 *                        
+	 * @return {int} Number of emails sent
 	 */
 	public function send_notification($debounce_time) {
 
@@ -48,25 +50,20 @@ class Model_Friendlist extends ORM {
 
 		if (!$this->friend->email) {
 			// friend/account removed
-			return;
+			return 0;
 		}
 
 		if (!$count) {
-			return;
+			return 0;
 		}
 
-		/*echo "<pre>Sending notification to {$this->friend->email}
-		  about $count changes on {$this->list->owner->email}'s list:  {$this->list->name}
-		";
-		foreach ($list_transactions as $t) {
-			echo "$t->description on $t->updated\n";
-		}
-*/
 		$n = new Model_Delayednotification($this, $list_transactions);
-		$n->send();
+		$sent = $n->send();
 
 		$this->last_notification = date('Y-m-d H:i:s', time());
 		$this->save();
+
+		return $sent ? 1 : 0;
 	}
 }
 

@@ -71,6 +71,8 @@ class Model_List extends ORM {
 	 * 
 	 * @param {int} $debouncetime Ignore changes new than this number
 	 *                            of seconds ago.
+	 *
+	 * @return {int} Number of emails sent
 	 */
 	public function send_notifications($debounce_time) {
 		//echo $list->name;
@@ -83,13 +85,17 @@ class Model_List extends ORM {
 			->where('last_notification', '<', $this->updated)
 			->find_all();
 
+		$sent = 0;
+
 		foreach ($circle as $friend) {
-			$friend->send_notification($debounce_time);
+			$sent += $friend->send_notification($debounce_time);
 		}
 
 		// add 1 second so it's slightly after the updated field
 		$this->last_notification = date('Y-m-d H:i:s', time() + 1);
 		$this->save();
+
+		return $sent;
 	}
 
 	public function touch() {

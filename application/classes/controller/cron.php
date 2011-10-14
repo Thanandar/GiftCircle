@@ -4,9 +4,10 @@
 
 class Controller_Cron extends Controller {
 
-	private $debounce_time = 10;//3600;
+	private $debounce_time = 3600;
 
 	public function action_index() {
+		$sent = 0;
 		$hour_ago = date('Y-m-d H:i:s', time() - $this->debounce_time);
 
 		// get al the lists that haven't been updated in the last hour
@@ -22,8 +23,10 @@ class Controller_Cron extends Controller {
 		->find_all();
 
 		foreach ($lists as $list) {
-			$list->send_notifications($this->debounce_time);
+			$sent += $list->send_notifications($this->debounce_time);
 		}
+
+		echo $sent;
 	}
 
 	

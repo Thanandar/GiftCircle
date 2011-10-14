@@ -43,25 +43,87 @@ class Model_Delayednotification {
 			if ($this->has_notified_friend_before()) {
 				
 			}
-			echo 'not emailing {$this->friend->email} as they\'re not a user';
+			//echo 'not emailing {$this->friend->email} as they\'re not a user';
 
 			return;
 		}
 
-		$to = $this->friend->email;
-		$from = 'no-reply@giftcircle.com';
-		$subject = $this->owner->fullname() . ' has updated one of their lists.';
-		$message = "Hi {$this->friend->firstname},
+		$config = Kohana::$config->load('giftcircle');
 
-{$this->owner->firstname} has updated their list '{$this->list->name}':
+		$from = array(
+			$config->get('email-from'),
+			$config->get('email-from-name')
+		);
 
-";
-
+		$updates = '';
 		foreach ($this->transactions as $transaction) {
-			$message .= "{$transaction->description}\n";
+			$updates .= "{$transaction->description}\n";
+		}
+				
+
+
+		if ($this->is_registered()) {
+			
+			$to = array($this->user->email, $this->user->fullname());
+			
+			if ($this->is_confirmed_friend()) {
+				
+				$subject = Message::t('email', 'list_update.subject', array(
+					'friend_name' => $this->owner->fullname(),
+					'list_name'     => $this->list->name,
+				));
+				
+				$message = Message::t('email', 'list_update.plain', array(
+					'url'           => URL::base('http'),
+					'email'         => $this->user->email,
+					'surname'       => $this->user->surname,
+					'firstname'     => $this->user->firstname,
+					'friend_name'   => $this->owner->fullname(),
+					'list_name'     => $this->list->name,
+					'updates'       => $updates,
+					'login_link'    => URL::base('http') . 'user/login',
+				), false);
+
+
+			} else {
+				
+				$subject = Message::t('email', 'friend_rquest.subject', array(
+					'friend_name' => $this->owner->fullname(),
+				));
+
+				$message = Message::t('email', 'friend_request.plain', array(
+					'url'           => URL::base('http'),
+					'email'         => $this->user->email,
+					'surname'       => $this->user->surname,
+					'firstname'     => $this->user->firstname,
+					'login_link'    => URL::base('http') . 'user/login',
+				), false);
+
+				
+			}
+			
+			
+			
+		} else {
+
+			$to = array($this->friend->email, $this->friend->firstname.' '.$this->friend->surname);
+
+			$subject = Message::t('email', 'invite.subject', array(
+				'friend_name' => $this->owner->fullname(),
+			));
+
+			$message = Message::t('email', 'invite.plain', array(
+				'url'           => URL::base('http'),
+				'email'         => $this->friend->email,
+				'surname'       => $this->friend->surname,
+				'firstname'     => $this->friend->firstname,
+				'register_link' => URL::base('http') . 'user/register',
+			), false);
+
 		}
 
-		echo $message;
 		Email::send($to, $from, $subject, $message);
+
+		return true;
 	}
 }

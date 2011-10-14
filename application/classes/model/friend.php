@@ -12,7 +12,7 @@ class Model_Friend extends ORM {
 
 	public function save(Validation $validation = NULL) {
 		if (!$this->loaded()) {
-			$this->maybe_notify();
+			//$this->maybe_notify();
 		}
 
 		parent::save($validation);
