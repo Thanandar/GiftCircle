@@ -64,13 +64,14 @@ if (empty($_SERVER['HTTP_HOST'])) {
 }
 
 switch($_SERVER['HTTP_HOST']) {
-	case 'gift-circle.dh.devba.se':
-		Kohana::$environment = Kohana::DEVELOPMENT;
-		break;
+	// case 'gift-circle.dh.devba.se':
+	// 	Kohana::$environment = Kohana::DEVELOPMENT;
+	// 	Kohana::$environment = 'dave';
+	// 	break;
 	case 'giftcircle.base-dev.com':
 		Kohana::$environment = Kohana::STAGING;
 		break;
-	default:
+	case 'giftcircle.com':
 		Kohana::$environment = Kohana::PRODUCTION;
 		error_reporting(E_ALL ^ E_NOTICE ^ E_STRICT);
 }
@@ -85,6 +86,10 @@ switch($_SERVER['HTTP_HOST']) {
 if (isset($_SERVER['KOHANA_ENV']))
 {
 	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
+}
+
+if (empty(Kohana::$environment)) {
+	Kohana::$environment = Kohana::DEVELOPMENT;
 }
 
 /**
@@ -148,9 +153,8 @@ $environments = array(
     Kohana::PRODUCTION  => 'production',
     Kohana::STAGING     => 'staging',
     Kohana::TESTING     => 'testing',
-    Kohana::DEVELOPMENT => 'development',
+   // Kohana::DEVELOPMENT => 'development',
 );
 
 // from http://forum.kohanaframework.org/discussion/9562/how-to-choose-database-config-in-bootstraps/p1
-Database::$default = $environments[Kohana::$environment];
-
+Database::$default = empty($environments[Kohana::$environment]) ? $_SERVER['HTTP_HOST'] : $environments[Kohana::$environment];

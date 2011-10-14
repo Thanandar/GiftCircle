@@ -2,7 +2,7 @@
 
 return array
 (
-	'development' => array
+	'gift-circle.dh.devba.se' => array
 	(
 		'type'       => 'mysql',
 		'connection' => array(
