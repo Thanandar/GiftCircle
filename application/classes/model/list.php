@@ -10,6 +10,7 @@ class Model_List extends ORM {
 		'gifts' => array(),
 		'friends' => array('through' => 'friends_lists'),
 		'friendlists' => array(),
+		'listtransactions' => array(),
 	);
 
 	public function contains_me() {
@@ -60,6 +61,42 @@ class Model_List extends ORM {
 		}
 
 		return parent::delete();
+	}
+
+	/**
+	 * Send email notifications to circle
+	 * 
+	 * Called from cron when a $this has been updates since its
+	 * list notification.
+	 * 
+	 * @param {int} $debouncetime Ignore changes new than this number
+	 *                            of seconds ago.
+	 */
+	public function send_notifications($debounce_time) {
+		//echo $list->name;
+		// find all friends on this list that are subscribed
+		$circle = $this->friendlists
+			// make sure they're subscribed
+			->where('subscribed', '=', '1')
+
+			// 
+			->where('last_notification', '<', $this->updated)
+			->find_all();
+
+		foreach ($circle as $friend) {
+			$friend->send_notification($debounce_time);
+		}
+
+		// add 1 second so it's slightly after the updated field
+		$this->last_notification = date('Y-m-d H:i:s', time() + 1);
+		$this->save();
+	}
+
+	public function touch() {
+		if ($this->loaded()) {
+			$this->updated = date('Y-m-d H:i:s', time());
+			$this->save();
+		}
 	}
 
 }

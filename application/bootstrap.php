@@ -59,6 +59,10 @@ I18n::lang('en-us');
 /**
  * Set the environment status by the domain.
  */
+if (empty($_SERVER['HTTP_HOST'])) {
+	$_SERVER['HTTP_HOST'] = trim(@file_get_contents(dirname(__DIR__).'/host'));
+}
+
 switch($_SERVER['HTTP_HOST']) {
 	case 'gift-circle.dh.devba.se':
 		Kohana::$environment = Kohana::DEVELOPMENT;

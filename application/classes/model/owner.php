@@ -222,5 +222,8 @@ class Model_Owner extends Model_User {
 		return $friendlists[0];
 	}
 
+	public function fullname() {
+		return $this->firstname . ' ' . $this->surname;
+	}
 
 }

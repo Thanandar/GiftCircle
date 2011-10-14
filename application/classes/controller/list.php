@@ -277,6 +277,10 @@ class Controller_List extends Controller_Page {
 			$added += $this->add_new_friends_from_post($view, $list);
 
 			if ($added) {
+				// mark the list as updated 
+				// so it can send notifications
+				$list->touch();
+
 				Message::add('success', __('Added ' . $added . ' friends.'));
 				Request::current()->redirect('list/mine/' . $list->id);
 			}

@@ -32,5 +32,41 @@ class Model_Friendlist extends ORM {
 		$this->save();
 	}
 
+	/**
+	 * Send an email to $this->friend about $this->list
+	 * 
+	 * @param {int} $debouncetime Ignore changes new than this number
+	 *                            of seconds ago.
+	 */
+	public function send_notification($debounce_time) {
+
+		$list_transactions = $this->list->listtransactions
+			->where('updated', '>', $this->last_notification)
+			->where('updated', '<', date('Y-m-d H:i:s', time() - $debounce_time))
+			->find_all();
+		$count = count($list_transactions);
+
+		if (!$this->friend->email) {
+			// friend/account removed
+			return;
+		}
+
+		if (!$count) {
+			return;
+		}
+
+		/*echo "<pre>Sending notification to {$this->friend->email}
+		  about $count changes on {$this->list->owner->email}'s list:  {$this->list->name}
+		";
+		foreach ($list_transactions as $t) {
+			echo "$t->description on $t->updated\n";
+		}
+*/
+		$n = new Model_Delayednotification($this, $list_transactions);
+		$n->send();
+
+		$this->last_notification = date('Y-m-d H:i:s', time());
+		$this->save();
+	}
 }
 

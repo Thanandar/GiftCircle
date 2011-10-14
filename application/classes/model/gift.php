@@ -41,6 +41,15 @@ class Model_Gift extends ORM {
 
 			Email::send($to, $from, $subject, $message);
 
+		} else {
+			// not reserved yet
+			// 
+			if (!$this->loaded()) {
+				Model_Listtransaction::log($this->list, 'Added a gift: ' . $this->name);
+			} else {
+				Model_Listtransaction::log($this->list, 'Updated a gift: ' . $this->name);
+			}
+			
 		}
 
 
@@ -49,7 +58,10 @@ class Model_Gift extends ORM {
 			if ($this->url) {
 				$this->url = $this->add_tracking_to_url($this->url);
 			}
+
+
 		}
+		
 
 
 		parent::save($validation);
