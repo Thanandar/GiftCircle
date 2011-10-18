@@ -58,7 +58,7 @@ class Controller_Page extends Controller_Template {
 	public function after() {
 		if ($this->auto_render && $this->template_extras) {
 			$styles = array(
-				'http://fonts.googleapis.com/css?family=Oswald' => 'screen',
+				//'http://fonts.googleapis.com/css?family=Oswald' => 'screen',
 				'static/css/bootstrap.min.css' => 'screen',
 				'static/css/theme.css' => 'screen',
 			);
