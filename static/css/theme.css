@@ -157,6 +157,7 @@ footer {
   border-radius: 12px;
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
+  -webkit-transition:0.1s linear all;-moz-transition:0.1s linear all;-ms-transition:0.1s linear all;-o-transition:0.1s linear all;transition:0.1s linear all;
 }
 
 .topbar a:hover span, .topbar a.active span {
