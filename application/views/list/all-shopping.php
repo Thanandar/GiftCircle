@@ -8,7 +8,7 @@
 			<th>Approx price</th>
 			<th>Who for?</th>
 			<th>List name</th>
-			<th></th>
+			<th width="235"></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -32,8 +32,9 @@
 			<td><?php echo HTML::chars($list->name) ?></td>
 			<td>
 				<?php if (!$bought) { ?>
-					<a class="btn success" title="Mark as bought" href="/gift/mark_as_bought/<?php echo $gift->id; ?>">Mark as bought</a>
-					<a class="btn danger"  title="Unreserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to unreserve this product?')">Unreserve</a>
+					<a class="btn" title="Mark as bought" href="/gift/mark_as_bought/<?php echo $gift->id; ?>">Mark as bought</a>
+					or
+					<a href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to remove this this product from your list?')">remove from list</a>
 				<?php } else { ?>
 				unbuy?
 				<?php } ?>

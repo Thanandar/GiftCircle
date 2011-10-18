@@ -11,6 +11,13 @@ $form->error_class = 'error block';
 $form->info_class = 'info block';
 ?>
 <div class="span12">
+	<?php
+	if (!empty($errors['password'])) {
+		echo '<div class="alert-message error"><p>';
+		echo $errors['password'];
+		echo '</p></div>';
+	}
+	?>
 	<form method="post" action="" accept-charset="utf-8">
 		<fieldset>
 			<div class="clearfix">
@@ -38,13 +45,6 @@ $form->info_class = 'info block';
 				</div>
 			</div>			
 
-			<?php
-			if (!empty($errors['password'])) {
-				echo '<div class="alert-message error"><p>';
-				echo $errors['password'];
-				echo '</p></div>';
-			}
-			?>
 
 <?php
 
@@ -53,11 +53,13 @@ $authClass = new ReflectionClass(get_class(Auth::instance()));
 if($authClass->hasMethod('auto_login')) {
 	?>
 			<div class="clearfix">
-				<?php echo $form->label('remember', __('Remember me')); ?>
 				<div class="input">
 					<ul class="inputs-list">
 						<li>
-							<?php echo $form->checkbox('remember'); ?>
+							<label>
+								<input type="checkbox" name="remember" value="remember" />
+								<span>Remember me</span>
+							</label>
 						</li>
 					</ul>
 				</div>
