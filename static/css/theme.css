@@ -190,6 +190,26 @@ a.login_provider:hover {
    border: 1px solid black;
 }
 
+/*buttons*/
+
+.btn.large {
+  font-family: HouschkaAltBlackRegular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-size: 130%;
+}
+
+.btn.primary{
+  color:#ffffff;
+  background-color:#D96301;
+  background-repeat:repeat-x;
+  background-image:-khtml-gradient(linear, left top, left bottom, from(#FFBA00), to(#D96301));
+  background-image:-moz-linear-gradient(top, #FFBA00, #D96301);background-image:-ms-linear-gradient(top, #FFBA00, #D96301);background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFBA00), color-stop(100%, #D96301));
+  background-image:-webkit-linear-gradient(top, #FFBA00, #D96301);background-image:-o-linear-gradient(top, #FFBA00, #D96301);background-image:linear-gradient(top, #FFBA00, #D96301);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBA00', endColorstr='#D96301', GradientType=0);
+  text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-color:#D96301 #D96301 #964300;
+  border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
 
 /* profile page: associated accounts */
 
@@ -230,5 +250,6 @@ background: #FFF url(/img/small/yahoo.png) no-repeat center center;
   display: inline-block;
   width: 116px;
 }
+
 
 
