@@ -10,15 +10,38 @@
 
 <?php echo View::factory('page/menu'); ?>
 
+<div class="page-header">
+	<div class="container">
+		<?php 
+		if (Auth::instance()->logged_in()) { 
+
+			$user = Auth::instance()->get_user();
+			$name = htmlspecialchars($user->firstname . ' ' . $user->surname);
+			if (!strlen(trim($name))) {
+				$name = $user->email;
+			}
+		?>
+			<div class="pull-right">
+				<span class="currently-logged-in">Logged in as 
+					<a href="/user/profile"><strong><?php echo $name; ?></strong></a>
+				</span>&nbsp;
+			</div>
+		<?php } ?>
+
+		<h1>
+			<?php echo $title ?>
+		</h1>
+		<?php if (!empty($subtitle)) { ?>
+			<h2>
+				<?php echo $subtitle ?>
+			</h2>
+		<?php } ?>
+
+	</div>
+</div>
+
 <div class="container">
 	<div class="content">
-		<div class="page-header">
-			<h1>
-				<img src="http://placehold.it/80x50&text=Logo" alt="Logo" style="vertical-align:middle" />
-				<?php echo $title ?>
-				<small>Gift Circle</small>
-			</h1>
-		</div>
 		<?php echo Message::output(); ?>
 		<div class="row">
 <!-- end of header -->
@@ -31,10 +54,13 @@
 <!-- footer -->
 		</div><!-- .row -->
 	</div><!-- .content -->
-	<footer>
-		<p>&copy; 2011 Net Optimisers Ltd</p>
-	</footer>
 </div><!-- .container -->
+
+<footer>
+	<div class="container">
+		<p>&copy; 2011 Net Optimisers Ltd</p>
+	</div>
+</footer>
 
 </body>
 </html>

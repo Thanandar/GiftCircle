@@ -2,13 +2,11 @@
 
 $logged_in = Auth::instance()->logged_in();
 
-if ($logged_in) {
-	$user = Auth::instance()->get_user();
-	$name = htmlspecialchars($user->firstname . ' ' . $user->surname);
-	if (!strlen(trim($name))) {
-		$name = $user->email;
-	}
+function menu_link($url, $text) {
+	$active = strstr(@$_SERVER['REQUEST_URI'], $url) ? ' class="active"' : '';
+	return '<li><a' . $active . ' href="' . $url . '"><span>' . $text . '</span></a></li>';
 }
+
 
 ?>
 <div class="topbar">
@@ -19,30 +17,32 @@ if ($logged_in) {
 			<div class="pull-right">
 				<ul class="nav">
 			
-				<?php if ($logged_in) { ?>
-					<li><a href="/home/dashboard">Dashboard</a></li>
-					<li><a href="/list/my">Lists</a></li>
-					<li><a href="/gift/shopping">Shopping List</a></li>
-					<li><a href="/friend/list">Friends</a></li>
-					<li><a href="/home/support">Support</a></li>
-					<li><a href="/home/faqs">FAQs</a></li>
-					<li><a href="/user/logout">Logout</a></li>
-				<?php } else { ?>
-					<li><a href="/home/faqs"><span>What is Gift Circle?</span></a></li>
-					<li><a href="/home/faqs"><span>FAQs</span></a></li>
-					<li><a href="/user/login"><span>Login</span></a></li>
-					<li><a href="/user/register"><span>Signup</span></a></li>
-				<?php } ?>
+				<?php
+
+				if ($logged_in) {
+					foreach (array(
+						"/home/dashboard" => 'Dashboard',
+						"/list/my"        => 'Lists',
+						"/gift/shopping"  => 'Shopping List',
+						"/friend/list"    => 'Friends',
+						"/home/support"   => 'Support',
+						"/home/faqs"      => 'FAQs',
+						"/user/logout"    => 'Logout',
+						) as $url => $text) {
+						echo menu_link($url, $text);
+					}
+				} else { 
+					foreach (array(
+						"/home/faqs"      => 'What is Gift Circle?',
+						"/home/faqs"      => 'FAQs',
+						"/user/login"    => 'Login',
+						"/user/register"    => 'Signup',
+						) as $url => $text) {
+						echo menu_link($url, $text);
+					}
+				} ?>
 				</ul>
 			</div>
 		</div>
 	</div>
 </div>
-
-<?php if ($logged_in) { ?>
-	<form class="pull-right">
-		<span class="currently-logged-in">Logged in as 
-			<a href="/user/profile"><strong><?php echo $name; ?></strong></a>
-		</span>&nbsp;
-	</form>
-<?php } ?>

@@ -35,6 +35,7 @@ class Controller_Home extends Controller_Page {
 		$config = Kohana::$config->load('giftcircle.dashboard');
 
 		$this->template->title = 'Dashboard';
+		$this->template->subtitle = 'Your control panel for your circles and gifts';
 
 		$view = View::factory('home/dashboard');
 		$me = ORM::factory('owner', $this->me()->id);
