@@ -114,10 +114,10 @@ Add a new friend to a list, using friend's email address.
 		Already on list:
 			* Warning "User B is already on your list"
 	Unregistered user:
-		- Delayed notification: "User A would like to add you to their list, click here to sign up." [GIFTCIRCLE-67]
+		* Delayed notification: "User A would like to add you to their list, click here to sign up." [GIFTCIRCLE-67]
 		* Added to your Friend list as pending
 	Registered user:
-		- Delayed notification: "User A would like to add you to their list, click here to accept or cancel friendship." [GIFTCIRCLE-67]
+		* Delayed notification: "User A would like to add you to their list, click here to accept or cancel friendship." [GIFTCIRCLE-67]
 		* Added to your Friend list as pending
 
 Add existing friend to a list, from Friend list
@@ -127,7 +127,7 @@ Add existing friend to a list, from Friend list
 		Unconfirmed friend:
 			* No email sent
 		Confirmed friend:
-			- Delayed notification: "User A has added you to their list. Click here to see it and manage your subscription" [GIFTCIRCLE-67]
+			* Delayed notification: "User A has added you to their list. Click here to see it and manage your subscription" [GIFTCIRCLE-67]
 			* User is automatically subscribed to list
 
 Edit a gift
@@ -222,7 +222,7 @@ Deleting account
 
 Server runs cron script
 	At any time, if any Subscribed friends on a list have not been notified of any changes to the list that happened over 60 minutes ago:
-		- Email notification sent saying a list has been updated (not detailing changes) [GIFTCIRCLE-64] [GIFTCIRCLE-52]
+		* Email notification sent saying a list has been updated (not detailing changes) [GIFTCIRCLE-64] [GIFTCIRCLE-52]
 
 
 ------------------------
