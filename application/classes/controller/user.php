@@ -4,10 +4,19 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 
 	public $template = 'template';
 
-	public function action_view_lists() {
-		Request::current()->redirect('list/all');
+	public function action_login() {
+		if (Auth::instance()->logged_in()) {
+			Request::current()->redirect('home/dashboard');
+		}
+
+		$this->template->title = 'Login';
+		$this->template->subtitle = 'Access your free account below.';
+		return parent::action_login();
 	}
 
+	public function action_view_lists() {
+		Request::current()->redirect('home/dashboard');
+	}
 
 	/**
 	 * View: Profile editor
@@ -80,6 +89,10 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 	 * Register a new user.
 	 */
 	public function action_register() {
+
+		$this->template->title = 'Sign up';
+		$this->template->subtitle = 'Register for your free account below. You\'ll be up and running in no time.';
+
 		// we're using email addresses as usernames
 		if (!empty($_POST['email'])) {
 			$_POST['username'] = $_POST['email'];
@@ -93,8 +106,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 			$recaptcha_config = Kohana::$config->load('recaptcha');
 			$recaptcha_error = null;
 		}
-		// set the template title (see Controller_App for implementation)
-		$this->template->title = __('User registration');
+
 		// If user already signed-in
 		if (Auth::instance()->logged_in() != false)
 		{
@@ -170,6 +182,17 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 		// }
 
 		$this->template->content = $view;
+	}
+
+	/**
+	 * Log the user out.
+	 */
+	public function action_logout()
+	{
+		// Sign out the user
+		Auth::instance()->logout();
+		// redirect to the user account and then the signin page if logout worked as expected
+		$this->request->redirect('');
 	}
 
 
