@@ -222,5 +222,7 @@ background: #FFF url(/img/small/yahoo.png) no-repeat center center;
   width: 116px;
 }
 
-
+.content-container {
+	min-height:500px;	
+}
 

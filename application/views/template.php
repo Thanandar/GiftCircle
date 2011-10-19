@@ -5,6 +5,9 @@
 	<title><?php echo $title ?> &mdash; GiftCircle</title>
 <?php foreach ($styles as $file => $type) echo "\t" . HTML::style($file, array('media' => $type)), PHP_EOL ?>
 <?php foreach ($scripts as $file) echo "\t" . HTML::script($file), PHP_EOL ?>
+<!--[if IE 7]>
+<link rel="stylesheet" href="/static/css/ie7styles.css" type="text/css" />
+<![endif]-->
 </head>
 <body>
 
@@ -40,7 +43,7 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container content-container">
 	<div class="content">
 		<?php echo Message::output(); ?>
 		<div class="row">

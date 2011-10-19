@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content .row .span12 {
+	margin-left: 0px !important;	
+}
+.well .btn {
+	float:left;
+}
+.well a.btn {
+	margin-left:4px;	
+}
