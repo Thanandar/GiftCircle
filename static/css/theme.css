@@ -7,7 +7,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: HouschkaAltBlackRegular, "Helvetica Neue",Helvetica,Arial,sans-serif;
   letter-spacing: -2px;
   text-transform: uppercase;
   font-weight: normal;
@@ -42,8 +41,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Page header tweaks */
 .page-header {
-  background-color: #00AFF0;
-  padding: 20px 20px 10px;
+  background-color:#00AFF0;
+  padding: 30px 20px 20px;
   margin: 0px -20px 20px;
   border:0;
   box-shadow: none;
@@ -60,19 +59,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-header h2 {
   color: #01678A;
-  font-family: VAGRoundedBoldRegular, "Helvetica Neue",Helvetica,Arial,sans-serif;
   text-transform: none;
   letter-spacing: 0px;
   margin-top: -10px;
 }
 
 .topbar .brand {
-  font-family: HouschkaAltBlackRegular, "Helvetica Neue",Helvetica,Arial,sans-serif;
-  text-shadow: #335F73 2px 2px 0px;
-  font-size: 25px;
+  font-size: 10px;
 }
 .topbar img.brand {
-	padding:8px 8px 12px 16px;	
+	padding:8px 8px 6px 16px;	
 }
 .topbar .brand:before {
   font-size: 170%;
@@ -81,20 +77,20 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 6px;
 }
 
+.topbar {
+  height: 54px;
+}
+
 .topbar .fill {
-  background-color: #00678D;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#00678D), to(#0181B2)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, #00678D, #0181B2); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image:    -moz-linear-gradient(top, #00678D, #0181B2); /* FF3.6 */
-  background-image:     -ms-linear-gradient(top, #00678D, #0181B2); /* IE10 */
-  background-image:      -o-linear-gradient(top, #00678D, #0181B2); /* Opera 11.10+ */
-  background-image:         linear-gradient(top, #00678D, #0181B2);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#00678D', EndColorStr='#0181B2'); /* IE6-IE9 */
-  box-shadow: none;
+  background:url("/img/header-bg.jpg") repeat-x #0083B1;
+
+}
+
+.topbar div > ul, .nav {
+  margin: 5px 10px 0 0;
 }
 
 .topbar a {
-  font-family: nevisBold, "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #fff;
   text-transform: uppercase;
   font-size: 12px;
@@ -174,7 +170,6 @@ a.login_provider:hover {
 /*buttons*/
 
 .btn.large {
-  font-family: HouschkaAltBlackRegular,"Helvetica Neue",Helvetica,Arial,sans-serif;
   text-transform: uppercase;
   font-size: 130%;
 }
@@ -230,12 +225,11 @@ background: #FFF url(/img/small/yahoo.png) no-repeat center center;
 .shop-logos li { /*media-grid*/
   display: inline-block;
 }
-
+form .clearfix {
+	padding-left:10px !important;	
+}
 .content-container {
 	min-height:500px;	
-}
-.delete {
-	background:url(../../img/recycle-icon.png) no-repeat;	
 }
 /*Footer styles taken from bootstrap.min.css*/
 .footer {

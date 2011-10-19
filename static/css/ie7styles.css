@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-.content .row .span12 {
+.content .row .span12, .content .row .span10 {
 	margin-left: 0px !important;	
 }
 .well .btn {

@@ -27,8 +27,8 @@
 			?>
 
 			<div class="actions">
-				<input type="submit" value="Create my list" class="btn primary" /> or
-				<a href="/">cancel</a>
+				<input type="submit" value="Create your list" class="btn primary" /> or
+				<a href="/list/my">go back to list overview</a>
 			</div>
 		</fieldset>
 	</form>
