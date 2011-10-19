@@ -12,18 +12,47 @@ if(isset($data)) {
 echo $form->open('user/profile_edit');
 ?>
 
-   <ul>
-      <li><label><?php echo __('Firstname'); ?></label></li>
-      <?php echo $form->input('firstname'); ?>
-      <li><label><?php echo __('Surname'); ?></label></li>
-      <?php echo $form->input('surname'); ?>
-      <li><label><?php echo __('Email address'); ?></label></li>
-      <?php echo $form->input('email') ?>
-      <li><label><?php echo __('Password'); ?></label></li>
-      <?php echo $form->password('password', null, array('info' => __('Password should be between 6-42 characters.'))) ?>
-      <li><label><?php echo __('Re-type Password'); ?></label></li>
-      <?php echo $form->password('password_confirm') ?>
-      
+
+   <div class="clearfix">
+      <label>First name</label>
+      <div class="input"><?php echo $form->input('firstname', null, array(
+         'required' => 'required',
+)); ?></div>
+   </div>
+   <div class="clearfix">
+      <label>Surname</label>
+      <div class="input"><?php echo $form->input('surname', null, array(
+         'required' => 'required',
+)); ?></div>
+   </div>
+
+   <div class="clearfix<?php if (isset($errors['email']) || isset($errors['username'])) echo ' error'; ?>">
+      <label>Email address</label>
+      <div class="input"><?php echo $form->input('email', null, array(
+         'type' => 'email',
+         'placeholder' => 'you@example.com',
+         'required' => 'required',
+)); ?></div>
+   </div>   
+
+   <div class="clearfix<?php if (isset($errors['password'])) echo ' error'; ?>">
+      <label>Password</label>
+      <div class="input">
+         <?php echo $form->password('password', null, array(
+)); ?>
+         <?php if (!isset($errors['password'])) { ?>
+         <?php } ?>
+      </div>
+   </div>   
+
+   <div class="clearfix<?php if (isset($errors['password_confirm'])) echo ' error'; ?>">
+      <label>Confirm password</label>
+      <div class="input">
+         <?php echo $form->password('password_confirm', null, array(
+)); ?>
+      </div>
+   </div>   
+
 
       <?php /*
       <li><h2><?php echo __('Roles'); ?></h2></li>
@@ -43,7 +72,7 @@ echo $form->open('user/profile_edit');
          }
       ?>
             </table> */ ?>
-   </ul>
+   
    <div class="actions">
       <input type="submit" class="btn primary large" value="Update" />
    </div>

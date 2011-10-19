@@ -88,12 +88,18 @@ class Controller_List extends Controller_Page {
 		if ($_POST) {
 			if (arr::get($_POST, 'name')) {
 				$list->name = arr::get($_POST, 'name');
-				$list->expiry = arr::get($_POST, 'expiry');
-				$list->save();
-				Message::add('success', __('List updated.'));
-				Request::current()->redirect('list/mine/' . $list->id);
+
+				if (arr::get($_POST, 'expiry') && !preg_match('~^\d{1,2}/\d{1,2}/\d{4}$~', arr::get($_POST, 'expiry'))) {
+					$view->errors = 'Please enter a valid date';
+				} else {
+					$list->expiry = arr::get($_POST, 'expiry');
+					$list->save();
+					Message::add('success', __('List updated.'));
+					Request::current()->redirect('list/mine/' . $list->id);
+				}
+			} else {
+				$view->errors = 'Please enter a list name';
 			}
-			$view->errors = 'Please enter a list name';
 		}
 		$this->template->content = $view;
 	}
