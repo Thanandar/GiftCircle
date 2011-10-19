@@ -69,7 +69,6 @@ class Controller_Page extends Controller_Template {
 				'static/js/cufon-yui.js',
 				'static/js/HouschkaAltBlackRegular_900.font.js',
 				'static/js/VAGLight_700.font.js',
-				'static/js/HouschkaAlt_Heavy_900.font.js',
 				'static/js/nevisBold_700.font.js',
 				'static/js/functions.js',
 			);
