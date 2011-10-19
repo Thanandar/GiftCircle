@@ -71,7 +71,8 @@ switch($_SERVER['HTTP_HOST']) {
 	case 'giftcircle.base-dev.com':
 		Kohana::$environment = Kohana::STAGING;
 		break;
-	case 'giftcircle.com':
+	case 'giftcircle.co.uk':
+	case 'www.giftcircle.co.uk':
 		Kohana::$environment = Kohana::PRODUCTION;
 		error_reporting(E_ALL ^ E_NOTICE ^ E_STRICT);
 }
