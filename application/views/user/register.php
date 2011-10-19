@@ -59,7 +59,6 @@ echo $form->open('');
       <div class="input">
          <?php echo $form->password('password', null, array(
          'required' => 'required',
-         'required' => 'required',
 )); ?>
          <?php if (!isset($errors['password'])) { ?>
          <?php } ?>
