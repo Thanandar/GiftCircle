@@ -251,7 +251,8 @@ class Controller_List extends Controller_Page {
 
 		$this->redirect_if_not_owner();
 
-		$this->template->title = 'Add friends to my list';
+		$this->template->title = 'Add friends to my circle';
+		$this->template->subtitle = 'Choose the friends and family you would like in your gift circle';
 
 		$view = View::factory('list/add_friend');
 		$list = new Model_List($this->request->param('id'));
