@@ -147,6 +147,14 @@ label {
   text-align: left;
 }
 
+a.delete {
+  text-indent: -99999em;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("/img/recycle-icon.png") no-repeat center center;
+}
+
 /* LOGIN PAGE */
 a.login_provider {
    text-indent: -9999em;

@@ -26,13 +26,7 @@
 				<td><?php echo $gift->price ? '&pound;' . $gift->price : ''; ?></td>
 				<td><?php echo HTML::chars($gift->category->name); ?></td>
 				<td>
-					<span class="label important">
-						<?php if ($gift->reserver_id) { ?>
-							<a href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
-						<?php } else { ?>
-							<a href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
-						<?php } ?>
-					</span>
+					<a class="delete" href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
 				</td>
 			</tr>
 			<?php } ?>
@@ -71,9 +65,7 @@
 					<?php } ?>
 				</td>
 				<td width="18">
-					<span class="label important">
-						<a href="/list/delete_friend/<?php echo $list->id; ?>-<?php echo $friend->id; ?>">✘</a>
-					</span>
+					<a class="delete" href="/list/delete_friend/<?php echo $list->id; ?>-<?php echo $friend->id; ?>">✘</a>
 				</td>
 			</tr>
 			<?php } ?>
