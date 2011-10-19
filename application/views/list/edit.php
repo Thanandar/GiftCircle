@@ -1,8 +1,14 @@
 
 <div class="span12">
 
+<h2><?php echo HTML::chars($list->name); ?></h2>
+
 	<form method="post">
+
 		<fieldset>
+	<div class="pull-right">
+		<a class="danger" href="/list/delete/<?php echo $list->id; ?>">Delete this list</a>
+	</div>
 
 			<div class="clearfix">
 				<label>Name your gift list</label>
@@ -27,7 +33,7 @@
 
 			<div class="actions">
 				<input type="submit" value="Update my list" class="btn primary" /> or
-				<a href="/list/mine/<?php echo $list->id; ?>">cancel</a>
+				<a href="/list/mine/<?php echo $list->id; ?>">go back to list</a>
 			</div>
 		</fieldset>
 	</form>
