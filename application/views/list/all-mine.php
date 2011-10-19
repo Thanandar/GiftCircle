@@ -10,7 +10,7 @@ if (count($lists)) {
 		<tr>
 			<th>List name</th>
 			<th>Total gifts</th>
-			<th>Friends in my circle</th>
+			<th>Friends in your circle</th>
 		</tr>
 	</thead>
 	<tbody>

@@ -32,7 +32,7 @@
 			?>
 
 			<div class="actions">
-				<input type="submit" value="Update my list" class="btn primary" /> or
+				<input type="submit" value="Update your list" class="btn primary" /> or
 				<a href="/list/mine/<?php echo $list->id; ?>">go back to list</a>
 			</div>
 		</fieldset>
