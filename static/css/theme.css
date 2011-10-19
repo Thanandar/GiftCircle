@@ -71,7 +71,9 @@ footer {
   text-shadow: #335F73 2px 2px 0px;
   font-size: 25px;
 }
-
+.topbar img.brand {
+	padding:8px 8px 12px 16px;	
+}
 .topbar .brand:before {
   font-size: 170%;
   line-height: 0px;
