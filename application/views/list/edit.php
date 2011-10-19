@@ -18,7 +18,7 @@
 			<div class="clearfix">
 				<label>Expiry date</label>
 				<div class="input">
-					<input name="expiry" placeholder="eg '25/12/2012'" value="<?php echo HTML::chars($list->expiry); ?>">
+					<input type="date" pattern="^\d{1,2}/\d{1,2}/\d{4}$" name="expiry" placeholder="eg '25/12/2012'" value="<?php echo HTML::chars($list->expiry); ?>">
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>
