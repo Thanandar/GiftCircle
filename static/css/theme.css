@@ -104,10 +104,12 @@ h1, h2, h3, h4, h5, h6 {
 .topbar a:hover {
   text-decoration: none;
 }
-
+.topbar div > ul a, .nav a {
+	padding:10px 3px 11px;	
+}
 .topbar a span {
   display: block;
-  padding: 3px 3px 2px;
+  padding: 3px 10px 2px;
   border-radius: 12px;
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
