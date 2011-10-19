@@ -1,10 +1,12 @@
 
 <div class="span12">
 
+	<h2>For list: <?php echo HTML::chars($list->name); ?></h2>
+
 	<form method="post">
 		<?php if (count($friends)) { ?>
 		<fieldset>
-			<legend>Add existing friends to "<?php echo HTML::chars($list->name); ?>"</legend>
+			<legend>Add existing friends</legend>
 
 			<div class="clearfix">
 				<label>Add existing friends</label>
@@ -29,7 +31,7 @@
 		<?php } ?>
 
 		<fieldset>
-			<legend>Add new friends to "<?php echo HTML::chars($list->name); ?>"</legend>
+			<legend>Add new friends</legend>
 			<ol>
 				<?php for ($i = 0; $i < 5; $i++) { ?>
 				<li>
@@ -55,8 +57,9 @@
 			?>
 
 			<div class="actions">
-				<input name="submit" type="submit" value="Add friends" class="btn primary large" /> or
-				<a href="/list/mine/<?php echo $list->id; ?>">cancel</a>
+				<input name="submit" type="submit" value="Add friends" class="btn primary large" /> 
+				or
+				<a href="/list/mine/<?php echo $list->id; ?>">go back to list</a>
 			</div>
 		</fieldset>
 	</form>
@@ -69,11 +72,11 @@
 	<div class="well">
 
 		<?php if (count($circle)) { ?>
-		<table>
+		<ul class="unstyled">
 			<?php foreach ($circle as $friend) { ?>
-			<tr><td><?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?></tr>
+			<li><?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?></li>
 			<?php } ?>
-		</table>
+		</ul>
 		<?php } else { ?>
 		<p>You have no friends in this circle</p>
 		<?php } ?>

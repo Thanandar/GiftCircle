@@ -13,6 +13,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
+.content h2 {
+  line-height: 24px;
+}
+
 footer {
   background-color: #E8E8E8;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#E8E8E8), to(#ffffff)); /* Saf4+, Chrome */
@@ -116,6 +120,14 @@ footer {
 
 .topbar .btn {
   border: 0;
+}
+
+big {
+  font-size:150%;
+}
+
+.well ul.unstyled li {
+  color: #404040;
 }
 
 .currently-logged-in {color: #fff;}
