@@ -116,6 +116,9 @@ class Controller_Gift extends Controller_Page {
 	}
 
 	public function action_delete() {
+		$this->template->title = 'Remove a gift';
+		$this->template->subtitle = 'Confirm you want to remove this gift from your list';
+
 		$gift_id = $this->request->param('id');
 		$gift = new Model_Gift($gift_id);
 
