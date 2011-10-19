@@ -17,7 +17,7 @@
 			<?php foreach ($gifts as $gift) { ?>
 			<tr>
 				<td><a href="/gift/edit/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a></td>
-				<td>&pound;<?php echo $gift->price; ?></td>
+				<td><?php echo $gift->price ? '&pound;' . $gift->price : ''; ?></td>
 				<td><?php echo HTML::chars($gift->category->name); ?></td>
 				<td>
 					<span class="label important">
