@@ -235,7 +235,9 @@ background: #FFF url(/img/small/yahoo.png) no-repeat center center;
 .content-container {
 	min-height:500px;	
 }
-
+.delete {
+	background:url(../../img/recycle-icon.png) no-repeat;	
+}
 /*Footer styles taken from bootstrap.min.css*/
 .footer {
 	display:block;margin-top:17px;padding-top:17px;	

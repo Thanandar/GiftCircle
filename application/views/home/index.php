@@ -10,8 +10,8 @@
 
 			<div class="well">
 				<button type="button" class="btn primary large" onclick="location.href='/user/register'">Register </button>
-				or
-				<a href="/home/features">find out more</a>
+				<span class="next-to-button">or
+				<a href="/home/features">find out more</a></span>
 			</div>
 		</div>
 		

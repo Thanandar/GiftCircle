@@ -13,3 +13,7 @@
 td .btn {
 	float:left;	
 }
+.next-to-button {
+	float:left;
+	padding-top:10px;
+}
