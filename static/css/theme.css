@@ -126,6 +126,10 @@ big {
   font-size:150%;
 }
 
+a.danger {
+  color:red;
+}
+
 .well ul.unstyled li {
   color: #404040;
 }
@@ -135,6 +139,10 @@ big {
 /* delete crosses*/
 .label a {
   color: #fff;
+}
+
+label {
+  text-align: left;
 }
 
 /* LOGIN PAGE */

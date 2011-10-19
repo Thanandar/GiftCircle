@@ -1,7 +1,13 @@
 
 <div class="span10">
 
-<h2>Current list: "<?php echo HTML::chars($list->name); ?>"</h2>
+<div class="pull-right">
+		<a href="/list/edit/<?php echo $list->id; ?>">
+			Edit list details
+		</a>
+</div>
+
+<h2><?php echo HTML::chars($list->name); ?></h2>
 	
 	<?php if (count($gifts)) { ?>
 	<table class="zebra-striped">
@@ -40,10 +46,8 @@
 
 	<div class="well">
 		<input type="button" class="btn primary" value="Add a gift to this list" onclick="location.href='/gift/add/<?php echo $list->id; ?>'"/>
-		<input type="button" class="btn" value="Edit this list" onclick="location.href='/list/edit/<?php echo $list->id; ?>'"/>
-		<input type="button" class="btn danger" a href="" onclick="location.href='/list/delete/<?php echo $list->id; ?>'" value="Delete this list" />
 		or
-		<a href="/list/my">back to all lists</a>
+		<a href="/list/my">go back to list overview</a>
 	</div>
 
 
