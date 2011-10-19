@@ -2,6 +2,7 @@
 <html lang="<?php echo I18n::$lang ?>">
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >
 	<title><?php echo $title ?> &mdash; GiftCircle</title>
 <?php foreach ($styles as $file => $type) echo "\t" . HTML::style($file, array('media' => $type)), PHP_EOL ?>
 <?php foreach ($scripts as $file) echo "\t" . HTML::script($file), PHP_EOL ?>
@@ -62,7 +63,6 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 <?php echo $content ?>
 
 
-
 <!-- footer -->
 		</div><!-- .row -->
 	</div><!-- .content -->
@@ -74,8 +74,10 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 	</div>
 </div>
 
+<!--[if lt IE 7 ]>
+<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+<![endif]-->
+
 </body>
-
-
-
 </html>
