@@ -79,6 +79,7 @@ loadScript('http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js', fu
 			location.hash = '';
 		}
 	};
+	
 
 });
 
