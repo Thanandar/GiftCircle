@@ -12,6 +12,7 @@ function menu_link($url, $text) {
 <div class="topbar">
 	<div class="fill">
 		<div class="container">
+        	<img class="brand" src="/img/bullet-point.png" alt="Gift Circle" />
 			<a class="brand" href="/home/dashboard">Gift Circle</a>
 			
 			<div class="pull-right">
