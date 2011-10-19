@@ -9,7 +9,7 @@
 <!--[if IE 7]>
 <link rel="stylesheet" href="/static/css/ie7styles.css" type="text/css" />
 <![endif]-->
-<<<<<<< HEAD
+
 <!-- Hack to fix <footer> on IE's older than 9 -->
 <!--[if lt IE 9]>
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
