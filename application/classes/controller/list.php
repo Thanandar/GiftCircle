@@ -102,6 +102,7 @@ class Controller_List extends Controller_Page {
 		$this->redirect_if_not_owner();
 
 		$this->template->title = 'View my list';
+		$this->template->subtitle = 'Your gift list in detail';
 
 		$list = new Model_List($this->request->param('id'));
 
