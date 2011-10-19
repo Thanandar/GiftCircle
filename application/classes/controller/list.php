@@ -20,7 +20,8 @@ class Controller_List extends Controller_Page {
 			Request::current()->redirect('');
 		}
 
-		$this->template->title = 'My Lists';
+		$this->template->title = 'Lists';
+		$this->template->subtitle = 'Gift lists you have created';
 
 		$view = View::factory('list/my');
 		$me = ORM::factory('owner', $this->me()->id);

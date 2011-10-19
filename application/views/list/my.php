@@ -1,8 +1,6 @@
 
 <div class="span12">
 
-	<h2>My lists</h2>
-	
 	<?php 
 	echo View::factory('list/all-mine')
 		->set('lists', $my_lists);
