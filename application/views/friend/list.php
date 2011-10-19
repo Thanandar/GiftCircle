@@ -2,8 +2,6 @@
 <div class="span12">
 
 
-	<h2>My friends</h2>
-
 	<?php if (count($friends)) { ?>
 
 	<table class="zebra-striped">
@@ -41,7 +39,7 @@
 
 <div class="span4">
 
-	<h2>On my shopping list</h2>
+	<h2>Shopping list</h2>
 	
 	<?php echo Request::factory('gift/to_buy')->execute() ?>
 	

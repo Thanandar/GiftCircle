@@ -15,7 +15,8 @@ class Controller_Friend extends Controller_Page {
 	}
 
 	public function action_list() {
-		$this->template->title = 'My Friends';
+		$this->template->title = 'Friends';
+		$this->template->subtitle = 'All of these people are confirmed friends and can be added to your circles';
 
 		$view = View::factory('friend/list');
 		
