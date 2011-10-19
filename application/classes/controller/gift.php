@@ -15,7 +15,8 @@ class Controller_Gift extends Controller_Page {
 			Request::current()->redirect('');
 		}
 
-		$this->template->title = 'My Shopping List';
+		$this->template->title = 'Shopping List';
+		$this->template->subtitle = 'All the gifts you need to buy for friends and family';
 
 		$view = View::factory('gift/shopping');
 		$me = ORM::factory('owner', $this->me()->id);

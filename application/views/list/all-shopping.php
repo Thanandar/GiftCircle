@@ -4,10 +4,10 @@
 <table class="zebra-striped">
 	<thead>
 		<tr>
-			<th>Product name</th>
-			<th>Approx price</th>
-			<th>Who for?</th>
-			<th>List name</th>
+			<th>Product&nbsp;name</th>
+			<th>Approx&nbsp;price</th>
+			<th>Who&nbsp;for?</th>
+			<th>List&nbsp;name</th>
 			<th width="235"></th>
 		</tr>
 	</thead>
