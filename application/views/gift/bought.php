@@ -14,7 +14,7 @@
 	<?php } ?>
 
 	<div class="well">
-		<input type="button" class="btn" value="Back to my lists" onclick="location.href='/'" />
+		<input type="button" class="btn" value="Back to your lists" onclick="location.href='/'" />
 	</div>
 
 
