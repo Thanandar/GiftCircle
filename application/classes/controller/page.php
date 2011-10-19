@@ -68,7 +68,7 @@ class Controller_Page extends Controller_Template {
 				'http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js',
 				'static/js/cufon-yui.js',
 				'static/js/HouschkaAltBlackRegular_900.font.js',
-				'static/js/VAGRoundedBoldRegular_500.font.js',
+				'static/js/VAGLight_700.font.js',
 				'static/js/HouschkaAlt_Heavy_900.font.js',
 				'static/js/nevisBold_700.font.js',
 				'static/js/functions.js',
