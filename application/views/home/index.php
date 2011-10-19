@@ -9,7 +9,7 @@
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 
 			<div class="well">
-				<input type="button" class="btn primary large" value="Register" onclick="location.href='/user/register'" />
+				<button type="button" class="btn primary large" onclick="location.href='/user/register'">Register </button>
 				or
 				<a href="/home/features">find out more</a>
 			</div>

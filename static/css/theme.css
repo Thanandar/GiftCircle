@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 24px;
 }
 
-footer {
+.footer {
   background-color: #E8E8E8;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#E8E8E8), to(#ffffff)); /* Saf4+, Chrome */
   background-image: -webkit-linear-gradient(top, #E8E8E8, #ffffff); /* Chrome 10+, Saf5.1+, iOS 5+ */
@@ -25,11 +25,11 @@ footer {
   background-image:     -ms-linear-gradient(top, #E8E8E8, #ffffff); /* IE10 */
   background-image:      -o-linear-gradient(top, #E8E8E8, #ffffff); /* Opera 11.10+ */
   background-image:         linear-gradient(top, #E8E8E8, #ffffff);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#E8E8E8', EndColorStr='#ffffff'); /* IE6-IE9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#E8E8E8', EndColorStr='#ffffff', GradientType=0); /* IE6-IE9 */
   border-top: 1px solid #AFAFAF;
 }
 
-.container > footer p {
+.container > .footer p {
   text-align: center; /* center align it with the container */
 }
 
@@ -107,7 +107,7 @@ footer {
 
 .topbar a span {
   display: block;
-  padding: 0px 3px 2px;
+  padding: 3px 3px 2px;
   border-radius: 12px;
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
@@ -226,3 +226,7 @@ background: #FFF url(/img/small/yahoo.png) no-repeat center center;
 	min-height:500px;	
 }
 
+/*Footer styles taken from bootstrap.min.css*/
+.footer {
+	display:block;margin-top:17px;padding-top:17px;	
+}

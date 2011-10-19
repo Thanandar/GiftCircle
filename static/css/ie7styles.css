@@ -7,6 +7,9 @@
 .well .btn {
 	float:left;
 }
-.well a.btn {
-	margin-left:4px;	
+.btn {
+	margin-right:4px;	
+}
+td .btn {
+	float:left;	
 }

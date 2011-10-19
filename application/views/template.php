@@ -5,8 +5,13 @@
 	<title><?php echo $title ?> &mdash; GiftCircle</title>
 <?php foreach ($styles as $file => $type) echo "\t" . HTML::style($file, array('media' => $type)), PHP_EOL ?>
 <?php foreach ($scripts as $file) echo "\t" . HTML::script($file), PHP_EOL ?>
+<!-- IE7 Stylesheet -->
 <!--[if IE 7]>
 <link rel="stylesheet" href="/static/css/ie7styles.css" type="text/css" />
+<![endif]-->
+<!-- Hack to fix <footer> on IE's older than 9 -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
 <body>
@@ -59,11 +64,11 @@
 	</div><!-- .content -->
 </div><!-- .container -->
 
-<footer>
+<div class="footer">
 	<div class="container">
 		<p>&copy; 2011 Net Optimisers Ltd</p>
 	</div>
-</footer>
+</div>
 
 </body>
 </html>
