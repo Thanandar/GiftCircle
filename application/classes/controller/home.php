@@ -17,6 +17,11 @@ class Controller_Home extends Controller_Page {
 		$this->template->content = View::factory('home/features');
 	}
 
+	public function action_whatis() {
+		$this->template->title = 'What is Gift Circle?';
+		$this->template->content = View::factory('home/whatis');
+	}
+
 	public function action_support() {
 		$this->template->title = 'Support';
 		$this->template->content = View::factory('home/support');

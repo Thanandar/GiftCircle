@@ -33,10 +33,10 @@ function menu_link($url, $text) {
 					}
 				} else { 
 					foreach (array(
-						"/home/faqs"      => 'What is Gift Circle?',
-						"/home/faqs"      => 'FAQs',
+						"/home/whatis"   => 'What is Gift Circle?',
+						"/home/faqs"     => 'FAQs',
 						"/user/login"    => 'Login',
-						"/user/register"    => 'Signup',
+						"/user/register" => 'Signup',
 						) as $url => $text) {
 						echo menu_link($url, $text);
 					}
