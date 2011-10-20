@@ -3,7 +3,33 @@
 $logged_in = Auth::instance()->logged_in();
 
 function menu_link($url, $text) {
-	$active = strstr(@$_SERVER['REQUEST_URI'], $url) ? ' class="active"' : '';
+	$current = @$_SERVER['REQUEST_URI'];
+
+	if (strpos($current, 'friend')) {
+		$current = "/friend/list";
+	}
+
+	$dir = preg_replace('~/[a-z]+/?([0-9-]+)?$~', '', $current);
+	
+	if (strpos($current, 'shopping') || strpos($current, 'buy') || strpos($current, 'bought')) {
+		$current = "/gift/shopping";
+	} else {
+		if ($dir == '/gift') {
+			$current = "/list/my";
+		}
+	}
+
+
+	if ($url == "/list/my" && $dir == '/list') {
+		$current = "/list/my";
+	}
+
+	if ($url == "/friend/list" && $dir == '/friend') {
+		$current = "/friend/list";
+	}
+
+	$active = strstr($current, $url) ? ' class="active"' : '';
+
 	return '<li><a' . $active . ' href="' . $url . '"><span>' . $text . '</span></a></li>';
 }
 
