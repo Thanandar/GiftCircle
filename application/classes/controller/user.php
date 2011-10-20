@@ -111,7 +111,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 		if (Auth::instance()->logged_in() != false)
 		{
 			// redirect to the user account
-			$this->request->redirect('user/profile');
+			$this->request->redirect('home/dashboard');
 		}
 		// Load the view
 		$view = View::factory('user/register');
