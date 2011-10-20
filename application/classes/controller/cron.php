@@ -8,7 +8,12 @@ class Controller_Cron extends Controller {
 
 	public function action_index() {
 		$sent = 0;
-		$hour_ago = date('Y-m-d H:i:s', time() - $this->debounce_time);
+
+ 		$debounce_time = $this->request->param('id') 
+ 			? (int) $this->request->param('id') 
+ 			: $this->debounce_time;
+
+		$hour_ago = date('Y-m-d H:i:s', time() - $debounce_time);
 
 		// get al the lists that haven't been updated in the last hour
 		$lists = ORM::factory('list')
@@ -23,7 +28,7 @@ class Controller_Cron extends Controller {
 		->find_all();
 
 		foreach ($lists as $list) {
-			$sent += $list->send_notifications($this->debounce_time);
+			$sent += $list->send_notifications($debounce_time);
 		}
 
 		echo $sent;
@@ -32,17 +37,3 @@ class Controller_Cron extends Controller {
 	
 }
 
-
-/*
-
-Matt Morgan just updated a list on Gift Circle
-
-Hi Tom,
-
-Matt Morgan has made the following changes to the list "Christmas":
-
- - Added gift foo
- - Updated gift bar
-
-View Matt's updated list: <http://>
-*/
