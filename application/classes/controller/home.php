@@ -8,7 +8,9 @@ class Controller_Home extends Controller_Page {
 			Request::current()->redirect('home/dashboard');
 		}
 
-		$this->template->title = 'Home';
+		$this->template->title = 'Give them just what they want';
+		$this->template->subtitle = 'Create and share gift lists with your friends and family';
+		$this->template->post_header = View::factory('home/header');
 		$this->template->content = View::factory('home/index');
 	}
 

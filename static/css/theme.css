@@ -6,7 +6,7 @@ body {
   background: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   letter-spacing: -2px;
   text-transform: uppercase;
   font-weight: normal;
@@ -14,6 +14,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .content h2 {
   line-height: 24px;
+}
+
+h3.big {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 300%;
+}
+
+h4 {
+  font-weight: normal;
 }
 
 .footer {
@@ -42,10 +52,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Page header tweaks */
 .page-header {
   background-color:#00AFF0;
-  padding: 30px 20px 20px;
+  padding: 20px 20px 10px;
   margin: 0px -20px 20px;
   border:0;
   box-shadow: none;
+  max-height: 310px;
 }
 
 .page-header h1 {
@@ -53,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: #0D6C89 2px 2px 1px;
 }
 
-.page-header a {
+.page-header a, .page-header p {
   color: #fff;
 }
 
@@ -231,7 +242,42 @@ form .clearfix {
 .content-container {
 	min-height:500px;	
 }
+
+
 /*Footer styles taken from bootstrap.min.css*/
 .footer {
 	display:block;margin-top:17px;padding-top:17px;	
+}
+
+
+/*home page*/
+.home-list ol {
+  font-size: 500%;
+  font-family: serif;
+  margin-left: 0;
+  list-style-type: none;
+  *list-style-type: decimal; /* hack for IE6 and IE7 */
+  counter-reset: x;
+}
+
+.home-list ol.right {
+  counter-reset: x 4;
+}
+
+.home-list li:before {
+  content: counter(x) " ";
+  float: left;
+  margin: 30px 20px 0 0;
+  height: 70px;
+}
+
+.home-list li {
+  color: #aaa;
+  counter-increment: x;
+  clear: left;
+}
+
+.home-list p, .home-list h4 {
+  color: #404040;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
 }

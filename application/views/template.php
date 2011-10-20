@@ -42,6 +42,8 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 			</h2>
 		<?php } ?>
 
+		<?php if (!empty($post_header)) { echo $post_header; } ?>
+
 	</div>
 </div>
 
