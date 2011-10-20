@@ -20,6 +20,7 @@ h3.big {
   text-transform: none;
   letter-spacing: 0;
   font-size: 300%;
+  margin-top: 25px;
 }
 
 h4 {
@@ -94,7 +95,7 @@ h4 {
 
 .topbar .fill {
   background:url("/img/header-bg.jpg") repeat-x #0083B1;
-
+  filter: none; /*reset bootstrap for IE*/
 }
 
 .topbar div > ul, .nav {
