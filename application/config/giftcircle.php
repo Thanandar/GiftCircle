@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'email-from'      => 'no-reply@giftcircle.com',
+	'email-from'      => 'no-reply@giftcircle.co.uk',
 	'email-from-name' => 'GiftCircle',
 	
 	'dashboard'       => array(
