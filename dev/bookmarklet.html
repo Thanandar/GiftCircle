@@ -7,12 +7,39 @@
 <body>
 
 <p>Drag to bookmarks:
-<a href="javascript:alert('Adding product '+window.location)" onclick="alert('Drag to bookmarks');return false">Gift Circle This!</a>
+<a href="javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='http://gift-circle.dh.devba.se/static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();" class="btn" onclick="alert('Drag this button to your bookmarks toolbar');return false">Add to GC (iframe)</a>
 </p>
 
-<p>Added the bookmarklet? Now add a product: <a href="http://amazon.co.uk">Amazon</p>
+<p>Drag to bookmarks:
+<a href="javascript:location.href='http://gift-circle.dh.devba.se/a.php?u='+encodeURIComponent(location.href)" onclick="alert('Drag to bookmarks');return false">Add to GC (redir)</a>
+</p>
 
-<a href="javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='<?php echo URL::base('http'); ?>static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();" class="btn" onclick="alert('Drag this button to your bookmarks toolbar');return false">Add to GiftCircle</a>
+<p>Drag to bookmarks:
+<a href="javascript:w=window.open('http://gift-circle.dh.devba.se/a.php?u='+encodeURIComponent(location.href),'GC','scrollbars=1,status=0,location=0,toolbar=0,width=800,height=580');w.focus()" onclick="alert('Drag to bookmarks');return false">Add to GC (popup)</a>
+</p>
+
+
+<p>Added the bookmarklet? Now add a product: <a href="http://www.amazon.co.uk/Never-Gonna-Give-You-Up/dp/B001HXNR2M/ref=sr_1_3?ie=UTF8&qid=1319100671&sr=8-3">Amazon</a>
+</p>
+
+
+<img src="http://tothepc.com/img/2010/08/chrome-bookmarks-bar.png">
+
+<img src="http://g-ecx.images-amazon.com/images/G/02/gifts/registries/wishlist/install-graphic-ff._V151380023_.jpg">
+
+<img src="http://g-ecx.images-amazon.com/images/G/02/gifts/registries/wishlist/install-graphic-sf._V192252752_.gif">
+
+<pre>
+Don't see the Bookmarks toolbar in your web browser?
+Select View > Toolbars > Bookmarks toolbar in your web browser menu to see it.
+
+Did you drag the button up there?
+Now click the button you just dragged to make sure everything worked.
+
+Ready for the fun part?
+Go to any online store, and when you see something you want, click the "Add to Wish List" button in your Bookmarks Toolbar. 
+Unless you need to quickly log in, that's all it takes to add to your Gift Circle list.
+</pre>
 
 </body>
 </html>
