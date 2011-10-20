@@ -46,7 +46,7 @@ Log in to your account on GiftCircle:
 		'subject' => '{owner_name} has just deleted a gift you\'ve reserved on Gift Circle',
 		'plain'   => 'Hello  {reserver_firstname} {reserver_surname},
 
-Just to keep you in the loop, {owner_name} has just deleted a gift you\'ve reserved on GiftCircle.
+Just to keep you in the loop, {owner_name} has just deleted the gift "{gift_name}" you\'ve reserved on GiftCircle.
 '
 	),
 
@@ -55,7 +55,7 @@ Just to keep you in the loop, {owner_name} has just deleted a gift you\'ve reser
 		'subject' => '{owner_name} has just edited a gift you\'ve reserved on Gift Circle',
 		'plain'   => 'Hello  {reserver_firstname} {reserver_surname},
 
-Just to keep you in the loop, {owner_name} has just edited a gift you\'ve reserved on GiftCircle.
+Just to keep you in the loop, {owner_name} has just edited the gift "{gift_name}" you\'ve reserved on GiftCircle.
 '
 	),
 );

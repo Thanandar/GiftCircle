@@ -29,6 +29,7 @@ class Model_Gift extends ORM {
 				'reserver_firstname' => $reserver->firstname,
 				'reserver_surname'   => $reserver->surname,
 				'owner_name'         => $gift_owner->firstname.' '.$gift_owner->surname,
+				'gift_name'          => $this->name,
 			), false);
 
 
@@ -91,6 +92,7 @@ class Model_Gift extends ORM {
 				'reserver_firstname' => $reserver->firstname,
 				'reserver_surname'   => $reserver->surname,
 				'owner_name'         => $gift_owner->firstname.' '.$gift_owner->surname,
+				'gift_name'          => $this->name,
 			), false);
 
 
