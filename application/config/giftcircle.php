@@ -2,7 +2,7 @@
 
 return array(
 	'email-from'      => 'no-reply@giftcircle.co.uk',
-	'email-from-name' => 'GiftCircle',
+	'email-from-name' => 'Gift Circle',
 	
 	'dashboard'       => array(
 		'my-lists'      => 10,

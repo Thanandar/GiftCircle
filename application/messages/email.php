@@ -6,7 +6,7 @@ return array(
 		'subject' => '{friend_name} would like to be your friend on Gift Circle',
 		'plain'   => 'Hello {firstname} {surname},
 
-Register on GitftCircle: 
+Register on Gitft Circle: 
 <{register_link}>
 ',
 	),
@@ -16,7 +16,7 @@ Register on GitftCircle:
 		'subject' => '{friend_name} would like to be your friend on Gift Circle',
 		'plain'   => 'Hello {firstname} {surname},
 
-Log in to your account on GiftCircle: 
+Log in to your account on Gift Circle: 
 <{login_link}>
 ',
 	),
@@ -30,7 +30,7 @@ Log in to your account on GiftCircle:
 
 {updates}
 
-Log in to your account on GiftCircle: 
+Log in to your account on Gift Circle: 
 <{login_link}>
 ',
 	),
@@ -40,9 +40,9 @@ Log in to your account on GiftCircle:
 		'subject' => '{owner_name} has just deleted a gift you\'ve reserved on Gift Circle',
 		'plain'   => 'Hello {reserver_firstname} {reserver_surname},
 
-Just to keep you in the loop, {owner_name} has just deleted the gift "{gift_name}" you\'ve reserved on GiftCircle.
+Just to keep you in the loop, {owner_name} has just deleted the gift "{gift_name}" you\'ve reserved on Gift Circle.
 
-Log in to your account on GiftCircle: 
+Log in to your account on Gift Circle: 
 <{url}>
 '
 	),
@@ -52,9 +52,9 @@ Log in to your account on GiftCircle:
 		'subject' => '{owner_name} has just edited a gift you\'ve reserved on Gift Circle',
 		'plain'   => 'Hello {reserver_firstname} {reserver_surname},
 
-Just to keep you in the loop, {owner_name} has just edited the gift "{gift_name}" you\'ve reserved on GiftCircle.
+Just to keep you in the loop, {owner_name} has just edited the gift "{gift_name}" you\'ve reserved on Gift Circle.
 
-Log in to your account on GiftCircle: 
+Log in to your account on Gift Circle: 
 <{url}>
 '
 	),
