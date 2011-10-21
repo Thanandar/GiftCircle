@@ -31,12 +31,18 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 					<a href="/user/profile"><strong><?php echo $name; ?></strong></a>
 				</span>&nbsp;
 			</div>
-		<?php } ?>
-
-		<h1>
-			<?php echo $title ?>
-		</h1>
-		<?php if (!empty($subtitle)) { ?>
+		<?php } 
+		
+			if (!empty($is_home)) { 
+			?>
+			<h1 class="homeh1"><?php echo $title ?></h1>
+			<?php 
+			} else {
+			?>
+			<h1 class="title"><?php echo $title ?></h1>
+			<?php 
+			}
+			if (!empty($subtitle)) { ?>
 			<h2>
 				<?php echo $subtitle ?>
 			</h2>
@@ -64,7 +70,7 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 
 <div class="footer">
 	<div class="container">
-		<p>&copy; 2011 Net Optimisers Ltd</p>
+		<p>&copy; 2011 Net Optimisers Ltd, 145-157 St John Street, London, England, EC1V 4PW | Registered in England and Wales Company No. 07607399</p>
 	</div>
 </div>
 

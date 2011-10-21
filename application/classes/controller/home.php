@@ -8,10 +8,11 @@ class Controller_Home extends Controller_Page {
 			Request::current()->redirect('home/dashboard');
 		}
 
-		$this->template->title = 'Give them just what they want';
-		$this->template->subtitle = 'Create and share gift lists with your friends and family';
+		$this->template->title = 'Create and share gift lists with your friends and family';
+		$this->template->subtitle = '';
 		$this->template->post_header = View::factory('home/header');
 		$this->template->content = View::factory('home/index');
+		$this->template->is_home = true;
 	}
 
 	public function action_features() {
