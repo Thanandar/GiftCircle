@@ -15,12 +15,20 @@ h1, h2, h3 {
 .content h2 {
   line-height: 24px;
 }
+h1.homeh1 {
+  text-transform: none;
+  letter-spacing: -2px;
+  font-size: 300%;
+  padding: 15px 0 10px 0;
+  font-weight: bold;
+}
 
 h3.big {
   text-transform: none;
-  letter-spacing: 0;
-  font-size: 300%;
-  margin-top: 25px;
+  letter-spacing: -2px;
+  font-size: 260%;
+  padding-bottom: 30px;
+  font-weight: bold;
 }
 
 h4 {
@@ -39,6 +47,11 @@ h4 {
   border-top: 1px solid #AFAFAF;
 }
 
+.footer p {
+  color: #888;	
+  margin: 0 0 20px 0;
+}
+
 .container > .footer p {
   text-align: center; /* center align it with the container */
 }
@@ -46,7 +59,7 @@ h4 {
 /* The white background content wrapper */
 .content {
   background-color: #fff;
-  padding: 20px;
+  padding: 0 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
 }
 
@@ -54,10 +67,11 @@ h4 {
 .page-header {
   background-color:#00AFF0;
   padding: 20px 20px 10px;
-  margin: 0px -20px 20px;
+  margin: 0px 0px 20px;
   border:0;
   box-shadow: none;
   max-height: 310px;
+  clear: both;
 }
 
 .page-header h1 {
@@ -268,17 +282,27 @@ form .clearfix {
 .home-list li:before {
   content: counter(x) " ";
   float: left;
-  margin: 30px 20px 0 0;
-  height: 70px;
+  margin: 25px 20px 0 0;
+  height: 75px;
 }
 
 .home-list li {
-  color: #aaa;
+  color: #ccc;
   counter-increment: x;
   clear: left;
 }
 
 .home-list p, .home-list h4 {
   color: #404040;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 5px;
+}
+.home-list p {
+	font-size: 14px;	
+}
+.home-list h4 {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 21px;
+  letter-spacing: -0.75px;
 }

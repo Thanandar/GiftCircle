@@ -9,9 +9,10 @@ class Controller_Home extends Controller_Page {
 		}
 
 		$this->template->title = 'Create and share gift lists with your friends and family';
-		$this->template->subtitle = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod';
+		$this->template->subtitle = '';
 		$this->template->post_header = View::factory('home/header');
 		$this->template->content = View::factory('home/index');
+		$this->template->is_home = true;
 	}
 
 	public function action_features() {
