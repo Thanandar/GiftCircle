@@ -71,6 +71,15 @@
 </div>
 
 <div class="span4">
+
+	<h3>Get the Browser Button</h3>
+
+	<p>
+		<a href="/gift/bookmarklet">Get the browser button</a>
+		to make adding gifts even easier.
+	</p>
+
+
 	<h3>On your list</h3>
 	<ul>
 		<?php foreach ($other_gifts as $gift) { ?>
