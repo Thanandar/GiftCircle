@@ -3,25 +3,70 @@
 <head>
 	<meta charset="utf-8">
 	<title>Gift Cicle</title>
+	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
+	<link type="text/css" href="/static/css/theme.css" rel="stylesheet" media="screen" />	
 </head>
 <body>
 
-<p>Drag to bookmarks:
-<a href="javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='http://gift-circle.dh.devba.se/static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();" class="btn" onclick="alert('Drag this button to your bookmarks toolbar');return false">Add to GC (iframe)</a>
+<div class="container">
+
+<h1>Gift Circle bookmarklet testing</h1>
+
+<h2>Bookmarklets</h2>
+
+<p>
+	Bookmarklets are browser bookmarks that instead of going to a http:// URL, run some JavaScript on the current page. Bookmarklets are usually placed on the browser's bookmark toolbar so they are always visible. They don't get favicons or any styling. They work on mobile devices.
 </p>
 
-<p>Drag to bookmarks:
-<a href="javascript:location.href='http://gift-circle.dh.devba.se/a.php?u='+encodeURIComponent(location.href)" onclick="alert('Drag to bookmarks');return false">Add to GC (redir)</a>
+<h2>Browser Extensions</h2>
+
+<p>
+	Most browser extensions are just bookmarklets that get a permanent place in the browser's UI. They are signed by the developer and installed from the browser vendor's site to avoid security warnings.
 </p>
 
-<p>Drag to bookmarks:
-<a href="javascript:w=window.open('http://gift-circle.dh.devba.se/a.php?u='+encodeURIComponent(location.href),'GC','scrollbars=1,status=0,location=0,toolbar=0,width=800,height=580');w.focus()" onclick="alert('Drag to bookmarks');return false">Add to GC (popup)</a>
+<p>
+	Clicking a the browser extension button would have the same effect as clicking a bookmarklet button (unless we spent days making them).
 </p>
 
 
-<p>Added the bookmarklet? Now add a product: <a href="http://www.amazon.co.uk/Never-Gonna-Give-You-Up/dp/B001HXNR2M/ref=sr_1_3?ie=UTF8&qid=1319100671&sr=8-3">Amazon</a>
+<h2>The bookmarklets</h2>
+
+<p>
+	There are 3 main ways bookmarklets can work.<strong> Drag the 3 proof-of-concept bookmarklets below to your bookmark bar to try them.</strong>
 </p>
 
+
+<ul>
+
+<li>
+<a href="javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='http://gift-circle.dh.devba.se/static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();" class="btn" onclick="alert('Drag this button to your bookmarks toolbar');return false">Add to GC (iframe)</a> - load a thickbox-style iframe over the current page.
+</li>
+
+<li>
+<a class="btn" href="javascript:location.href='http://gift-circle.dh.devba.se/a.php?u='+encodeURIComponent(location.href)" onclick="alert('Drag to bookmarks');return false">Add to GC (redir)</a> - redirect from the current page to Gift Circle
+</li>
+
+<li>
+<a class="btn" href="javascript:w=window.open('http://gift-circle.dh.devba.se/a.php?u='+encodeURIComponent(location.href),'GC','scrollbars=1,status=0,location=0,toolbar=0,width=800,height=580');w.focus()" onclick="alert('Drag to bookmarks');return false">Add to GC (popup)</a> - open a popup window with Gift Circle in
+</li>
+</ul>
+
+
+
+<h2>Some product links for testing:</h2>
+<ul>
+
+
+<li><a target="_blank" href="http://www.amazon.co.uk/Never-Gonna-Give-You-Up/dp/B001HXNR2M/ref=sr_1_3?ie=UTF8&qid=1319100671&sr=8-3">Amazon</a></li>
+
+<li><a target="_blank"  href="http://www.play.com/DVD/DVD/4-/23009137/Barbie-Complete-Classic-Movie-Collection/Product.html?searchstring=&searchtype=allproducts&searchsource=2&searchfilters=ae212%7B645339%7D+ae207%7B29.99-%7D+&ob=3&urlrefer=search">Play</a></li>
+
+<li><a href="http://www.iwantoneofthose.com/10561187.html">IWOOT</a></li>
+
+</ul>
+
+
+<h2>How to install/use bookmarklets (taken from random sites)</h2>
 
 <img src="http://tothepc.com/img/2010/08/chrome-bookmarks-bar.png">
 
@@ -40,6 +85,9 @@ Ready for the fun part?
 Go to any online store, and when you see something you want, click the "Add to Wish List" button in your Bookmarks Toolbar. 
 Unless you need to quickly log in, that's all it takes to add to your Gift Circle list.
 </pre>
+
+</div>
+
 
 </body>
 </html>
