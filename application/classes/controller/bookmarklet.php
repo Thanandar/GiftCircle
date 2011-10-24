@@ -10,13 +10,26 @@ class Controller_Bookmarklet extends Controller_Page {
 		if (!empty($_GET['u'])) {
 			// save the URL for JS
 			setcookie('bmu', $_GET['u']);
+		} else {
+			if (!mpert($_COOKIE['bmu'])) {
+				$_GET['u'] = $_COOKIE['bmu'];
+			}
 		}
+
 
 		if ($this->is_test()) {
 			$this->action_test();
 		} else {
 			if (Auth::instance()->logged_in()) {
-				$this->action_add_gift();
+
+				$has_lists = $this->me('owner')->lists->count_all();
+
+				if ($has_lists) {
+					$this->action_add_gift();
+				} else {
+					$this->action_no_lists();
+				}
+
 			} else {
 				$this->action_login();
 			}			
@@ -32,7 +45,50 @@ class Controller_Bookmarklet extends Controller_Page {
 	}
 
 	public function action_add_gift() {
-		$this->template->content = View::factory('bookmarklet/add_gift');;
+		$view = View::factory('bookmarklet/add_gift');
+		
+		$view->url = @$_GET['u'];
+
+		$view->categories = ORM::factory('category')
+			->find_all()
+			->as_array('id', 'name');
+		
+		$view->lists = $this->me('owner')->lists
+			->order_by('updated', 'desc')
+			->find_all()
+			->as_array('id', 'name');
+
+		if ($_POST) {
+			if (!arr::get($_POST, 'list_id')) {
+				$view->errors = 'Please select a list';
+			} else {
+
+				$list = new Model_List((int) arr::get($_POST, 'list_id'));
+
+				if ($list->owner->id != $this->me()->id) {
+					Request::current()->redirect('user/noaccess');
+				}
+
+				if (arr::get($_POST, 'name')) {
+					$gift              = new Model_Gift;
+					$gift->list_id     = $list->id;
+					$gift->name        = arr::get($_POST, 'name');
+					$gift->price       = arr::get($_POST, 'price');
+					$gift->url         = arr::get($_POST, 'url');
+					$gift->category_id = arr::get($_POST, 'category_id');
+					$gift->details     = arr::get($_POST, 'details');
+					$gift->save();
+					
+					Message::add('success', Kohana::message('gift', 'added'));
+					Request::current()->redirect('bookmarklet/added/' . $gift->id);
+				}
+				$view->errors = Kohana::message('gift', 'title-required');
+			}
+		}
+
+
+
+		$this->template->content = $view;
 	}
 
 	public function action_login() {
@@ -83,7 +139,18 @@ class Controller_Bookmarklet extends Controller_Page {
 	}
 
 	public function action_test() {
+		// user trying bookmarklet on GC page
 		$this->template->content = View::factory('bookmarklet/test');
+	}
+
+	public function action_no_lists() {
+		// user has no lists
+		$this->template->content = View::factory('bookmarklet/no_lists');
+	}
+
+	public function action_added() {
+		// successfully added gift
+		$this->template->content = View::factory('bookmarklet/added');
 	}
 
 }

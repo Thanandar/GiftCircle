@@ -44,7 +44,7 @@ $form->info_class = 'info block';
 						'required' => 'required',
 					)); 
 					?>
-					<span class="help-inline"><?php echo Html::anchor('user/forgot', __('Forgot your password?')); ?></span>
+					<span class="help-inline"><a target="_top" href="/user/forgot/">Forgot your password?</a></span>
 				</div>
 			</div>			
 
