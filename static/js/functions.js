@@ -22,16 +22,3 @@ function readCookie(name) {
 	}
 	return null;
 }
-
-function close_iframe() {
-	var u = unescape(readCookie('bmu')).replace(/#.*/, '');
-	if (!u) {
-		return;
-	}
-
-	try {
-		window.parent.location = u + '#GCclose';
-	} catch (e) {
-		
-	}
-}

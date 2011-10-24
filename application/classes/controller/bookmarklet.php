@@ -10,8 +10,9 @@ class Controller_Bookmarklet extends Controller_Page {
 		if (!empty($_GET['u'])) {
 			// save the URL for JS
 			setcookie('bmu', $_GET['u']);
+			$_COOKIE['bmu'] = $_GET['u'];
 		} else {
-			if (!mpert($_COOKIE['bmu'])) {
+			if (!empty($_COOKIE['bmu'])) {
 				$_GET['u'] = $_COOKIE['bmu'];
 			}
 		}

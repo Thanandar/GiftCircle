@@ -7,6 +7,20 @@
 <?php foreach ($styles as $file => $type) echo "\t" . HTML::style($file, array('media' => $type)), PHP_EOL ?>
 	<!--[if IE 7]><link rel="stylesheet" href="/static/css/ie7styles.css" type="text/css" /><![endif]-->
 <?php foreach ($scripts as $file) echo "\t" . HTML::script($file), PHP_EOL ?>
+<?php if (!empty($_GET['u'])) { ?>
+<script>
+var url = <?php echo json_encode($_GET['u']); ?>;
+
+</script>
+<?php } ?>
+<script>
+
+function close_iframe() {
+	var u = (window.url || '').replace(/#.*/, '');
+	window.parent.location = u ? u + '#GCclose' : window.parent.location;
+}
+
+</script>
 <script type="text/javascript">
 var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();
 </script>
@@ -42,6 +56,7 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
         						<button class="btn" type="button" onclick="window.parent.location='http://'+location.hostname+'/user/logout'">Logout</button>
 						<?php } ?>
 
+        				<button class="btn" type="button" onclick="window.parent.location='http://'+location.hostname">Go to Gift Circle</button>
         				<button class="btn" type="button" onclick="close_iframe()">Close</button>
         				&nbsp;&nbsp;
         			</p>

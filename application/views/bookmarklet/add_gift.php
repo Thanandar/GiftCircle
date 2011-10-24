@@ -16,7 +16,7 @@
 			<div class="clearfix<?php if (!empty($errors)) {echo ' error';} ?>">
 				<label>Product Title: </label>
 				<div class="input">
-					<input name="name">
+					<input name="name" autofocus="autofocus">
 					<?php if (!empty($errors)) {
 						echo '<span class="help-inline">' . $errors . '</span>';
 					} ?>
