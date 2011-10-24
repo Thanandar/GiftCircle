@@ -19,7 +19,7 @@ foreach ($uas as $re => $ua) {
 }
 
 $show_toolbar = array(
-	'Firefox' => '<p>Right click on an open area of the Firefox menu near the top of your screen, then check <code>Bookmarks Toolbar</code>. Alternatively, Press <code>Alt</code>, then <code>V</code>, then <code>T</code>, then <code>B</code>.</p>',
+	'Firefox' => '<p>Right click on an empty area of the Firefox toolbar near the top of your screen, then check <code>Bookmarks Toolbar</code>. Alternatively, Press <code>Alt</code>, then <code>V</code>, then <code>T</code>, then <code>B</code>.</p>',
 
 	'Chrome'  => '<p>Click on the wrench icon in the top right, go to <code>Bookmarks</code>, then check <code>Show Bookmarks Bar</code>. Alternatively, press <code>Ctrl + Shift + B</code> (Windows) or <code>Command + B</code> (Mac) at the same time.</p>',
 
