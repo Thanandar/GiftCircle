@@ -48,7 +48,7 @@ function menu_link($url, $text) {
 				if ($logged_in) {
 					foreach (array(
 						"/home/dashboard" => 'Dashboard',
-						"/list/my"        => 'Lists',
+						"/list/my"        => 'Circles',
 						"/gift/shopping"  => 'Shopping List',
 						"/friend/list"    => 'Friends',
 						"/home/support"   => 'Support',

@@ -6,7 +6,7 @@
 		->set('pending', $pending);
 	?>
 
-	<h2>Your lists</h2>
+	<h2>Your circles</h2>
 	
 	<?php 
 	echo View::factory('list/all-mine')
@@ -14,12 +14,12 @@
 	?>
 
 	<div class="well">
-		<input type="button" class="btn primary" value="New list" onclick="location.href='/list/add'"/>
+		<input type="button" class="btn primary" value="New circle" onclick="location.href='/list/add'"/>
 
-		<a class="btn" href="/list/my">All your lists</a>
+		<a class="btn" href="/list/my">All your circles</a>
 	</div>
 
-	<h2>Your friends' lists</h2>
+	<h2>Your friends' circles</h2>
 
 	<?php 
 	echo View::factory('list/all-friends')

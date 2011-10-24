@@ -39,7 +39,7 @@ $fullname = HTML::chars($friend->firstname . ' ' . $friend->surname);
 
 	<?php if ($friend_user) { ?>
 
-		<h2><?php echo $fullname; ?>'s lists <!-- that you're on --></h2>
+		<h2><?php echo $fullname; ?>'s circles <!-- that you're on --></h2>
 		<?php if (count($friends_lists)) { ?>
 			
 			<table class="zebra-striped">

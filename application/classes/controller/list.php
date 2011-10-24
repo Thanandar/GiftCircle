@@ -20,8 +20,8 @@ class Controller_List extends Controller_Page {
 			Request::current()->redirect('');
 		}
 
-		$this->template->title = 'Lists';
-		$this->template->subtitle = 'Gift lists you have created';
+		$this->template->title = 'Circles';
+		$this->template->subtitle = 'Gift circles you have created';
 
 		$view = View::factory('list/my');
 		$me = ORM::factory('owner', $this->me()->id);
@@ -81,7 +81,7 @@ class Controller_List extends Controller_Page {
 		$list = new Model_List($list_id);
 
 
-		$this->template->title = 'Edit list';
+		$this->template->title = 'Edit circle';
 		$view = View::factory('list/edit');
 		$view->list = $list;
 
@@ -94,11 +94,11 @@ class Controller_List extends Controller_Page {
 				} else {
 					$list->expiry = arr::get($_POST, 'expiry');
 					$list->save();
-					Message::add('success', __('List updated.'));
+					Message::add('success', __('Circle updated.'));
 					Request::current()->redirect('list/mine/' . $list->id);
 				}
 			} else {
-				$view->errors = 'Please enter a list name';
+				$view->errors = 'Please enter a circle name';
 			}
 		}
 		$this->template->content = $view;
@@ -107,8 +107,8 @@ class Controller_List extends Controller_Page {
 	public function action_mine() {
 		$this->redirect_if_not_owner();
 
-		$this->template->title = 'View my list';
-		$this->template->subtitle = 'Your gift list in detail';
+		$this->template->title = 'View my circle';
+		$this->template->subtitle = 'Your gift circle in detail';
 
 		$list = new Model_List($this->request->param('id'));
 

@@ -8,7 +8,7 @@ if (count($lists)) {
 <table class="zebra-striped">
 	<thead>
 		<tr>
-			<th>List name</th>
+			<th>Circle name</th>
 			<th>Total gifts</th>
 			<th>Friends in your circle</th>
 		</tr>
@@ -30,7 +30,7 @@ if (count($lists)) {
 
 <?php }  else { ?>
 
-<p>You have no lists</p>
+<p>You have no circles</p>
 
 <?php }
 ?>

@@ -1,9 +1,9 @@
 
-<div class="span10">
+<div class="span8">
 
 <div class="pull-right">
 		<a href="/list/edit/<?php echo $list->id; ?>">
-			Edit list details
+			Edit circle details
 		</a>
 </div>
 
@@ -39,9 +39,9 @@
 	<?php } ?>
 
 	<div class="well">
-		<input type="button" class="btn primary" value="Add a gift to this list" onclick="location.href='/gift/add/<?php echo $list->id; ?>'"/>
+		<input type="button" class="btn primary large" value="Add gifts" onclick="location.href='/gift/add/<?php echo $list->id; ?>'"/>
 		or
-		<a href="/list/my">go back to list overview</a>
+		<a href="/list/my">go back to circle overview</a>
 	</div>
 
 

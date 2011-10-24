@@ -1,7 +1,7 @@
 
 <div class="span12">
 
-	<h2>For list: <?php echo HTML::chars($list->name); ?></h2>
+	<h2>For circle: <?php echo HTML::chars($list->name); ?></h2>
 
 	<form method="post">
 		<?php if (count($friends)) { ?>
