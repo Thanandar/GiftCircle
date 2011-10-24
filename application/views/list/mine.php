@@ -47,14 +47,20 @@
 
 </div>
 
-<div class="span6">
+<div class="span8">
 
 	<h2>Friends in this circle</h2>
 
-	<div class="well">
+	<div>
 
 		<?php if (count($friends)) { ?>
-		<table>
+		<table class="zebra-striped">
+			<thead>
+				<tr>
+					<th>Friend name</th>
+					<th></th>
+				</tr>
+			</thead>
 			<?php foreach ($friends as $friend) { ?>
 			<tr>
 				<td>
@@ -74,8 +80,9 @@
 		<p>You have no friends in this circle</p>
 		<?php } ?>
 
-		<input type="button" class="btn primary" value="Add friends" onclick="location.href='/list/add_friend/<?php echo $list->id; ?>'"/>
-		
+		<div class="well">
+			<input type="button" class="btn primary large" value="Add friends" onclick="location.href='/list/add_friend/<?php echo $list->id; ?>'"/>
+		</div>
 	</div>
 
 </div>
