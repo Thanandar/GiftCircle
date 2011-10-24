@@ -45,7 +45,7 @@ $form->info_class = 'info block';
 				</div>
 			</div>			
 
-
+<!--
 <?php
 
 
@@ -66,7 +66,7 @@ if($authClass->hasMethod('auto_login')) {
 			</div>	
 	<?php
 }
-?>
+?>-->
 			<div class="actions">
 				<input type="submit" value="Login" class="btn primary large" />
 				or
