@@ -50,6 +50,19 @@ h4 {
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
 }
 
+/*bookmarklet*/
+.iframe .container {
+  width: 100%;
+}
+
+.iframe .topbar .fill {
+  padding-left: 10px;
+}
+
+.iframe .content {
+  margin: 10px;
+}
+
 /* Page header tweaks */
 .page-header {
   background-color:#00AFF0;

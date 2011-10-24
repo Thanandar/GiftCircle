@@ -54,9 +54,9 @@ loadScript('http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js', fu
 		background: 'rgba(0, 0, 0, 0.5)'
 	}).append('<div></div>');
 
-	var url = base + '/a.php?u=' + encodeURIComponent(location.href);
+	var url = base + '/bookmarklet/?u=' + encodeURIComponent(location.href);
 
-	var inner = $('<div><iframe scrolling="no" border="0" width="100%" height="470" src="' + url + '"></iframe></div>').css({
+	var inner = $('<div><iframe scrolling="no" border="0" width="100%" height="500" src="' + url + '"></iframe></div>').css({
 		width: '700px',
 		background: '#fff',
 		margin: '100px auto',

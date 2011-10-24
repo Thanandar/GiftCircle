@@ -1,4 +1,4 @@
-/*global Cufon*/
+/*global Cufon, window, document, unescape*/
 
 //Cufon
 Cufon.replace('.topbar a', { fontFamily: 'nevisBold' });
@@ -6,3 +6,32 @@ Cufon.replace('h2', { fontFamily: 'HouschkaAltBlackRegular'});
 Cufon.replace('.btn.large', { fontFamily: 'HouschkaAltBlackRegular', textShadow: '#444 1px 1px' });
 Cufon.replace('h1', { fontFamily: 'HouschkaAltBlackRegular', textShadow: '#004369 1px 1px' });
 Cufon.replace('.page-header h2', { fontFamily: 'VAGLight' });
+
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)===' ') {
+			c = c.substring(1,c.length);
+		}
+		if (c.indexOf(nameEQ) == 0) {
+			return c.substring(nameEQ.length,c.length);
+		}
+	}
+	return null;
+}
+
+function close_iframe() {
+	var u = unescape(readCookie('bmu')).replace(/#.*/, '');
+	if (!u) {
+		return;
+	}
+
+	try {
+		window.parent.location = u + '#GCclose';
+	} catch (e) {
+		
+	}
+}

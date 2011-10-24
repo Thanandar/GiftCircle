@@ -1,41 +1,4 @@
-<!doctype html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
-	<link type="text/css" href="/static/css/theme.css" rel="stylesheet" media="screen" />
-	<style>html, body{margin:0,padding:0;border:0;} body{padding-top: 40px; } .container {width: auto;}</style>
-</head>
-<body>
 
-<div class="topbar">
-	<div class="topbar-inner">
-		<div class="container">
-			<h3><a href="#">&nbsp;GiftCircle</a></h3>
-			<form class="pull-right">
-				<button class="btn" type="button" onclick="window.parent.location.hash='#GCclose'">Close</button>
-				&nbsp;
-			</form>
-		</div>
-	</div>
-</div>
-
-<?php if (strpos(@$_GET['u'], 'gift-circle')) { ?>
-
-<p>
-	<br />
-	<br />
-	You tried the bookmarklet on a Gift Circle page.
-	<br />
-	<br />
-
-
-	The bookmark works!
-	<button class="btn" type="button" onclick="window.parent.location.hash='#GCclose'">Close</button> this popup and browse for gifts to add.
-</p>
-
-<?php } else { ?>
 
 
 <form method="post">
@@ -129,16 +92,8 @@
 		</div>	
 
 		<div class="actions">
-			<input type="submit" value="Add item" class="btn primary" /> or
-			<a href="javascript:window.parent.location.hash='#GCclose'">cancel</a>
+			<input type="submit" value="Add item" class="btn primary" />
 		</div>
 
 	</fieldset>
 </form>
-
-<?php } ?>
-
-</pre>
-</body>
-</html>
-
