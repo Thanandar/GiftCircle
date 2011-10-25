@@ -6,7 +6,7 @@
 		<tr>
 			<th>Circle name</th>
 			<th>Who's circle?</th>
-			<th>Total items</th>
+			<th>Total gifts</th>
 		</tr>
 	</thead>
 	<tbody>

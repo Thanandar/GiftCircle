@@ -1,6 +1,10 @@
 
 <div class="span11">
 
+	<h2>Add gift details</h2>
+
+	<p>Add at least the title but the more information you can provide, the better your list will be.</p>
+
 	<form method="post">
 		<fieldset>
 
@@ -14,7 +18,7 @@
 			</div>
 
 			<div class="clearfix<?php if (!empty($errors)) {echo ' error';} ?>">
-				<label>Product Title: </label>
+				<label>Title: </label>
 				<div class="input">
 					<input name="name" autofocus="autofocus">
 					<?php if (!empty($errors)) {
@@ -23,7 +27,7 @@
 				</div>
 			</div>
 			<div class="clearfix">
-				<label>Product Price: </label>
+				<label>Price: </label>
 				<div class="input">
 					<div class="input-prepend">
 						<span class="add-on">&pound;</span>
@@ -33,31 +37,31 @@
 				</div>
 			</div>
 			<div class="clearfix">
-				<label>Product Category: </label>
+				<label>Category: </label>
 				<div class="input">
 					<?php
-					Arr::unshift($categories, '', '&mdash; SELECT &mdash;');
+					Arr::unshift($categories, '', 'Please select&hellip;');
 					echo Form::select('category_id', $categories);
 					?>
 				</div>
 			</div>
 			<div class="clearfix">
-				<label>Product Link: </label>
+				<label>Link: </label>
 				<div class="input">
 					<input name="url" value="<?php echo HTML::chars($url); ?>">
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>
 			<div class="clearfix">
-				<label>Product Description: </label>
+				<label>Description: </label>
 				<div class="input">
-					<textarea class="xxlarge" rows="3" name="details" placeholder="e.g. Don't mind the colour, as long as they have the powerlaces."></textarea>
+					<textarea class="xlarge" rows="3" name="details" placeholder="e.g. Don't mind the colour, as long as they have the powerlaces."></textarea>
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>	
 
 			<div class="actions">
-				<input type="submit" value="Add item" class="btn primary" />
+				<input type="submit" value="Add gift" class="btn primary" />
 			</div>
 		</fieldset>
 	</form>

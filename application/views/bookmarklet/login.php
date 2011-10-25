@@ -71,7 +71,7 @@ if($authClass->hasMethod('auto_login')) {
 }
 ?>-->
 			<div class="actions">
-				<input type="submit" value="Login" class="btn primary large" />
+				<input type="submit" value="Login" class="btn primary" />
 			</div>
 
 </form>

@@ -37,14 +37,17 @@ $show_toolbar = $show_toolbar[$browser];
 
 ?>
 
+<div class="span16">
+<h2>Step 3</h2>
+
 <p>
 Browse the web as usual, then click the Gift Circle Browser Button when you see a gift you like. You don't even leave the page you're on!
 <p>
-
+</div>
 
 <div class="span10">
 
-<h2>Install the Browser Button</h2>
+<h3>Get the Browser Button</h3>
 
 <ol>
 	<li>
@@ -75,11 +78,22 @@ Browse the web as usual, then click the Gift Circle Browser Button when you see 
 
 <div class="span6">
 
-<h2>Can't see the bookmarks toolbar?</h2>
+<h3>Can't see the bookmarks toolbar?</h3>
 
 <p><?php echo $show_toolbar; ?></p>
 
 <img src="http://placehold.it/300x100&text=<?php echo $browser; ?> toolbar" alt="Help">
 
+
+</div>
+
+<div class="span16">
+
+	<div class="well">
+	<a class="btn primary" href="/gift/browse/<?php echo $list_id; ?>">I've added the browser button</a>
+
+	or <a href="/gift/browse/<?php echo $list_id; ?>">skip this step</a>
+
+	</div>
 
 </div>

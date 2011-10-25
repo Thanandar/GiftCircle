@@ -64,7 +64,7 @@
 	<table class="zebra-striped">
 		<thead>
 			<tr>
-				<th width="180">Product name</th>
+				<th width="180">Gift name</th>
 				<th>Price</th>
 				<th>Category</th>
 				<th></th>
@@ -89,7 +89,7 @@
 	<?php } ?>
 
 	<div class="well">
-		<input type="button" class="btn primary" value="Add gifts" onclick="location.href='/gift/add/<?php echo $list->id; ?>'"/>
+		<input type="button" class="btn primary" value="Add gifts" onclick="location.href='/gift/browse/<?php echo $list->id; ?>'"/>
 	</div>
 
 

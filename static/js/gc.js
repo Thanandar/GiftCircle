@@ -57,7 +57,7 @@ loadScript('http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js', fu
 
 	var url = base + '/bookmarklet/?u=' + encodeURIComponent(location.href);
 
-	var inner = $('<div><iframe scrolling="no" border="0" width="100%" height="500" src="' + url + '"></iframe></div>').css({
+	var inner = $('<div><iframe frameborder="0" scrolling="no" border="0" width="100%" height="500" src="' + url + '"></iframe></div>').css({
 		width: '700px',
 		background: '#fff',
 		margin: '100px auto',

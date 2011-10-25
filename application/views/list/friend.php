@@ -12,7 +12,7 @@
 			<thead>
 				<tr>
 					<th></th>
-					<th>Product name</th>
+					<th>Gift name</th>
 					<th>Approximate Price</th>
 					<th>Category</th>
 					<th>Who's buying?</th>

@@ -1,8 +1,11 @@
-<h2>FAQs</h2>
 
-<dl>
-	<dt>What is Gift Circle?</dt>
-	<dd>A universal wishlist</dd>
-	<dt>Why is Gift Circle better?</dt>
-	<dd>It's more circular</dd>
-</dl>
+<h3>Q. So... What?</h3>
+<p><b>A.</b> Let's face it, it sucks to get the wrong gift. Ditzy mums, useless partners, interesting grandparents, and even sometimes your closest friends - Sometimes when it comes to presents they manage to go astray. And you've probably made a few mistakes in your lifetime too, even if you thought that look on your dad's face was genuine happiness.
+Here at Gift Circle we're putting a stop to bad gifts. How? With simple, useable, fun wishlists that make everyone happy.</p>
+
+<h3>Q. OK, so when's a good time to use Gift Circle?</h3>
+<p><b>A.</b> Any time there's an upcoming occasion in which the exchange of gifts is expected!</p>
+
+<h3>Q. Doesn't this take the surprise out of presents?</h3>
+<p><b>A.</b> We don't like to judge. Besides, people regularly use wishlists for Weddings, so why not every event? 
+At the end of the day there will always be some people who value the surprise. For those of us who just like receiving or giving cool stuff, there's Gift Circle.</p>

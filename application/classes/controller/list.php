@@ -38,7 +38,7 @@ class Controller_List extends Controller_Page {
 		$list = new Model_List($list_id);
 
 		if ($list->owner->id != $this->me()->id) {
-			Request::current()->redirect('user/noaccess');
+			Request::current()->redirect('list/my');
 		}
 	}
 
@@ -291,9 +291,9 @@ class Controller_List extends Controller_Page {
 				// so it can send notifications
 				$list->touch();
 
-				Message::add('success', __('Added ' . $added . ' friend(s).'));
+				Message::add('success', __('Successfully added ' . $added . ' friend(s).'));
 				//Request::current()->redirect('list/mine/' . $list->id);
-				Request::current()->redirect('gift/add/' . $list->id);
+				Request::current()->redirect('gift/bookmarklet/' . $list->id);
 			}
 
 			$view->errors[] = 'Please add some friends.';

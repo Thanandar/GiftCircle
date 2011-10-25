@@ -1,13 +1,11 @@
 
+<div class="span11">
 
 <p>
-	You gift has been added
-</p>
-
-<p>
-	<a class="btn" href="/" target="_top">Back to Gift Circle</a>
+	<a class="btn primary" href="javascript:close_iframe()">Continue browsing</a>
 	or
-	<a class="btn" href="javascript:close_iframe()">continue browsing</a>
+	<a href="/list/mine/<?php echo $list_id; ?>" target="_top">back to Gift Circle</a>
 </p>
 
 
+</div>

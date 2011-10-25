@@ -1,5 +1,14 @@
 
-	<h2>Browse for a gift</h2>
+<div class="span12">
+
+	<h2>Step 4</h2>
+
+	<ol>
+		<li>Select a category</li>
+		<li>Choose a shop from the selected category</li>
+		<li>Find the gift you're after</li>
+		<li>Use the browser button to add it to your list</li>
+	</ol>
 
 	<div class="well">
 		<form>
@@ -20,7 +29,7 @@
 		<?php foreach ($departments as $department) { ?>
 		<div id="cat-<?php echo $department->id; ?>" xstyle="display:none">
 		<!-- 
-		<h2><?php echo HTML::chars($department->name) ?></h2>
+		<h3><?php echo HTML::chars($department->name) ?></h3>
 		<ul class="media-grid shop-logos">
 			<?php foreach ($department->shops->find_all() as $shop) { ?>
 			<li>
@@ -35,6 +44,37 @@
 		<?php } ?>
 
 	</div>
+
+</div>
+
+<div class="span4">
+<?php if (count($other_gifts)) { ?>
+	<h3>On your list</h3>
+	<table class="zebra-striped">
+		<thead>
+			<tr>
+				<th width="180">Gift name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach ($other_gifts as $gift) { ?>
+			<tr>
+				<td><a href="/gift/edit/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a></td>
+			</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+
+	<div class="well">
+		<a class="btn" href="/list/mine/<?php echo $list->id; ?>">Manage list</a>
+	</div>
+
+</div>
+<?php } ?>
+
+
+
+
 
 <script>
 $(function() {
@@ -83,6 +123,8 @@ $(function() {
 		$('#cat-' + $(this).val())
 			.show()
 			.commentToHTML();
+		Cufon.replace('h3', { fontFamily: 'HouschkaAltBlackRegular'});
+
 		//alert($(this).val());
 	});
 

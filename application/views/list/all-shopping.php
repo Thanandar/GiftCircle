@@ -4,10 +4,10 @@
 <table class="zebra-striped">
 	<thead>
 		<tr>
-			<th>Product&nbsp;name</th>
-			<th>Approx&nbsp;price</th>
+			<th>Gift&nbsp;name</th>
+			<th>Price</th>
 			<th>Who&nbsp;for?</th>
-			<th>List&nbsp;name</th>
+			<th>List</th>
 			<th width="235"></th>
 		</tr>
 	</thead>
@@ -27,7 +27,7 @@
 				<a href="/gift/buy/<?php echo $gift->id; ?>"><?php echo HTML::chars($gift->name) ?></a>
 				<?php } ?>
 			</td>
-			<td>&pound;<?php echo HTML::chars($gift->price) ?></td>
+			<td style="text-align:right"><?php echo ($gift->price()) ?></td>
 			<td><?php echo HTML::chars($owner->firstname . ' ' . $owner->surname) ?></td>
 			<td><?php echo HTML::chars($list->name) ?></td>
 			<td>
@@ -46,6 +46,6 @@
 
 <?php } else { ?>
 	
-<p>No items on your shopping list</p>
+<p>No gifts on your shopping list</p>
 
 <?php }?>

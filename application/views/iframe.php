@@ -7,7 +7,7 @@
 <?php foreach ($styles as $file => $type) echo "\t" . HTML::style($file, array('media' => $type)), PHP_EOL ?>
 	<!--[if IE 7]><link rel="stylesheet" href="/static/css/ie7styles.css" type="text/css" /><![endif]-->
 <?php foreach ($scripts as $file) echo "\t" . HTML::script($file), PHP_EOL ?>
-<?php if (!empty($_GET['u'])) { ?>
+<?php if (!empty($_COOKIE['bmu'])) { ?>
 <script>
 var url = <?php echo json_encode($_GET['u']); ?>;
 
@@ -17,7 +17,11 @@ var url = <?php echo json_encode($_GET['u']); ?>;
 
 function close_iframe() {
 	var u = (window.url || '').replace(/#.*/, '');
-	window.parent.location = u ? u + '#GCclose' : window.parent.location;
+	if (u) {
+		window.parent.location = u + '#GCclose';
+	} else {
+		
+	}
 }
 
 </script>
@@ -32,10 +36,10 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 	<div class="fill">
 		<div class="container">
 			
-        	<span class="brand" style="padding-left: 20px">
+        		<a href="/" target="_top" class="brand" >
         		
         		<img alt="Gift Circle" src="/img/logo.png" class="brand">
-        	</span>
+        	</a>
 
         	<div class="pull-right">
         		<form>
@@ -50,13 +54,15 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 								$name = $user->email;
 							}
 						?>
-								<span class="currently-logged-in">Logged in as 
-									<strong><?php echo $name; ?></strong>
-								</span>&nbsp;
-        						<button class="btn" type="button" onclick="window.parent.location='http://'+location.hostname+'/user/logout'">Logout</button>
+						<span class="currently-logged-in">
+							Logged in as 
+							<strong><?php echo $name; ?></strong>
+							|	
+       						<a href="/user/logout" target="_top">Logout</a>
+       						&nbsp;
+						</span>
 						<?php } ?>
 
-        				<button class="btn" type="button" onclick="window.parent.location='http://'+location.hostname">Go to Gift Circle</button>
         				<button class="btn" type="button" onclick="close_iframe()">Close</button>
         				&nbsp;&nbsp;
         			</p>

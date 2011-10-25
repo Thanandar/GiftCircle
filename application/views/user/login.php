@@ -68,7 +68,7 @@ if($authClass->hasMethod('auto_login')) {
 }
 ?>-->
 			<div class="actions">
-				<input type="submit" value="Login" class="btn primary large" />
+				<input type="submit" value="Login" class="btn primary" />
 				or
 				<a href="/user/register">register a new account</a>
 			</div>

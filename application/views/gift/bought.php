@@ -30,7 +30,7 @@
 	</ul>
 	<?php } else { ?>
 
-	<p>There are no items on your shopping list</p>
+	<p>There are no gifts on your shopping list</p>
 
 	<?php } ?>
 </div>

@@ -6,7 +6,7 @@ class Controller_Bookmarklet extends Controller_Page {
 
 	public $template = 'iframe';
 
-	public function action_index() {
+	public function before() {
 		if (!empty($_GET['u'])) {
 			// save the URL for JS
 			setcookie('bmu', $_GET['u']);
@@ -16,6 +16,10 @@ class Controller_Bookmarklet extends Controller_Page {
 				$_GET['u'] = $_COOKIE['bmu'];
 			}
 		}
+		return parent::before();
+	}
+
+	public function action_index() {
 
 
 		if ($this->is_test()) {
@@ -80,8 +84,8 @@ class Controller_Bookmarklet extends Controller_Page {
 					$gift->details     = arr::get($_POST, 'details');
 					$gift->save();
 					
-					Message::add('success', Kohana::message('gift', 'added'));
-					Request::current()->redirect('bookmarklet/added/' . $gift->id);
+					Message::add('success', 'Your gift has been added');
+					Request::current()->redirect('bookmarklet/added/' . $list->id);
 				}
 				$view->errors = Kohana::message('gift', 'title-required');
 			}
@@ -151,7 +155,9 @@ class Controller_Bookmarklet extends Controller_Page {
 
 	public function action_added() {
 		// successfully added gift
-		$this->template->content = View::factory('bookmarklet/added');
+		$view = View::factory('bookmarklet/added');
+		$view->list_id = $this->request->param('id');
+		$this->template->content = $view;
 	}
 
 }

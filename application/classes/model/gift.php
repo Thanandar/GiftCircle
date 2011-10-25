@@ -110,5 +110,9 @@ class Model_Gift extends ORM {
 		parent::delete();
 	}
 
+	public function price() {
+		return '&pound;' . number_format($this->price, 2);
+	}
+
 	
 }

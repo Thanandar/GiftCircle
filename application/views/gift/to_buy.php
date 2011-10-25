@@ -1,12 +1,21 @@
 <?php if (count($gifts)) { ?>
 
-<ul>
-	<?php foreach ($gifts as $gift) { ?>
-	<li>
-		<a href="/gift/buy/<?php echo $gift->id; ?>"><?php echo HTML::chars($gift->name) ?></a>
-	</li>
-	<?php } ?>
-</ul>
+<table class="zebra-striped">
+	<thead>
+		<tr>
+			<th width="180">Gift name</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($gifts as $gift) { ?>
+		<tr>
+			<td><a href="/gift/buy/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a></td>
+		</tr>
+		<?php } ?>
+	</tbody>
+</table>
+
+
 
 <?php } else { ?>
 

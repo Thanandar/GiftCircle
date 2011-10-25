@@ -27,11 +27,11 @@ class Controller_Gift extends Controller_Page {
 	}
 
 	public function action_bookmarklet() {
-
 		$this->template->title = 'Browser Button';
 		$this->template->subtitle = 'Get the Browser Button to make adding gifts easy';
 
 		$view = View::factory('gift/bookmarklet');
+		$view->list_id = $this->request->param('id');
 		
 		$this->template->content = $view;
 	}
@@ -55,7 +55,7 @@ class Controller_Gift extends Controller_Page {
 
 		$list_id = $this->request->param('id');
 		$list = new Model_List($list_id);
-		$this->template->title = 'Add gift to your list &raquo; ' . $list->name;
+		$this->template->title = 'Add gifts to your list &raquo; ' . $list->name;
 		
 		if ($list->owner->id != $this->me()->id) {
 			Request::current()->redirect('user/noaccess');
@@ -162,6 +162,14 @@ class Controller_Gift extends Controller_Page {
 		$view->list = $list;
 		$view->shops = ORM::factory('shop')->find_all();
 		$view->other_gifts = $list->gifts->find_all();
+
+
+		$view->categories = ORM::factory('category')
+			->find_all()
+			->as_array('id', 'name');
+
+		$view->departments = ORM::factory('category')
+			->find_all();
 
 		$this->template->content = $view;
 	}
