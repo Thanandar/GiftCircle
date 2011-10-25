@@ -20,12 +20,15 @@
 		<?php } ?>
 	</div>
 
+	<?php if (count($friends_lists)) { ?>
 	<h2>Your friends' circles</h2>
 
 	<?php 
 	echo View::factory('list/all-friends')
 		->set('lists', $friends_lists);
 	?>
+	<?php } ?>
+
 	<h2>Your shopping list</h2>
 
 	<?php 
