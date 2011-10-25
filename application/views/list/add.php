@@ -3,7 +3,6 @@
 
 	<form method="post">
 		<fieldset>
-			<legend>Create a list</legend>
 			<div class="clearfix">
 				<label>Name your gift list</label>
 				<div class="input"><input name="name" placeholder="eg '30th Birthday'"></div>

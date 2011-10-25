@@ -48,7 +48,7 @@ class Controller_List extends Controller_Page {
 
 
 	public function action_add() {
-		$this->template->title = 'Add a list';
+		$this->template->title = 'Create a Circle';
 		
 		$me = new Model_Owner($this->me()->id);
 
@@ -66,10 +66,10 @@ class Controller_List extends Controller_Page {
 				$added = $this->add_existing_friends_from_post($view, $list);
 				$added += $this->add_new_friends_from_post($view, $list);
 
-				Message::add('success', __('Created new list with ' . $added . ' friends.'));
+				Message::add('success', __('Created a new circle.'));
 				Request::current()->redirect('list/mine/' . $list->id);
 			}
-			$view->errors = 'Please enter a list name';
+			$view->errors = 'Please enter a circle name';
 		}
 		$this->template->content = $view;
 	}
