@@ -50,7 +50,7 @@ function menu_link($url, $text) {
 						"/home/dashboard" => 'Dashboard',
 						"/list/my"        => 'Circles',
 						"/gift/shopping"  => 'Shopping List',
-						"/friend/list"    => 'Friends',
+						"/friend/list"    => 'Friends\' Circles',
 						"/home/support"   => 'Support',
 						"/home/faqs"      => 'FAQs',
 						"/user/logout"    => 'Logout',
