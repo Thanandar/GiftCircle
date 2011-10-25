@@ -31,7 +31,7 @@
 
 	<?php } else { ?>
 
-	<p>You haven't added any friends yet. <a href="/list/add">Create a list</a> to add some friends.</p>
+	<p>You haven't added any friends yet. . <a href="/list/add">Create a circle</a> to add some friends to.</p>
 
 	<?php } ?>
 
