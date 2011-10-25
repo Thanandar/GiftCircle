@@ -1,12 +1,14 @@
 
 <div class="span12">
 
-	<h2>Add item to your list "<?php echo HTML::chars($list->name); ?>"</h2>
+	<h2>Step 3</h2>
+	
+	<h2>Product details</h2>
 
 
 	<form method="post">
 		<fieldset>
-			<legend>Product details</legend>
+			<legend></legend>
 			<div class="clearfix<?php if (!empty($errors)) {echo ' error';} ?>">
 				<label>Product Title: </label>
 				<div class="input">

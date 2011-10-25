@@ -42,10 +42,10 @@ class Controller_Gift extends Controller_Page {
 	
 	public function action_add() {
 
-		$this->template->title = 'Add gift';
 
 		$list_id = $this->request->param('id');
 		$list = new Model_List($list_id);
+		$this->template->title = 'Add gift to your list &raquo; ' . $list->name;
 		
 		if ($list->owner->id != $this->me()->id) {
 			Request::current()->redirect('user/noaccess');

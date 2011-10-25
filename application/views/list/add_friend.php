@@ -1,23 +1,28 @@
 
 <div class="span12">
+<h2>Step 2</h2>
+<p>
+All the people you've added to your circle will be notified via email and once they've accepted your invite to join they'll become an active member of your circle. They'll be encouraged to create their own list so that you can see what they'd like (for Christmas, Birthday, etc). 
 
-	<h2>For circle: <?php echo HTML::chars($list->name); ?></h2>
+	</p>
+</div>
+<div class="span12">
 
 	<form method="post">
 		<?php if (count($friends)) { ?>
 		<fieldset>
-			<legend>Add existing friends</legend>
+			<h2>Add existing friends</h2>
 
 			<div class="clearfix">
-				<label>Add existing friends</label>
-				<div class="input">
-					<ul class="inputs-list">
+				<div>
+					<ul class="inputs-list existing-friends">
 						<li><label><input type="checkbox" onclick="toggle_friends(this)" /> <span>Select everyone</span></label></li>
 						
 						<?php foreach ($friends as $friend) { ?>
 							<li>
 								<label>
-									<input type="checkbox" name="id[]" value="<?php echo $friend->id; ?>" /> 
+									<input type="checkbox" name="id[]" value="<?php echo $friend->id; ?>" />
+
 									<span>
 										<?php echo HTML::chars($friend->firstname . ' ' . $friend->surname ); ?>
 									</span>
@@ -31,15 +36,13 @@
 		<?php } ?>
 
 		<fieldset>
-			<legend>Add new friends</legend>
-			<ol>
+			<h2>Add new friends</h2>
+			<ol class="new-friends">
 				<?php for ($i = 0; $i < 5; $i++) { ?>
 				<li>
-					<input type="text" name="firstname[]" placeholder="First name" />
-					<input type="text" name="surname[]" placeholder="Surname" />
-					<input type="text" name="email[]" placeholder="Email address" />
-					<br />
-					<br />
+					<input class="span3" type="text" name="firstname[]" placeholder="First name" />
+					<input class="span3" type="text" name="surname[]" placeholder="Surname" />
+					<input class="span6" type="text" name="email[]" placeholder="Email address" />
 				</li>
 				<?php } ?>
 				<li style="list-style-type:none"><a href="#" onclick="return more_friends(this)">Add more</a></li>
@@ -56,34 +59,16 @@
 			}
 			?>
 
-			<div class="actions">
-				<input name="submit" type="submit" value="Add friends" class="btn primary large" /> 
+			<div class="well">
+				<input name="submit" type="submit" value="Add friends" class="btn primary" /> 
 				or
-				<a href="/list/mine/<?php echo $list->id; ?>">go back to list</a>
+				<a href="/list/mine/<?php echo $list->id; ?>">skip this step</a>
 			</div>
 		</fieldset>
 	</form>
 </div>
 
-<div class="span4">
 
-	<h2>Friends currently in this circle</h2>
-
-	<div class="well">
-
-		<?php if (count($circle)) { ?>
-		<ul class="unstyled">
-			<?php foreach ($circle as $friend) { ?>
-			<li><?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?></li>
-			<?php } ?>
-		</ul>
-		<?php } else { ?>
-		<p>You have no friends in this circle</p>
-		<?php } ?>
-
-	</div>
-
-</div>
 
 
 <script>

@@ -66,8 +66,8 @@ class Controller_List extends Controller_Page {
 				$added = $this->add_existing_friends_from_post($view, $list);
 				$added += $this->add_new_friends_from_post($view, $list);
 
-				Message::add('success', __('Created a new circle.'));
-				Request::current()->redirect('list/mine/' . $list->id);
+				Message::add('success', __('Successfully created a new circle.'));
+				Request::current()->redirect('list/add_friend/' . $list->id);
 			}
 			$view->errors = 'Please enter a circle name';
 		}
@@ -107,15 +107,15 @@ class Controller_List extends Controller_Page {
 	public function action_mine() {
 		$this->redirect_if_not_owner();
 
-		$this->template->title = 'View my circle';
-		$this->template->subtitle = 'Your gift circle in detail';
-
 		$list = new Model_List($this->request->param('id'));
 
 		$view = View::factory('list/mine');
 		$view->list = $list;
 		$view->gifts = $list->gifts->find_all();
 		$view->friends = $list->friends->find_all();
+
+		$this->template->title = 'View your circle &raquo; ' . $list->name;
+		$this->template->subtitle = 'Your gift circle in detail';
 
 		$this->template->content = $view;
 	}
@@ -259,11 +259,12 @@ class Controller_List extends Controller_Page {
 
 		$this->redirect_if_not_owner();
 
-		$this->template->title = 'Add friends to my circle';
+		$list = new Model_List($this->request->param('id'));
+		
+		$this->template->title = 'Add friends to my circle &raquo; ' . $list->name;
 		$this->template->subtitle = 'Choose the friends and family you would like in your gift circle';
 
 		$view = View::factory('list/add_friend');
-		$list = new Model_List($this->request->param('id'));
 		$view->list = $list;
 
 		$me = new Model_Owner($this->me()->id);
@@ -290,8 +291,9 @@ class Controller_List extends Controller_Page {
 				// so it can send notifications
 				$list->touch();
 
-				Message::add('success', __('Added ' . $added . ' friends.'));
-				Request::current()->redirect('list/mine/' . $list->id);
+				Message::add('success', __('Added ' . $added . ' friend(s).'));
+				//Request::current()->redirect('list/mine/' . $list->id);
+				Request::current()->redirect('gift/add/' . $list->id);
 			}
 
 			$view->errors[] = 'Please add some friends.';
@@ -304,6 +306,9 @@ class Controller_List extends Controller_Page {
 		// delete a list, its gifts and related friends
 		$this->redirect_if_not_owner();
 
+		$this->template->title = 'Delete circle';
+
+
 		$list_id = $this->request->param('id');
 		$list = new Model_List($list_id);
 
@@ -311,7 +316,7 @@ class Controller_List extends Controller_Page {
 
 		if (arr::get($_POST, 'delete')) {
 			$list->delete();		
-			Message::add('success', 'List deleted.');
+			Message::add('success', 'Circle deleted.');
 			Request::current()->redirect('list/all');
 		}
 
@@ -322,6 +327,8 @@ class Controller_List extends Controller_Page {
 
 	public function action_delete_friend() {
 		@list($list_id, $friend_id) = explode('-', $this->request->param('id'));
+
+		$this->template->title = 'Confirm';
 
 		if (!$list_id || !$friend_id) {
 			Request::current()->redirect('user/noaccess');

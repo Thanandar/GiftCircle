@@ -1,51 +1,19 @@
 
-<div class="span8">
 
-<div class="pull-right">
-		<a href="/list/edit/<?php echo $list->id; ?>">
-			Edit circle details
-		</a>
-</div>
 
-<h2><?php echo HTML::chars($list->name); ?></h2>
-	
-	<?php if (count($gifts)) { ?>
-	<table class="zebra-striped">
-		<thead>
-			<tr>
-				<th>Product name</th>
-				<th>Approximate Price</th>
-				<th>Category</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php foreach ($gifts as $gift) { ?>
-			<tr>
-				<td><a href="/gift/edit/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a></td>
-				<td><?php echo $gift->price ? '&pound;' . $gift->price : ''; ?></td>
-				<td><?php echo HTML::chars($gift->category->name); ?></td>
-				<td>
-					<a class="delete" href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
-				</td>
-			</tr>
-			<?php } ?>
-		</tbody>
-	</table>
-	<?php } else { ?>
+<div class="span16">
 
-	<p>This list currently has no gifts</p>
-
-	<?php } ?>
-
-	<div class="well">
-		<input type="button" class="btn primary large" value="Add gifts" onclick="location.href='/gift/add/<?php echo $list->id; ?>'"/>
-		or
-		<a href="/list/my">go back to circle overview</a>
+	<div class="pull-right" style="margin: -10px 0 10px">
+			<a href="/list/edit/<?php echo $list->id; ?>">
+				Edit circle details
+			</a>
+			|
+			<a href="/list/my">Back to overview</a>
 	</div>
-
-
 </div>
+
+
+
 
 <div class="span8">
 
@@ -77,13 +45,52 @@
 			<?php } ?>
 		</table>
 		<?php } else { ?>
-		<p>You have no friends in this circle</p>
 		<?php } ?>
 
 		<div class="well">
-			<input type="button" class="btn primary large" value="Add friends" onclick="location.href='/list/add_friend/<?php echo $list->id; ?>'"/>
+			<input type="button" class="btn primary" value="Add friends" onclick="location.href='/list/add_friend/<?php echo $list->id; ?>'"/>
 		</div>
 	</div>
 
 </div>
 
+
+
+<div class="span8">
+
+<h2>Gifts on this list</h2>
+	
+	<?php if (count($gifts)) { ?>
+	<table class="zebra-striped">
+		<thead>
+			<tr>
+				<th width="180">Product name</th>
+				<th>Price</th>
+				<th>Category</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach ($gifts as $gift) { ?>
+			<tr>
+				<td><a href="/gift/edit/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a></td>
+				<td><?php echo $gift->price ? '&pound;' . $gift->price : ''; ?></td>
+				<td><?php echo HTML::chars($gift->category->name); ?></td>
+				<td>
+					<a class="delete" href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
+				</td>
+			</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+	<?php } else { ?>
+
+
+	<?php } ?>
+
+	<div class="well">
+		<input type="button" class="btn primary" value="Add gifts" onclick="location.href='/gift/add/<?php echo $list->id; ?>'"/>
+	</div>
+
+
+</div>

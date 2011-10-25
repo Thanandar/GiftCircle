@@ -63,10 +63,14 @@ h4 {
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
 }
 
+.content h2 {
+  margin-bottom: 7px;
+}
+
 /* Page header tweaks */
 .page-header {
   background-color:#00AFF0;
-  padding: 20px 20px 10px;
+  padding: 20px 20px 5px;
   margin: 0px 0px 20px;
   border:0;
   box-shadow: none;
@@ -77,6 +81,7 @@ h4 {
 .page-header h1 {
   color: #fff;
   text-shadow: #0D6C89 2px 2px 1px;
+  margin-bottom: -2px;
 }
 
 .page-header a, .page-header p {
@@ -167,8 +172,16 @@ a.danger {
   color: #fff;
 }
 
+fieldset {
+  margin-bottom: 0;
+}
+
 label {
   text-align: left;
+}
+
+input, textarea, select, .uneditable-input {
+  color: #444;
 }
 
 a.delete {
@@ -305,4 +318,13 @@ form .clearfix {
   font-weight: bold;
   line-height: 21px;
   letter-spacing: -0.75px;
+}
+
+
+.new-friends li {
+  margin: 5px 0;
+}
+
+.existing-friends {
+  margin: 0 0 0 15px;
 }
