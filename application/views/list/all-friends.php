@@ -28,8 +28,4 @@
 	<a class="btn" href="/friend/list">All friends' circles</a>
 </div>
 
-<?php } else { ?>
-
-<p>None of your friends have added you to any lists.</p>
-
 <?php } ?>
