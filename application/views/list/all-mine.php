@@ -30,7 +30,7 @@ if (count($lists)) {
 
 <?php }  else { ?>
 
-<p>You have no circles</p>
+<p>'Right now, you haven't created any circles. Get started by clicking the 'New circle' button below.</p>
 
 <?php }
 ?>
