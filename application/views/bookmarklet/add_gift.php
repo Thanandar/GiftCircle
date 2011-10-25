@@ -1,18 +1,22 @@
 
-<div class="span12">
-
-	<h2>Step 3</h2>
-	
-	<h2>Product details</h2>
-
+<div class="span11">
 
 	<form method="post">
 		<fieldset>
-			<legend></legend>
+
+			<div class="clearfix">
+				<label>Choose a list: </label>
+				<div class="input">
+					<?php
+					echo Form::select('list_id', $lists);
+					?>
+				</div>	
+			</div>
+
 			<div class="clearfix<?php if (!empty($errors)) {echo ' error';} ?>">
 				<label>Product Title: </label>
 				<div class="input">
-					<input name="name">
+					<input name="name" autofocus="autofocus">
 					<?php if (!empty($errors)) {
 						echo '<span class="help-inline">' . $errors . '</span>';
 					} ?>
@@ -40,7 +44,7 @@
 			<div class="clearfix">
 				<label>Product Link: </label>
 				<div class="input">
-					<input name="url">
+					<input name="url" value="<?php echo HTML::chars($url); ?>">
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>
@@ -53,42 +57,12 @@
 			</div>	
 
 			<div class="actions">
-				<input type="submit" value="Add item" class="btn primary" /> or
-				<a href="/list/mine/<?php echo $list->id; ?>">cancel</a>
+				<input type="submit" value="Add item" class="btn primary" />
 			</div>
 		</fieldset>
 	</form>
 
 
-	<?php 
-	echo View::factory('gift/browse')
-		->set('categories', $categories)
-		->set('departments', $departments)
-		->set('shops', $shops)
-		->set('list', $list);
-	?>
-
-
-
 </div>
-
-<div class="span4">
-
-	<h3>Get the Browser Button</h3>
-
-	<p>
-		<a href="/gift/bookmarklet">Get the browser button</a>
-		to make adding gifts even easier.
-	</p>
-
-
-	<h3>On your list</h3>
-	<ul>
-		<?php foreach ($other_gifts as $gift) { ?>
-		<li><?php echo HTML::chars($gift->name) ?></li>
-		<?php } ?>
-	</ul>
-</div>
-
 
 

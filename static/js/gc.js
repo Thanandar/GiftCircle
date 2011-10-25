@@ -1,4 +1,4 @@
-/*global document, window, location, $ */
+/*global document, window, location, $, setInterval */
 
 
 
@@ -46,20 +46,22 @@ loadScript('http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js', fu
 
 	var overlay = $('<div></div>').css({
 		position: 'absolute',
+		textAlign: 'center', // IE quirks
 		left: 0,
 		top: 0,
 		width: '100%',
 		height: '100%',
 		zIndex: 99999,
 		background: 'rgba(0, 0, 0, 0.5)'
-	}).append('<div></div>');
+	});
 
-	var url = base + '/a.php?u=' + encodeURIComponent(location.href);
+	var url = base + '/bookmarklet/?u=' + encodeURIComponent(location.href);
 
-	var inner = $('<div><iframe scrolling="no" border="0" width="100%" height="470" src="' + url + '"></iframe></div>').css({
+	var inner = $('<div><iframe scrolling="no" border="0" width="100%" height="500" src="' + url + '"></iframe></div>').css({
 		width: '700px',
 		background: '#fff',
 		margin: '100px auto',
+		textAlign: 'left', // IE quirks
 		border: '0'
 	});
 
@@ -72,13 +74,19 @@ loadScript('http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js', fu
 	overlay.appendTo($('body')).append(inner);
 	//overlay.append(inner).appendTo($('body'));
 
-	window.onhashchange = function() {
+	var gc_hashchange = function() {
 		if (location.hash === "#GCclose") {
 			window.giftcircle = null;
 			overlay.remove();
 			location.hash = '';
 		}
 	};
+	if ('onhashchange' in window) {
+		window.onhashchange = gc_hashchange;
+	} else {
+		// IE 7
+		setInterval(gc_hashchange, 500);
+	}
 	
 
 });

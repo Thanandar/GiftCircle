@@ -6,6 +6,10 @@ body {
   background: #fff;
 }
 
+.iframe body {
+  padding-top: 50px;
+}
+
 h1, h2, h3 {
   letter-spacing: -2px;
   text-transform: uppercase;
@@ -65,6 +69,19 @@ h4 {
 
 .content h2 {
   margin-bottom: 7px;
+}
+
+/*bookmarklet*/
+.iframe .container {
+  width: 100%;
+}
+
+.iframe .topbar .fill {
+  padding-left: 10px;
+}
+
+.iframe .content {
+  margin: 10px;
 }
 
 /* Page header tweaks */

@@ -26,6 +26,16 @@ class Controller_Gift extends Controller_Page {
 		$this->template->content = $view;
 	}
 
+	public function action_bookmarklet() {
+
+		$this->template->title = 'Browser Button';
+		$this->template->subtitle = 'Get the Browser Button to make adding gifts easy';
+
+		$view = View::factory('gift/bookmarklet');
+		
+		$this->template->content = $view;
+	}
+
 
 	private function redirect_if_not_owner() {
 		$gift_id = $this->request->param('id');
