@@ -15,8 +15,9 @@
 
 	<div class="well">
 		<input type="button" class="btn primary" value="New circle" onclick="location.href='/list/add'"/>
-
+		<?php if (count($my_lists)) { ?>
 		<a class="btn" href="/list/my">All your circles</a>
+		<?php } ?>
 	</div>
 
 	<h2>Your friends' circles</h2>
