@@ -29,6 +29,7 @@
 	?>
 	<?php } ?>
 
+	<?php if (count($my_shopping_list)) { ?>
 	<h2>Your shopping list</h2>
 
 	<?php 
@@ -39,6 +40,7 @@
 	<div class="well">
 		<a class="btn" href="/gift/shopping">View all gifts on shopping list</a>
 	</div>
+	<?php } ?>
 
 
 
