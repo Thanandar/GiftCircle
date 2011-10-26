@@ -409,7 +409,7 @@ class Useradmin_Controller_User extends Controller_App {
 				$to = $_POST['reset_email'];
 				$from = Kohana::$config->load('useradmin')->email_address;
 				$body = __($message, array(
-					':reset_token_link' => URL::site('user/reset?reset_token='.$user->reset_token.'&reset_email='.$_POST['reset_email'], TRUE), 
+					':reset_token_link' => URL::site('user/reset?reset_token='.$user->reset_token.'&reset_email='.urlencode($_POST['reset_email']), TRUE), 
 					':reset_link' => URL::site('user/reset', TRUE), 
 					':reset_token' => $user->reset_token, 
 					':username' => $user->username
