@@ -481,7 +481,7 @@ class Useradmin_Controller_User extends Controller_App {
 						                      . __('Please log in below.') 
 						                      . '</p>'
 						);
-						$this->request->redirect('user/login?username=' . $user->username);
+						$this->request->redirect('user/login?username=' . urlencode($user->username));
 					}
 			}
 		}
