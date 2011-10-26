@@ -67,7 +67,7 @@ class Controller_List extends Controller_Page {
 				$added += $this->add_new_friends_from_post($view, $list);
 
 				Message::add('success', __('Successfully created a new circle.'));
-				Request::current()->redirect('list/add_friend/' . $list->id);
+				Request::current()->redirect('list/add_friend_wizard/' . $list->id);
 			}
 			$view->errors = 'Please enter a circle name';
 		}
@@ -255,48 +255,81 @@ class Controller_List extends Controller_Page {
 		return $added;
 	}
 
-	public function action_add_friend() {
-
+	public function action_add_friend_wizard() {
 		$this->redirect_if_not_owner();
-
-		$list = new Model_List($this->request->param('id'));
 		
+		$list = new Model_List($this->request->param('id'));
+
+		$view = $this->get_add_friend_view($list);
+		$view->doing_wizard = true;
+
 		$this->template->title = 'Add friends to my circle &raquo; ' . $list->name;
 		$this->template->subtitle = 'Choose the friends and family you would like in your gift circle';
 
+		if ($_POST) {
+			$this->add_friends($view, 'gift/bookmarklet/' . $list->id);
+		}
+
+		$this->template->content = $view;
+
+	}
+
+	private function get_add_friend_view($list) {
 		$view = View::factory('list/add_friend');
 		$view->list = $list;
-
-		$me = new Model_Owner($this->me()->id);
 		
 		// friends already on the list
 		$view->circle = $list->friends->find_all();
+		
 		$circle_ids = $view->circle->as_array('id');
-
+		
+		$me = new Model_Owner($this->me()->id);
+		
 		// friends not yet on the list
 		$friends = $me->friends;
 		if (count($circle_ids)) {
 			$friends->where('id', 'NOT IN', $view->circle->as_array('id'));
 		}
 		$view->friends = $friends->find_all();
-		
+
 		$view->errors = array();
 
+		return $view;
+	}
+
+	private function add_friends($view, $redir) {
+		$list = $view->list;
+		
+		$added = $this->add_existing_friends_from_post($view, $list);
+		$added += $this->add_new_friends_from_post($view, $list);
+
+		if ($added) {
+			// mark the list as updated 
+			// so it can send notifications
+			$list->touch();
+
+			Message::add('success', __('Successfully added ' . $added . ' friend(s).'));
+
+			Request::current()->redirect($redir);
+		}
+
+		$view->errors[] = 'Please add some friends.';
+	}
+
+	public function action_add_friend() {
+
+		$this->redirect_if_not_owner();
+
+		$list = new Model_List($this->request->param('id'));
+		
+		$view = $this->get_add_friend_view($list);
+		$view->doing_wizard = false;
+
+		$this->template->title = 'Add friends to my circle &raquo; ' . $list->name;
+		$this->template->subtitle = 'Choose the friends and family you would like in your gift circle';
+
 		if ($_POST) {
-			$added = $this->add_existing_friends_from_post($view, $list);
-			$added += $this->add_new_friends_from_post($view, $list);
-
-			if ($added) {
-				// mark the list as updated 
-				// so it can send notifications
-				$list->touch();
-
-				Message::add('success', __('Successfully added ' . $added . ' friend(s).'));
-				//Request::current()->redirect('list/mine/' . $list->id);
-				Request::current()->redirect('gift/bookmarklet/' . $list->id);
-			}
-
-			$view->errors[] = 'Please add some friends.';
+			$this->add_friends($view, 'list/mine/' . $list->id);
 		}
 
 		$this->template->content = $view;

@@ -1,13 +1,15 @@
 
 <div class="span12">
 
+	<?php if (strpos(@$_SERVER['HTTP_REFERER'], 'bookmarklet')) { ?>
 	<h2>Step 4</h2>
+	<?php } ?>
 
 	<ol>
 		<li>Select a category</li>
 		<li>Choose a shop from the selected category</li>
 		<li>Find the gift you're after</li>
-		<li>Use the browser button to add it to your list</li>
+		<li>Use the <a href="/gift/bookmarklet/<?php echo $list->id; ?>">browser button</a> to add it to your list or <a href="/gift/add/<?php echo $list->id; ?>">enter details manually</a></li>
 	</ol>
 
 	<div class="well">
@@ -48,6 +50,8 @@
 </div>
 
 <div class="span4">
+
+
 <?php if (count($other_gifts)) { ?>
 	<h3>On your list</h3>
 	<table class="zebra-striped">

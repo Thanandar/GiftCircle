@@ -1,5 +1,5 @@
 
-<?php if (!count($circle)) { ?>
+<?php if ($doing_wizard) { ?>
 
 <div class="span12">
 <h2>Step 2</h2>
@@ -67,10 +67,11 @@ All the people you've added to your circle will be notified via email and once t
 			<div class="well">
 				<input name="submit" type="submit" value="Add friends" class="btn primary" /> 
 				or
-				<?php if (count($circle)) { ?>
-				<a href="/list/mine/<?php echo $list->id; ?>">skip this step</a>
-				<?php } else { ?>
+				<?php if ($doing_wizard) { ?>
+				<input type="hidden" name="wizard" value="true" />
 				<a href="/gift/bookmarklet/<?php echo $list->id; ?>">skip this step</a>
+				<?php } else { ?>
+				<a href="/list/mine/<?php echo $list->id; ?>">cancel</a>
 				<?php } ?>
 			</div>
 		</fieldset>
@@ -78,6 +79,38 @@ All the people you've added to your circle will be notified via email and once t
 </div>
 
 
+<?php if (count($circle)) { ?>
+
+<div class="span4">
+
+	<h2>Friends currently in this circle</h2>
+
+	<table class="zebra-striped">
+		<thead>
+			<tr>
+				<th>Friend name</th>
+				<th></th>
+			</tr>
+		</thead>
+		<?php foreach ($circle as $friend) { ?>
+		<tr>
+			<td>
+				<?php if ($friend->is_confirmed()) { ?>
+				<?php echo HTML::anchor('friend/view/' . $friend->id, HTML::chars($friend->firstname . ' ' . $friend->surname)) ?>
+				<?php } else { ?>
+				<?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?>
+				<?php } ?>
+			</td>
+			<td width="18">
+				<a class="delete" href="/list/delete_friend/<?php echo $list->id; ?>-<?php echo $friend->id; ?>">✘</a>
+			</td>
+		</tr>
+		<?php } ?>
+	</table>
+
+</div>
+
+<?php } ?>
 
 
 <script>

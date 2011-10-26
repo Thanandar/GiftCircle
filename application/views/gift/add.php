@@ -1,12 +1,6 @@
 
 <div class="span12">
 
-	<h2>Step 3</h2>
-	
-	<p>
-		Browse for gifts and add them to your list. You can use the browser button to make this simpler.
-	</p>
-
 	<h3>Gift details</h3>
 
 
@@ -64,16 +58,6 @@
 	</form>
 
 
-	<?php 
-	echo View::factory('gift/browse')
-		->set('categories', $categories)
-		->set('departments', $departments)
-		->set('shops', $shops)
-		->set('list', $list);
-	?>
-
-
-
 </div>
 
 <div class="span4">
@@ -81,7 +65,7 @@
 	<h3>Get the Browser Button</h3>
 
 	<p>
-		<a href="/gift/bookmarklet">Get the browser button</a>
+		<a href="/gift/bookmarklet/<?php echo $list->id; ?>">Get the browser button</a>
 		to make adding gifts even easier.
 	</p>
 
