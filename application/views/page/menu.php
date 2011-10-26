@@ -4,6 +4,9 @@ $logged_in = Auth::instance()->logged_in();
 
 function menu_link($url, $text) {
 	$current = @$_SERVER['REQUEST_URI'];
+	$class_text = strtolower($text);
+	$class_text = preg_replace("/[^a-zA-Z0-9]/", "", $class_text);
+
 
 	if (strpos($current, 'friend')) {
 		$current = "/friend/list";
@@ -30,7 +33,7 @@ function menu_link($url, $text) {
 
 	$active = strstr($current, $url) ? ' class="active"' : '';
 
-	return '<li><a' . $active . ' href="' . $url . '"><span>' . $text . '</span></a></li>';
+	return '<li><a' . $active . ' href="' . $url . '"><span class="menu-item-'.$class_text.'">' . $text . '</span></a></li>';
 }
 
 
