@@ -476,7 +476,7 @@ class Useradmin_Controller_User extends Controller_App {
 						$user->save();
 						Message::add('success', __('Password reset.'));
 						Message::add('success', '<p>' 
-						                      . __('Your password has been reset to: ":password".', array(':password' => $password)) 
+						                      . __('Your password has been reset to: "<span id="new-password">:password</span>".', array(':password' => $password)) 
 						                      . '</p><p>' 
 						                      . __('Please log in below.') 
 						                      . '</p>'
