@@ -1,4 +1,6 @@
 
+<?php if (!count($circle)) { ?>
+
 <div class="span12">
 <h2>Step 2</h2>
 <p>
@@ -6,6 +8,9 @@ All the people you've added to your circle will be notified via email and once t
 
 	</p>
 </div>
+
+<?php } ?>
+
 <div class="span12">
 
 	<form method="post">
@@ -62,7 +67,11 @@ All the people you've added to your circle will be notified via email and once t
 			<div class="well">
 				<input name="submit" type="submit" value="Add friends" class="btn primary" /> 
 				or
+				<?php if (count($circle)) { ?>
 				<a href="/list/mine/<?php echo $list->id; ?>">skip this step</a>
+				<?php } else { ?>
+				<a href="/gift/bookmarklet/<?php echo $list->id; ?>">skip this step</a>
+				<?php } ?>
 			</div>
 		</fieldset>
 	</form>
