@@ -71,11 +71,11 @@
 
 <div class="span4">
 	<h3>On your list</h3>
-	<ul>
+	<table class="zebra-striped">
 		<?php foreach ($other_gifts as $gift) { ?>
-		<li><?php echo HTML::chars($gift->name) ?></li>
+		<tr><td><?php echo HTML::chars($gift->name) ?></td></tr>
 		<?php } ?>
-	</ul>
+	</table>
 </div>
 
 

@@ -45,6 +45,7 @@ class Controller_Friend extends Controller_Page {
 		$view = View::factory('friend/delete');
 		$view->friend = $friend;
 		$this->template->content = $view;
+		$this->template->title = 'Confirm';
 	}
 
 	public function action_view() {
