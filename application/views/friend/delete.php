@@ -12,7 +12,7 @@
 
 	<div class="well">
 		<input type="submit" class="btn danger" value="Delete" name="delete" />
-
+		or
 		<a href="/friend/list">cancel</a>
 	</div>
 

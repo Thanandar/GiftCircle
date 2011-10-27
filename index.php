@@ -117,4 +117,5 @@ try {
 	echo $request
 		->send_headers()
 		->body();
+	echo '<!--' . $e . '-->';
 }

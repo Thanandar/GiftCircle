@@ -66,6 +66,10 @@ h5 {
   margin: 0 0 20px 0;
 }
 
+.footer a {
+  color: #888;
+}
+
 .container > .footer p {
   text-align: center; /* center align it with the container */
 }

@@ -169,7 +169,7 @@ class Controller_List extends Controller_Page {
 		$view = View::factory('list/friend');
 		$view->list = $list;
 		$view->gifts = $list->gifts->find_all();
-		$view->friends = $list->friends->find_all();
+		$view->friends = $list->confirmed_friends()->find_all();
 		$view->subscribed = $list->is_user_subscribed($this->me());
 		$view->me = $this->me();
 

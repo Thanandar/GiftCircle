@@ -66,7 +66,7 @@
 								?>
 								<a class="btn" title="Mark as bought" href="/gift/mark_as_bought/<?php echo $gift->id; ?>">Mark as bought</a>
 								or
-								<a title="Un-reserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to un-reserve this product?')">unreserve</a>
+								<a title="Un-reserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to un-reserve this product?')">remove from list</a>
 								<?php
 							}
 						} else {
@@ -96,7 +96,7 @@
 		<div class="well">
 			<input name="confirm" type="submit" class="btn primary" value="Reserve selected gifts" />
 			or
-			<a href="/">cancel</a>
+			<a href="/friend/list">cancel</a>
 		</div>
 	
 		<?php } else { ?>
