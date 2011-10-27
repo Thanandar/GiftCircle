@@ -105,5 +105,18 @@ class Model_List extends ORM {
 		}
 	}
 
+	public function confirmed_friends() {
+
+		return $this->friends
+			->join('users')
+				->on('users.email', '=', 'friend.email')
+			
+			->join(array('friends', 'friends_friends'))
+				->on('friends_friends.creator_id', '=', 'users.id')
+
+			->where('friends_friends.email', '=', $this->owner->email)
+			;
+	}
+
 }
 	

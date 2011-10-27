@@ -275,6 +275,7 @@ class Controller_Gift extends Controller_Page {
 
 	public function action_unreserve() {
 		$gift = new Model_Gift((int) $this->request->param('id'));
+		$list = $gift->list;
 
 		if ($gift->reserver_id != $this->me()->id) {
 			Message::add('danger', __('You have not reserved this gift.'));
@@ -290,7 +291,7 @@ class Controller_Gift extends Controller_Page {
 		$gift->save();
 
 		Message::add('success', __('Successfully un-reserved a gift.'));
-		Request::current()->redirect('');
+		Request::current()->redirect('list/friend/' . $list->id);
 	}
 
 

@@ -1,7 +1,7 @@
 
 <div class="span12">
 
-	<a class="danger pull-right" href="/friend/delete/<?php echo $friend->id; ?>'">Delete this friend</a>
+	<a class="danger pull-right" href="/friend/delete/<?php echo $friend->id; ?>">Delete this friend</a>
 	
 	<h2><?php echo HTML::chars($friend->firstname.' '.$friend->surname) ?></h2>
 
