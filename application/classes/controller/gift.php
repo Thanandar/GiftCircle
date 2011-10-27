@@ -314,6 +314,7 @@ class Controller_Gift extends Controller_Page {
 		return ORM::factory('gift')
 			->where('reserver_id', '=', $this->me()->id)
 			->where('buyer_id', '=', 0)
+			->order_by('name')
 			->find_all();
 	}
 
