@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="<?php echo I18n::$lang ?>">
+<html lang="<?php echo I18n::$lang ?>" class="<?php echo HTML::chars($controller.'-'.$action) ?>">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >

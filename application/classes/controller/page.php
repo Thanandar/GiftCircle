@@ -81,6 +81,10 @@ class Controller_Page extends Controller_Template {
 				$this->template->scripts,
 				$scripts
 			);
+
+			//print_r($this);
+			$this->template->controller = $this->request->controller();
+			$this->template->action = $this->request->action();
 		}
 		
 		parent::after();
