@@ -33,7 +33,7 @@ h3 {
   line-height: 100%;
 }
 
-h3.big {
+h4 {
   text-transform: none;
   letter-spacing: -2px;
   font-size: 260%;
@@ -43,6 +43,10 @@ h3.big {
 
 h4 {
   font-weight: normal;
+}
+
+h5 {
+  font-size: 16px;
 }
 
 .footer {

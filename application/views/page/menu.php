@@ -51,9 +51,9 @@ function menu_link($url, $text) {
 				if ($logged_in) {
 					foreach (array(
 						"/home/dashboard" => 'Dashboard',
-						"/list/my"        => 'Circles',
+						"/list/my"        => 'My Circles',
 						"/gift/shopping"  => 'Shopping List',
-						"/friend/list"    => 'Friends\' Circles',
+						"/friend/list"    => 'Friends',
 						"/home/support"   => 'Support',
 						"/home/faqs"      => 'FAQs',
 						"/user/logout"    => 'Logout',

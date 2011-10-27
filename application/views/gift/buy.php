@@ -4,7 +4,7 @@
 	<h2>Shop for '<?php echo HTML::chars($gift->name); ?>' now</h2>
 	
 	<h3>
-		For <?php echo HTML::chars($gift->list->owner->firstname . ' ' . $gift->list->owner->surname); ?>'s list "<?php echo HTML::chars($gift->list->name); ?>"
+		For <?php echo HTML::chars($gift->list->owner->firstname); ?>'s list "<?php echo HTML::chars($gift->list->name); ?>"
 	</h3>
 	
 	<dl>
@@ -46,20 +46,9 @@
 </div>
 
 <div class="span4">
-	<h3>On your shopping list</h3>
-	<?php if (count($shopping_list)) { ?>
-	<ul>
-		<?php foreach ($shopping_list as $item) { ?>
-		<li><a href="/gift/buy/<?php echo $item->id; ?>"><?php echo HTML::chars($item->name); ?></a></li>
-		<?php } ?>
-	</ul>
-	<?php } else { ?>
-
-	<p>There are no gifts on your shopping list</p>
-
-	<?php } ?>
+	<h2><?php echo Message::e('shopping', 'my-list') ?></h2>
+	
+	<?php echo Request::factory('gift/to_buy')->execute() ?>
 </div>
-
-
 
 

@@ -83,7 +83,7 @@ All the people you've added to your circle will be notified via email and once t
 
 <div class="span4">
 
-	<h2>Friends currently in this circle</h2>
+	<h2>Friends already in this circle</h2>
 
 	<table class="zebra-striped">
 		<thead>

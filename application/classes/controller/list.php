@@ -155,7 +155,7 @@ class Controller_List extends Controller_Page {
 			$reserved++;
 		}
 
-		Message::add('success', __('Reserved ' . $reserved . ' gifts.'));
+		Message::add('success', __('Reserved ' . $reserved . ' gift(s).'));
 		Request::current()->redirect('gift/shopping');
 	}
 

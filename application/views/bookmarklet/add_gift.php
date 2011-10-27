@@ -43,6 +43,7 @@
 					Arr::unshift($categories, '', 'Please select&hellip;');
 					echo Form::select('category_id', $categories);
 					?>
+					<span class="help-inline">Optional</span>
 				</div>
 			</div>
 			<div class="clearfix">

@@ -1,9 +1,9 @@
 
 <div class="span16">
 
-	<h3 class="big">
+	<h4>
 		Why Gift Circle is just what you need for Christmas&hellip;
-	</h3>
+	</h4>
 
 	<div class="row home-list">
 		<div class="span8">

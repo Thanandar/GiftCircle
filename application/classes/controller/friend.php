@@ -15,13 +15,14 @@ class Controller_Friend extends Controller_Page {
 	}
 
 	public function action_list() {
-		$this->template->title = 'Friends\' Circles';
-		$this->template->subtitle = 'All of these people are confirmed friends and can be added to your circles';
+		$this->template->title = 'Friends';
+		$this->template->subtitle = 'All of these people can be added to your circles';
 
 		$view = View::factory('friend/list');
 		
 		$me = new Model_Owner($this->me()->id);
 		$view->friends = $me->confirmed_friends();
+		$view->friends = $me->friends->order_by('surname')->find_all();
 
 		$this->template->content = $view;
 	}
@@ -89,8 +90,8 @@ class Controller_Friend extends Controller_Page {
 				$friend->birthday  = arr::get($_POST, 'birthday');
 				$friend->address   = arr::get($_POST, 'address');
 				$friend->save();
-				Message::add('success', 'Updated friend.');
-				Request::current()->redirect('friend/view/' . $friend->id);
+				Message::add('success', 'Successfully updated friend.');
+				Request::current()->redirect('friend/list');
 			}
 			$view->errors = Kohana::message('friend', 'email-required');
 		}

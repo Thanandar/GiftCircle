@@ -19,6 +19,8 @@
 				<td>
 					<?php if ($friend->is_confirmed()) { ?>
 					C
+					<?php } else { ?>
+						P
 					<?php } ?>
 				</td>
 				<td>
@@ -32,10 +34,13 @@
 				<td><?php echo HTML::chars($friend->birthday) ?></td>
 				<td><?php echo nl2br(HTML::chars($friend->address)) ?></td>
 				<td>
-					<?php if ($friend->is_confirmed()) { ?>
-					<a class="btn" href="/friend/view/<?php echo $friend->id; ?>">10 circles</a>
+					<?php 
+					$count_circles_im_in = $friend->count_circles_im_in();
+					if ($count_circles_im_in) { 
+					?>
+						<a class="btn" href="/friend/view/<?php echo $friend->id; ?>"><?php echo $count_circles_im_in; ?> circle(s)</a>
 					<?php } else {  ?>
-					<input class="btn" type="button" disabled="disabled" value="0 circles" />
+						<input class="btn" type="button" disabled="disabled" value="0 circles" />
 					<?php }  ?>
 				</td>
 			</tr>
@@ -52,11 +57,4 @@
 
 </div>
 
-<div class="span4">
-
-	<h2>Shopping list</h2>
-	
-	<?php echo Request::factory('gift/to_buy')->execute() ?>
-	
-</div>
 

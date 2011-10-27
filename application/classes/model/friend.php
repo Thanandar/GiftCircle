@@ -170,4 +170,24 @@ class Model_Friend extends ORM {
 			))->loaded();
 	}
 
+	public function count_circles_im_in() {
+		if (!$this->is_confirmed()) {
+			return 0;
+		}
+
+		$user = $this->get_user();
+
+		$my_email = Auth::instance()->get_user()->email;
+
+		return $user->lists
+			->join('friends_lists')
+				->on('friends_lists.list_id', '=', 'list.id')
+				
+			->join('friends')
+				->on('friends_lists.friend_id', '=', 'friends.id')
+
+			->where('friends.email', '=', $my_email)
+			->find_all()->count();
+	}
+
 }

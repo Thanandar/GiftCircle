@@ -49,10 +49,10 @@
 
 </div>
 
-<div class="span4">
 
 
 <?php if (count($other_gifts)) { ?>
+<div class="span4">
 	<h3>On your list</h3>
 	<table class="zebra-striped">
 		<thead>

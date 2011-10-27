@@ -1,15 +1,10 @@
 <?php if (count($gifts)) { ?>
 
 <table class="zebra-striped">
-	<thead>
-		<tr>
-			<th width="180">Gift name</th>
-		</tr>
-	</thead>
 	<tbody>
 		<?php foreach ($gifts as $gift) { ?>
 		<tr>
-			<td><a href="/gift/buy/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a></td>
+			<td><a href="/gift/buy/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a> for <?php echo HTML::chars($gift->list->owner->firstname) ?></td>
 		</tr>
 		<?php } ?>
 	</tbody>

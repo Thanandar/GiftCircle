@@ -5,6 +5,8 @@
 		<?php echo HTML::chars($list->owner->firstname . ' ' . $list->owner->surname) ?>'s list: 
 		<?php echo HTML::chars($list->name) ?></h2>
 
+	<p>Check the boxes then click reserve</p>
+
 	<form action="" method="post">
 
 		<?php if (count($gifts)) { ?>
@@ -13,7 +15,7 @@
 				<tr>
 					<th></th>
 					<th>Gift name</th>
-					<th>Approximate Price</th>
+					<th>Price</th>
 					<th>Category</th>
 					<th>Who's buying?</th>
 				</tr>
@@ -49,8 +51,8 @@
 						<?php echo HTML::chars($gift->name) ?>
 						<?php } ?>
 					</td>
-					<td>
-						&pound;<?php echo HTML::chars($gift->price) ?>
+					<td style="text-align:right">
+						<?php echo ($gift->price()) ?>
 					</td>
 					<td>
 						<?php echo HTML::chars($gift->category->name) ?>
@@ -62,8 +64,9 @@
 								echo '<em>You\'ve bought this</em>';
 							} else {
 								?>
-								<a class="btn success" title="Mark as bought" href="/gift/mark_as_bought/<?php echo $gift->id; ?>">Mark as bought</a>
-								<a class="btn danger" title="Un-reserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to un-reserve this product?')">Unreserve</a>
+								<a class="btn" title="Mark as bought" href="/gift/mark_as_bought/<?php echo $gift->id; ?>">Mark as bought</a>
+								or
+								<a title="Un-reserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to un-reserve this product?')">unreserve</a>
 								<?php
 							}
 						} else {
@@ -115,30 +118,40 @@
 
 	<h2>Friends in this circle</h2>
 
-	<div class="well">
 
-		<?php if (count($friends)) { ?>
-		<table>
-			<?php foreach ($friends as $friend) { ?>
-			<tr><td><?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?></td></tr>
-			<?php } ?>
-		</table>
-		<?php } else { ?>
-		<p>There are no friends in this circle</p>
+	<?php if (count($friends)) { ?>
+	<table class="zebra-striped">
+		<?php foreach ($friends as $friend) { ?>
+		<tr>
+			<td>
+				<?php echo HTML::chars($friend->firstname . ' ' . $friend->surname) ?>
+			</td>
+		</tr>
 		<?php } ?>
+	</table>
+
+	<?php } else { ?>
+	<p>There are no friends in this circle</p>
+	<?php } ?>
+
+	<div class="well">	
+		
+		<h5>Notifications</h5>
+
+		<p>Notifications keep you informed about changes to this list.
+				You can unsubscribe from these here.</p>
 
 		<p>
-			<?php if ($subscribed) { ?>
-			You are subscribed to this list
-			<input type="button" class="btn" value="Unsubscribe" onclick="location.href='/list/unsubscribe/<?php echo $list->id ?>'" />
-			<?php } else { ?>
-			Subscribe to this list
-			<input type="button" class="btn" value="Subscribe" onclick="location.href='/list/subscribe/<?php echo $list->id ?>'" />
-			<?php } ?>
+			<input id="subscribe" name="subscribe" value="subscribe" type="checkbox" <?php if ($subscribed) { ?> checked="checked" <?php } ?>
+			/>
+			&nbsp;
 		</p>
-
-
 	</div>
 
+<p>	(these won't be here)<br />
+<input type="button" class="btn" value="Turn on"  onclick="location.href='/list/subscribe/<?php echo $list->id ?>'" />
+
+<input type="button" class="btn" value="Turn off"  onclick="location.href='/list/unsubscribe/<?php echo $list->id ?>'" />
+</p>
 </div>
 
