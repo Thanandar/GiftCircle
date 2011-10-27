@@ -61,6 +61,7 @@ class Controller_Page extends Controller_Template {
 				//'http://fonts.googleapis.com/css?family=Oswald' => 'screen',
 				'static/css/bootstrap.min.css' => 'screen',
 				'static/css/theme.css' => 'screen',
+				'static/css/engage.itoggle.css' => 'screen',
 			);
 
 			$scripts = array(
@@ -70,6 +71,7 @@ class Controller_Page extends Controller_Template {
 				'static/js/HouschkaAltBlackRegular_900.font.js',
 				'static/js/VAGLight_700.font.js',
 				'static/js/nevisBold_700.font.js',
+				'static/js/engage.itoggle.js',
 				'static/js/jquery.metadata.js',
 				'static/js/jquery.tablesorter.min.js',
 				'static/js/functions.js',

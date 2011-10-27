@@ -25,6 +25,7 @@ function readCookie(name) {
 }
 
 jQuery(function($) {
+	$('#subscribe').iToggle();
 	
 	if (true) {
 		$("html:not(.home-dashboard) table.sort").tablesorter({
