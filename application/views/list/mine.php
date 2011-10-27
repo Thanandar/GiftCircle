@@ -22,11 +22,11 @@
 	<div>
 
 		<?php if (count($friends)) { ?>
-		<table class="zebra-striped">
+		<table class="zebra-striped sort">
 			<thead>
 				<tr>
 					<th>Friend name</th>
-					<th></th>
+					<th class="{sorter: false}"></th>
 				</tr>
 			</thead>
 			<?php foreach ($friends as $friend) { ?>
@@ -61,13 +61,13 @@
 <h2>Gifts on this list</h2>
 	
 	<?php if (count($gifts)) { ?>
-	<table class="zebra-striped">
+	<table class="zebra-striped sort">
 		<thead>
 			<tr>
 				<th width="180">Gift name</th>
 				<th>Price</th>
 				<th>Category</th>
-				<th></th>
+				<th class="{sorter: false}"></th>
 			</tr>
 		</thead>
 		<tbody>

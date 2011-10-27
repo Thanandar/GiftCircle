@@ -365,3 +365,11 @@ form .clearfix {
 .bigger p {
   font-size:14px;
 }
+
+/*tables*/
+
+table .headerSortUp, table .headerSortDown {
+  background-color: #ddd;
+}
+
+

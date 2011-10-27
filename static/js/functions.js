@@ -1,4 +1,5 @@
-/*global Cufon, window, document, unescape*/
+/*global Cufon, window, document, unescape, jQuery*/
+/*jshint eqeqeq:true */
 
 //Cufon
 Cufon.replace('.topbar .nav a', { fontFamily: 'nevisBold' });
@@ -22,3 +23,14 @@ function readCookie(name) {
 	}
 	return null;
 }
+
+jQuery(function($) {
+	
+	if (true) {
+		$("html:not(.home-dashboard) table.sort").tablesorter({
+			dateFormat: 'uk'
+		});
+	}
+
+});
+

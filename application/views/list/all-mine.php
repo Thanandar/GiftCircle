@@ -5,7 +5,7 @@ if (count($lists)) {
 
 ?>
 
-<table class="zebra-striped">
+<table class="zebra-striped sort">
 	<thead>
 		<tr>
 			<th>Circle name</th>

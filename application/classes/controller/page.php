@@ -70,6 +70,8 @@ class Controller_Page extends Controller_Template {
 				'static/js/HouschkaAltBlackRegular_900.font.js',
 				'static/js/VAGLight_700.font.js',
 				'static/js/nevisBold_700.font.js',
+				'static/js/jquery.metadata.js',
+				'static/js/jquery.tablesorter.min.js',
 				'static/js/functions.js',
 			);
 

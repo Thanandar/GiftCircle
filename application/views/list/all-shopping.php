@@ -1,14 +1,14 @@
 
 <?php if (count($gifts)) { ?>
 
-<table class="zebra-striped">
+<table class="zebra-striped sort">
 	<thead>
 		<tr>
 			<th>Gift&nbsp;name</th>
 			<th>Price</th>
 			<th>Who&nbsp;for?</th>
 			<th>List</th>
-			<th width="235"></th>
+			<th width="235" class="{sorter: false}"></th>
 		</tr>
 	</thead>
 	<tbody>

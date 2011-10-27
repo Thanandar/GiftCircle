@@ -5,9 +5,9 @@ return array(
 	'email-from-name' => 'Gift Circle',
 	
 	'dashboard'       => array(
-		'my-lists'      => 10,
-		'friends-lists' => 10,
-		'shopping-list' => 10,
+		'my-lists'      => 5,
+		'friends-lists' => 5,
+		'shopping-list' => 5,
 	),
 
 );
