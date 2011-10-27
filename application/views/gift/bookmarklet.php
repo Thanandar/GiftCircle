@@ -56,7 +56,7 @@ Browse the web as usual, then click the Gift Circle Browser Button when you see 
 	<li>
 		<p>Drag this button to the bookmarks toolbar in your web browser</p>
 
-<p><a style="cursor:move" href="javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='<?php echo URL::base('http'); ?>static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();" class="btn primary large" onclick="alert('Drag this button to your bookmarks toolbar');return false">Add to Gift Circle</a></p>
+<p><a href="javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='<?php echo URL::base('http'); ?>static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();"  onclick="alert('Drag this button to your bookmarks toolbar');return false"><img src="/img/screen-grab/btn-<?php echo strtolower($browser); ?>.png" alt="Add to Gift Circle" /></a></p>
 	</li>
 
 	<li>
@@ -69,7 +69,7 @@ Browse the web as usual, then click the Gift Circle Browser Button when you see 
 
 </ol>
 
-<img src="http://placehold.it/550x200&text=<?php echo $browser; ?> example" alt="Help">
+<img src="/img/screen-grab/drag-<?php echo strtolower($browser); ?>.png" alt="Help">
 
 
 
