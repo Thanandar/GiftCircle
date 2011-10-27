@@ -111,7 +111,7 @@ class Model_Gift extends ORM {
 	}
 
 	public function price() {
-		return '&pound;' . number_format($this->price, 2);
+		return '&pound;' . number_format((float) $this->price, 2);
 	}
 
 	
