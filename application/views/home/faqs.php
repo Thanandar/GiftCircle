@@ -1,5 +1,5 @@
 
-<div class="span16">
+<div class="span16 bigger">
 
 
 <h3>Q. So... What?</h3>

@@ -70,7 +70,20 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 
 <div class="footer">
 	<div class="container">
-		<p>&copy; 2011 Net Optimisers Ltd, 145-157 St John Street, London, England, EC1V 4PW | Registered in England and Wales Company No. 07607399</p>
+		<p>
+			&copy; 2011 Net Optimisers Ltd
+
+			| <a href="/home/company_info">Company Info</a>
+
+			| <a href="/home/terms">Terms &amp; Conditions</a>
+
+			| <a href="/home/privacy">Privacy Policy</a>
+
+			| <a href="/home/contact">Contact us</a>
+
+			| <a href="/home/partner">Partner with us</a>
+
+		</p>
 	</div>
 </div>
 

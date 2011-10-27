@@ -26,13 +26,38 @@ class Controller_Home extends Controller_Page {
 	}
 
 	public function action_support() {
-		$this->template->title = 'Support';
+		$this->template->title = 'Help';
 		$this->template->content = View::factory('home/support');
 	}
 
 	public function action_faqs() {
 		$this->template->title = 'FAQs';
 		$this->template->content = View::factory('home/faqs');
+	}
+
+	public function action_company_info() {
+		$this->template->title = 'Company Info';
+		$this->template->content = View::factory('home/company_info');
+	}
+
+	public function action_terms() {
+		$this->template->title = 'Terms &amp; Conditions';
+		$this->template->content = View::factory('home/terms');
+	}
+
+	public function action_privacy() {
+		$this->template->title = 'Privacy Policy';
+		$this->template->content = View::factory('home/privacy');
+	}
+
+	public function action_contact() {
+		$this->template->title = 'Contact us';
+		$this->template->content = View::factory('home/contact');
+	}
+
+	public function action_partner() {
+		$this->template->title = 'Partner with us';
+		$this->template->content = View::factory('home/partner');
 	}
 
 	public function action_dashboard() {
@@ -62,7 +87,5 @@ class Controller_Home extends Controller_Page {
 
 		$this->template->content = $view;
 	}
-
-
 
 }
