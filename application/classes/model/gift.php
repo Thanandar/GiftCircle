@@ -24,7 +24,7 @@ class Model_Gift extends ORM {
 			));
 			
 			$message = Message::t('email', 'edited_gift.plain', array(
-				'url'                => URL::base('http'),
+				'url'                => URL::base('http') . 'gift/shopping',
 				'reserver_email'     => $reserver->email,
 				'reserver_firstname' => $reserver->firstname,
 				'reserver_surname'   => $reserver->surname,

@@ -81,7 +81,7 @@ class Model_Delayednotification {
 					'friend_name'   => $this->owner->fullname(),
 					'list_name'     => $this->list->name,
 					'updates'       => $updates,
-					'login_link'    => URL::base('http') . 'user/login',
+					'login_link'    => URL::base('http') . 'list/friend/' . $this->list->id,
 				), false);
 
 
