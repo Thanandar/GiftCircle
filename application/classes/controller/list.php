@@ -163,7 +163,7 @@ class Controller_List extends Controller_Page {
 	public function action_friend() {
 		$this->redirect_if_not_on_list();
 
-		$this->template->title = 'View my friend\'s list';
+		$this->template->title = 'View friend\'s circle';
 		$list = new Model_List($this->request->param('id'));
 
 		$view = View::factory('list/friend');

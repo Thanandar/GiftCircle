@@ -22,6 +22,7 @@ class Controller_Gift extends Controller_Page {
 		$me = ORM::factory('owner', $this->me()->id);
 
 		$view->my_shopping_list = $me->shopping_list();
+		$view->my_bought_list = $me->bought_list();
 		
 		$this->template->content = $view;
 	}
@@ -235,10 +236,10 @@ class Controller_Gift extends Controller_Page {
 			$me->unsubscribe_from_list($gift->list);
 			
 			Message::add('success', __('This gift has been marked as bought.'));
-			Request::current()->redirect('gift/bought/' . $gift->id);
+			Request::current()->redirect('gift/shopping');
 		}
 
-		$this->template->title = 'Buy gift';
+		$this->template->title = 'Confirm';
 		$view = View::factory('gift/mark-as-bought');
 		$view->gift = $gift;
 		$this->template->content = $view;

@@ -8,7 +8,7 @@
 
 	<div class="well">
 		<input type="submit" class="btn primary" value="Mark as bought" name="bought" />
-
+		or
 		<a href="/gift/buy/<?php echo $gift->id ?>">cancel</a>
 	</div>
 

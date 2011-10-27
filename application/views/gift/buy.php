@@ -1,36 +1,58 @@
 
 <div class="span12">
 
-	<h2>Shop for '<?php echo HTML::chars($gift->name); ?>' now</h2>
-	
 	<h3>
 		For <?php echo HTML::chars($gift->list->owner->firstname); ?>'s list "<?php echo HTML::chars($gift->list->name); ?>"
 	</h3>
-	
-	<dl>
-		<dt>Approximate price</dt>
-			<dd>&pound;<?php echo HTML::chars($gift->price); ?></dd>
-		<dt>Category</dt>
-			<dd><?php echo HTML::chars($gift->category->name); ?></dd>
-		<dt>Description</dt>
-			<dd><?php echo HTML::chars($gift->details); ?></dd>
-	</dl>
 
-	<p>Click a retailer logo to browse. Mark the gift as bought after you've bought it.</p>
+	<table class="zebra-striped">
+		<thead>
+			<tr>
+				<th>Gift name</th>
+				<th>Price</th>
+				<th>Category</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
 
-	<div class="well">
+				if ($gift->reserver_id) {
+					$reserver = new Model_Owner($gift->reserver_id);
+				} else {
+					$reserver = new Model_Owner;
+				}
 
-		<?php if ($gift->url) { ?>
-		<input type="button" class="btn primary" value="Buy from preset URL" onclick="window.open('<?php echo HTML::chars($gift->url); ?>')" />
-		
-		<?php } ?>
+				if ($gift->buyer_id) {
+					$buyer = new Model_Owner($gift->reserver_id);
+				} else {
+					$buyer = new Model_Owner;
+				}
 
-		<input type="button" class="btn" value="Mark as bought" onclick="location.href='/gift/mark_as_bought/<?php echo $gift->id; ?>'" />
-	</div>
+			?>
+
+			<tr>
+				<td>
+					<?php echo HTML::chars($gift->name) ?>
+				</td>
+				<td style="text-align:right">
+					<?php echo ($gift->price()) ?>
+				</td>
+				<td>
+					<?php echo HTML::chars($gift->category->name) ?>
+				</td>
+				<td>
+					<?php echo HTML::chars($gift->details) ?>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 
 	<hr />
 
 	<h3>Category &gt; <?php echo HTML::chars($gift->category->name); ?></h3>
+
+	<p>Click a retailer logo to browse. Mark the gift as bought after you've bought it.</p>
 
 	<ul class="media-grid shop-logos">
 		<?php foreach ($shops as $shop) { ?>
@@ -42,6 +64,17 @@
 		</li>
 		<?php } ?>
 	</ul>
+
+	
+	<div class="well">
+
+		<?php if ($gift->url) { ?>
+		<input type="button" class="btn primary" value="Buy from the shop <?php echo HTML::chars($gift->list->owner->firstname); ?> recommended" onclick="window.open('<?php echo HTML::chars($gift->url); ?>')" />
+		
+		<?php } ?>
+
+		<input type="button" class="btn" value="Mark as bought" onclick="location.href='/gift/mark_as_bought/<?php echo $gift->id; ?>'" />
+	</div>
 
 </div>
 

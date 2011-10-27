@@ -46,6 +46,6 @@
 
 <?php } else { ?>
 	
-<p>No gifts on your shopping list</p>
+
 
 <?php }?>

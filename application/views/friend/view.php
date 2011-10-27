@@ -16,13 +16,13 @@ $fullname = HTML::chars($friend->firstname . ' ' . $friend->surname);
 
 	<?php if ($friend_user) { ?>
 
-		<h2><?php echo $fullname; ?>'s lists</h2>
+		<h2><?php echo $fullname; ?></h2>
 		<?php if (count($friends_lists)) { ?>
 			
 			<table class="zebra-striped sort">
 				<thead>
 					<tr>
-						<th>List name</th>
+						<th>Circle name</th>
 						<th>Total gifts</th>
 					</tr>
 				</thead>

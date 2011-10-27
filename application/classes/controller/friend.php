@@ -48,7 +48,7 @@ class Controller_Friend extends Controller_Page {
 	}
 
 	public function action_view() {
-		$this->template->title = 'View friend';
+		$this->template->title = 'View friend\'s circles';
 
 		$friend = new Model_Friend($this->request->param('id'));
 
