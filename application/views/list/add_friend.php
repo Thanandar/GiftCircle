@@ -18,6 +18,14 @@ All the people you've added to your circle will be notified via email and once t
 		<fieldset>
 			<h2>Add existing friends</h2>
 
+			<?php
+			if (!empty($errors['existing'])) {
+				echo '<div class="alert-message error">';
+					echo '<p>' . $errors['existing'] . '</p>';
+				echo '</div>';
+			}
+			?>
+
 			<div class="clearfix">
 				<div>
 					<ul class="inputs-list existing-friends">
@@ -43,11 +51,18 @@ All the people you've added to your circle will be notified via email and once t
 		<fieldset>
 			<h2>Add new friends</h2>
 			<ol class="new-friends">
-				<?php for ($i = 0; $i < 5; $i++) { ?>
+				<?php 
+				$rows = max(array(5, count(@$new_friends)));
+				for ($i = 0; $i < $rows; $i++) { 
+				?>
 				<li>
-					<input class="span3" type="text" name="firstname[]" placeholder="First name" />
-					<input class="span3" type="text" name="surname[]" placeholder="Surname" />
-					<input class="span6" type="text" name="email[]" placeholder="Email address" />
+
+					<input class="span3<?php if (isset($new_friends[$i][0]) && empty($new_friends[$i][0])) echo ' error'; ?>" type="text" name="firstname[]" placeholder="First name" value="<?php echo HTML::chars(@$new_friends[$i][0]) ?>" />
+
+					<input class="span3" type="text" name="surname[]" placeholder="Surname" value="<?php echo HTML::chars(@$new_friends[$i][1]) ?>" />
+
+					<input class="span6<?php if (isset($new_friends[$i][2]) && !filter_var($new_friends[$i][2], FILTER_VALIDATE_EMAIL)) echo ' error'; ?>" type="text" name="email[]" placeholder="Email address" value="<?php echo HTML::chars(@$new_friends[$i][2]) ?>" />
+
 				</li>
 				<?php } ?>
 				<li style="list-style-type:none"><a href="#" onclick="return more_friends(this)">Add more</a></li>
@@ -55,11 +70,17 @@ All the people you've added to your circle will be notified via email and once t
 
 
 			<?php
-			if (!empty($errors)) {
+			if (!empty($errors['new'])) {
 				echo '<div class="alert-message error">';
-				foreach ($errors as $error) {
-					echo '<p>' . $error . '</p>';
-				}
+					echo '<p>' . $errors['new'] . '</p>';
+				echo '</div>';
+			}
+			?>
+
+			<?php
+			if (!empty($errors['all'])) {
+				echo '<div class="alert-message error">';
+					echo '<p>' . $errors['all'] . '</p>';
 				echo '</div>';
 			}
 			?>

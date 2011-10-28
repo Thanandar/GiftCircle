@@ -63,8 +63,8 @@ class Controller_List extends Controller_Page {
 				$list->expiry = arr::get($_POST, 'expiry');
 				$list->save();
 
-				$added = $this->add_existing_friends_from_post($view, $list);
-				$added += $this->add_new_friends_from_post($view, $list);
+				//$added = $this->add_existing_friends_from_post($view, $list);
+				//$added += $this->add_new_friends_from_post($view, $list);
 
 				Message::add('success', __('Successfully created a new circle.'));
 				Request::current()->redirect('list/add_friend_wizard/' . $list->id);
@@ -190,7 +190,7 @@ class Controller_List extends Controller_Page {
 				$friend = new Model_Friend((int) $friend_id);
 
 				if (!$friend->loaded()) {
-					$view->errors[] = 'Could not find your friend.';
+					$view->errors['existing'] = 'Could not find your friend.';
 					break;
 				}
 
@@ -206,7 +206,7 @@ class Controller_List extends Controller_Page {
 
 	private function add_new_friends_from_post(&$view, $list) {
 		$added = 0;
-
+		$view->new_friends = array();
 		$i = 0;
 		$firstnames = arr::get($_POST, 'firstname', array());
 		$surnames   = arr::get($_POST, 'surname',   array());
@@ -222,9 +222,9 @@ class Controller_List extends Controller_Page {
 				continue;
 			}
 
-			// TODO: validate stuff, including dupes
-			if (empty($firstname) || empty($surname) || empty($email)) {
-				$view->errors[] = 'Please enter all friend details.';
+			if (empty($firstname) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+				$view->new_friends[] = array($firstname, $surname, $email);
+				$view->errors['new'] = 'Please enter a first name and a valid email address.';
 				continue;
 			}
 
@@ -270,17 +270,6 @@ class Controller_List extends Controller_Page {
 			$this->add_friends($view, 'gift/bookmarklet/' . $list->id);
 		}
 
-		$this->template->content = $view;
-
-	}
-
-	private function get_add_friend_view($list) {
-		$view = View::factory('list/add_friend');
-		$view->list = $list;
-		
-		// friends already on the list
-		$view->circle = $list->friends->find_all();
-		
 		$circle_ids = $view->circle->as_array('id');
 		
 		$me = new Model_Owner($this->me()->id);
@@ -291,6 +280,17 @@ class Controller_List extends Controller_Page {
 			$friends->where('id', 'NOT IN', $view->circle->as_array('id'));
 		}
 		$view->friends = $friends->find_all();
+
+		$this->template->content = $view;
+
+	}
+
+	private function get_add_friend_view($list) {
+		$view = View::factory('list/add_friend');
+		$view->list = $list;
+		
+		// friends already on the list
+		$view->circle = $list->friends->find_all();
 
 		$view->errors = array();
 
@@ -308,12 +308,16 @@ class Controller_List extends Controller_Page {
 			// so it can send notifications
 			$list->touch();
 
-			Message::add('success', __('Successfully added ' . $added . ' friend(s).'));
-
-			Request::current()->redirect($redir);
+			Message::add('success', __('Successfully added ' . $added . ' friend(s).'));			
 		}
 
-		$view->errors[] = 'Please add some friends.';
+		if ($added && empty($view->errors)) {
+			Request::current()->redirect($redir);			
+		}
+
+		if (empty($view->errors)) {
+			$view->errors['all'] = 'Please add some friends.';
+		}
 	}
 
 	public function action_add_friend() {
@@ -331,6 +335,17 @@ class Controller_List extends Controller_Page {
 		if ($_POST) {
 			$this->add_friends($view, 'list/mine/' . $list->id);
 		}
+
+		$circle_ids = $view->circle->as_array('id');
+		
+		$me = new Model_Owner($this->me()->id);
+		
+		// friends not yet on the list
+		$friends = $me->friends;
+		if (count($circle_ids)) {
+			$friends->where('id', 'NOT IN', $view->circle->as_array('id'));
+		}
+		$view->friends = $friends->find_all();
 
 		$this->template->content = $view;
 	}
