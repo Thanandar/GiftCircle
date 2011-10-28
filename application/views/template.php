@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >
 	<title><?php echo $title ?> &mdash; Gift Circle</title>
+	<link href="/favicon.ico" rel="shortcut icon" />
 <?php foreach ($styles as $file => $type) echo "\t" . HTML::style($file, array('media' => $type)), PHP_EOL ?>
 	<!--[if IE 7]><link rel="stylesheet" href="/static/css/ie7styles.css" type="text/css" /><![endif]-->
 <?php foreach ($scripts as $file) echo "\t" . HTML::script($file), PHP_EOL ?>
