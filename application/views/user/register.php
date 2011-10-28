@@ -36,6 +36,7 @@ echo $form->open('');
       <label>First name</label>
       <div class="input"><?php echo $form->input('firstname', null, array(
          'required' => 'required',
+         'autofocus' => 'autofocus',
 )); ?></div>
    </div>
    <div class="clearfix">

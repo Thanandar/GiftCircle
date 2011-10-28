@@ -28,6 +28,7 @@ $form->info_class = 'info block';
 						'type' => 'email',
 						'required' => 'required',
 						'placeholder' => 'you@example.com',
+						'autofocus' => 'autofocus',
 					)); 
 					?>
 				</div>
