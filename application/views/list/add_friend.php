@@ -13,18 +13,30 @@ All the people you've added to your circle will be notified via email and once t
 
 <div class="span12">
 
+	<?php
+	if (!empty($errors['existing'])) {
+		echo '<div class="alert-message error">';
+			echo '<p>' . $errors['existing'] . '</p>';
+		echo '</div>';
+	}
+
+	if (!empty($errors['new'])) {
+		echo '<div class="alert-message error">';
+			echo '<p>' . $errors['new'] . '</p>';
+		echo '</div>';
+	}
+	if (!empty($errors['all'])) {
+		echo '<div class="alert-message error">';
+			echo '<p>' . $errors['all'] . '</p>';
+		echo '</div>';
+	}
+	?>
+
+
 	<form method="post">
 		<?php if (count($friends)) { ?>
 		<fieldset>
 			<h2>Add existing friends</h2>
-
-			<?php
-			if (!empty($errors['existing'])) {
-				echo '<div class="alert-message error">';
-					echo '<p>' . $errors['existing'] . '</p>';
-				echo '</div>';
-			}
-			?>
 
 			<div class="clearfix">
 				<div>
@@ -67,23 +79,6 @@ All the people you've added to your circle will be notified via email and once t
 				<?php } ?>
 				<li style="list-style-type:none"><a href="#" onclick="return more_friends(this)">Add more</a></li>
 			</ol>
-
-
-			<?php
-			if (!empty($errors['new'])) {
-				echo '<div class="alert-message error">';
-					echo '<p>' . $errors['new'] . '</p>';
-				echo '</div>';
-			}
-			?>
-
-			<?php
-			if (!empty($errors['all'])) {
-				echo '<div class="alert-message error">';
-					echo '<p>' . $errors['all'] . '</p>';
-				echo '</div>';
-			}
-			?>
 
 			<div class="well">
 				<input name="submit" type="submit" value="Add friends" class="btn primary" /> 
