@@ -148,10 +148,5 @@
 		</p>
 	</div>
 
-<p>	(these won't be here)<br />
-<input type="button" class="btn" value="Turn on"  onclick="location.href='/list/subscribe/<?php echo $list->id ?>'" />
-
-<input type="button" class="btn" value="Turn off"  onclick="location.href='/list/unsubscribe/<?php echo $list->id ?>'" />
-</p>
 </div>
 

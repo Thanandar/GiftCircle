@@ -412,7 +412,7 @@ class Controller_List extends Controller_Page {
 
 		$me->unsubscribe_from_list($list);
 		Message::add('success', 'Unsubscribed from this list');
-		Request::current()->redirect('list/friend/' . $list->id);
+		//Request::current()->redirect('list/friend/' . $list->id);
 	}
 
 	public function action_subscribe() {
@@ -429,7 +429,7 @@ class Controller_List extends Controller_Page {
 
 		$me->subscribe_to_list($list);
 		Message::add('success', 'Subscribed to this list');
-		Request::current()->redirect('list/friend/' . $list->id);
+		//Request::current()->redirect('list/friend/' . $list->id);
 	}
 
 }

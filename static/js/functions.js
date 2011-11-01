@@ -24,8 +24,19 @@ function readCookie(name) {
 	return null;
 }
 
+function get_last_url_segment() {
+	return location.pathname.split('/').pop();
+}
+
 jQuery(function($) {
-	$('#subscribe').iToggle();
+	$('#subscribe').iToggle({
+		onClickOn: function() {
+			$.get('/list/subscribe/' + get_last_url_segment());
+		},
+		onClickOff: function() {
+			$.get('/list/unsubscribe/' + get_last_url_segment());
+		}
+	});
 	
 	if (true) {
 		$("html:not(.home-dashboard) table.sort").tablesorter({
