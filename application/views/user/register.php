@@ -76,17 +76,17 @@ echo $form->open('');
 		</div>
 	</div>	
 
-<!--    <div class="clearfix">
-      <label>Terms &amp; Conditions</label>
+    <div class="clearfix">
+      <label><a href="/home/terms" target="_blank">Terms &amp; Conditions</a></label>
       <div class="input">
          <ul class="inputs-list">
             <li><label>
-               <input type="checkbox" value="accept" name="terms" />
+               <input required="required" type="checkbox" value="accept" name="terms" />
                <span>Accept</span>
             </label></li>
          </ul>
       </div>
-   </div> -->
+   </div>
 
 	<?php if(isset($captcha_enabled) && $captcha_enabled) { ?>
 		 <?php echo $recaptcha_html; ?>
