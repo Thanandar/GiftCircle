@@ -31,7 +31,7 @@
 
 	<p>
 		Your budget: 
-		&pound; <input type="text" name="budget" value="<?php echo (float) $budget; ?>">
+		&pound; <input class="span1" type="text" name="budget" value="<?php echo (float) $budget; ?>">
 		<input type="button" value="Update" class="btn" onclick="alert('Clicking this will update your budget')" />
 	</p>
 
