@@ -84,7 +84,9 @@ class Controller_Friend extends Controller_Page {
 		$view->friend = $friend;
 
 		if ($_POST) {
-			if (arr::get($_POST, 'email')) {
+			$view->errors = array();
+			
+			if (filter_var(arr::get($_POST, 'email'), FILTER_VALIDATE_EMAIL) && arr::get($_POST, 'firstname')) {
 				$friend->firstname = arr::get($_POST, 'firstname');
 				$friend->surname   = arr::get($_POST, 'surname');
 				$friend->email     = arr::get($_POST, 'email');
@@ -93,8 +95,16 @@ class Controller_Friend extends Controller_Page {
 				$friend->save();
 				Message::add('success', 'Successfully updated friend.');
 				Request::current()->redirect('friend/list');
+			} else {
+				if (!filter_var(arr::get($_POST, 'email'), FILTER_VALIDATE_EMAIL)) {
+					$view->errors['email'] = Kohana::message('friend', 'email-required');
+				}
+
+				if (!arr::get($_POST, 'firstname')) {
+					$view->errors['firstname'] = Kohana::message('friend', 'firstname-required');
+				}
+				
 			}
-			$view->errors = Kohana::message('friend', 'email-required');
 		}
 		$this->template->content = $view;
 	}

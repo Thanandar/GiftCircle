@@ -8,9 +8,14 @@
 
 	<form method="post">
 		<fieldset>
-			<div class="clearfix">
+			<div class="clearfix<?php if (!empty($errors['firstname'])) {echo ' error';} ?>">
 				<label>First name: </label>
-				<div class="input"><input name="firstname" value="<?php echo HTML::chars($friend->firstname) ?>"></div>
+				<div class="input">
+					<input name="firstname" value="<?php echo HTML::chars($friend->firstname) ?>">
+					<?php if (!empty($errors['firstname'])) {
+						echo '<span class="help-inline">' . $errors['firstname'] . '</span>';
+					} ?>
+				</div>
 			</div>
 			<div class="clearfix">
 				<label>Surname: </label>
@@ -19,12 +24,12 @@
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>
-			<div class="clearfix<?php if (!empty($errors)) {echo ' error';} ?>">
+			<div class="clearfix<?php if (!empty($errors['email'])) {echo ' error';} ?>">
 				<label>Email: </label>
 				<div class="input">
 					<input name="email" value="<?php echo HTML::chars($friend->email) ?>" />
-					<?php if (!empty($errors)) {
-						echo '<span class="help-inline">' . $errors . '</span>';
+					<?php if (!empty($errors['email'])) {
+						echo '<span class="help-inline">' . $errors['email'] . '</span>';
 					} ?>
 				</div>
 			</div>

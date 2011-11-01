@@ -5,6 +5,7 @@ return array(
 	'not-on-any-lists' => "You're not on any of <b>%s</b>'s lists yet.",
 	'not-registered'   => "<b>%s</b> has not registered on Gift Circle yet.",
 	'not-friends'      => "You are not friends with this person.",
-	'email-required'   => "Please supply an email address",
+	'email-required'   => "Please enter a valid email address",
+	'firstname-required'   => "Please enter a first name",
 );
 
