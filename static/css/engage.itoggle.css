@@ -65,12 +65,12 @@ label.itoggle span{
 	width: 93px;
 	height: 27px;
 	margin-bottom: 20px;
-	background: url(../img/itoggle.png) left bottom no-repeat;
+	background: url(../img/itoggle.png) 0px -27px no-repeat;
 	cursor:pointer;
 	text-indent:-5000px;
 	}
 label.itoggle.iToff{
-	background-position:right bottom;
+	background-position:-54px -27px;
 	}
 label.itoggle span{
 	background-position: left top;
