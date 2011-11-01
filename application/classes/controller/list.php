@@ -179,6 +179,8 @@ class Controller_List extends Controller_Page {
 
 		$view->list_id = $this->request->param('id');
 		$this->template->content = $view;
+		$this->template->styles['static/css/engage.itoggle.css'] = 'screen';
+		$this->template->scripts[] = 'static/js/engage.itoggle.js';
 	}
 
 	private function add_existing_friends_from_post(&$view, $list) {
