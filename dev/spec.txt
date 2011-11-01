@@ -216,9 +216,9 @@ Deleting account
 	* Confirmation required
 	* No emails sent
 	* All gifts that user has bought or reserved stay "Taken" on their friends' lists
-	- Any gifts that have been reserved by friends get removed from their shopping list [GIFTCIRCLE-96]
-	- User is removed from all friends' lists (including unconfirmed friends)
-	- All user's lists (and the list's gifts/circle) are removed
+	* Any gifts that have been reserved by friends get removed from their shopping list
+	* User is removed from all friends' lists (including unconfirmed friends)
+	* All user's lists (and the list's gifts/circle) are removed
 
 Server runs cron script
 	At any time, if any Subscribed friends on a list have not been notified of any changes to the list that happened over 60 minutes ago:

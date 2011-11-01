@@ -261,4 +261,29 @@ class Model_Owner extends Model_User {
 		return $this->firstname . ' ' . $this->surname;
 	}
 
+	/**
+	 * Clean up a user account that's about to be deleted
+	 */
+	public function clear_all_related() {
+		// All gifts that user has bought or reserved stay "Taken" on their friends' lists
+
+		// All user's lists (and the list's gifts/circle) are removed
+		// Any gifts that have been reserved by friends get removed from their shopping list
+		$lists = $this->lists->find_all();
+		foreach ($lists as $list) {
+			// this removes gifts and friends from the list
+			$list->delete();
+		}
+		
+		// User is removed from all friends' lists (including unconfirmed friends)
+		$friends = $this->friends->find_all();
+		foreach ($friends as $friend) {
+			$friend->delete();
+		}
+		
+	}
+
+
+
+
 }
