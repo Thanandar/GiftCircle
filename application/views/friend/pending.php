@@ -26,7 +26,7 @@
 			<td>
 				<input type="button" class="btn primary" value="Accept" onclick="location.href='/friend/request_accept/<?php echo $friend->id; ?>'" />
 				or
-				<a type="button" onclick="return confirm('Are you sure you want to cancel this friend request?')" href="/friend/request_cancel/<?php echo $friend->id; ?>">Cancel</a>
+				<a type="button" onclick="return confirm('Are you sure you want to cancel this friend request?')" href="/friend/request_cancel/<?php echo $friend->id; ?>">cancel</a>
 			</td>
 		</tr>
 		<?php } ?>

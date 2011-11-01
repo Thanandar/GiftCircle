@@ -5,11 +5,15 @@
 	<h2>Step 4</h2>
 	<?php } ?>
 
+	<p><a href="/gift/add/<?php echo $list->id; ?>">Enter details manually</a> if you know the gift details </p>
+
+	<p>or</p>
+
 	<ol>
-		<li>Select a category</li>
+		<li>Select a category to browse for a gift</li>
 		<li>Choose a shop from the selected category</li>
 		<li>Find the gift you're after</li>
-		<li>Use the <a href="/gift/bookmarklet/<?php echo $list->id; ?>">browser button</a> to add it to your list or <a href="/gift/add/<?php echo $list->id; ?>">enter details manually</a></li>
+		<li>Use the <a href="/gift/bookmarklet/<?php echo $list->id; ?>">browser button</a> to add it to your list </li> 
 	</ol>
 
 	<div class="well">
