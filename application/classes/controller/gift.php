@@ -24,6 +24,23 @@ class Controller_Gift extends Controller_Page {
 		$view->my_shopping_list = $me->shopping_list();
 		$view->my_bought_list = $me->bought_list();
 		
+		$view->total_to_buy = 0;
+		foreach ($view->my_shopping_list as $gift) {
+			if ((float) $gift->price) {
+				$view->total_to_buy += (float) $gift->price;
+			}
+		}
+
+		$view->total_bought = 0;
+		foreach ($view->my_bought_list as $gift) {
+			if ((float) $gift->price) {
+				$view->total_bought += (float) $gift->price;
+			}
+		}
+
+		$view->budget = 1000;
+		$view->budget_left = $view->budget - ($view->total_to_buy + $view->total_bought);
+
 		$this->template->content = $view;
 	}
 
