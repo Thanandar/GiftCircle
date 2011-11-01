@@ -105,8 +105,5 @@ echo $form->close();
 ?>
 </div>
 
-<div class="span4">
-	<?php echo View::factory('sidebar/testimonials'); ?>
-</div>
 
 
