@@ -47,7 +47,7 @@ Immediate notification
 
 View any page
 	* Track page view on Google Analytics
-	- User stays logged in for a period of time [GIFTCIRLCE-46]
+	* User stays logged in for a period of time
 	* Pages look nice
 	* On live site
 
@@ -80,7 +80,8 @@ View dashboard
 	* See my shopping list
 
 View my shopping list
-	* See gifts I've reserved but not bought
+	* See gifts I've reserved
+	* See gifts I've bought
 	* Click on gift to start buying it
 
 Accept friend request
@@ -147,8 +148,11 @@ Delete a gift
 		* Immediate notification: "User A has deleted a gift you have reserved/bought"
 		* Gift removed from User B's shopping list (if reserved)
 
+View list of my friends
+
 View friend
 	* See their lists that you're on
+	* Edit user
 
 View friends' lists
 	* See list of gifts
@@ -224,6 +228,8 @@ Server runs cron script
 	At any time, if any Subscribed friends on a list have not been notified of any changes to the list that happened over 60 minutes ago:
 		* Email notification sent saying a list has been updated (not detailing changes)
 
+Add Bookmarklet
+Use Bookmarklet
 
 ------------------------
 === NOT IN VERSION 1 ===
@@ -233,7 +239,6 @@ Gifts that I've bought
 Treating lists differently based on list date
 Admin area for users
 Admin area for shops, logos, departments and links
-Bookmarklet
 Scraping pages to extract gift information
 Tracking outbound links
 Import friends from 3rd party sites (eg Facebook)
