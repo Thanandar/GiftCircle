@@ -53,6 +53,18 @@ echo $form->open('user/profile_edit');
       </div>
    </div>   
 
+   <div class="clearfix<?php if (isset($errors['password_confirm'])) echo ' error'; ?>">
+      <div class="input">
+         <ul class="inputs-list">
+            <li>
+               <label>
+                  <input type="checkbox" name="marketing" value="1" <?php echo $data['marketing'] ? ' checked="checked" ':''; ?> />
+                  Receive marketing communication via email
+               </label>
+            </li>
+         </ul>
+      </div>
+   </div>   
 
       <?php /*
       <li><h2><?php echo __('Roles'); ?></h2></li>
