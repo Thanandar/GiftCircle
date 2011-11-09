@@ -29,16 +29,18 @@ function get_last_url_segment() {
 }
 
 jQuery(function($) {
-	$('#subscribe').iToggle({
-		onClickOn: function() {
-			$.get('/list/subscribe/' + get_last_url_segment());
-		},
-		onClickOff: function() {
-			$.get('/list/unsubscribe/' + get_last_url_segment());
-		}
-	});
+	if ($().iToggle) {	
+		$('#subscribe').iToggle({
+			onClickOn: function() {
+				$.get('/list/subscribe/' + get_last_url_segment());
+			},
+			onClickOff: function() {
+				$.get('/list/unsubscribe/' + get_last_url_segment());
+			}
+		});
+	}
 	
-	if (true) {
+	if ($().tablesorter) {
 		$("html:not(.home-dashboard) table.sort").tablesorter({
 			dateFormat: 'uk'
 		});
