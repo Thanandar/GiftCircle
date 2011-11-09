@@ -12,7 +12,7 @@ function menu_link($url, $text) {
 		$current = "/friend/list";
 	}
 
-	$dir = preg_replace('~/[a-z]+/?([0-9-]+)?$~', '', $current);
+	$dir = preg_replace('~/[a-z\_]+/?([0-9-]+)?$~', '', $current);
 	
 	if (strpos($current, 'shopping') || strpos($current, 'buy') || strpos($current, 'bought')) {
 		$current = "/gift/shopping";
@@ -22,16 +22,15 @@ function menu_link($url, $text) {
 		}
 	}
 
-
 	if ($url == "/list/my" && $dir == '/list') {
-		$current = "/list/my";
+		$current = true;
 	}
 
 	if ($url == "/friend/list" && $dir == '/friend') {
-		$current = "/friend/list";
+		$current = true;
 	}
 
-	$active = strstr($current, $url) ? ' class="active"' : '';
+	$active = $current === true || (strpos($current, $url)  !== false) ? ' class="active"' : '';
 
 	return '<li><a' . $active . ' href="' . $url . '"><span class="menu-item-'.$class_text.'">' . $text . '</span></a></li>';
 }
