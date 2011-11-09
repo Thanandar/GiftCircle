@@ -43,7 +43,7 @@
 		<li>Gifts bought: &pound;<?php echo $total_bought; ?></li>
 		<li>
 			Budget left:
-			<span style="color:#<?php echo $budget_left ? '080' : '800'; ?>">
+			<span style="color:#<?php echo ($budget_left > 0) ? '080' : '800'; ?>">
 				&pound;<?php echo $budget_left; ?>
 			</span>
 		</li>
