@@ -38,13 +38,13 @@
 	<?php if ($budget > 0) { ?>
 
 	<ul>
-		<li>Your budget: &pound;<?php echo $budget; ?></li>
-		<li>Gifts left to buy: &pound;<?php echo $total_to_buy; ?></li>
-		<li>Gifts bought: &pound;<?php echo $total_bought; ?></li>
+		<li>Your budget: &pound;<?php echo number_format($budget, 2); ?></li>
+		<li>Gifts left to buy: &pound;<?php echo number_format($total_to_buy, 2); ?></li>
+		<li>Gifts bought: &pound;<?php echo number_format($total_bought, 2); ?></li>
 		<li>
 			Budget left:
 			<span style="color:#<?php echo ($budget_left > 0) ? '080' : '800'; ?>">
-				&pound;<?php echo $budget_left; ?>
+				&pound;<?php echo number_format($budget_left, 2); ?>
 			</span>
 		</li>
 	</ul>
