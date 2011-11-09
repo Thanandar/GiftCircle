@@ -7,7 +7,7 @@
 	<thead>
 		<tr>
 			<th>Gift&nbsp;name</th>
-			<th>Price</th>
+			<th>&pound;&nbsp;Guide</th>
 			<th>Who&nbsp;for?</th>
 			<th>List</th>
 		</tr>

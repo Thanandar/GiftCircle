@@ -1,17 +1,18 @@
 
 <?php if ($doing_wizard) { ?>
 
-<div class="span12">
-<h2>Step 2</h2>
-<p>
-All the people you've added to your circle will be notified via email and once they've accepted your invite to join they'll become an active member of your circle. They'll be encouraged to create their own list so that you can see what they'd like (for Christmas, Birthday, etc). 
-
-	</p>
-</div>
 
 <?php } ?>
 
 <div class="span12">
+
+<h2>Step 2</h2>
+<p>
+
+	All the people you've added to your circle will be notified via email and once they've accepted your invite to join they'll become an active member of your circle. They'll be encouraged to create their own list so that you can see what they'd like (for Christmas, Birthday, etc). 
+
+	</p>
+
 
 	<?php
 	if (!empty($errors['existing'])) {
@@ -143,3 +144,39 @@ function more_friends(el) {
 
 </script>
 
+
+<?php if ($doing_wizard) { ?>
+
+
+<div class="span4">
+	<h2>Quick help</h2>
+
+
+	<ul class="unstyled steps">
+
+		<li>
+			<strong>Step 1</strong>
+			<p>Give your list a name.</p>
+		</li>
+
+		<li class="active">
+			<strong>Step 2</strong>
+			<p>Add your friends.</p>
+		</li>
+
+		<li>
+			<strong>Step 3</strong>
+			<p>Get the browser button.</p>
+		</li>
+
+		<li>
+			<strong>Step 4</strong>
+			<p>Add gift ideas to your list.</p>
+		</li>
+	</ul>
+
+</div>
+
+
+
+<?php } ?>

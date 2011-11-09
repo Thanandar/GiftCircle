@@ -65,7 +65,7 @@
 		<thead>
 			<tr>
 				<th width="180">Gift name</th>
-				<th>Price</th>
+				<th>&pound;&nbsp;Guide</th>
 				<th>Category</th>
 				<th class="{sorter: false}"></th>
 			</tr>

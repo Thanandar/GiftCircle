@@ -4,8 +4,8 @@
 <table class="zebra-striped">
 	<thead>
 		<tr>
-			<th>Circle name</th>
-			<th>Who's circle?</th>
+			<th>List name</th>
+			<th>Whose list?</th>
 			<th>Total gifts</th>
 		</tr>
 	</thead>
@@ -25,7 +25,7 @@
 </table>
 
 <div class="well">
-	<a class="btn" href="/friend/list">All friends' circles</a>
+	<a class="btn" href="/friend/list">All friends' lists</a>
 </div>
 
 <?php } ?>

@@ -8,9 +8,9 @@ if (count($lists)) {
 <table class="zebra-striped sort">
 	<thead>
 		<tr>
-			<th>Circle name</th>
-			<th>Total gifts</th>
-			<th>Friends in your circle</th>
+			<th>List name</th>
+			<th width="150">Total gifts</th>
+			<th width="150">Friends in your circle</th>
 		</tr>
 	</thead>
 	<tbody>

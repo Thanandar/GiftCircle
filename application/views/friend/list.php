@@ -38,9 +38,9 @@
 					$count_circles_im_in = $friend->count_circles_im_in();
 					if ($count_circles_im_in) { 
 					?>
-						<a class="btn" href="/friend/view/<?php echo $friend->id; ?>"><?php echo $count_circles_im_in; ?> circle(s)</a>
+						<a class="btn" href="/friend/view/<?php echo $friend->id; ?>"><?php echo $count_circles_im_in; ?> list(s)</a>
 					<?php } else {  ?>
-						<input class="btn" type="button" disabled="disabled" value="0 circles" />
+						<input class="btn" type="button" disabled="disabled" value="0 lists" />
 					<?php }  ?>
 				</td>
 			</tr>

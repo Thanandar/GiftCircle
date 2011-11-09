@@ -20,8 +20,8 @@ class Controller_List extends Controller_Page {
 			Request::current()->redirect('');
 		}
 
-		$this->template->title = 'Circles';
-		$this->template->subtitle = 'Gift circles you have created';
+		$this->template->title = 'My Lists';
+		$this->template->subtitle = 'Gift lists you have created';
 
 		$view = View::factory('list/my');
 		$me = ORM::factory('owner', $this->me()->id);
@@ -48,7 +48,7 @@ class Controller_List extends Controller_Page {
 
 
 	public function action_add() {
-		$this->template->title = 'Create a Circle';
+		$this->template->title = 'Create a List';
 		
 		$me = new Model_Owner($this->me()->id);
 
@@ -66,10 +66,10 @@ class Controller_List extends Controller_Page {
 				//$added = $this->add_existing_friends_from_post($view, $list);
 				//$added += $this->add_new_friends_from_post($view, $list);
 
-				Message::add('success', __('Successfully created a new circle.'));
+				Message::add('success', __('Successfully created a new list.'));
 				Request::current()->redirect('list/add_friend_wizard/' . $list->id);
 			}
-			$view->errors = 'Please enter a circle name';
+			$view->errors = 'Please enter a list name';
 		}
 		$this->template->content = $view;
 	}
@@ -265,8 +265,8 @@ class Controller_List extends Controller_Page {
 		$view = $this->get_add_friend_view($list);
 		$view->doing_wizard = true;
 
-		$this->template->title = 'Add friends to my circle &raquo; ' . $list->name;
-		$this->template->subtitle = 'Choose the friends and family you would like in your gift circle';
+		$this->template->title = 'Add friends to my list &raquo; ' . $list->name;
+		$this->template->subtitle = 'Choose the friends and family you would like in your gift list';
 
 		if ($_POST) {
 			$this->add_friends($view, 'gift/bookmarklet/' . $list->id);

@@ -15,7 +15,7 @@
 				<tr>
 					<th></th>
 					<th>Gift name</th>
-					<th>Price</th>
+					<th>&pound;&nbsp;Guide</th>
 					<th>Category</th>
 					<th>Who's buying?</th>
 				</tr>

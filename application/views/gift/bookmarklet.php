@@ -41,7 +41,7 @@ $show_toolbar = $show_toolbar[$browser];
 <h2>Step 3</h2>
 
 <p>
-Browse the web as usual, then click the Gift Circle Browser Button when you see a gift you like. You don't even leave the page you're on!
+Getting the browser button will allow you to surf the web as usual and when you see a gift you like, add it to your gift list with 1 click. You don't even leave the page you're on!
 <p>
 </div>
 

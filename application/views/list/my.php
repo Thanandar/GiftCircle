@@ -7,7 +7,7 @@
 	?>
 
 	<div class="well">
-		<input type="button" class="btn primary" value="New circle" onclick="location.href='/list/add'"/>
+		<input type="button" class="btn primary" value="New list" onclick="location.href='/list/add'"/>
 	</div>
 
 </div>

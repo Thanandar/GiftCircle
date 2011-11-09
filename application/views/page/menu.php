@@ -8,7 +8,7 @@ function menu_link($url, $text) {
 	$class_text = preg_replace("/[^a-zA-Z0-9]/", "", $class_text);
 
 
-	if (strpos($current, 'friend')) {
+	if (strpos($current, '/friend')) {
 		$current = "/friend/list";
 	}
 
@@ -51,7 +51,7 @@ function menu_link($url, $text) {
 				if ($logged_in) {
 					foreach (array(
 						"/home/dashboard" => 'Dashboard',
-						"/list/my"        => 'My Circles',
+						"/list/my"        => 'My Lists',
 						"/gift/shopping"  => 'Shopping List',
 						"/friend/list"    => 'Friends',
 						"/home/faqs"      => 'FAQs',

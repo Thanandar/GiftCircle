@@ -4,13 +4,15 @@
 	<h2>Step 1</h2>
 
 	<p>
-		There are 2 elements of a circle. Your friends and a list. First create the circle name and then add your friends. As soon as you're done adding the people in your circle you can add gift ideas to your list too if you want to.
+		Give your list a name then add your friends.
+
+		As soon as you're done adding people to your circle you can add gift ideas to your list.
 	</p>
 
 	<form method="post">
 		<fieldset>
 			<div class="clearfix">
-				<label>Name your gift circle</label>
+				<label>List name</label>
 				<div class="input"><input name="name" placeholder="eg '30th Birthday'"></div>
 			</div>
 
@@ -32,7 +34,7 @@
 			?>
 
 			<div class="actions">
-				<input type="submit" value="Create your circle" class="btn primary" /> or
+				<input type="submit" value="Create your list" class="btn primary" /> or
 				<a href="/list/my">cancel</a>
 			</div>
 		</fieldset>
@@ -40,13 +42,31 @@
 </div>
 
 <div class="span4">
-	<h2>Create a circle</h2>
+	<h2>Quick help</h2>
+	
+	<ul class="unstyled steps">
 
-	<ol>
-		<li><strong>Step 1</strong></li>
-		<li>Step 2</li>
-		<li>Step 3</li>
-	</ol>
+		<li class="active">
+			<strong>Step 1</strong>
+			<p>Give your list a name.</p>
+		</li>
+
+		<li>
+			<strong>Step 2</strong>
+			<p>Add your friends.</p>
+		</li>
+
+		<li>
+			<strong>Step 3</strong>
+			<p>Get the browser button.</p>
+		</li>
+
+		<li>
+			<strong>Step 4</strong>
+			<p>Add gift ideas to your list.</p>
+		</li>
+	</ul>
+
 
 </div>
 

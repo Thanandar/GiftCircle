@@ -9,7 +9,7 @@
 		<thead>
 			<tr>
 				<th>Gift name</th>
-				<th>Price</th>
+				<th>&pound;&nbsp;Guide</th>
 				<th>Category</th>
 				<th>Description</th>
 			</tr>

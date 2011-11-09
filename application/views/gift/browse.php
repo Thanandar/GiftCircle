@@ -9,7 +9,7 @@
 
 	<p>or</p>
 
-	<ol>
+	<ol class="darker">
 		<li>Select a category to browse for a gift</li>
 		<li>Choose a shop from the selected category</li>
 		<li>Find the gift you're after</li>
@@ -144,3 +144,33 @@ $(function() {
 
 </script>
 
+<?php if (strpos(@$_SERVER['HTTP_REFERER'], 'bookmarklet')) { ?>
+
+<div class="span4">
+	<h2>Quick help</h2>
+
+	<ul class="unstyled steps">
+
+		<li>
+			<strong>Step 1</strong>
+			<p>Give your list a name.</p>
+		</li>
+
+		<li>
+			<strong>Step 2</strong>
+			<p>Add your friends.</p>
+		</li>
+
+		<li>
+			<strong>Step 3</strong>
+			<p>Get the browser button.</p>
+		</li>
+
+		<li class="active">
+			<strong>Step 4</strong>
+			<p>Add gift ideas to your list.</p>
+		</li>
+	</ul>
+</div>
+
+<?php } ?>

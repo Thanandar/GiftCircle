@@ -180,7 +180,7 @@ class Controller_Gift extends Controller_Page {
 			Request::current()->redirect('user/noaccess');
 		}
 
-		$this->template->title = 'Browse for a gift';
+		$this->template->title = 'Browse for gifts';
 		$view = View::factory('gift/browse');
 		$view->list = $list;
 		$view->shops = ORM::factory('shop')->find_all();
