@@ -4,7 +4,7 @@
 
 <h3>Q. So... What?</h3>
 <p><b>A.</b> Let's face it, it sucks to get the wrong gift. Ditzy mums, useless partners, interesting grandparents, and even sometimes your closest friends - Sometimes when it comes to presents they manage to go astray. And you've probably made a few mistakes in your lifetime too, even if you thought that look on your dad's face was genuine happiness.
-Here at Gift Circle we're putting a stop to bad gifts. How? With simple, useable, fun wishlists that make everyone happy.</p>
+Here at Gift Circle we're putting a stop to bad gifts. How? With simple, usable, fun wishlists that make everyone happy.</p>
 
 <h3>Q. OK, so when's a good time to use Gift Circle?</h3>
 <p><b>A.</b> Any time there's an upcoming occasion in which the exchange of gifts is expected!</p>
@@ -25,7 +25,7 @@ If you're not signed up... What are you waiting for?</p>
 
 <h3>Q. Circles? Friends? How can I manage my acquaintances?</h3>
 <p><b>A.</b> Here at Gift Circle you have a list of confirmed "Friends", as in, anyone who is willing to buy a gift for you or have a gift bought for them by you. You can check them out by going to Friends.
-However, to help categorise people and to refine your wishlists (Let's face it, nobody wants Jim from the Office seeing what you want from your Wife on your anniversary) we've introduced Circles, which are essentially lists of friends that are related to a wishlist. It's a simple concept you may be familiar with. If you want to categorise your friends, we recommend you break them down into meaningful groups that are likely to attend the same events. Perhaps seperate family from your closest friends, and both of those again from your workplace. You can have as many or as few circles/wishlists as you want.</p>
+However, to help categorise people and to refine your wishlists (Let's face it, nobody wants Jim from the Office seeing what you want from your Wife on your anniversary) we've introduced Circles, which are essentially lists of friends that are related to a wishlist. It's a simple concept you may be familiar with. If you want to categorise your friends, we recommend you break them down into meaningful groups that are likely to attend the same events. Perhaps separate family from your closest friends, and both of those again from your workplace. You can have as many or as few circles/wishlists as you want.</p>
 <p>Adding friends is as simple as heading to one of your lists and hitting Add Friend. If they're signed up already it'll add them, if not, they'll be invited. </p>
 <p>If you're already friends with someone you can tick their checkbox then hit Add Friends to add them to this list/circle.</p>
 <p>Controlling your Circles is done in the list management area too. When you're on a list, click the garbage/bin icon to remove that friend from the list!</p>
@@ -47,7 +47,7 @@ However, to help categorise people and to refine your wishlists (Let's face it, 
 <h3>Q. I made a big mistake; I want to delete a list completely.</h3>
 <p><b>A.</b> Head to a list, click "Edit List Details" and then "Delete this list". Make sure you're sure though!</p>
 
-<h3>Q. What's this bookmarklet or browser button business about?</h3> 
+<h3>Q. What's this browser button business about?</h3> 
 <p><b>A.</b> Good question!</p>
 <p>When you go to add gifts to your list, you can optionally decide to add a button to your bookmarks toolbar in your browser by clicking "Get the Browser Button". This streamlines the gift adding process by
 letting you click the button when you're on any other site and automatically add what you're looking at to one of your lists.
