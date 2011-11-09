@@ -35,9 +35,14 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 		// save the data
 		if (! empty($_POST) && is_numeric($id))
 		{
-
+			
 			$_POST['marketing'] = (int) @$_POST['marketing'];
 			
+			if (!empty($_POST['dob'])) {
+				$_POST['dob'] = str_replace('/', '-', $_POST['dob']);
+				$_POST['dob'] = date('Y-m-d', strtotime($_POST['dob']));
+			}
+//print_r($_POST);die();
 			if (empty($_POST['password']) || empty($_POST['password_confirm']))
 			{
 				// force unsetting the password! Otherwise Kohana3 will automatically hash the empty string - preventing logins
@@ -53,6 +58,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 					'password', 
 					'email',
 					'marketing',
+					'dob',
 				));
 				// message: save success
 				Message::add('success', __('Values saved.'));

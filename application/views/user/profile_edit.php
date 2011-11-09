@@ -7,9 +7,11 @@ if(isset($errors)) {
 }
 if(isset($data)) {
    unset($data['password']);
+   $data['dob'] = strtotime($data['dob']);
+   $data['dob'] = $data['dob'] ? date('d/m/Y', $data['dob']) : '';
    $form->values = $data;
 }
-echo $form->open('user/profile_edit');
+echo $form->open('user/profile_edit');;
 ?>
 
 
@@ -33,6 +35,18 @@ echo $form->open('user/profile_edit');
          'placeholder' => 'you@example.com',
          'required' => 'required',
 )); ?></div>
+   </div>   
+
+   <div class="clearfix<?php if (isset($errors['dob']) || isset($errors['dob'])) echo ' error'; ?>">
+      <label>Date of birth</label>
+      <div class="input">
+         <?php echo $form->input('dob', null, array(
+         'type' => 'date',
+         'placeholder' => '31/12/1999',
+         'pattern' => '^\d+/\d+/\d\d\d\d$',
+         )); ?>
+         <span class="help-inline">Optional (dd/mm/yyyy)</span>
+      </div>
    </div>   
 
    <div class="clearfix<?php if (isset($errors['password'])) echo ' error'; ?>">
