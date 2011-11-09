@@ -144,9 +144,10 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 					throw new ORM_Validation_Exception("Invalid option checks");
 				}
 
-				// if (empty($_POST['terms'])) {
-				// 	throw new ORM_Validation_Exception("You must accept the terms and conditions", new Validation(array('terms')));
-				// }
+				if (empty($_POST['terms'])) {
+					Message::add('error', __('You must accept the terms and conditions.'));
+				 	throw new Exception("You must accept the terms and conditions");
+				 }
 
 				Auth::instance()->register($_POST, TRUE);
 				// sign the user in
@@ -172,6 +173,12 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 				// Pass on the old form values
 				$_POST['password'] = $_POST['password_confirm'] = '';
 				$view->set('defaults', $_POST);
+			} catch (Exception $e) {
+				
+				// Pass on the old form values
+				$_POST['password'] = $_POST['password_confirm'] = '';
+				$view->set('defaults', $_POST);
+				
 			}
 		}
 
