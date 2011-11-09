@@ -29,7 +29,7 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 		?>
 			<div class="pull-right">
 				<span class="currently-logged-in">Logged in as 
-					<a href="/user/profile"><strong><?php echo $name; ?></strong></a>
+					<a href="/user/profile_edit"><strong><?php echo $name; ?></strong></a>
 				</span>&nbsp;
 			</div>
 		<?php } 
