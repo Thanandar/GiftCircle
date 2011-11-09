@@ -53,24 +53,14 @@ class Model_Gift extends ORM {
 			
 		}
 
-
-		if (!$this->loaded()) {
-			// creating a new gift
-			if ($this->url) {
-				$this->url = $this->add_tracking_to_url($this->url);
-			}
-
-
-		}
-		
-
+		//$this->affiliate_url = $this->add_tracking_to_url($this->url);
 
 		parent::save($validation);
 	}
 
-	private function add_tracking_to_url($url) {
-		// This needs moving to another class and making work properly
-		return 'http://www.awin1.com/cread.php?awinmid=530&awinaffid=125132&clickref=&p=' . urlencode($url);
+	public function affiliate_url() {
+		$affiliate_url = new Model_AffialteUrl($this->url);
+		return $affiliate_url->tracking_url();
 	}
 
 	public function delete() {

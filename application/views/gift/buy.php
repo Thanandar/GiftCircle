@@ -69,7 +69,7 @@
 	<div class="well">
 
 		<?php if ($gift->url) { ?>
-		<input type="button" class="btn primary" value="Buy from the shop <?php echo HTML::chars($gift->list->owner->firstname); ?> recommended" onclick="window.open('<?php echo HTML::chars($gift->url); ?>')" />
+		<input type="button" class="btn primary" value="Buy from the shop <?php echo HTML::chars($gift->list->owner->firstname); ?> recommended" onclick="window.open('<?php echo HTML::chars($gift->affiliate_url()); ?>')" />
 		
 		<?php } ?>
 
