@@ -1,5 +1,9 @@
 
-<?php if (count($gifts)) { ?>
+<?php if (count($gifts)) { 
+
+$total = 0;
+
+?>
 
 <table class="zebra-striped sort">
 	<thead>
@@ -14,6 +18,7 @@
 	<tbody>
 		<?php foreach ($gifts as $gift) { ?>
 		<?php 
+		$total += $gift->price;
 		$list = new Model_List($gift->list_id);
 		$owner = new Model_Owner($list->owner_id);
 		$bought = !empty($gift->buyer_id);
@@ -39,6 +44,14 @@
 				unbuy?
 				<?php } ?>
 			</td>
+		</tr>
+		<?php } 
+
+		if (!empty($show_total)) { ?>
+		<tr>
+			<th>Total</th>
+			<th style="text-align:right">&pound;<?php echo number_format($total, 2); ?></th>
+			<th colspan="3">&nbsp;</th>
 		</tr>
 		<?php } ?>
 	</tbody>

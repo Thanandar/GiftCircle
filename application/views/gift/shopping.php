@@ -4,12 +4,15 @@
 	<?php 
 
 	echo View::factory('list/all-shopping')
-		->set('gifts', $my_shopping_list);
+		->set('gifts', $my_shopping_list)
+		->set('show_total', true)
+		;
 	?>
 
 	<?php 
 	echo View::factory('list/all-bought')
-		->set('gifts', $my_bought_list);
+		->set('gifts', $my_bought_list)
+		->set('show_total', true);
 	?>
 
 	<input class="btn" type="button" value="Clear selected bought gifts"
