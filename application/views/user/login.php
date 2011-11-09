@@ -99,6 +99,5 @@ if(!empty($options)) {
 
 
 <div class="span4">
-	<?php echo View::factory('sidebar/testimonials'); ?>
 </div>
 
