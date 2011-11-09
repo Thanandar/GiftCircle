@@ -29,19 +29,24 @@
 <div class="span4">
 	<h2>Budget</h2>
 
-	<p>
+	<form action="" method="post">
 		Your budget: 
-		&pound; <input class="span1" type="text" name="budget" value="<?php echo (float) $budget; ?>">
-		<input type="button" value="Update" class="btn" onclick="alert('Clicking this will update your budget')" />
-	</p>
+		&pound; <input class="span1" type="text" name="budget" value="<?php echo $budget; ?>">
+		<input type="submit" value="Update" class="btn" />
+	</form>
 
-	<?php if (!empty($budget)) { ?>
+	<?php if ($budget > 0) { ?>
 
 	<ul>
 		<li>Your budget: &pound;<?php echo $budget; ?></li>
 		<li>Gifts left to buy: &pound;<?php echo $total_to_buy; ?></li>
 		<li>Gifts bought: &pound;<?php echo $total_bought; ?></li>
-		<li>Budget left:<span style="color:#080"> &pound;<?php echo $budget_left; ?></span></li>
+		<li>
+			Budget left:
+			<span style="color:#<?php echo $budget_left ? '080' : '800'; ?>">
+				&pound;<?php echo $budget_left; ?>
+			</span>
+		</li>
 	</ul>
 
 	<?php }?>

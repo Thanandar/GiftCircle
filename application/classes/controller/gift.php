@@ -38,7 +38,12 @@ class Controller_Gift extends Controller_Page {
 			}
 		}
 
-		$view->budget = 1000;
+		if (isset($_POST['budget'])) {
+			$me->budget = (float) str_replace(',', '', $_POST['budget']);
+			$me->save();
+		}
+
+		$view->budget = (int) $me->budget;
 		$view->budget_left = $view->budget - ($view->total_to_buy + $view->total_bought);
 
 		$this->template->content = $view;
