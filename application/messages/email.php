@@ -12,6 +12,7 @@ Join Gift Circle today and let {friend_name} and everyone in your circle know wh
 
 Register now! <{register_link}> | What is Gift Circle? <{home_link}>
 
+--
 Gift Circle from Net Optimisers Ltd, 145-157 St John Street, London, England, EC1V 4PW Company No. 07607399
 
 ',
@@ -26,6 +27,7 @@ Gift Circle from Net Optimisers Ltd, 145-157 St John Street, London, England, EC
 
 Log in to your account on Gift Circle: <{login_link}>
 
+--
 Gift Circle from Net Optimisers Ltd, 145-157 St John Street, London, England, EC1V 4PW Company No. 07607399
 
 ',
@@ -42,8 +44,9 @@ Gift Circle from Net Optimisers Ltd, 145-157 St John Street, London, England, EC
 
 Log in to your account on Gift Circle: <{login_link}>
 
-The message was sent to {email}. If you don\'t want to receive these emails from Gift Circle in the future, you can unsubscribe in your settings: <{login_link}>
+The message was sent to {email}. If you don\'t want to receive these emails from your friend\'s list in the future, you can unsubscribe in your settings: <{login_link}>
 
+--
 Gift Circle from Net Optimisers Ltd, 145-157 St John Street, London, England, EC1V 4PW Company No. 07607399
 
 ',
@@ -59,6 +62,7 @@ Just to keep you in the loop, {owner_name} has just deleted the gift "{gift_name
 Log in to your account on Gift Circle: 
 <{url}>
 
+--
 Gift Circle from Net Optimisers Ltd, 145-157 St John Street, London, England, EC1V 4PW Company No. 07607399
 
 '
@@ -74,6 +78,7 @@ Just to keep you in the loop, {owner_name} has just edited the gift "{gift_name}
 Log in to your account on Gift Circle: 
 <{url}>
 
+--
 Gift Circle from Net Optimisers Ltd, 145-157 St John Street, London, England, EC1V 4PW Company No. 07607399
 
 '
