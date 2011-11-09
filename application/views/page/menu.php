@@ -54,7 +54,6 @@ function menu_link($url, $text) {
 						"/list/my"        => 'My Circles',
 						"/gift/shopping"  => 'Shopping List',
 						"/friend/list"    => 'Friends',
-						"/home/support"   => 'Help',
 						"/home/faqs"      => 'FAQs',
 						"/user/logout"    => 'Logout',
 						) as $url => $text) {
