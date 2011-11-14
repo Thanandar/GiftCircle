@@ -28,7 +28,7 @@ Gift Circle from Net Optimisers Ltd, 145-157 St John Street, London, England, EC
 
 {friend_name} would like to be your friend on Gift Circle.
 
-Log in to your account on Gift Circle: <{login_link}>
+Log in to your account to accept the invitation: <{login_link}>
 
 --
 Gift Circle from Net Optimisers Ltd, 145-157 St John Street, London, England, EC1V 4PW Company No. 07607399
