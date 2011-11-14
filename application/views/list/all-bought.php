@@ -37,7 +37,7 @@ $total = 0;
 			<td style="text-align:right"><?php echo ($gift->price()) ?></td>
 			<td><?php echo HTML::chars($owner->firstname . ' ' . $owner->surname) ?></td>
 			<td><?php echo HTML::chars($list->name) ?></td>
-			<td>DISPLAY HERE</td>
+			<td><?php echo HTML::chars($gift->category->name) ?></td>
 		</tr>
 		<?php } ?>
 
