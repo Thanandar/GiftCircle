@@ -33,7 +33,7 @@ class Controller_Gift extends Controller_Page {
 
 		$view->total_bought = 0;
 		foreach ($view->my_bought_list as $gift) {
-			if ((float) $gift->price) {
+			if ((float) $gift->price || (float) $gift->bought_price) {
 				$view->total_bought += (float) ($gift->bought_price ? $gift->bought_price : $gift->price);
 			}
 		}

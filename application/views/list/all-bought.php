@@ -13,7 +13,7 @@ $total = 0;
 	<thead>
 		<tr>
 			<th>Gift&nbsp;name</th>
-			<th>&pound;&nbsp;Guide</th>
+			<th width="80">&pound;&nbsp;Guide</th>
 			<th>Who&nbsp;for?</th>
 			<th>List</th>
 			<th>Category</th>
@@ -39,7 +39,7 @@ $total = 0;
 			</td>
 			<td style="text-align:right">
 				&pound;
-				<input style="text-align:right" class="span2" name="price[<?php echo $gift->id; ?>]" value="<?php echo ($gift->price(false, true)) ?>" />
+				<input style="text-align:right;width:4em" name="price[<?php echo $gift->id; ?>]" value="<?php echo ($gift->price(false, true)) ?>" />
 			</td>
 			<td><?php echo HTML::chars($owner->firstname . ' ' . $owner->surname) ?></td>
 			<td><?php echo HTML::chars($list->name) ?></td>
