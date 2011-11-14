@@ -23,7 +23,7 @@ $total = 0;
 	<tbody>
 		<?php foreach ($gifts as $gift) { ?>
 		<?php 
-		$total += $gift->bought_price;
+		$total += $gift->bought_price ? $gift->bought_price : $gift->price;
 		$list = new Model_List($gift->list_id);
 		$owner = new Model_Owner($list->owner_id);
 		$bought = !empty($gift->buyer_id);
