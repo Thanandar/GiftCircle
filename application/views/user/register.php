@@ -27,6 +27,7 @@ if(isset($defaults)) {
 	$form->defaults = $_POST;
 }
 echo $form->open('');
+
 ?>
 
 
@@ -55,6 +56,19 @@ echo $form->open('');
 )); ?></div>
    </div>   
 
+   <div class="clearfix<?php if (isset($errors['dob']) || isset($errors['dob'])) echo ' error'; ?>">
+      <label>Date of birth</label>
+      <div class="input">
+         <?php echo $form->input('dob', null, array(
+         'type' => 'date',
+         'placeholder' => '31/12/1999',
+         'pattern' => '^\d+/\d+/\d\d\d\d$',
+         )); ?>
+         <span class="help-inline">Optional (dd/mm/yyyy)</span>
+      </div>
+   </div>   
+
+
    <div class="clearfix<?php if (isset($errors['password'])) echo ' error'; ?>">
       <label>Password</label>
       <div class="input">
@@ -75,6 +89,20 @@ echo $form->open('');
 )); ?>
 		</div>
 	</div>	
+
+   <div class="clearfix<?php if (isset($errors['password_confirm'])) echo ' error'; ?>">
+      <div class="input">
+         <ul class="inputs-list">
+            <li>
+               <label>
+                  <input type="checkbox" name="marketing" value="1" <?php echo @$_POST['marketing'] ? ' checked="checked" ':''; ?> />
+                  Receive marketing communication via email
+               </label>
+            </li>
+         </ul>
+      </div>
+   </div>   
+
 
     <div class="clearfix">
       <label><a href="/home/terms" target="_blank">Terms &amp; Conditions</a></label>

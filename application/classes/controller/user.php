@@ -167,6 +167,14 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 				$_POST['firstname'] = empty($_POST['firstname']) ? 'Anon' : @$_POST['firstname'];
 				$user->firstname = @$_POST['firstname'];
 				$user->surname = @$_POST['surname'];
+	
+				if (!empty($_POST['dob'])) {
+					$dob = str_replace('/', '-', $_POST['dob']);
+					$user->dob = date('Y-m-d', strtotime($dob));
+				}
+
+				$user->marketing = (int) @$_POST['marketing'];
+
 				$user->save();
 
 				// redirect to the user account
