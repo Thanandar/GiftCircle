@@ -7,9 +7,12 @@ $total = 0;
 
 <h2>Bought gifts</h2>
 
+<form action="/gift/clear" method="post">
+
 <table class="zebra-striped sort">
 	<thead>
 		<tr>
+			<th></th>
 			<th>Gift&nbsp;name</th>
 			<th>&pound;&nbsp;Guide</th>
 			<th>Who&nbsp;for?</th>
@@ -27,6 +30,7 @@ $total = 0;
 		?>
 
 		<tr>
+			<td><input type="checkbox" name="clear[]" value="<?php echo $gift->id ?>" /></td>
 			<td>
 				<?php if ($bought) { ?>
 				<?php echo HTML::chars($gift->name) ?>
@@ -43,6 +47,7 @@ $total = 0;
 
 		<?php if (!empty($show_total)) { ?>
 		<tr>
+			<th></th>
 			<th>Total</th>
 			<th style="text-align:right">&pound;<?php echo number_format($total, 2); ?></th>
 			<th colspan="3">&nbsp;</th>
@@ -51,6 +56,12 @@ $total = 0;
 
 	</tbody>
 </table>
+
+<div class="well">
+	<input class="btn" type="submit" value="Clear selected bought gifts" />
+</div>
+
+</form>
 
 <?php } else { ?>
 	

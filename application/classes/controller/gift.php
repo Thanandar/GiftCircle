@@ -342,4 +342,30 @@ class Controller_Gift extends Controller_Page {
 			->find_all();
 	}
 
+	public function action_clear() {
+		// clear bought gifts
+		$cleared = 0;
+		if (!is_array(@$_POST['clear']) || !count($_POST['clear'])) {
+			Message::add('error', __('Please select some gifts to clear.'));
+			Request::current()->redirect('gift/shopping');
+		}
+
+		foreach ($_POST['clear'] as $gift_id) {
+			$gift = new Model_Gift((int) $gift_id);
+			if ($gift->loaded()) {
+				$gift->cleared = 1;
+				$gift->save();
+				$cleared++;
+			}
+		}
+
+		if ($cleared) {
+			Message::add('success', __('Successfully cleared ' . $cleared . ' gift(s).'));
+		} else {
+			Message::add('error', __('Please select some gifts to clear.'));
+		}
+		
+		Request::current()->redirect('gift/shopping');
+	}
+
 } 

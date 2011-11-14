@@ -15,9 +15,6 @@
 		->set('show_total', true);
 	?>
 
-	<input class="btn" type="button" value="Clear selected bought gifts"
-		onclick="alert('This will clear some of your bought gifts so you can budget better')" />
-
 	<?php if (!count($my_shopping_list) && !count($my_bought_list)) { ?>
 
 	<h2>You have an empty shopping list!</h2>

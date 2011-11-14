@@ -134,7 +134,7 @@ $(function() {
 		Cufon.replace('h3', { fontFamily: 'HouschkaAltBlackRegular'});
 
 		//alert($(this).val());
-	});
+	}).change();
 
 
 	setTimeout(function() {

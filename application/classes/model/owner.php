@@ -177,6 +177,9 @@ class Model_Owner extends Model_User {
 		return $this->reservations
 			// gifts that have been bought
 			->where('buyer_id', '!=', 0)
+			
+			// gifts that haven't been cleared
+			->where('cleared', '!=', 1)
 
 			// get the gift list
 			->join('lists')

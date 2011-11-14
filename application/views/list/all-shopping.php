@@ -53,7 +53,7 @@ $total = 0;
 		<tr>
 			<th>Total</th>
 			<th style="text-align:right">&pound;<?php echo number_format($total, 2); ?></th>
-			<th colspan="3">&nbsp;</th>
+			<th colspan="4">&nbsp;</th>
 		</tr>
 		<?php } ?>
 	</tbody>
