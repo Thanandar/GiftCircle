@@ -43,7 +43,7 @@ class Model_Delayednotification {
 			if ($this->has_notified_friend_before()) {
 				
 			}
-			//echo 'not emailing {$this->friend->email} as they\'re not a user';
+			echo 'not emailing {$this->friend->email} as they\'re not a user';
 
 			return;
 		}
