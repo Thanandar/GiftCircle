@@ -3,12 +3,15 @@
 return array(
 	// sent to an unregistered user
 	'invite' => array(
-		'subject' => '{friend_name} wants to know what you\'d like for Christmas',
-		'plain'   => 'Hello {firstname} {surname},
+		'subject' => '{friend_name} would like you to join them on Gift Circle',
+		'plain'   => 'Hi {firstname},
 
-{friend_name} wants to know what you’d like for Christmas.
+{friend_name} wants to know what you\'d like for Christmas.
 
-Join Gift Circle today and let {friend_name} and everyone in your circle know what you\'d like.
+Gift Circle is the great new place where friends and family get
+together to swap gift lists and find out what to buy each other 
+to celebrate special occasions. Join up now and create a list 
+of gifts you\'d like - it could make a special occasion great!
 
 Register now! <{register_link}> | What is Gift Circle? <{home_link}>
 
