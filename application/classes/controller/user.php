@@ -178,7 +178,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 				$user->save();
 
 				// redirect to the user account
-				$this->request->redirect(Session::instance()->get_once('returnUrl','user/profile'));
+				$this->request->redirect('home/dashboard');
 			}
 			catch (ORM_Validation_Exception $e)
 			{
