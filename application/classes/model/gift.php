@@ -100,8 +100,15 @@ class Model_Gift extends ORM {
 		parent::delete();
 	}
 
-	public function price() {
-		return '&pound;' . number_format((float) $this->price, 2);
+	public function price($pound = true, $bought = false) {
+		if ($bought && empty($this->bought_price)) {
+			$this->bought_price = $this->price;
+			$this->save();
+		}
+
+		$price = $bought ? $this->bought_price : $this->price;
+		$pound = $pound ? '&pound;' : '';
+		return $pound . number_format((float) $price, 2);
 	}
 
 	

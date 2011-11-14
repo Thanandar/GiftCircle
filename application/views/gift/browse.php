@@ -37,7 +37,7 @@
 		<!-- 
 		<h3><?php echo HTML::chars($department->name) ?></h3>
 		<ul class="media-grid shop-logos">
-			<?php foreach ($department->shops->find_all() as $shop) { ?>
+			<?php foreach ($department->shops->order_by('orderfield', 'DESC')->order_by('name', 'ASC')->find_all() as $shop) { ?>
 			<li>
 				<a href="<?php echo HTML::chars($shop->url); ?>" target="_blank">
 					<img src="<?php echo HTML::chars($shop->logo); ?>" alt="<?php echo HTML::chars($shop->name); ?>" title="<?php echo HTML::chars($shop->name); ?>" />

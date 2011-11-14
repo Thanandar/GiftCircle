@@ -7,6 +7,9 @@ function menu_link($url, $text) {
 	$class_text = strtolower($text);
 	$class_text = preg_replace("/[^a-zA-Z0-9]/", "", $class_text);
 
+	if ($current == '/' || $current == '/home/') {
+		$current = '/home';
+	}
 
 	if (strpos($current, '/friend')) {
 		$current = "/friend/list";
@@ -28,6 +31,11 @@ function menu_link($url, $text) {
 
 	if ($url == "/friend/list" && $dir == '/friend') {
 		$current = true;
+	}
+
+	if ($current != '/home' && $url == '/home') {
+
+		$current = 'dfgdsfg';
 	}
 
 	$active = $current === true || (strpos($current, $url)  !== false) ? ' class="active"' : '';
@@ -60,6 +68,7 @@ function menu_link($url, $text) {
 					}
 				} else { 
 					foreach (array(
+						"/home"              => 'Home',
 						"/home/whatis"   => 'What is Gift Circle?',
 						"/home/faqs"     => 'FAQs',
 						"/user/login"    => 'Login',

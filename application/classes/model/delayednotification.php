@@ -41,11 +41,9 @@ class Model_Delayednotification {
 	public function send() {
 		if (!$this->is_confirmed_friend()) {
 			if ($this->has_notified_friend_before()) {
-				
+				//echo "\nNot emailing {$this->friend->email} as they're not a user ({$this->friendlist->last_notification})\n";
+				return;
 			}
-			//echo 'not emailing {$this->friend->email} as they\'re not a user';
-
-			return;
 		}
 
 		$config = Kohana::$config->load('giftcircle');
@@ -97,6 +95,8 @@ class Model_Delayednotification {
 					'email'         => $this->user->email,
 					'surname'       => $this->user->surname,
 					'firstname'     => $this->user->firstname,
+					'friend_name'   => $this->owner->fullname(),
+					'home_link'     => URL::base('http'),
 					'login_link'    => URL::base('http') . 'user/login',
 				), false);
 
@@ -118,6 +118,8 @@ class Model_Delayednotification {
 				'email'         => $this->friend->email,
 				'surname'       => $this->friend->surname,
 				'firstname'     => $this->friend->firstname,
+				'friend_name'   => $this->owner->fullname(),
+				'home_link'     => URL::base('http'),
 				'register_link' => URL::base('http') . 'user/register',
 			), false);
 
