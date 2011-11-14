@@ -82,7 +82,7 @@ class Model_List extends ORM {
 			->where('subscribed', '=', '1')
 
 			// 
-			->where('last_notification', '<', $this->updated)
+			->where('last_notification', '<=', $this->updated)
 			->find_all();
 
 		$sent = 0;
