@@ -12,12 +12,12 @@ $total = 0;
 <table class="zebra-striped sort">
 	<thead>
 		<tr>
-			<th></th>
 			<th>Gift&nbsp;name</th>
 			<th>&pound;&nbsp;Guide</th>
 			<th>Who&nbsp;for?</th>
 			<th>List</th>
 			<th>Category</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -30,7 +30,6 @@ $total = 0;
 		?>
 
 		<tr>
-			<td><input type="checkbox" name="clear[]" value="<?php echo $gift->id ?>" /></td>
 			<td>
 				<?php if ($bought) { ?>
 				<?php echo HTML::chars($gift->name) ?>
@@ -38,19 +37,22 @@ $total = 0;
 				<a href="/gift/buy/<?php echo $gift->id; ?>"><?php echo HTML::chars($gift->name) ?></a>
 				<?php } ?>
 			</td>
-			<td style="text-align:right"><?php echo ($gift->price()) ?></td>
+			<td style="text-align:right">
+				&pound;
+				<input style="text-align:right" class="span2" name="price[<?php echo $gift->id; ?>]" value="<?php echo ($gift->price()) ?>" />
+			</td>
 			<td><?php echo HTML::chars($owner->firstname . ' ' . $owner->surname) ?></td>
 			<td><?php echo HTML::chars($list->name) ?></td>
 			<td><?php echo HTML::chars($gift->category->name) ?></td>
+			<td><a class="delete" href="/gift/clear/<?php echo $gift->id; ?>">✘</a></td>
 		</tr>
 		<?php } ?>
 
 		<?php if (!empty($show_total)) { ?>
 		<tr>
-			<th></th>
 			<th>Total</th>
 			<th style="text-align:right">&pound;<?php echo number_format($total, 2); ?></th>
-			<th colspan="3">&nbsp;</th>
+			<th colspan="4">&nbsp;</th>
 		</tr>
 		<?php } ?>
 
@@ -58,7 +60,7 @@ $total = 0;
 </table>
 
 <div class="well">
-	<input class="btn" type="submit" value="Clear selected bought gifts" />
+	<input class="btn" type="submit" value="Update gift prices" />
 </div>
 
 </form>

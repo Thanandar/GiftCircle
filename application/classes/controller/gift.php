@@ -343,29 +343,27 @@ class Controller_Gift extends Controller_Page {
 	}
 
 	public function action_clear() {
-		// clear bought gifts
-		$cleared = 0;
-		if (!is_array(@$_POST['clear']) || !count($_POST['clear'])) {
-			Message::add('error', __('Please select some gifts to clear.'));
+		$gift = new Model_Gift((int) $this->request->param('id'));
+
+		if ($gift->reserver_id != $this->me()->id || $gift->reserver_id != $gift->buyer_id) {
+			Message::add('danger', __('You have not bought this gift.'));
+			Request::current()->redirect('');
+		} 
+
+		if ($gift->loaded() && arr::get($_POST, 'clear')) {
+			$gift->cleared = 1;
+			$gift->save();
+
+			Message::add('success', __('Successfully cleared a gift.'));
 			Request::current()->redirect('gift/shopping');
 		}
 
-		foreach ($_POST['clear'] as $gift_id) {
-			$gift = new Model_Gift((int) $gift_id);
-			if ($gift->loaded()) {
-				$gift->cleared = 1;
-				$gift->save();
-				$cleared++;
-			}
-		}
+		$this->template->title = 'Confirm';
+		$view = View::factory('gift/clear');
+		$view->gift = $gift;
+		$this->template->content = $view;
 
-		if ($cleared) {
-			Message::add('success', __('Successfully cleared ' . $cleared . ' gift(s).'));
-		} else {
-			Message::add('error', __('Please select some gifts to clear.'));
-		}
-		
-		Request::current()->redirect('gift/shopping');
+
 	}
 
 } 
