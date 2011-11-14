@@ -41,7 +41,7 @@ class Model_Delayednotification {
 	public function send() {
 		if (!$this->is_confirmed_friend()) {
 			if ($this->has_notified_friend_before()) {
-				echo "not emailing {$this->friend->email} as they're not a user";
+				echo "\nNot emailing {$this->friend->email} as they're not a user ({$this->friendlist->last_notification})\n";
 			}
 
 			return;
