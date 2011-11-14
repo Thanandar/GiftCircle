@@ -14,12 +14,12 @@
 	<form method="post">
 		<fieldset>
 			<legend>Gift details</legend>
-			<div class="clearfix<?php if (!empty($errors)) {echo ' error';} ?>">
+			<div class="clearfix<?php if (!empty($errors['name'])) {echo ' error';} ?>">
 				<label>Title: </label>
 				<div class="input">
 					<input name="name" value="<?php echo HTML::chars($gift->name); ?>">
-					<?php if (!empty($errors)) {
-						echo '<span class="help-inline">' . $errors . '</span>';
+					<?php if (!empty($errors['name'])) {
+						echo '<span class="help-inline">' . $errors['name'] . '</span>';
 					} ?>
 				</div>
 			</div>
@@ -33,13 +33,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="clearfix">
+			<div class="clearfix<?php if (!empty($errors['cat'])) {echo ' error';} ?>">
 				<label>Category: </label>
 				<div class="input">
 					<?php
 					Arr::unshift($categories, '', 'Please select&hellip;');
 					echo Form::select('category_id', $categories, $gift->category_id);
 					?>
+					<?php if (!empty($errors['cat'])) {
+						echo '<span class="help-inline">' . $errors['cat'] . '</span>';
+					} ?>
 				</div>
 			</div>
 			<div class="clearfix">

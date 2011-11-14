@@ -63,6 +63,8 @@ class Controller_Bookmarklet extends Controller_Page {
 			->find_all()
 			->as_array('id', 'name');
 
+		$view->errors = array();
+
 		if ($_POST) {
 			if (!arr::get($_POST, 'list_id')) {
 				$view->errors = 'Please select a list';
@@ -74,7 +76,7 @@ class Controller_Bookmarklet extends Controller_Page {
 					Request::current()->redirect('user/noaccess');
 				}
 
-				if (arr::get($_POST, 'name')) {
+				if (arr::get($_POST, 'name') && arr::get($_POST, 'category_id')) {
 					$gift              = new Model_Gift;
 					$gift->list_id     = $list->id;
 					$gift->name        = arr::get($_POST, 'name');
@@ -87,7 +89,13 @@ class Controller_Bookmarklet extends Controller_Page {
 					Message::add('success', 'Your gift has been added');
 					Request::current()->redirect('bookmarklet/added/' . $list->id);
 				}
-				$view->errors = Kohana::message('gift', 'title-required');
+
+				if (!arr::get($_POST, 'name')) {
+					$view->errors['name'] = Kohana::message('gift', 'title-required');
+				}
+				if (!arr::get($_POST, 'category_id')) {
+					$view->errors['cat'] ='Please select a category';
+				}
 			}
 		}
 
