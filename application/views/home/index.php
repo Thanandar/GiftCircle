@@ -1,7 +1,7 @@
 
 <div class="span16">
 
-	<a href="javascript:location.href='/user/register'" class="btn-start"><img src="/img/buttons/home-get-started.png" width="336" height="48" alt="Get started in 30 seconds flat"></a>
+	<a href="/user/register" class="btn-start"><img src="/img/buttons/home-get-started.png" width="336" height="48" alt="Get started in 30 seconds flat"></a>
 
 <script type="text/javascript" src="/static/swf/swfobject.js"></script>
 <script type="text/javascript">
