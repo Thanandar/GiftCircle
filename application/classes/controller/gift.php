@@ -33,7 +33,7 @@ class Controller_Gift extends Controller_Page {
 
 		$view->total_bought = 0;
 		foreach ($view->my_bought_list as $gift) {
-			if ((float) $gift->price) {
+			if ((float) $gift->price || (float) $gift->bought_price) {
 				$view->total_bought += (float) ($gift->bought_price ? $gift->bought_price : $gift->price);
 			}
 		}
@@ -98,8 +98,10 @@ class Controller_Gift extends Controller_Page {
 
 		$view->shops = ORM::factory('shop')->find_all();
 
+		$view->errors = array();
+
 		if ($_POST) {
-			if (arr::get($_POST, 'name')) {
+			if (arr::get($_POST, 'name') && arr::get($_POST, 'category_id')) {
 				$gift              = new Model_Gift;
 				$gift->list_id     = $list->id;
 				$gift->name        = arr::get($_POST, 'name');
@@ -112,7 +114,13 @@ class Controller_Gift extends Controller_Page {
 				Message::add('success', Kohana::message('gift', 'added'));
 				Request::current()->redirect('list/mine/' . $list->id);
 			}
-			$view->errors = Kohana::message('gift', 'title-required');
+
+			if (!arr::get($_POST, 'name')) {
+				$view->errors['name'] = Kohana::message('gift', 'title-required');
+			}
+			if (!arr::get($_POST, 'category_id')) {
+				$view->errors['cat'] ='Please select a category';
+			}
 		}
 		$this->template->content = $view;
 	}
@@ -133,8 +141,10 @@ class Controller_Gift extends Controller_Page {
 			->find_all()
 			->as_array('id', 'name');
 
+		$view->errors = array();
+
 		if ($_POST) {
-			if (arr::get($_POST, 'name')) {
+			if (arr::get($_POST, 'name') && arr::get($_POST, 'category_id')) {
 				$gift->name        = arr::get($_POST, 'name');
 				$gift->price       = arr::get($_POST, 'price');
 				$gift->url         = arr::get($_POST, 'url');
@@ -144,7 +154,13 @@ class Controller_Gift extends Controller_Page {
 				Message::add('success', Kohana::message('gift', 'updated'));
 				Request::current()->redirect('list/mine/' . $gift->list->id);
 			}
-			$view->errors = Kohana::message('gift', 'title-required');
+
+			if (!arr::get($_POST, 'name')) {
+				$view->errors['name'] = Kohana::message('gift', 'title-required');
+			}
+			if (!arr::get($_POST, 'category_id')) {
+				$view->errors['cat'] ='Please select a category';
+			}
 		}
 		$this->template->content = $view;
 	}
@@ -309,11 +325,18 @@ class Controller_Gift extends Controller_Page {
 			Request::current()->redirect('');
 		}
 
-		$gift->reserver_id = 0;
-		$gift->save();
+		if (arr::get($_POST, 'unreserve')) {
+			$gift->reserver_id = 0;
+			$gift->save();
 
-		Message::add('success', __('Successfully un-reserved a gift.'));
-		Request::current()->redirect('list/friend/' . $list->id);
+			Message::add('success', __('Successfully removed a gift from your shopping list.'));
+			Request::current()->redirect('gift/shopping');
+		}
+
+		$this->template->title = 'Confirm';
+		$view = View::factory('gift/unreserve');
+		$view->gift = $gift;
+		$this->template->content = $view;
 	}
 
 

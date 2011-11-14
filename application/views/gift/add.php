@@ -7,12 +7,12 @@
 	<form method="post">
 		<fieldset>
 			<legend></legend>
-			<div class="clearfix<?php if (!empty($errors)) {echo ' error';} ?>">
+			<div class="clearfix<?php if (!empty($errors['name'])) {echo ' error';} ?>">
 				<label>Title: </label>
 				<div class="input">
-					<input name="name">
-					<?php if (!empty($errors)) {
-						echo '<span class="help-inline">' . $errors . '</span>';
+					<input name="name" value="<?php echo HTML::chars(@$_POST['name']) ?>">
+					<?php if (!empty($errors['name'])) {
+						echo '<span class="help-inline">' . $errors['name'] . '</span>';
 					} ?>
 				</div>
 			</div>
@@ -21,31 +21,34 @@
 				<div class="input">
 					<div class="input-prepend">
 						<span class="add-on">&pound;</span>
-						<input name="price">
+						<input name="price" value="<?php echo HTML::chars(@$_POST['price']) ?>">
 						<span class="help-inline">Optional</span>					
 					</div>
 				</div>
 			</div>
-			<div class="clearfix">
+			<div class="clearfix<?php if (!empty($errors['cat'])) {echo ' error';} ?>">
 				<label>Category: </label>
 				<div class="input">
 					<?php
 					Arr::unshift($categories, '', 'Please select&hellip;');
 					echo Form::select('category_id', $categories);
 					?>
+					<?php if (!empty($errors['cat'])) {
+						echo '<span class="help-inline">' . $errors['cat'] . '</span>';
+					} ?>
 				</div>
 			</div>
 			<div class="clearfix">
 				<label>Link: </label>
 				<div class="input">
-					<input name="url">
+					<input name="url" value="<?php echo HTML::chars(@$_POST['url']) ?>">
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>
 			<div class="clearfix">
 				<label>Description: </label>
 				<div class="input">
-					<textarea class="xxlarge" rows="3" name="details" placeholder="e.g. Don't mind the colour, as long as they have the powerlaces."></textarea>
+					<textarea class="xxlarge" rows="3" name="details" placeholder="e.g. Don't mind the colour, as long as they have the powerlaces."><?php echo HTML::chars(@$_POST['details']) ?></textarea>
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>	

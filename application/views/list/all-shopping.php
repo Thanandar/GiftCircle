@@ -41,7 +41,7 @@ $total = 0;
 				<?php if (!$bought) { ?>
 					<a class="btn" title="Mark as bought" href="/gift/mark_as_bought/<?php echo $gift->id; ?>">Mark as bought</a>
 					<br />or
-					<a href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to remove this this product from your list?')">remove from list</a>
+					<a href="/gift/unreserve/<?php echo $gift->id; ?>">remove from list</a>
 				<?php } else { ?>
 				unbuy?
 				<?php } ?>
