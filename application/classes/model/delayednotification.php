@@ -118,6 +118,8 @@ class Model_Delayednotification {
 				'email'         => $this->friend->email,
 				'surname'       => $this->friend->surname,
 				'firstname'     => $this->friend->firstname,
+				'friend_name'   => $this->owner->fullname(),
+				'home_link'     => URL::base('http'),
 				'register_link' => URL::base('http') . 'user/register',
 			), false);
 
