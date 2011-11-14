@@ -36,7 +36,7 @@ $total = 0;
 			<td style="text-align:right"><?php echo ($gift->price()) ?></td>
 			<td><?php echo HTML::chars($owner->firstname . ' ' . $owner->surname) ?></td>
 			<td><?php echo HTML::chars($list->name) ?></td>
-			<td>DISPLAY HERE</td>
+			<td><?php echo HTML::chars($gift->name) ?></td>
 			<td>
 				<?php if (!$bought) { ?>
 					<a class="btn" title="Mark as bought" href="/gift/mark_as_bought/<?php echo $gift->id; ?>">Mark as bought</a>
