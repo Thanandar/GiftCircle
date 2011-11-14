@@ -34,7 +34,7 @@ class Controller_Gift extends Controller_Page {
 		$view->total_bought = 0;
 		foreach ($view->my_bought_list as $gift) {
 			if ((float) $gift->price) {
-				$view->total_bought += (float) $gift->price;
+				$view->total_bought += (float) $gift->bought_price;
 			}
 		}
 
@@ -363,7 +363,32 @@ class Controller_Gift extends Controller_Page {
 		$view->gift = $gift;
 		$this->template->content = $view;
 
+	}
 
+	public function action_prices() {
+		// update multiple gift prices
+
+		if (empty($_POST['price']) || !is_array($_POST['price'])) {
+			Message::add('danger', __('No prices to update.'));
+			Request::current()->redirect('gift/shopping');
+		}
+		
+		foreach ($_POST['price'] as $gift_id => $price) {
+
+			$gift = new Model_Gift((int) $gift_id);
+
+			if (!$gift->loaded() || $gift->reserver_id != $this->me()->id || $gift->reserver_id != $gift->buyer_id) {
+				Message::add('danger', __('You have not bought this gift.'));
+				Request::current()->redirect('');
+			} 
+
+			$gift->bought_price = (float) $price;
+			$gift->save();
+			
+		}
+
+		Message::add('success', __('Successfully updated gift prices.'));
+		Request::current()->redirect('gift/shopping');
 	}
 
 } 

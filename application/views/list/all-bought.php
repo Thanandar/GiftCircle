@@ -7,7 +7,7 @@ $total = 0;
 
 <h2>Bought gifts</h2>
 
-<form action="/gift/clear" method="post">
+<form action="/gift/prices" method="post">
 
 <table class="zebra-striped sort">
 	<thead>
@@ -23,7 +23,7 @@ $total = 0;
 	<tbody>
 		<?php foreach ($gifts as $gift) { ?>
 		<?php 
-		$total += $gift->price;
+		$total += $gift->bought_price;
 		$list = new Model_List($gift->list_id);
 		$owner = new Model_Owner($list->owner_id);
 		$bought = !empty($gift->buyer_id);
@@ -39,7 +39,7 @@ $total = 0;
 			</td>
 			<td style="text-align:right">
 				&pound;
-				<input style="text-align:right" class="span2" name="price[<?php echo $gift->id; ?>]" value="<?php echo ($gift->price()) ?>" />
+				<input style="text-align:right" class="span2" name="price[<?php echo $gift->id; ?>]" value="<?php echo ($gift->price(false, true)) ?>" />
 			</td>
 			<td><?php echo HTML::chars($owner->firstname . ' ' . $owner->surname) ?></td>
 			<td><?php echo HTML::chars($list->name) ?></td>
