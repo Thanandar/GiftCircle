@@ -12,7 +12,8 @@ $total = 0;
 			<th>&pound;&nbsp;Guide</th>
 			<th>Who&nbsp;for?</th>
 			<th>List</th>
-			<th width="235" class="{sorter: false}"></th>
+			<th>Category</th>
+			<th width="120" class="{sorter: false}"></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -35,10 +36,11 @@ $total = 0;
 			<td style="text-align:right"><?php echo ($gift->price()) ?></td>
 			<td><?php echo HTML::chars($owner->firstname . ' ' . $owner->surname) ?></td>
 			<td><?php echo HTML::chars($list->name) ?></td>
+			<td>DISPLAY HERE</td>
 			<td>
 				<?php if (!$bought) { ?>
 					<a class="btn" title="Mark as bought" href="/gift/mark_as_bought/<?php echo $gift->id; ?>">Mark as bought</a>
-					or
+					<br />or
 					<a href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to remove this this product from your list?')">remove from list</a>
 				<?php } else { ?>
 				unbuy?

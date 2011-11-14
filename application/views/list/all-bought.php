@@ -14,6 +14,7 @@ $total = 0;
 			<th>&pound;&nbsp;Guide</th>
 			<th>Who&nbsp;for?</th>
 			<th>List</th>
+			<th>Category</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -36,6 +37,7 @@ $total = 0;
 			<td style="text-align:right"><?php echo ($gift->price()) ?></td>
 			<td><?php echo HTML::chars($owner->firstname . ' ' . $owner->surname) ?></td>
 			<td><?php echo HTML::chars($list->name) ?></td>
+			<td>DISPLAY HERE</td>
 		</tr>
 		<?php } ?>
 

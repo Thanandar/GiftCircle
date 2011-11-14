@@ -116,7 +116,7 @@
 
 <div class="span4">
 
-	<h2>Friends in this circle</h2>
+	<h2>Friends with this list</h2>
 
 
 	<?php if (count($friends)) { ?>

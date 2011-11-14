@@ -1,0 +1,17 @@
+/*  --------------------  */
+/*  =GENERAL RULES
+/*  --------------------  */
+
+/* -- Code for vertical centering ----- */
+
+#flashcontent {
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+}
+#altcontent {
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+	width: 500px;
+}

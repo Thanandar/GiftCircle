@@ -27,7 +27,7 @@
 				</div>
 			</div>
 			<div class="clearfix">
-				<label>&pound;&nbsp;Guide: </label>
+				<label>&pound;Guide: </label>
 				<div class="input">
 					<div class="input-prepend">
 						<span class="add-on">&pound;</span>

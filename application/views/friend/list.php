@@ -8,7 +8,7 @@
 			<tr>
 				<th class="{sorter: false}"></th>
 				<th>Name</th>
-				<th class="{parser: 'shortDate'}">Birthday</th>
+				<th class="{parser: 'shortDate'}">Date of Birth</th>
 				<th>Address</th>
 				<th class="{sorter: false}"></th>
 			</tr>
@@ -24,10 +24,7 @@
 					<?php } ?>
 				</td>
 				<td>
-					<a href="/friend/edit/<?php echo $friend->id; ?>">
-						<?php echo HTML::chars($friend->firstname) ?>
-						<?php echo HTML::chars($friend->surname) ?>
-					</a>
+					<a href="/friend/edit/<?php echo $friend->id; ?>"><?php echo HTML::chars($friend->firstname) ?> <?php echo HTML::chars($friend->surname) ?></a>
 					<br />
 					<?php echo HTML::chars($friend->email) ?>
 				</td>

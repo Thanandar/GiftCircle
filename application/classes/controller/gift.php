@@ -16,7 +16,7 @@ class Controller_Gift extends Controller_Page {
 		}
 
 		$this->template->title = 'Shopping List';
-		$this->template->subtitle = 'All the gifts you need to buy for friends and family';
+		$this->template->subtitle = 'All the gifts you\'ve bought and need to buy for friends and family';
 
 		$view = View::factory('gift/shopping');
 		$me = ORM::factory('owner', $this->me()->id);

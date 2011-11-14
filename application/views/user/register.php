@@ -94,7 +94,7 @@ echo $form->open('');
 
 
    <div class="actions">
-      <button type="submit" class="btn primary large" >Create your account</button>
+      <button type="submit" class="btn primary" >Create your account</button>
    </div>
 
 

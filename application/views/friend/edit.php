@@ -34,9 +34,9 @@
 				</div>
 			</div>
 			<div class="clearfix">
-				<label>Birthday: </label>
+				<label>Date of Birth: </label>
 				<div class="input" value="<?php echo HTML::chars($friend->birthday) ?>">
-					<input name="birthday" value="<?php echo HTML::chars($friend->birthday) ?>">
+					<input name="birthday" value="<?php echo HTML::chars($friend->birthday) ?>" placeholder="eg '25/12/1980'">
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>			

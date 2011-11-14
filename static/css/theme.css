@@ -45,6 +45,12 @@ h4 {
   font-weight: normal;
 }
 
+.home-index h4 {
+  font-weight: bold;
+  font-size: 280%;
+  padding-top: 25px;
+}
+
 h5 {
   font-size: 16px;
 }
@@ -100,12 +106,12 @@ h5 {
 
 /* Page header tweaks */
 .page-header {
-  background-color:#00AFF0;
+  background:#00AFF0 url(/img/hp-header.png) no-repeat center top;
   padding: 20px 20px 5px;
   margin: 0px 0px 20px;
   border:0;
   box-shadow: none;
-  max-height: 310px;
+  max-height: 340px;
   clear: both;
 }
 
@@ -123,7 +129,8 @@ h5 {
   color: #01678A;
   text-transform: none;
   letter-spacing: 0px;
-  margin-top: -10px;
+  margin-top: -8px;
+  font-size: 22px;
 }
 
 .topbar .brand {
@@ -320,7 +327,10 @@ form .clearfix {
 
 /*Footer styles taken from bootstrap.min.css*/
 .footer {
-	display:block;margin-top:17px;padding-top:17px;	
+	display:block;
+	margin-top:17px;
+	padding-top:17px;	
+	text-align: center;
 }
 
 
@@ -341,7 +351,7 @@ form .clearfix {
 .home-list li:before {
   content: counter(x) " ";
   float: left;
-  margin: 25px 20px 0 0;
+  margin: 20px 20px 0 0;
   height: 75px;
 }
 
@@ -364,6 +374,7 @@ form .clearfix {
   font-weight: bold;
   line-height: 21px;
   letter-spacing: -0.75px;
+  padding-bottom: 0px;
 }
 
 
@@ -392,4 +403,17 @@ table .headerSortUp, table .headerSortDown {
 
 ol.darker li {
   color: #404040;
+}
+
+.btn-start {
+	margin: 0 42px;	
+}
+
+.btn-start img {
+	margin: 30px 0 0 0;	
+}
+
+#countdown {
+	width: 470px;
+	float: right;	
 }

@@ -266,7 +266,7 @@ class Controller_List extends Controller_Page {
 		$view->doing_wizard = true;
 
 		$this->template->title = 'Add friends to my list &raquo; ' . $list->name;
-		$this->template->subtitle = 'Choose the friends and family you would like in your gift list';
+		$this->template->subtitle = 'Choose the friends and family you would like to share this list with';
 
 		if ($_POST) {
 			$this->add_friends($view, 'gift/bookmarklet/' . $list->id);

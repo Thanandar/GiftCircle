@@ -35,14 +35,18 @@ $show_toolbar = array(
 
 $show_toolbar = $show_toolbar[$browser];
 
+$ieArray = array("IE7", "IE8", "IE9");
 ?>
 
 <div class="span16">
 <h2>Step 3</h2>
 
-<p>
-Getting the browser button will allow you to surf the web as usual and when you see a gift you like, add it to your gift list with 1 click. You don't even leave the page you're on!
-<p>
+<?php	if (!in_array($browser, $ieArray)) { ?>
+    <p>Adding the browser button to your Bookmark toolbar will allow you to search as usual and when you find a gift you like, add it to your gift list with one click. You don't even leave the page you're on!<p>
+<?php	} else { ?>
+    <p>Adding the browser button to your Favorites bar will allow you to search as usual and when you find a gift you like, add it to your gift list with one click. You don't even leave the page you're on!<p>
+<?php 	}  ?>
+
 </div>
 
 <div class="span10">
@@ -51,10 +55,18 @@ Getting the browser button will allow you to surf the web as usual and when you 
 
 <ol>
 	<li>
-		<p>Make sure your bookmarks toolbar is enabled</p>
+<?php	if (!in_array($browser, $ieArray)) { ?>
+ 		<p>Make sure your Bookmarks toolbar is enabled.</p>
+<?php	} else { ?>
+ 		<p>Make sure your Favorites bar is enabled <br />If you're using the Internet Explorer browser, you'll need version 7 or later.</p>
+<?php 	}  ?>
 	</li>
 	<li>
-		<p>Drag this button to the bookmarks toolbar in your web browser</p>
+<?php	if (!in_array($browser, $ieArray)) { ?>
+		<p>Drag this button to the Bookmarks toolbar in your web browser</p>
+<?php	} else { ?>
+		<p>Drag this button to the Favorites bar in your web browser</p>
+<?php 	}  ?>
 
 <p><a href="javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='<?php echo URL::base('http'); ?>static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();"  onclick="alert('Drag this button to your bookmarks toolbar');return false"><img src="/img/screen-grab/btn-<?php echo strtolower($browser); ?>.png" alt="Add to Gift Circle" /></a></p>
 	</li>
@@ -78,7 +90,11 @@ Getting the browser button will allow you to surf the web as usual and when you 
 
 <div class="span6">
 
-<h3>Can't see the bookmarks toolbar?</h3>
+<?php	if (!in_array($browser, $ieArray)) { ?>
+        <h3>Can't see the bookmarks toolbar?</h3>
+<?php	} else { ?>
+        <h3>Can't see the favourites toolbar?</h3>
+<?php 	}  ?>
 
 <p><?php echo $show_toolbar; ?></p>
 
