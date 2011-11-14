@@ -43,7 +43,7 @@ class Model_Friendlist extends ORM {
 	public function send_notification($debounce_time) {
 
 		$list_transactions = $this->list->listtransactions
-			->where('updated', '>', $this->last_notification)
+			->where('updated', '>=', $this->last_notification)
 			->where('updated', '<', date('Y-m-d H:i:s', time() - $debounce_time))
 			->find_all();
 		$count = count($list_transactions);
