@@ -1,3 +1,8 @@
+<?php 
+
+$reservable_gifts = 0;
+
+?>
 
 <div class="span12">
 
@@ -74,6 +79,7 @@
 								echo '<em>Taken</em>';
 								//echo HTML::chars($reserver->firstname . ' ' . $reserver->surname);
 							} else {
+								$reservable_gifts++;
 								echo '<em>Up for grabs</em>';
 							}
 						}
@@ -91,13 +97,17 @@
 			echo $errors;
 			echo '</p></div>';
 		}
-		?>
 
-		<div class="well">
-			<input name="confirm" type="submit" class="btn primary" value="Reserve selected gifts" />
-			or
-			<a href="/friend/list">cancel</a>
-		</div>
+
+		if ($reservable_gifts) { ?>
+			<div class="well">
+				<input name="confirm" type="submit" class="btn primary" value="Reserve selected gifts" />
+				or
+				<a href="/friend/list">cancel</a>
+			</div>
+		<?php } ?>
+	
+
 	
 		<?php } else { ?>
 
