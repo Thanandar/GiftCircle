@@ -417,3 +417,8 @@ ol.darker li {
 	width: 470px;
 	float: right;	
 }
+
+.mar-copy img.right {
+	float: right;
+	padding: 0 0px 0 40px;	
+}

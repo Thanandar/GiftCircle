@@ -1,10 +1,10 @@
 
-<div class="span8 bigger">
+<div class="span15 bigger mar-copy">
 
 	<h2>Gift Circle...</h2>
 
 
-<p>Presents are great, but they can be a hassle. Frantic shopping, disappointed recipients, even receiving things that you really didn't want - All things that can bring down an event which is supposed to be a good time.</p>
+<p><img src="/img/chars/chars-circle.png" width="313" height="361" "Gift Circle" class="right" />Presents are great, but they can be a hassle. Frantic shopping, disappointed recipients, even receiving things that you really didn't want - All things that can bring down an event which is supposed to be a good time.</p>
 
 <p>If you never want to have to say "I still have the receipt if you don't like it...", or if you never want to have to nod and smile like you really wanted a matchstick model set, then Gift Circle is the gift buying tool you've been searching for. </p>
 
