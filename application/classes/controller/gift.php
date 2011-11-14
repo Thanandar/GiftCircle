@@ -309,11 +309,18 @@ class Controller_Gift extends Controller_Page {
 			Request::current()->redirect('');
 		}
 
-		$gift->reserver_id = 0;
-		$gift->save();
+		if (arr::get($_POST, 'unreserve')) {
+			$gift->reserver_id = 0;
+			$gift->save();
 
-		Message::add('success', __('Successfully un-reserved a gift.'));
-		Request::current()->redirect('list/friend/' . $list->id);
+			Message::add('success', __('Successfully removed a gift from your shopping list.'));
+			Request::current()->redirect('gift/shopping');
+		}
+
+		$this->template->title = 'Confirm';
+		$view = View::factory('gift/unreserve');
+		$view->gift = $gift;
+		$this->template->content = $view;
 	}
 
 
