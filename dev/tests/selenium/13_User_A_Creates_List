@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://gift-circle.dh.devba.se/" />
+<title>13_User_A_Creates_List</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">13_User_A_Creates_List</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/home/dashboard</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=table td a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=table td a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@value=&quot;Add gifts&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value=&quot;Add gifts&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>category_id</td>
+	<td>value=17</td>
+</tr>
+<!--Let's assume we actually went to Amazon and saw something nice, then came back here-->
+<tr>
+	<td>click</td>
+	<td>//a[contains(., 'enter details manually')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name</td>
+	<td>Can You Feel The Love Tonight?</td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>category_id</td>
+	<td>value=17</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>url</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>url</td>
+	<td>http://www.amazon.co.uk/Can-You-Feel-Love-Tonight/dp/B001WJ8GL8/ref=sr_1_1?ie=UTF8&amp;s=dmusic&amp;qid=1319643537&amp;sr=1-1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value=&quot;Add gift&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[contains(., 'Gift added')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[contains(., 'Gift added')]</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://gift-circle.dh.devba.se/" />
+<title>24_User_B_Reserves_Then_Unreserves</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">24_User_B_Reserves_Then_Unreserves</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.menu-item-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>username</td>
+	<td>${UserA}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>${newPW}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=.currently-logged-in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=.currently-logged-in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/home/dashboard</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=table td a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=table td a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@value=&quot;Add gifts&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value=&quot;Add gifts&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>category_id</td>
+	<td>value=17</td>
+</tr>
+<!--Let's assume we actually went to Amazon and saw something nice, then came back here-->
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(), 'enter details manually')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name</td>
+	<td>Star Wars: KOTOR</td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>category_id</td>
+	<td>value=20</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>url</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>url</td>
+	<td>http://www.amazon.co.uk/Star-Wars-Knights-Republic-Xbox/dp/B00006BMWZ/ref=sr_1_3?s=videogames&amp;ie=UTF8&amp;qid=1319721118&amp;sr=1-3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>details</td>
+	<td>Best Star Wars game ever. Sorry Jedi Academy.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value=&quot;Add gift&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[contains(., 'Gift added')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[contains(., 'Gift added')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.menu-item-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>username</td>
+	<td>${UserB}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>wearebase</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(), 'User A')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(), 'User A')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@type=&quot;checkbox&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@type=&quot;checkbox&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[contains(., 'Reserved 1 gift(s).')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[contains(., 'Reserved 1 gift(s).')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(), 'remove from list')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[contains(., 'Successfully un-reserved a gift.')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[contains(., 'Successfully un-reserved a gift.')]</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
