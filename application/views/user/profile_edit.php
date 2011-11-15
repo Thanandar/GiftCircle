@@ -101,6 +101,8 @@ echo $form->open('user/profile_edit');;
    
    <div class="actions">
       <input type="submit" class="btn primary large" value="Update" />
+      or
+      <a href="/user/unregister">delete account</a>
    </div>
 <?php
 echo $form->close();
