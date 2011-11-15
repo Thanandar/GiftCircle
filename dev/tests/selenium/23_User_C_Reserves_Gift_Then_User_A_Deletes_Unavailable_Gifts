@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://gift-circle.dh.devba.se/" />
+<title>23_User_C_Reserves_Gift_Then_User_A_Deletes_Unavailable_Gifts</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">23_User_C_Reserves_Gift_Then_User_A_Deletes_Unavailable_Gifts</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.menu-item-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>username</td>
+	<td>${UserC}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>wearebase</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(), 'User A')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(), 'User A')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@type=&quot;checkbox&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@type=&quot;checkbox&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[contains(., 'Reserved 1 gift(s).')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[contains(., 'Reserved 1 gift(s).')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.menu-item-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>username</td>
+	<td>${UserA}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>wearebase</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=.currently-logged-in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=.currently-logged-in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=table td a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=table td a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(), 'Kindle')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//tr[contains(., 'Kindle')]//a[@class=&quot;delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[contains(., 'It is possible that someone may have already purchased this gift')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value=&quot;Confirm Delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[contains(., 'Gift deleted')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[contains(., 'Gift deleted')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.menu-item-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>username</td>
+	<td>${UserC}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>wearebase</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(), 'User A')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.menu-item-shoppinglist</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(), 'Why not get started now')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//a[contains(text(), 'Why not get started now')]</td>
+	<td></td>
+</tr>
+<!--TODO - Check Emails to see if people are being emailed-->
+</tbody></table>
+</body>
+</html>

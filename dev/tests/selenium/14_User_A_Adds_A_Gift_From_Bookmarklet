@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://gift-circle.dh.devba.se/" />
+<title>14_User_A_Adds_A_Gift_From_Bookmarklet</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">14_User_A_Adds_A_Gift_From_Bookmarklet</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>http://www.amazon.co.uk/Kindle-Wi-Fi-6-Ink-Display/dp/B0051QVF7A/ref=sr_1_1?ie=UTF8&amp;qid=1319707469&amp;sr=8-1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=body.dp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>runScript</td>
+	<td>javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='http://gift-circle.dh.devba.se/static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name</td>
+	<td>Kindle</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name</td>
+	<td>Kindle</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>category_id</td>
+	<td>value=17</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value=&quot;Add gift&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[contains(., 'Your gift has been added')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[contains(., 'Your gift has been added')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(), 'back to Gift Circle')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//a[contains(text(), 'Kindle')]</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

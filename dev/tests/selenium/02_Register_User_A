@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://gift-circle.dh.devba.se/" />
+<title>Register User A</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Register User A</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.menu-item-signup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>firstname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>firstname</td>
+	<td>javascript{&quot;Selenium&quot; + Math.floor(Math.random()*11111);}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>surname</td>
+	<td>User A</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>javascript{&quot;Selenium+&quot; + Math.floor(Math.random()*11111) + &quot;@basecreativeagency.com&quot;;}</td>
+</tr>
+<!--Store this user's username as a variable-->
+<tr>
+	<td>storeValue</td>
+	<td>email</td>
+	<td>UserA</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>wearebase</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password_confirm</td>
+	<td>wearebase</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=terms</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=.currently-logged-in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=.currently-logged-in</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

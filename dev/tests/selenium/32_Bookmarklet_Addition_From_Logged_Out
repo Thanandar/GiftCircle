@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://gift-circle.dh.devba.se/" />
+<title>32_Bookmarklet_Addition_From_Logged_Out</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">32_Bookmarklet_Addition_From_Logged_Out</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.menu-item-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>username</td>
+	<td>${UserA}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>wearebase</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=.currently-logged-in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=.currently-logged-in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.menu-item-mylists</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value=&quot;New list&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name</td>
+	<td>User A's Second Selenium Test Circle</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value=&quot;Create your list&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[contains(., 'Successfully created a new list')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[contains(., 'Successfully created a new list')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://www.amazon.co.uk/Inbetweeners-Movie-DVD-Simon-Bird/dp/B0052745GQ/ref=pd_nr_zgc_d_h__dvd_3?ie=UTF8&amp;s=dvd&amp;pf_rd_p=241059967&amp;pf_rd_s=right-6&amp;pf_rd_t=101&amp;pf_rd_i=283926&amp;pf_rd_m=A3P5ROKL5A1OLE&amp;pf_rd_r=0AZD212JFJHCJHMD9GS7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=body.dp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>runScript</td>
+	<td>javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='http://gift-circle.dh.devba.se/static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>username</td>
+	<td>${UserA}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>wearebase</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value=&quot;Login&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name</td>
+	<td>The Inbetweeners Movie</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>category_id</td>
+	<td>value=17</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value=&quot;Add gift&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[contains(., 'Your gift has been added')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[contains(., 'Your gift has been added')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(), 'back to Gift Circle')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(), 'The Inbetweeners Movie')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//a[contains(text(), 'The Inbetweeners Movie')]</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

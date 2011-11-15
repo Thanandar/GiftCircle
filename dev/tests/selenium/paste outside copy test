@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="Site_exists">Site Exists</a></td></tr>
+<tr><td><a href="Register User A">Register User A</a></td></tr>
+<tr><td><a href="Register User B">Register User B</a></td></tr>
+<tr><td><a href="Register User C">Register User C</a></td></tr>
+<tr><td><a href="Logout User A (Must Follow Registration)">Logout Fake User</a></td></tr>
+<tr><td><a href="Login Test (User A)">Login Test (User A)</a></td></tr>
+<tr><td><a href="Logout Test">Logout Test</a></td></tr>
+<tr><td><a href="Gift_Circle_Main">Copy and paste</a></td></tr>
+<tr><td><a href="paste outside copy test">paste outside copy test</a></td></tr>
+</tbody></table>
+</body>
+</html>
