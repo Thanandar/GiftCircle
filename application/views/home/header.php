@@ -14,8 +14,8 @@
 			<a id="video-link" href="http://player.vimeo.com/video/32096592?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1"><img src="/img/hp-video-temp.png" alt="Introduction" /></a>
 			<script>
 				$("#video-link").fancybox({
-					'width'				: 760,
-					'height'			: 428,
+					'width'				: 768,
+					'height'			: 432,
 			        'autoScale'     	: false,
 			        'transitionIn'		: 'none',
 					'transitionOut'		: 'none',
