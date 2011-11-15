@@ -96,7 +96,7 @@ echo $form->open('');
             <li>
                <label>
                   <input type="checkbox" name="marketing" value="1" <?php echo @$_POST['marketing'] ? ' checked="checked" ':''; ?> />
-                  Receive marketing communication via email
+                  I'm happy to receive marketing communication via email
                </label>
             </li>
          </ul>
@@ -105,12 +105,11 @@ echo $form->open('');
 
 
     <div class="clearfix">
-      <label><a href="/home/terms" target="_blank">Terms &amp; Conditions</a></label>
       <div class="input">
          <ul class="inputs-list">
             <li><label>
                <input required="required" type="checkbox" value="accept" name="terms" />
-               <span>Accept</span>
+               <span>Accept</span> <a href="/home/terms" target="_blank">Gift Circle Terms &amp; Conditions</a>
             </label></li>
          </ul>
       </div>

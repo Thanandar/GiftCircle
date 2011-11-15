@@ -38,7 +38,7 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 			
         		<a href="/" target="_top" class="brand" >
         		
-        		<img alt="Gift Circle" src="/img/logo.png" class="brand">
+        		<img alt="Gift Circle" src="/img/logo-beta.png" class="brand">
         	</a>
 
         	<div class="pull-right">
@@ -63,7 +63,7 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 						</span>
 						<?php } ?>
 
-        				<button class="btn" type="button" onclick="close_iframe()">Close</button>
+        				<button class="btn" type="button" onClick="close_iframe()">Close</button>
         				&nbsp;&nbsp;
         			</p>
         		</form>

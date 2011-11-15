@@ -83,7 +83,7 @@
 				</li>
 				<li>
 					<h4>Save money by keeping to your budget</h4>
-					<p>Don't get carried away with your spending. Keep a check on your spending with our built in shopping list manager.</p>
+					<p>Don't get carried away with your spending. Keep a check on your finances with our built in shopping list manager.</p>
 				</li>
 				<li>
 					<h4>Create wish lists for your children</h4>
