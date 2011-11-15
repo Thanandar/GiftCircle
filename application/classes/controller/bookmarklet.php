@@ -122,7 +122,7 @@ class Controller_Bookmarklet extends Controller_Page {
                                         Arr::get($_REQUEST,'remember',false)!=false)
             ){
 				// redirect to the user account
-				$this->request->redirect(Session::instance()->get_once('returnUrl','bookmarklet/index'));
+				$this->request->redirect('bookmarklet/index');
 				return;
 			}
 			else
