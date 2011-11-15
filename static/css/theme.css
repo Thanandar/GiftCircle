@@ -115,6 +115,10 @@ h5 {
   clear: both;
 }
 
+.home-index .page-header {
+  background:#00AFF0 url(/img/hp-header-xmas-home.png) no-repeat center top;
+}
+
 .page-header h1 {
   color: #fff;
   text-shadow: #0D6C89 2px 2px 1px;
