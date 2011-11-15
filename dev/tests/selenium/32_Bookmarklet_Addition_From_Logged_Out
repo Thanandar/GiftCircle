@@ -44,7 +44,7 @@
 <tr>
 	<td>type</td>
 	<td>password</td>
-	<td>${newPW}</td>
+	<td>wearebase</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -63,12 +63,12 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=.menu-item-mycircles</td>
+	<td>css=.menu-item-mylists</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@value=&quot;New circle&quot;]</td>
+	<td>//input[@value=&quot;New list&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -83,17 +83,17 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@value=&quot;Create your circle&quot;]</td>
+	<td>//input[@value=&quot;Create your list&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[contains(., 'Successfully created a new circle')]</td>
+	<td>//div[contains(., 'Successfully created a new list')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>//div[contains(., 'Successfully created a new circle')]</td>
+	<td>//div[contains(., 'Successfully created a new list')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -134,7 +134,7 @@
 <tr>
 	<td>type</td>
 	<td>password</td>
-	<td>${newPW}</td>
+	<td>wearebase</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -150,6 +150,21 @@
 	<td>type</td>
 	<td>name</td>
 	<td>The Inbetweeners Movie</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>category_id</td>
+	<td>value=17</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -181,7 +196,6 @@
 	<td>//a[contains(text(), 'The Inbetweeners Movie')]</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

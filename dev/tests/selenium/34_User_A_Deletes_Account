@@ -44,7 +44,7 @@
 <tr>
 	<td>type</td>
 	<td>password</td>
-	<td>${newPW}</td>
+	<td>wearebase</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -68,12 +68,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//input[@value=&quot;Delete account&quot;]</td>
+	<td>link=delete account</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@value=&quot;Delete account&quot;]</td>
+	<td>link=delete account</td>
 	<td></td>
 </tr>
 <tr>

@@ -37,6 +37,21 @@
 	<td>Kindle</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>category_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>category_id</td>
+	<td>value=17</td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>//input[@value=&quot;Add gift&quot;]</td>
 	<td></td>

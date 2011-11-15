@@ -54,7 +54,7 @@
 <!--Let's assume we actually went to Amazon and saw something nice, then came back here-->
 <tr>
 	<td>click</td>
-	<td>//a[contains(., 'enter details manually')]</td>
+	<td>//a[contains(., 'Enter details manually')]</td>
 	<td></td>
 </tr>
 <tr>

@@ -102,6 +102,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>//input[@type=&quot;submit&quot;]</td>
 	<td></td>
@@ -154,7 +159,7 @@
 <tr>
 	<td>type</td>
 	<td>password</td>
-	<td>${newPW}</td>
+	<td>wearebase</td>
 </tr>
 <tr>
 	<td>click</td>

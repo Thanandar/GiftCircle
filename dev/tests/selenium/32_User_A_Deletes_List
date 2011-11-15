@@ -44,7 +44,7 @@
 <tr>
 	<td>type</td>
 	<td>password</td>
-	<td>${newPW}</td>
+	<td>wearebase</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -63,12 +63,12 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=.menu-item-mycircles</td>
+	<td>css=.menu-item-mylists</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@value=&quot;New circle&quot;]</td>
+	<td>//input[@value=&quot;New list&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -83,17 +83,17 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@value=&quot;Create your circle&quot;]</td>
+	<td>//input[@value=&quot;Create your list&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[contains(., 'Successfully created a new circle')]</td>
+	<td>//div[contains(., 'Successfully created a new list')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>//div[contains(., 'Successfully created a new circle')]</td>
+	<td>//div[contains(., 'Successfully created a new list')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -139,7 +139,7 @@
 <!--Let's assume we actually went to Amazon and saw something nice, then came back here-->
 <tr>
 	<td>click</td>
-	<td>//a[contains(., 'enter details manually')]</td>
+	<td>//a[contains(., 'Enter details manually')]</td>
 	<td></td>
 </tr>
 <tr>

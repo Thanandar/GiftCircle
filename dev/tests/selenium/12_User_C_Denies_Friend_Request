@@ -133,7 +133,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[contains(., 'Cancel')]</td>
+	<td>//a[contains(., 'cancel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -184,7 +184,7 @@
 <tr>
 	<td>type</td>
 	<td>password</td>
-	<td>${newPW}</td>
+	<td>wearebase</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -198,7 +198,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=.menu-item-mycircles</td>
+	<td>css=.menu-item-mylists</td>
 	<td></td>
 </tr>
 <tr>
