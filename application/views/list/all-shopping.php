@@ -9,7 +9,7 @@ $total = 0;
 	<thead>
 		<tr>
 			<th>Gift&nbsp;name</th>
-			<th>&pound;&nbsp;Guide</th>
+			<th>&pound;Guide</th>
 			<th>Who&nbsp;for?</th>
 			<th>List</th>
 			<th>Category</th>

@@ -20,7 +20,7 @@ $reservable_gifts = 0;
 				<tr>
 					<th></th>
 					<th>Gift name</th>
-					<th>&pound;&nbsp;Guide</th>
+					<th>&pound;Guide</th>
 					<th>Category</th>
 					<th>Who's buying?</th>
 				</tr>

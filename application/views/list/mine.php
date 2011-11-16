@@ -22,7 +22,7 @@
 		<thead>
 			<tr>
 				<th width="180">Gift name</th>
-				<th>&pound;&nbsp;Guide</th>
+				<th>&pound;Guide</th>
 				<th>Category</th>
 				<th class="{sorter: false}"></th>
 			</tr>
