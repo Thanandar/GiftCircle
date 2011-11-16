@@ -73,12 +73,22 @@
 	</p>
 
 	<?php if (count($other_gifts)) { ?>
+
 	<h3>On your list</h3>
-	<ul>
-		<?php foreach ($other_gifts as $gift) { ?>
-		<li><?php echo HTML::chars($gift->name) ?></li>
-		<?php } ?>
-	</ul>
+	<table class="zebra-striped">
+		<thead>
+			<tr>
+				<th width="180">Gift name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach ($other_gifts as $gift) { ?>
+			<tr>
+				<td><a href="/gift/edit/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a></td>
+			</tr>
+			<?php } ?>
+		</tbody>
+	</table>
 	<?php } ?>
 </div>
 
