@@ -18,9 +18,9 @@
 			<tr>
 				<td>
 					<?php if ($friend->is_confirmed()) { ?>
-						<img src="/img/confirmed.png" alt="Confirmed" class="confirmed" />
+						<img src="/img/confirmed.png"  alt="Confirmed"  title="Confirmed" class="confirmed" />
 					<?php } else { ?>
-						<img src="/img/pending.png" alt="Pending" class="pending" />
+						<img src="/img/pending.png" alt="Pending"  title="Pending" class="pending" />
 					<?php } ?>
 				</td>
 				<td>
