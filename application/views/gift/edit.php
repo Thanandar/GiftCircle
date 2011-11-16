@@ -47,7 +47,7 @@
 			<div class="clearfix">
 				<label>Link: </label>
 				<div class="input">
-					<input name="url" value="<?php echo HTML::chars($gift->url) ?>">
+					<input placeholder="http://" name="url" value="<?php echo HTML::chars($gift->url) ?>">
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>			
