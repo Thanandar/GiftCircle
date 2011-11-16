@@ -54,7 +54,7 @@
 			<div class="clearfix">
 				<label>Description: </label>
 				<div class="input">
-					<textarea class="xxlarge" rows="3" name="details" placeholder="e.g. Don't mind the colour, as long as they have the powerlaces."><?php echo HTML::chars($gift->details) ?></textarea>
+					<textarea class="xlarge" rows="3" name="details" placeholder="e.g. Don't mind the colour, as long as they have the powerlaces."><?php echo HTML::chars($gift->details) ?></textarea>
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>			
@@ -74,10 +74,23 @@
 <div class="span4">
 	<h3>On your list</h3>
 	<table class="zebra-striped">
-		<?php foreach ($other_gifts as $gift) { ?>
-		<tr><td><?php echo HTML::chars($gift->name) ?></td></tr>
-		<?php } ?>
+		<thead>
+			<tr>
+				<th width="180">Gift name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach ($other_gifts as $other_gift) { ?>
+			<tr>
+				<td><a href="/gift/edit/<?php echo $other_gift->id; ?>"><?php echo $other_gift->name; ?></a></td>
+			</tr>
+			<?php } ?>
+		</tbody>
 	</table>
+
+	<div class="well">
+		<a class="btn" href="/list/mine/<?php echo $gift->list->id; ?>">Manage list</a>
+	</div>
 </div>
 
 

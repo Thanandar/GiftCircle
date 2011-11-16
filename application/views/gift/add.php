@@ -48,7 +48,7 @@
 			<div class="clearfix">
 				<label>Description: </label>
 				<div class="input">
-					<textarea class="xxlarge" rows="3" name="details" placeholder="e.g. Don't mind the colour, as long as they have the powerlaces."><?php echo HTML::chars(@$_POST['details']) ?></textarea>
+					<textarea class="xlarge" rows="3" name="details" placeholder="e.g. Don't mind the colour, as long as they have the powerlaces."><?php echo HTML::chars(@$_POST['details']) ?></textarea>
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>	
@@ -89,6 +89,10 @@
 			<?php } ?>
 		</tbody>
 	</table>
+
+	<div class="well">
+		<a class="btn" href="/list/mine/<?php echo $list->id; ?>">Manage list</a>
+	</div>
 	<?php } ?>
 </div>
 

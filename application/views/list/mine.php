@@ -4,7 +4,7 @@
 <div class="span16">
 
 	<div class="pull-right" style="margin: -10px 0 10px">
-			<a href="/list/edit/<?php echo $list->id; ?>">Edit circle details</a>
+			<a href="/list/edit/<?php echo $list->id; ?>">Edit list details</a>
 			|
 			<a href="/list/my">Back to overview</a>
 	</div>
