@@ -1,5 +1,5 @@
 ------------------------------
-Development Spec v1.2 05/10/11
+Development Spec v1.5 16/11/11
 For Version 1 of GiftCircle
 ------------------------------
 
