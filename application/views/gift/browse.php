@@ -22,6 +22,7 @@
 				<label>Category: </label>
 				<div class="input" id="category_changer">
 					<?php
+					Arr::unshift($categories, '', 'Please select&hellip;');
 					echo Form::select('category_id', $categories);
 					?>
 				</div>
@@ -134,7 +135,7 @@ $(function() {
 		Cufon.replace('h3', { fontFamily: 'HouschkaAltBlackRegular'});
 
 		//alert($(this).val());
-	}).change();
+	});
 
 
 	setTimeout(function() {
