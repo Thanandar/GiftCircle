@@ -66,7 +66,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 					'dob',
 				));
 				// message: save success
-				Message::add('success', __('Values saved.'));
+				Message::add('success', __('Successfully updated details'));
 				// redirect and exit
 				$this->request->redirect('user/profile');
 				return;
@@ -253,7 +253,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 			DB::delete('user_identity')->where('user_id', '=', $id)
 			                           ->execute();
 			// message: save success
-			Message::add('success', __('User deleted.'));
+			Message::add('success', __('Successfully deleted your account.'));
 			$this->request->redirect(Session::instance()->get_once('returnUrl','user/profile'));
 		}
 		// display confirmation

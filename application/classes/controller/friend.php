@@ -144,7 +144,7 @@ class Controller_Friend extends Controller_Page {
 		$new_friend->email      = $friend->email;
 		$new_friend->save();
 
-		Message::add('success', 'Confirmed friendship');
+		Message::add('success', 'Successfully confirmed friendship');
 		Request::current()->redirect('');
 
 	}
@@ -171,7 +171,7 @@ class Controller_Friend extends Controller_Page {
 			$me->delete();
 		}
 
-		Message::add('success', 'Cancelled friendship');
+		Message::add('success', 'Successfully cancelled friendship');
 		Request::current()->redirect('');
 	}
 
