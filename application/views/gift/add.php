@@ -16,16 +16,6 @@
 					} ?>
 				</div>
 			</div>
-			<div class="clearfix">
-				<label>&pound;Guide: </label>
-				<div class="input">
-					<div class="input-prepend">
-						<span class="add-on">&pound;</span>
-						<input name="price" value="<?php echo HTML::chars(@$_POST['price']) ?>">
-						<span class="help-inline">Optional</span>					
-					</div>
-				</div>
-			</div>
 			<div class="clearfix<?php if (!empty($errors['cat'])) {echo ' error';} ?>">
 				<label>Category: </label>
 				<div class="input">
@@ -36,6 +26,16 @@
 					<?php if (!empty($errors['cat'])) {
 						echo '<span class="help-inline">' . $errors['cat'] . '</span>';
 					} ?>
+				</div>
+			</div>
+			<div class="clearfix">
+				<label>&pound;Guide: </label>
+				<div class="input">
+					<div class="input-prepend">
+						<span class="add-on">&pound;</span>
+						<input name="price" value="<?php echo HTML::chars(@$_POST['price']) ?>">
+						<span class="help-inline">Optional</span>					
+					</div>
 				</div>
 			</div>
 			<div class="clearfix">

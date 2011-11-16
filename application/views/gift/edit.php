@@ -1,7 +1,7 @@
 
 <div class="span12">
 
-	<h2>Edit gift "<?php echo HTML::chars($gift->name); ?>"</h2>
+	<h2><?php echo HTML::chars($gift->name); ?></h2>
 
 	<?php if ($gift->reserver_id) { ?>
 
@@ -13,7 +13,6 @@
 
 	<form method="post">
 		<fieldset>
-			<legend>Gift details</legend>
 			<div class="clearfix<?php if (!empty($errors['name'])) {echo ' error';} ?>">
 				<label>Title: </label>
 				<div class="input">
@@ -21,16 +20,6 @@
 					<?php if (!empty($errors['name'])) {
 						echo '<span class="help-inline">' . $errors['name'] . '</span>';
 					} ?>
-				</div>
-			</div>
-			<div class="clearfix">
-				<label>&pound;Guide: </label>
-				<div class="input">
-					<div class="input-prepend">
-						<span class="add-on">&pound;</span>
-						<input name="price" value="<?php echo HTML::chars($gift->price); ?>">
-						<span class="help-inline">Optional</span>					
-					</div>
 				</div>
 			</div>
 			<div class="clearfix<?php if (!empty($errors['cat'])) {echo ' error';} ?>">
@@ -43,6 +32,16 @@
 					<?php if (!empty($errors['cat'])) {
 						echo '<span class="help-inline">' . $errors['cat'] . '</span>';
 					} ?>
+				</div>
+			</div>
+			<div class="clearfix">
+				<label>&pound;Guide: </label>
+				<div class="input">
+					<div class="input-prepend">
+						<span class="add-on">&pound;</span>
+						<input name="price" value="<?php echo HTML::chars($gift->price); ?>">
+						<span class="help-inline">Optional</span>					
+					</div>
 				</div>
 			</div>
 			<div class="clearfix">
