@@ -52,7 +52,6 @@ However, to help categorise people and to refine your wishlists (Let's face it, 
 <p>When you go to add gifts to your list, you can optionally decide to add a button to your bookmarks toolbar in your browser by clicking "Get the Browser Button". This streamlines the gift adding process by
 letting you click the button when you're on any other site and automatically add what you're looking at to one of your lists.
 Using this method you can still browse your favourite online stores in your usual way while creating your lists. It's the efficient, smooth way of using Gift Circle and we think it's pretty awesome.</p>
-<p>Check it out here.</p>
 
 <h3>Q. I don't see any bookmark toolbar to add the button to! Help!</h3>
 <p><b>A.</b> Not to worry. Different browsers handle this in different ways, so here's a handy guide to the most popular browsers and how to make them show the Bookmarks (or Favorites) Toolbar.</p>
