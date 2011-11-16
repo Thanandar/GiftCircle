@@ -1,12 +1,12 @@
 
-<?php if ($doing_wizard) { ?>
-
-
-<?php } ?>
 
 <div class="span12">
 
+<?php if ($doing_wizard) { ?>
 <h2>Step 2</h2>
+<?php } ?>
+
+
 <p>
 
 	All the people you've added to your circle will be notified via email and once they've accepted your invite to join they'll become an active member of your circle. They'll be encouraged to create their own list so that you can see what they'd like (for Christmas, Birthday, etc). 
