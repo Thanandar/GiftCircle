@@ -4,6 +4,11 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 
 	public $template = 'template';
 
+	public function before() {
+		 Session::instance()->set('returnUrl','');
+		 parent::before();
+	}
+
 	public function action_login() {
 		if (Auth::instance()->logged_in()) {
 			Request::current()->redirect('home/dashboard');
