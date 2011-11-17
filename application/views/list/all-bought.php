@@ -5,7 +5,7 @@ $total = 0;
 
 ?>
 
-<h2>Bought gifts</h2>
+<h3>Bought gifts</h3>
 
 <form action="/gift/prices" method="post">
 

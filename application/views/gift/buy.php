@@ -2,7 +2,7 @@
 <div class="span12">
 
 	<h3>
-		For <?php echo HTML::chars($gift->list->owner->firstname); ?>'s list "<?php echo HTML::chars($gift->list->name); ?>"
+		For <?php echo HTML::chars($gift->list->owner->firstname); ?>'s list: <?php echo HTML::chars($gift->list->name); ?>
 	</h3>
 
 	<table class="zebra-striped">
@@ -79,7 +79,7 @@
 </div>
 
 <div class="span4">
-	<h2><?php echo Message::e('shopping', 'my-list') ?></h2>
+	<h3>On your<br /> shopping list</h3>
 	
 	<?php echo Request::factory('gift/to_buy')->execute() ?>
 </div>
