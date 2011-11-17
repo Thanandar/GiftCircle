@@ -22,8 +22,9 @@ $fullname = HTML::chars($friend->firstname . ' ' . $friend->surname);
 			<table class="zebra-striped sort">
 				<thead>
 					<tr>
-						<th>Circle name</th>
-						<th>Total gifts</th>
+						<th>List name</th>
+						<th width="100">Expiry date</th>
+						<th width="100">Total gifts</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -34,7 +35,8 @@ $fullname = HTML::chars($friend->firstname . ' ' . $friend->surname);
 								<?php echo HTML::chars($list->name); ?>
 							</a>
 						</td>
-						<td><?php echo HTML::chars($list->total_gifts()); ?></td>
+						<td style="text-align:right"><?php echo HTML::chars($list->expiry); ?></td>
+						<td style="text-align:right"><?php echo HTML::chars($list->total_gifts()); ?></td>
 					</tr>
 					<?php } ?>
 				</tbody>

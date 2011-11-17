@@ -18,14 +18,14 @@
 				</a>
 			</td>
 			<td><?php echo HTML::chars($list->owner->firstname . ' ' . $list->owner->surname); ?></td>
-			<td><?php echo HTML::chars($list->total_gifts()); ?></td>
+			<td style="text-align:right"><?php echo HTML::chars($list->total_gifts()); ?></td>
 		</tr>
 		<?php } ?>
 	</tbody>
 </table>
 
 <div class="well">
-	<a class="btn" href="/friend/list">All friends' lists</a>
+	<a class="btn" href="/friend/list">All friends</a>
 </div>
 
 <?php } ?>

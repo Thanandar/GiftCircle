@@ -32,7 +32,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 		}
 
 		// set the template title (see Controller_App for implementation)
-		$this->template->title = __('Edit user profile');
+		$this->template->title = __('Edit your profile');
 		$user = Auth::instance()->get_user();
 		$id = $user->id;
 		// load the content from view

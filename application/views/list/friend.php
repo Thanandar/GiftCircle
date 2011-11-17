@@ -6,9 +6,9 @@ $reservable_gifts = 0;
 
 <div class="span12">
 
-	<h2>
+	<h3>
 		<?php echo HTML::chars($list->owner->firstname . ' ' . $list->owner->surname) ?>'s list: 
-		<?php echo HTML::chars($list->name) ?></h2>
+		<?php echo HTML::chars($list->name) ?></h3>
 
 	<p>Check the boxes then click reserve</p>
 
@@ -126,7 +126,7 @@ $reservable_gifts = 0;
 
 <div class="span4">
 
-	<h2>Friends with this list</h2>
+	<h3>Friends with<br /> this list</h3>
 
 
 	<?php if (count($friends)) { ?>

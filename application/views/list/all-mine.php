@@ -9,8 +9,8 @@ if (count($lists)) {
 	<thead>
 		<tr>
 			<th>List name</th>
-			<th width="150">Total gifts</th>
 			<th width="150">Friends in your circle</th>
+			<th width="100">Total gifts</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,8 +21,8 @@ if (count($lists)) {
 					<?php echo HTML::chars($list->name); ?>
 				</a>
 			</td>
-			<td><?php echo HTML::chars($list->total_gifts()); ?></td>
-			<td><?php echo HTML::chars($list->total_friends()); ?></td>
+			<td style="text-align:right"><?php echo HTML::chars($list->total_friends()); ?></td>
+			<td style="text-align:right"><?php echo HTML::chars($list->total_gifts()); ?></td>
 		</tr>
 		<?php } ?>
 	</tbody>

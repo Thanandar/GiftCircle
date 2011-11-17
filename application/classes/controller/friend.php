@@ -21,7 +21,7 @@ class Controller_Friend extends Controller_Page {
 		$view = View::factory('friend/list');
 		
 		$me = new Model_Owner($this->me()->id);
-		$view->friends = $me->confirmed_friends();
+		//$view->friends = $me->confirmed_friends();
 		$view->friends = $me->friends->order_by('surname')->find_all();
 
 		$this->template->content = $view;
@@ -49,7 +49,7 @@ class Controller_Friend extends Controller_Page {
 	}
 
 	public function action_view() {
-		$this->template->title = 'View friend\'s circles';
+		$this->template->title = 'View friend\'s lists';
 
 		$friend = new Model_Friend($this->request->param('id'));
 

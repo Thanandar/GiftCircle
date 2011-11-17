@@ -27,7 +27,7 @@
 </div>
 
 <div class="span4">
-	<h2>Budget</h2>
+	<h3>Budget</h3>
 
 	<form action="" method="post">
 

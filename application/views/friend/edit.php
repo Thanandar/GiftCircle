@@ -1,13 +1,10 @@
 
+
 <div class="span12">
+	<form method="post">
 
 	<a class="danger pull-right" href="/friend/delete/<?php echo $friend->id; ?>">Delete this friend</a>
 	
-	<h2><?php echo HTML::chars($friend->firstname.' '.$friend->surname) ?></h2>
-
-
-	<form method="post">
-		<fieldset>
 			<div class="clearfix<?php if (!empty($errors['firstname'])) {echo ' error';} ?>">
 				<label>First name: </label>
 				<div class="input">
@@ -34,7 +31,7 @@
 				</div>
 			</div>
 			<div class="clearfix">
-				<label>Date of Birth: </label>
+				<label>Date of birth: </label>
 				<div class="input" value="<?php echo HTML::chars($friend->birthday) ?>">
 					<input name="birthday" value="<?php echo HTML::chars($friend->birthday) ?>" placeholder="eg '25/12/1980'">
 					<span class="help-inline">Optional</span>
@@ -53,7 +50,6 @@
 				<input type="submit" value="Update your friend" class="btn primary" /> or
 				<a href="/friend/list">cancel</a>
 			</div>
-		</fieldset>
 	</form>
 </div>
 

@@ -6,7 +6,7 @@
 		->set('pending', $pending);
 	?>
 
-	<h2>Your lists</h2>
+	<h3>Your lists</h3>
 	
 	<?php 
 	echo View::factory('list/all-mine')
@@ -21,7 +21,7 @@
 	</div>
 
 	<?php if (count($friends_lists)) { ?>
-	<h2>Your friends' lists</h2>
+	<h3>Most recently updated friends' lists</h3>
 
 	<?php 
 	echo View::factory('list/all-friends')
@@ -30,7 +30,7 @@
 	<?php } ?>
 
 	<?php if (count($my_shopping_list)) { ?>
-	<h2>Your shopping list</h2>
+	<h3>Your shopping list</h3>
 
 	<?php 
 	echo View::factory('list/all-shopping')
