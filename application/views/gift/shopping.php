@@ -30,26 +30,28 @@
 	<h2>Budget</h2>
 
 	<form action="" method="post">
-		Your budget: 
-		&pound; <input class="span1" type="text" name="budget" value="<?php echo $budget; ?>">
-		<input type="submit" value="Update" class="btn" />
+
+	<table class="zebra-striped">
+		<tr><td style="vertical-align:middle">Your budget</td>
+			<td style="text-align:right">&pound; <input class="span1" type="text" name="budget" value="<?php echo $budget; ?>"></td>
+		</tr>
+
+		<tr><td>Gifts left to buy</td>
+			<td style="text-align:right">&pound;<?php echo number_format($total_to_buy, 2); ?></td>
+		</tr>
+		<tr><td>Gifts bought</td>
+			<td style="text-align:right">&pound;<?php echo number_format($total_bought, 2); ?></td>
+		</tr>
+		<tr>
+			<td>Budget left</td>
+			<td style="text-align:right"><span style="color:#<?php echo ($budget_left > 0) ? '080' : '800'; ?>">
+							&pound;<?php echo number_format($budget_left, 2); ?>
+						</span></td>
+		</tr>
+	</table>
+
+		<div class="well"><input type="submit" value="Update budget" class="btn" /></div>
 	</form>
-
-	<?php if ($budget > 0) { ?>
-
-	<ul>
-		<li>Your budget: &pound;<?php echo number_format($budget, 2); ?></li>
-		<li>Gifts left to buy: &pound;<?php echo number_format($total_to_buy, 2); ?></li>
-		<li>Gifts bought: &pound;<?php echo number_format($total_bought, 2); ?></li>
-		<li>
-			Budget left:
-			<span style="color:#<?php echo ($budget_left > 0) ? '080' : '800'; ?>">
-				&pound;<?php echo number_format($budget_left, 2); ?>
-			</span>
-		</li>
-	</ul>
-
-	<?php }?>
 
 </div>
 
