@@ -107,6 +107,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>css=.menu-item-dashboard</td>
 	<td></td>
@@ -154,7 +159,7 @@
 <tr>
 	<td>type</td>
 	<td>password</td>
-	<td>wearebase</td>
+	<td>${newPW}</td>
 </tr>
 <tr>
 	<td>click</td>
