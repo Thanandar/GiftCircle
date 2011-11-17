@@ -81,7 +81,7 @@ class Controller_List extends Controller_Page {
 		$list = new Model_List($list_id);
 
 
-		$this->template->title = 'Edit circle';
+		$this->template->title = 'Edit list';
 		$view = View::factory('list/edit');
 		$view->list = $list;
 
@@ -94,7 +94,7 @@ class Controller_List extends Controller_Page {
 				} else {
 					$list->expiry = arr::get($_POST, 'expiry');
 					$list->save();
-					Message::add('success', __('Circle updated.'));
+					Message::add('success', __('Successfully updated list.'));
 					Request::current()->redirect('list/mine/' . $list->id);
 				}
 			} else {
@@ -114,7 +114,7 @@ class Controller_List extends Controller_Page {
 		$view->gifts = $list->gifts->find_all();
 		$view->friends = $list->friends->find_all();
 
-		$this->template->title = 'View your circle &raquo; ' . $list->name;
+		$this->template->title = 'View your list: ' . $list->name;
 		$this->template->subtitle = 'Your gift circle in detail';
 
 		$this->template->content = $view;
@@ -265,7 +265,7 @@ class Controller_List extends Controller_Page {
 		$view = $this->get_add_friend_view($list);
 		$view->doing_wizard = true;
 
-		$this->template->title = 'Add friends to my list &raquo; ' . $list->name;
+		$this->template->title = 'Add friends to my list: ' . $list->name;
 		$this->template->subtitle = 'Choose the friends and family you would like to share this list with';
 
 		if ($_POST) {
@@ -331,7 +331,7 @@ class Controller_List extends Controller_Page {
 		$view = $this->get_add_friend_view($list);
 		$view->doing_wizard = false;
 
-		$this->template->title = 'Add friends to my circle &raquo; ' . $list->name;
+		$this->template->title = 'Add friends to my circle: ' . $list->name;
 		$this->template->subtitle = 'Choose the friends and family you would like in your gift circle';
 
 		if ($_POST) {

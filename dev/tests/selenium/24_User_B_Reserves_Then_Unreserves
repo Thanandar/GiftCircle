@@ -234,7 +234,17 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>name=unreserve</td>
+	<td>//a[contains(text(), 'remove from list')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(), 'remove from list')]</td>
 	<td></td>
 </tr>
 <tr>

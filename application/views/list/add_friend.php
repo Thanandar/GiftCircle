@@ -1,12 +1,12 @@
 
-<?php if ($doing_wizard) { ?>
-
-
-<?php } ?>
 
 <div class="span12">
 
-<h2>Step 2</h2>
+<?php if ($doing_wizard) { ?>
+<h3>Step 2</h3>
+<?php } ?>
+
+
 <p>
 
 	All the people you've added to your circle will be notified via email and once they've accepted your invite to join they'll become an active member of your circle. They'll be encouraged to create their own list so that you can see what they'd like (for Christmas, Birthday, etc). 
@@ -37,7 +37,7 @@
 	<form method="post">
 		<?php if (count($friends)) { ?>
 		<fieldset>
-			<h2>Add existing friends</h2>
+			<h3>Add existing friends</h3>
 
 			<div class="clearfix">
 				<div>
@@ -62,7 +62,7 @@
 		<?php } ?>
 
 		<fieldset>
-			<h2>Add new friends</h2>
+			<h3>Add new friends</h3>
 			<ol class="new-friends">
 				<?php 
 				$rows = max(array(5, count(@$new_friends)));
@@ -100,7 +100,7 @@
 
 <div class="span4">
 
-	<h2>Friends already in this circle</h2>
+	<h3>Friends already in this circle</h3>
 
 	<table class="zebra-striped">
 		<thead>
@@ -149,7 +149,7 @@ function more_friends(el) {
 
 
 <div class="span4">
-	<h2>Quick help</h2>
+	<h3>Quick help</h3>
 
 
 	<ul class="unstyled steps">

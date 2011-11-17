@@ -1,7 +1,7 @@
 
 <div class="span12">
 
-	<h2>You have bought '<?php echo HTML::chars($gift->name); ?>'</h2>
+	<h3>You have bought '<?php echo HTML::chars($gift->name); ?>'</h3>
 
 	<?php if ($previously_subscribed) { ?>
 	<div class="alert-message info">

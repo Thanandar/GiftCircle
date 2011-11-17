@@ -78,7 +78,7 @@ class Controller_Gift extends Controller_Page {
 
 		$list_id = $this->request->param('id');
 		$list = new Model_List($list_id);
-		$this->template->title = 'Add gifts to your list &raquo; ' . $list->name;
+		$this->template->title = 'Add gifts to your list: ' . $list->name;
 		
 		if ($list->owner->id != $this->me()->id) {
 			Request::current()->redirect('user/noaccess');
@@ -111,7 +111,7 @@ class Controller_Gift extends Controller_Page {
 				$gift->details     = arr::get($_POST, 'details');
 				$gift->save();
 				
-				Message::add('success', Kohana::message('gift', 'added'));
+				Message::add('success', 'Successfully added gift');
 				Request::current()->redirect('list/mine/' . $list->id);
 			}
 

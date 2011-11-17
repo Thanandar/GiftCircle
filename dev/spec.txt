@@ -1,5 +1,5 @@
 ------------------------------
-Development Spec v1.2 05/10/11
+Development Spec v1.5 16/11/11
 For Version 1 of GiftCircle
 ------------------------------
 
@@ -53,12 +53,15 @@ View any page
 
 Register
 	* Fill in form
+	* Option to opt in to marketing
+	* Option to add DOB
 	* No email sent
 	* Automatically logged in
 
 Login
-	* Fill in form (in header or separate login page)
+	* Fill in form
 	* Logged in
+	* Always redirected to dashboard
 
 Log out
 	* Logged out
@@ -82,6 +85,11 @@ View dashboard
 View my shopping list
 	* See gifts I've reserved
 	* See gifts I've bought
+	* Remove bought gifts
+	* Set a budget
+	* See totals for reserved and (uncleared) bought gifts
+	* See budget left
+	* Update bought gifts' prices
 	* Click on gift to start buying it
 
 Accept friend request
@@ -100,13 +108,15 @@ Cancel friend request
 	* Notification goes
 
 User A creates a list. 
+	* User is taken through 4-step wizard
 	* List is visible in "My lists" and "Friends lists" of Circle
 
 Add a gift to list.
 	* User browses web normally
 	* User chooses product category and browses affiliate link
 	* User manually enters gift details
-	- If supplied URL: Affiliate tracking is added to link [GIFTCIRCLE-62]
+	* If supplied URL: Affiliate tracking is added to link
+	* Delayed notification
 
 Add a new friend to a list, using friend's email address.
 	Email already your friend:
@@ -134,6 +144,7 @@ Add existing friend to a list, from Friend list
 Edit a gift
 	Avilable gift:
 		* Gift is edited
+		* Delayed notification
 	Unavilable gift:
 		* Warning: "Someone has reserved or bought this gift."
 		* Immediate notification: "User A has edited a gift you have reserved/bought"
@@ -228,14 +239,27 @@ Server runs cron script
 	At any time, if any Subscribed friends on a list have not been notified of any changes to the list that happened over 60 minutes ago:
 		* Email notification sent saying a list has been updated (not detailing changes)
 
-Add Bookmarklet
+Add Bookmarklet (browser-button)
+	* User goes to add bookmarklet page
+	* Browser-specific guide
+	* User adds button
+
 Use Bookmarklet
+	If on any GC page
+		* Popup saying browser button is working
+	If on any other page
+		* Popup
+		* User logs in if not already logged in
+		* User's most recently updated list is pre-selected
+		* User enters gift details
+		* Gift added
+		* Close popup by clicking "Continue browsing" or "back to Gift circle"
+
 
 ------------------------
 === NOT IN VERSION 1 ===
 ------------------------
 
-Gifts that I've bought
 Treating lists differently based on list date
 Admin area for users
 Admin area for shops, logos, departments and links

@@ -4,6 +4,11 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 
 	public $template = 'template';
 
+	public function before() {
+		 Session::instance()->set('returnUrl','');
+		 parent::before();
+	}
+
 	public function action_login() {
 		if (Auth::instance()->logged_in()) {
 			Request::current()->redirect('home/dashboard');
@@ -27,7 +32,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 		}
 
 		// set the template title (see Controller_App for implementation)
-		$this->template->title = __('Edit user profile');
+		$this->template->title = __('Edit your profile');
 		$user = Auth::instance()->get_user();
 		$id = $user->id;
 		// load the content from view
@@ -61,7 +66,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 					'dob',
 				));
 				// message: save success
-				Message::add('success', __('Values saved.'));
+				Message::add('success', __('Successfully updated details'));
 				// redirect and exit
 				$this->request->redirect('user/profile');
 				return;
@@ -248,8 +253,8 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 			DB::delete('user_identity')->where('user_id', '=', $id)
 			                           ->execute();
 			// message: save success
-			Message::add('success', __('User deleted.'));
-			$this->request->redirect(Session::instance()->get_once('returnUrl','user/profile'));
+			//Message::add('success', __('Successfully deleted your account.'));
+			$this->request->redirect('');
 		}
 		// display confirmation
 		$this->template->content = View::factory('user/unregister')
@@ -269,6 +274,72 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 		// redirect to the user account and then the signin page if logout worked as expected
 		$this->request->redirect('');
 	}
+
+	/**
+	 * A basic implementation of the "Forgot password" functionality
+	 */
+	public function action_forgot()
+	{
+		// Password reset must be enabled in config/useradmin.php
+		if (! Kohana::$config->load('useradmin')->email)
+		{
+			Message::add('error', 'Password reset via email is not enabled. Please contact the site administrator to reset your password.');
+			$this->request->redirect('user/register');
+		}
+		// set the template title (see Controller_App for implementation)
+		$this->template->title = __('Password reset');
+		if (isset($_POST['reset_email']))
+		{
+			$user = ORM::factory('user')->where('email', '=', $_POST['reset_email'])->find();
+			// admin passwords cannot be reset by email
+			if (is_numeric($user->id) && ( $user->username != 'admin' ))
+			{
+				// send an email with the account reset token
+				$user->reset_token = $user->generate_password(32);
+				$user->save();
+				$message = "You have requested a password reset. You can reset password to your account by visiting the page at:\n\n" .
+				           ":reset_token_link\n\n" .
+				           "If the above link is not clickable, please visit the following page:\n" .
+				           ":reset_link\n\n" .
+				           "and copy/paste the following Reset Token: :reset_token\nYour user account name is: :username\n";
+				$mailer = Email::connect();
+				// Create complex Swift_Message object stored in $message
+				// MUST PASS ALL PARAMS AS REFS
+				$subject = __('Account password reset');
+				$to = $_POST['reset_email'];
+				$from = Kohana::$config->load('useradmin')->email_address;
+				$body = __($message, array(
+					':reset_token_link' => URL::site('user/reset?reset_token='.$user->reset_token.'&reset_email='.urlencode($_POST['reset_email']), TRUE), 
+					':reset_link' => URL::site('user/reset', TRUE), 
+					':reset_token' => $user->reset_token, 
+					':username' => $user->username
+				));
+				// FIXME: Test if Swift_Message has been found.
+				$message_swift = Swift_Message::newInstance($subject, $body)->setFrom($from)->setTo($to);
+				if ($mailer->send($message_swift))
+				{
+					Message::add('success', __('Password reset email sent.'));
+					$this->request->redirect('user/login');
+				}
+				else
+				{
+					Message::add('failure', __('Could not send email.'));
+				}
+			}
+			else 
+				if ($user->username == 'admin')
+				{
+					Message::add('error', __('Admin account password cannot be reset via email.'));
+				}
+				else
+				{
+					Message::add('error', __('User account could not be found.'));
+				}
+		}
+		$this->template->content = View::factory('user/reset/forgot');
+	}
+
+
 
 
 }

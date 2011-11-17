@@ -16,16 +16,6 @@
 					} ?>
 				</div>
 			</div>
-			<div class="clearfix">
-				<label>&pound;Guide: </label>
-				<div class="input">
-					<div class="input-prepend">
-						<span class="add-on">&pound;</span>
-						<input name="price" value="<?php echo HTML::chars(@$_POST['price']) ?>">
-						<span class="help-inline">Optional</span>					
-					</div>
-				</div>
-			</div>
 			<div class="clearfix<?php if (!empty($errors['cat'])) {echo ' error';} ?>">
 				<label>Category: </label>
 				<div class="input">
@@ -39,16 +29,26 @@
 				</div>
 			</div>
 			<div class="clearfix">
+				<label>&pound;Guide: </label>
+				<div class="input">
+					<div class="input-prepend">
+						<span class="add-on">&pound;</span>
+						<input name="price" value="<?php echo HTML::chars(@$_POST['price']) ?>">
+						<span class="help-inline">Optional</span>					
+					</div>
+				</div>
+			</div>
+			<div class="clearfix">
 				<label>Link: </label>
 				<div class="input">
-					<input name="url" value="<?php echo HTML::chars(@$_POST['url']) ?>">
+					<input placeholder="http://" name="url" value="<?php echo HTML::chars(@$_POST['url']) ?>">
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>
 			<div class="clearfix">
 				<label>Description: </label>
 				<div class="input">
-					<textarea class="xxlarge" rows="3" name="details" placeholder="e.g. Don't mind the colour, as long as they have the powerlaces."><?php echo HTML::chars(@$_POST['details']) ?></textarea>
+					<textarea class="xlarge" rows="3" name="details" placeholder="e.g. Don't mind the colour, as long as they have the powerlaces."><?php echo HTML::chars(@$_POST['details']) ?></textarea>
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>	
@@ -73,12 +73,26 @@
 	</p>
 
 	<?php if (count($other_gifts)) { ?>
+
 	<h3>On your list</h3>
-	<ul>
-		<?php foreach ($other_gifts as $gift) { ?>
-		<li><?php echo HTML::chars($gift->name) ?></li>
-		<?php } ?>
-	</ul>
+	<table class="zebra-striped">
+		<thead>
+			<tr>
+				<th width="180">Gift name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach ($other_gifts as $gift) { ?>
+			<tr>
+				<td><a href="/gift/edit/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a></td>
+			</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+
+	<div class="well">
+		<a class="btn" href="/list/mine/<?php echo $list->id; ?>">Manage list</a>
+	</div>
 	<?php } ?>
 </div>
 

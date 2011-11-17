@@ -61,7 +61,7 @@ echo $form->open('');
       <div class="input">
          <?php echo $form->input('dob', null, array(
          'type' => 'date',
-         'placeholder' => '31/12/1999',
+         'placeholder' => '31/12/1980',
          'pattern' => '^\d+/\d+/\d\d\d\d$',
          )); ?>
          <span class="help-inline">Optional (dd/mm/yyyy)</span>

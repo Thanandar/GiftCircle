@@ -2,8 +2,8 @@
 
 return array(
 	'title-required' => 'Please enter a product title',
-	'added' => 'Gift added',
-	'updated' => 'Gift updated',
-	'deleted' => 'Gift deleted',
+	'added' => 'Successfully added gift',
+	'updated' => 'Successfully updated gift',
+	'deleted' => 'Successfully deleted gift',
 );
 

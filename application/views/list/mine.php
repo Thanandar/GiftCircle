@@ -4,7 +4,7 @@
 <div class="span16">
 
 	<div class="pull-right" style="margin: -10px 0 10px">
-			<a href="/list/edit/<?php echo $list->id; ?>">Edit circle details</a>
+			<a href="/list/edit/<?php echo $list->id; ?>">Edit list details</a>
 			|
 			<a href="/list/my">Back to overview</a>
 	</div>
@@ -15,14 +15,14 @@
 
 <div class="span8">
 
-	<h2>Gifts on this list</h2>
+	<h3>Gifts on this list</h3>
 	
 	<?php if (count($gifts)) { ?>
 	<table class="zebra-striped sort">
 		<thead>
 			<tr>
 				<th width="180">Gift name</th>
-				<th>&pound;&nbsp;Guide</th>
+				<th width="60">&pound;Guide</th>
 				<th>Category</th>
 				<th class="{sorter: false}"></th>
 			</tr>
@@ -31,7 +31,7 @@
 			<?php foreach ($gifts as $gift) { ?>
 			<tr>
 				<td><a href="/gift/edit/<?php echo $gift->id; ?>"><?php echo $gift->name; ?></a></td>
-				<td><?php echo $gift->price ? '&pound;' . $gift->price : ''; ?></td>
+				<td style="text-align:right"><?php echo $gift->price ? $gift->price() : ''; ?></td>
 				<td><?php echo HTML::chars($gift->category->name); ?></td>
 				<td>
 					<a class="delete" href="/gift/delete/<?php echo $gift->id; ?>">✘</a>
@@ -55,7 +55,7 @@
 
 <div class="span8">
 
-	<h2>Friends in this circle</h2>
+	<h3>Friends in this circle</h3>
 
 	<div>
 
@@ -63,12 +63,20 @@
 		<table class="zebra-striped sort">
 			<thead>
 				<tr>
+					<th width="20"></th>
 					<th>Friend name</th>
 					<th class="{sorter: false}"></th>
 				</tr>
 			</thead>
 			<?php foreach ($friends as $friend) { ?>
 			<tr>
+				<td>
+					<?php if ($friend->is_confirmed()) { ?>
+						<img src="/img/confirmed.png"  alt="Confirmed"  title="Confirmed" class="confirmed" />
+					<?php } else { ?>
+						<img src="/img/pending.png" alt="Pending"  title="Pending" class="pending" />
+					<?php } ?>
+				</td>
 				<td>
 					<?php if ($friend->is_confirmed()) { ?>
 					<?php echo HTML::anchor('friend/view/' . $friend->id, HTML::chars($friend->firstname . ' ' . $friend->surname)) ?>

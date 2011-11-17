@@ -10,8 +10,10 @@ Here at Gift Circle we're putting a stop to bad gifts. How? With simple, usable,
 <p><b>A.</b> Any time there's an upcoming occasion in which the exchange of gifts is expected!</p>
 
 <h3>Q. Doesn't this take the surprise out of presents?</h3>
-<p><b>A.</b> We don't like to judge. Besides, people regularly use wishlists for Weddings, so why not every event? 
-At the end of the day there will always be some people who value the surprise. For those of us who just like receiving or giving cool stuff, there's Gift Circle.</p>
+<p><b>A.</b> 
+
+In short, no. At no point can you see whether a member of your circle has bought a gift from your list. What you will receive on the big day will remain a mystery until you start unwrapping.
+</p>
 
 <h3>Q. Alright, I'm in. How can I let my friends and family know what I want?</h3>
 <p><b>A.</b> If you're signed up, all you need to do is go to Dashboard and hit "New List". Give it a name and if you want, an expiry date. Add your gifts and add some friends and you're off!
@@ -52,7 +54,6 @@ However, to help categorise people and to refine your wishlists (Let's face it, 
 <p>When you go to add gifts to your list, you can optionally decide to add a button to your bookmarks toolbar in your browser by clicking "Get the Browser Button". This streamlines the gift adding process by
 letting you click the button when you're on any other site and automatically add what you're looking at to one of your lists.
 Using this method you can still browse your favourite online stores in your usual way while creating your lists. It's the efficient, smooth way of using Gift Circle and we think it's pretty awesome.</p>
-<p>Check it out here.</p>
 
 <h3>Q. I don't see any bookmark toolbar to add the button to! Help!</h3>
 <p><b>A.</b> Not to worry. Different browsers handle this in different ways, so here's a handy guide to the most popular browsers and how to make them show the Bookmarks (or Favorites) Toolbar.</p>
