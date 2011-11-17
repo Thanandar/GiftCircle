@@ -1,7 +1,7 @@
 
 <div class="span16">
 
-<h2>Gift Circle has lots of features</h2>
+<h3>Gift Circle has lots of features</h3>
 
 <ol>
 	<li>Gifts!</li>

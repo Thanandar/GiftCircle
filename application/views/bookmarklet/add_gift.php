@@ -1,7 +1,7 @@
 
 <div class="span11">
 
-	<h2>Add gift details</h2>
+	<h3>Add gift details</h3>
 
 	<p>Add at least the title but the more information you can provide, the better your list will be.</p>
 
@@ -26,16 +26,6 @@
 					} ?>
 				</div>
 			</div>
-			<div class="clearfix">
-				<label>&pound;Guide: </label>
-				<div class="input">
-					<div class="input-prepend">
-						<span class="add-on">&pound;</span>
-						<input name="price">
-						<span class="help-inline">Optional</span>					
-					</div>
-				</div>
-			</div>
 			<div class="clearfix<?php if (!empty($errors['cat'])) {echo ' error';} ?>">
 				<label>Category: </label>
 				<div class="input">
@@ -49,9 +39,19 @@
 				</div>
 			</div>
 			<div class="clearfix">
+				<label>&pound;Guide: </label>
+				<div class="input">
+					<div class="input-prepend">
+						<span class="add-on">&pound;</span>
+						<input name="price">
+						<span class="help-inline">Optional</span>					
+					</div>
+				</div>
+			</div>
+			<div class="clearfix">
 				<label>Link: </label>
 				<div class="input">
-					<input name="url" value="<?php echo HTML::chars($url); ?>">
+					<input placeholder="http://" name="url" value="<?php echo HTML::chars($url); ?>">
 					<span class="help-inline">Optional</span>
 				</div>
 			</div>

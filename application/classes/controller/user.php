@@ -4,6 +4,11 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 
 	public $template = 'template';
 
+	public function before() {
+		 Session::instance()->set('returnUrl','');
+		 parent::before();
+	}
+
 	public function action_login() {
 		if (Auth::instance()->logged_in()) {
 			Request::current()->redirect('home/dashboard');
@@ -27,7 +32,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 		}
 
 		// set the template title (see Controller_App for implementation)
-		$this->template->title = __('Edit user profile');
+		$this->template->title = __('Edit your profile');
 		$user = Auth::instance()->get_user();
 		$id = $user->id;
 		// load the content from view
@@ -61,7 +66,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 					'dob',
 				));
 				// message: save success
-				Message::add('success', __('Values saved.'));
+				Message::add('success', __('Successfully updated details'));
 				// redirect and exit
 				$this->request->redirect('user/profile');
 				return;
@@ -248,7 +253,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 			DB::delete('user_identity')->where('user_id', '=', $id)
 			                           ->execute();
 			// message: save success
-			Message::add('success', __('User deleted.'));
+			Message::add('success', __('Successfully deleted your account.'));
 			$this->request->redirect(Session::instance()->get_once('returnUrl','user/profile'));
 		}
 		// display confirmation

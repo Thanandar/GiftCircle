@@ -2,7 +2,7 @@
 <div class="span12">
 
 	<?php if (strpos(@$_SERVER['HTTP_REFERER'], 'bookmarklet')) { ?>
-	<h2>Step 4</h2>
+	<h3>Step 4</h3>
 	<?php } ?>
 
 	<p><a href="/gift/add/<?php echo $list->id; ?>">Enter details manually</a> if you know the gift details </p>
@@ -22,6 +22,7 @@
 				<label>Category: </label>
 				<div class="input" id="category_changer">
 					<?php
+					Arr::unshift($categories, '', 'Please select&hellip;');
 					echo Form::select('category_id', $categories);
 					?>
 				</div>
@@ -134,7 +135,7 @@ $(function() {
 		Cufon.replace('h3', { fontFamily: 'HouschkaAltBlackRegular'});
 
 		//alert($(this).val());
-	}).change();
+	});
 
 
 	setTimeout(function() {
@@ -147,7 +148,7 @@ $(function() {
 <?php if (strpos(@$_SERVER['HTTP_REFERER'], 'bookmarklet')) { ?>
 
 <div class="span4">
-	<h2>Quick help</h2>
+	<h3>Quick help</h3>
 
 	<ul class="unstyled steps">
 

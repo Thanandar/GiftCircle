@@ -8,7 +8,7 @@
 			<tr>
 				<th class="{sorter: false}"></th>
 				<th>Name</th>
-				<th class="{parser: 'shortDate'}">Date of Birth</th>
+				<th class="{parser: 'shortDate'}">Date of birth</th>
 				<th>Address</th>
 				<th class="{sorter: false}"></th>
 			</tr>
@@ -18,9 +18,9 @@
 			<tr>
 				<td>
 					<?php if ($friend->is_confirmed()) { ?>
-						<img src="/img/confirmed.png" alt="Confirmed" class="confirmed" />
+						<img src="/img/confirmed.png"  alt="Confirmed"  title="Confirmed" class="confirmed" />
 					<?php } else { ?>
-						<img src="/img/pending.png" alt="Pending" class="pending" />
+						<img src="/img/pending.png" alt="Pending"  title="Pending" class="pending" />
 					<?php } ?>
 				</td>
 				<td>
@@ -28,7 +28,7 @@
 					<br />
 					<?php echo HTML::chars($friend->email) ?>
 				</td>
-				<td><?php echo HTML::chars($friend->birthday) ?></td>
+				<td style="text-align:right"><?php echo HTML::chars($friend->birthday) ?></td>
 				<td><?php echo nl2br(HTML::chars($friend->address)) ?></td>
 				<td>
 					<?php 

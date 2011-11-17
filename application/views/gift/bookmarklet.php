@@ -41,7 +41,10 @@ $show_toolbar = $show_toolbar[$browser];
 ?>
 
 <div class="span16">
-<h2>Step 3</h2>
+<?php if (strpos(@$_SERVER['HTTP_REFERER'], 'wizard')) { ?>
+<h3>Step 3</h3>
+<?php } ?>
+
 
 <?php if ($is_ie) { ?>
     <p>Adding the browser button to your Favourites bar will allow you to search as usual and when you find a gift you like, add it to your gift list with one click. You don't even leave the page you're on!<p>

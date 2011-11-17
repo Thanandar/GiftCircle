@@ -2,7 +2,7 @@
 
 <div class="span16">
 
-<h2>You Selected:</h2>
+<h3>You Selected:</h3>
 
 <p><big><?php echo HTML::chars($gift->name) ?></big></p>
 

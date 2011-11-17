@@ -207,6 +207,9 @@ a.danger {
   color: #404040;
 }
 
+.currently-logged-in {
+  margin-right: 20px;
+}
 .currently-logged-in, .currently-logged-in a {
   color: #fff;
 }

@@ -21,7 +21,7 @@ class Controller_Friend extends Controller_Page {
 		$view = View::factory('friend/list');
 		
 		$me = new Model_Owner($this->me()->id);
-		$view->friends = $me->confirmed_friends();
+		//$view->friends = $me->confirmed_friends();
 		$view->friends = $me->friends->order_by('surname')->find_all();
 
 		$this->template->content = $view;
@@ -49,7 +49,7 @@ class Controller_Friend extends Controller_Page {
 	}
 
 	public function action_view() {
-		$this->template->title = 'View friend\'s circles';
+		$this->template->title = 'View friend\'s lists';
 
 		$friend = new Model_Friend($this->request->param('id'));
 
@@ -144,7 +144,7 @@ class Controller_Friend extends Controller_Page {
 		$new_friend->email      = $friend->email;
 		$new_friend->save();
 
-		Message::add('success', 'Confirmed friendship');
+		Message::add('success', 'Successfully confirmed friendship');
 		Request::current()->redirect('');
 
 	}
@@ -171,7 +171,7 @@ class Controller_Friend extends Controller_Page {
 			$me->delete();
 		}
 
-		Message::add('success', 'Cancelled friendship');
+		Message::add('success', 'Successfully cancelled friendship');
 		Request::current()->redirect('');
 	}
 

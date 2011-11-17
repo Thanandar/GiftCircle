@@ -5,7 +5,7 @@ $total = 0;
 
 ?>
 
-<h2>Bought gifts</h2>
+<h3>Bought gifts</h3>
 
 <form action="/gift/prices" method="post">
 
@@ -13,7 +13,7 @@ $total = 0;
 	<thead>
 		<tr>
 			<th>Gift&nbsp;name</th>
-			<th width="80">&pound;&nbsp;Guide</th>
+			<th width="80">&pound;Price</th>
 			<th>Who&nbsp;for?</th>
 			<th>List</th>
 			<th>Category</th>
@@ -48,15 +48,16 @@ $total = 0;
 		</tr>
 		<?php } ?>
 
-		<?php if (!empty($show_total)) { ?>
 		<tr>
-			<th>Total</th>
-			<th style="text-align:right">&pound;<?php echo number_format($total, 2); ?></th>
-			<th colspan="4">&nbsp;</th>
+			<td><strong>Total</strong></td>
+			<td style="text-align:right"><strong>&pound;<?php echo number_format($total, 2); ?></strong></td>
+			<td colspan="4">&nbsp;</td>
 		</tr>
-		<?php } ?>
-
 	</tbody>
+	<?php if (!empty($show_total)) { ?>
+
+	<?php } ?>
+
 </table>
 
 <div class="well">

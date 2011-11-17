@@ -9,7 +9,7 @@ $total = 0;
 	<thead>
 		<tr>
 			<th>Gift&nbsp;name</th>
-			<th>&pound;&nbsp;Guide</th>
+			<th>&pound;Guide</th>
 			<th>Who&nbsp;for?</th>
 			<th>List</th>
 			<th>Category</th>
@@ -51,9 +51,9 @@ $total = 0;
 
 		if (!empty($show_total)) { ?>
 		<tr>
-			<th>Total</th>
-			<th style="text-align:right">&pound;<?php echo number_format($total, 2); ?></th>
-			<th colspan="4">&nbsp;</th>
+			<td><strong>Total</strong></td>
+			<td style="text-align:right"><strong>&pound;<?php echo number_format($total, 2); ?></strong></td>
+			<td colspan="4">&nbsp;</td>
 		</tr>
 		<?php } ?>
 	</tbody>

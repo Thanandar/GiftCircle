@@ -111,7 +111,7 @@ class Controller_Gift extends Controller_Page {
 				$gift->details     = arr::get($_POST, 'details');
 				$gift->save();
 				
-				Message::add('success', Kohana::message('gift', 'added'));
+				Message::add('success', 'Successfully added gift');
 				Request::current()->redirect('list/mine/' . $list->id);
 			}
 
