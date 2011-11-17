@@ -149,17 +149,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[contains(., 'Gift added')]</td>
+	<td>//div[contains(., 'added gift')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>//div[contains(., 'Gift added')]</td>
+	<td>//div[contains(., 'added gift')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
 	<td>/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=.menu-item-login</td>
 	<td></td>
 </tr>
 <tr>
@@ -244,7 +249,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[contains(text(), 'remove from list')]</td>
+	<td>//input[@value='Remove from list']</td>
 	<td></td>
 </tr>
 <tr>

@@ -113,7 +113,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//p[contains(., 'These people would like to be your friend.')]</td>
+	<td>//input[@value=&quot;Accept&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -133,7 +133,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[contains(., 'cancel')]</td>
+	<td>//a[contains(., 'ignore')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -143,17 +143,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[contains(., 'Cancelled friendship')]</td>
+	<td>//div[contains(., 'cancelled friendship')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>//div[contains(., 'Cancelled friendship')]</td>
+	<td>//div[contains(., 'cancelled friendship')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
 	<td>/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=.menu-item-login</td>
 	<td></td>
 </tr>
 <tr>

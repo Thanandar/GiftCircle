@@ -168,12 +168,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[contains(., 'Gift deleted')]</td>
+	<td>//div[contains(., 'deleted gift')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>//div[contains(., 'Gift deleted')]</td>
+	<td>//div[contains(., 'deleted gift')]</td>
 	<td></td>
 </tr>
 <tr>

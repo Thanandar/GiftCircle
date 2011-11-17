@@ -134,7 +134,7 @@
 <tr>
 	<td>type</td>
 	<td>password</td>
-	<td>wearebase</td>
+	<td>${newPW}</td>
 </tr>
 <tr>
 	<td>click</td>

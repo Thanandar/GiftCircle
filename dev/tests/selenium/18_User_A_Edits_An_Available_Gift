@@ -98,12 +98,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[contains(., 'Gift updated')]</td>
+	<td>//div[contains(., 'updated gift')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>//div[contains(., 'Gift updated')]</td>
+	<td>//div[contains(., 'updated gift')]</td>
 	<td></td>
 </tr>
 <!--TODO - Check Emails to see if people are being emailed-->

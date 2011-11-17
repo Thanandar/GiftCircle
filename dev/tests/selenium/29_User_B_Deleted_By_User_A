@@ -279,7 +279,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//p[contains(., 'These people would like to be your friend.')]</td>
+	<td>//input[@value=&quot;Accept&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -299,12 +299,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[contains(., 'Confirmed friendship')]</td>
+	<td>//div[contains(., 'confirmed friendship')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>//div[contains(., 'Confirmed friendship')]</td>
+	<td>//div[contains(., 'confirmed friendship')]</td>
 	<td></td>
 </tr>
 </tbody></table>

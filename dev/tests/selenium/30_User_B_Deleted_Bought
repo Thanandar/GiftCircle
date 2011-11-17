@@ -364,12 +364,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[contains(., 'Confirmed friendship')]</td>
+	<td>//div[contains(., 'confirmed friendship')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>//div[contains(., 'Confirmed friendship')]</td>
+	<td>//div[contains(., 'confirmed friendship')]</td>
 	<td></td>
 </tr>
 </tbody></table>
