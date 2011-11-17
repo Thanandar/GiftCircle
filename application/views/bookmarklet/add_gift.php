@@ -1,7 +1,7 @@
 
 <div class="span11">
 
-	<h2>Add gift details</h2>
+	<h3>Add gift details</h3>
 
 	<p>Add at least the title but the more information you can provide, the better your list will be.</p>
 

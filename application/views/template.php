@@ -44,9 +44,9 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 			<?php 
 			}
 			if (!empty($subtitle)) { ?>
-			<h2>
+			<h3>
 				<?php echo $subtitle ?>
-			</h2>
+			</h3>
 		<?php } ?>
 
 		<?php if (!empty($post_header)) { echo $post_header; } ?>

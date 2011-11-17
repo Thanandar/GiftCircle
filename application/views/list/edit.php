@@ -1,7 +1,7 @@
 
 <div class="span12">
 
-<h2><?php echo HTML::chars($list->name); ?></h2>
+<h3><?php echo HTML::chars($list->name); ?></h3>
 
 	<form method="post">
 

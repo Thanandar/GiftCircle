@@ -1,7 +1,7 @@
 
 <div class="span12">
 
-	<h2><?php echo HTML::chars($gift->name); ?></h2>
+	<h3><?php echo HTML::chars($gift->name); ?></h3>
 
 	<?php if ($gift->reserver_id) { ?>
 

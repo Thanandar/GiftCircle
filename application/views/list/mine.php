@@ -15,7 +15,7 @@
 
 <div class="span8">
 
-	<h2>Gifts on this list</h2>
+	<h3>Gifts on this list</h3>
 	
 	<?php if (count($gifts)) { ?>
 	<table class="zebra-striped sort">
@@ -55,7 +55,7 @@
 
 <div class="span8">
 
-	<h2>Friends in this circle</h2>
+	<h3>Friends in this circle</h3>
 
 	<div>
 

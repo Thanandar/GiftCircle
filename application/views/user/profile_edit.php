@@ -83,7 +83,7 @@ echo $form->open('user/profile_edit');;
    </div>   
 
       <?php /*
-      <li><h2><?php echo __('Roles'); ?></h2></li>
+      <li><h3><?php echo __('Roles'); ?></h3></li>
       <table class="content">
          <tr class="heading"><td><?php echo __('Role'); ?></td><td><?php echo __('Description'); ?></td></tr>
      <?php

@@ -3,7 +3,7 @@
 <div class="span12">
 
 <?php if ($doing_wizard) { ?>
-<h2>Step 2</h2>
+<h3>Step 2</h3>
 <?php } ?>
 
 
@@ -37,7 +37,7 @@
 	<form method="post">
 		<?php if (count($friends)) { ?>
 		<fieldset>
-			<h2>Add existing friends</h2>
+			<h3>Add existing friends</h3>
 
 			<div class="clearfix">
 				<div>
@@ -62,7 +62,7 @@
 		<?php } ?>
 
 		<fieldset>
-			<h2>Add new friends</h2>
+			<h3>Add new friends</h3>
 			<ol class="new-friends">
 				<?php 
 				$rows = max(array(5, count(@$new_friends)));
@@ -100,7 +100,7 @@
 
 <div class="span4">
 
-	<h2>Friends already in this circle</h2>
+	<h3>Friends already in this circle</h3>
 
 	<table class="zebra-striped">
 		<thead>
@@ -149,7 +149,7 @@ function more_friends(el) {
 
 
 <div class="span4">
-	<h2>Quick help</h2>
+	<h3>Quick help</h3>
 
 
 	<ul class="unstyled steps">

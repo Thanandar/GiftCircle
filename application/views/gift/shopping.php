@@ -17,7 +17,7 @@
 
 	<?php if (!count($my_shopping_list) && !count($my_bought_list)) { ?>
 
-	<h2>You have an empty shopping list!</h2>
+	<h3>You have an empty shopping list!</h3>
 
 	<p>
 		You haven't reserved any gifts yet. <a href="/friend/list">Why not get started now</a>.

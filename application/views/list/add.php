@@ -1,7 +1,7 @@
 
 <div class="span12">
 
-	<h2>Step 1</h2>
+	<h3>Step 1</h3>
 
 	<p>
 		Give your list a name then add your friends.
@@ -42,7 +42,7 @@
 </div>
 
 <div class="span4">
-	<h2>Quick help</h2>
+	<h3>Quick help</h3>
 	
 	<ul class="unstyled steps">
 

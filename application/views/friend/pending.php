@@ -3,7 +3,7 @@
 <?php if (count($pending)) { ?>
 
 
-<h2>Pending friend requests</h2>
+<h3>Pending friend requests</h3>
 
 <p>These people would like to be your friend.</p>
 

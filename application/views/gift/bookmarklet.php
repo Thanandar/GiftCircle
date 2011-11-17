@@ -42,7 +42,7 @@ $show_toolbar = $show_toolbar[$browser];
 
 <div class="span16">
 <?php if (strpos(@$_SERVER['HTTP_REFERER'], 'wizard')) { ?>
-<h2>Step 3</h2>
+<h3>Step 3</h3>
 <?php } ?>
 
 
