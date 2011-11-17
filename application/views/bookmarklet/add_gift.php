@@ -3,7 +3,7 @@
 
 	<h3>Add gift details</h3>
 
-	<p>Add at least the title but the more information you can provide, the better your list will be.</p>
+	<p>The more information you provide, the better your list will be.</p>
 
 	<form method="post">
 		<fieldset>

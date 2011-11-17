@@ -249,7 +249,7 @@ class Useradmin_Controller_User extends Controller_App {
 	public function action_unregister()
 	{
 		// set the template title (see Controller_App for implementation)
-		$this->template->title = __('Close user account');
+		$this->template->title = __('Remove your account');
 		if (Auth::instance()->logged_in() == false)
 		{
 			// No user is currently logged in

@@ -12,8 +12,6 @@ $form->info_class = 'info block';
 ?>
 <div class="span11">
 
-	<p>Log in to Gift Circle to add this gift<p>
-
 	<?php
 	if (!empty($errors['password'])) {
 		echo '<div class="alert-message error"><p>';

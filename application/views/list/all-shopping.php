@@ -2,14 +2,14 @@
 <?php if (count($gifts)) { 
 
 $total = 0;
-
+$count = 0;
 ?>
 
 <table class="zebra-striped sort">
 	<thead>
 		<tr>
 			<th>Gift&nbsp;name</th>
-			<th>&pound;Guide</th>
+			<th width="60">&pound;Guide</th>
 			<th>Who&nbsp;for?</th>
 			<th>List</th>
 			<th>Category</th>
@@ -19,6 +19,10 @@ $total = 0;
 	<tbody>
 		<?php foreach ($gifts as $gift) { ?>
 		<?php 
+		$count++;
+		if (empty($show_total) && $count > 5) {
+			break;
+		}
 		$total += $gift->price;
 		$list = new Model_List($gift->list_id);
 		$owner = new Model_Owner($list->owner_id);
@@ -36,7 +40,7 @@ $total = 0;
 			<td style="text-align:right"><?php echo ($gift->price()) ?></td>
 			<td><?php echo HTML::chars($owner->firstname . ' ' . $owner->surname) ?></td>
 			<td><?php echo HTML::chars($list->name) ?></td>
-			<td><?php echo HTML::chars($gift->name) ?></td>
+			<td><?php echo HTML::chars($gift->category->name) ?></td>
 			<td>
 				<?php if (!$bought) { ?>
 					<a class="btn" title="Mark as bought" href="/gift/mark_as_bought/<?php echo $gift->id; ?>">Mark as bought</a>
