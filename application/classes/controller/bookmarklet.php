@@ -7,6 +7,7 @@ class Controller_Bookmarklet extends Controller_Page {
 	public $template = 'iframe';
 
 	public function before() {
+		@header('P3P: CP="ALL OTP DEV COM NAV OUR IND"');
 		if (!empty($_GET['u'])) {
 			// save the URL for JS
 			setcookie('bmu', $_GET['u']);
