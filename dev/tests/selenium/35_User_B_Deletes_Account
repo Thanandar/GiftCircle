@@ -78,12 +78,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>//input[@value=&quot;Y&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
 	<td>//input[@type=&quot;submit&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>//input[@type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=.homeh1</td>
 	<td></td>
 </tr>
 <tr>
