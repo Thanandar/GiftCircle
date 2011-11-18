@@ -399,6 +399,10 @@ form .clearfix {
 
 /*tables*/
 
+tfoot td {
+  border-top: 1px solid #ddd;
+}
+
 table .headerSortUp, table .headerSortDown {
   background-color: #ddd;
 }

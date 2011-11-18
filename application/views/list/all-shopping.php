@@ -51,16 +51,18 @@ $count = 0;
 				<?php } ?>
 			</td>
 		</tr>
-		<?php } 
-
-		if (!empty($show_total)) { ?>
-		<tr>
-			<td><strong>Total</strong></td>
-			<td style="text-align:right"><strong>&pound;<?php echo number_format($total, 2); ?></strong></td>
-			<td colspan="4">&nbsp;</td>
-		</tr>
 		<?php } ?>
+
 	</tbody>
+	<?php if (!empty($show_total)) { ?>
+	<tfoot>
+	<tr>
+		<td><strong>Total</strong></td>
+		<td style="text-align:right"><strong>&pound;<?php echo number_format($total, 2); ?></strong></td>
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	</tfoot>
+	<?php } ?>
 </table>
 
 <?php } else { ?>

@@ -47,16 +47,14 @@ $total = 0;
 			<td><a class="delete" href="/gift/clear/<?php echo $gift->id; ?>">✘</a></td>
 		</tr>
 		<?php } ?>
-
+	</tbody>
+	<tfoot>
 		<tr>
 			<td><strong>Total</strong></td>
 			<td style="text-align:right"><strong>&pound;<?php echo number_format($total, 2); ?></strong></td>
 			<td colspan="4">&nbsp;</td>
 		</tr>
-	</tbody>
-	<?php if (!empty($show_total)) { ?>
-
-	<?php } ?>
+	</tfoot>
 
 </table>
 
