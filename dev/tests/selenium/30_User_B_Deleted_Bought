@@ -63,36 +63,6 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//input[@type=&quot;checkbox&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@type=&quot;checkbox&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@type=&quot;submit&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[contains(., 'Reserved 1 gift(s).')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertElementPresent</td>
-	<td>//div[contains(., 'Reserved 1 gift(s).')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=.menu-item-shoppinglist</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>//a[contains(text(), 'Mark as bought')]</td>
 	<td></td>
 </tr>
@@ -344,7 +314,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//p[contains(., 'These people would like to be your friend.')]</td>
+	<td>//input[@value=&quot;Accept&quot;]</td>
 	<td></td>
 </tr>
 <tr>
