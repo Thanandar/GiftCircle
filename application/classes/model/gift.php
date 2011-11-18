@@ -40,6 +40,15 @@ class Model_Gift extends ORM {
 				$config->get('email-from-name')
 			);
 
+			if (is_object(Kohana::$log)) {
+				Kohana::$log->add(Log::INFO,
+					'Sending email To "' . implode(' ', $to) . '", '
+					. 'From "' . implode(' ', $from) . '", '
+					. 'Subject "' . $subject . '".'
+				);
+				Kohana::$log->write();
+			}
+
 			Email::send($to, $from, $subject, $message);
 
 		} else {
@@ -92,6 +101,15 @@ class Model_Gift extends ORM {
 				$config->get('email-from'),
 				$config->get('email-from-name')
 			);
+
+			if (is_object(Kohana::$log)) {
+				Kohana::$log->add(Log::INFO,
+					'Sending email To "' . implode(' ', $to) . '", '
+					. 'From "' . implode(' ', $from) . '", '
+					. 'Subject "' . $subject . '".'
+				);
+				Kohana::$log->write();
+			}
 
 			Email::send($to, $from, $subject, $message);
 
