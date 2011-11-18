@@ -87,7 +87,7 @@ class Controller_Bookmarklet extends Controller_Page {
 					$gift->save();
 					
 					Message::add('success', 'Your gift has been added');
-					Request::current()->redirect('bookmarklet/added/' . $list->id);
+					Request::current()->redirect('bookmarklet/added/' . $gift->id);
 				}
 
 				if (!arr::get($_POST, 'name')) {
@@ -163,8 +163,12 @@ class Controller_Bookmarklet extends Controller_Page {
 
 	public function action_added() {
 		// successfully added gift
+		$gift_id = $this->request->param('id');
+		$gift = new Model_Gift((int) $gift_id);
+
 		$view = View::factory('bookmarklet/added');
-		$view->list_id = $this->request->param('id');
+		$view->list_id = $gift->list_id;
+		$view->continue_link = $gift->url;
 		$this->template->content = $view;
 	}
 
