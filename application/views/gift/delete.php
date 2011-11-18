@@ -6,11 +6,9 @@
 
 <p><big><?php echo HTML::chars($gift->name) ?></big></p>
 
-<?php if ($gift->reserver_id) { ?>
-
-<p>It is possible that someone may have already purchased this gift</p>
-
-<?php } ?>
+<div class="alert-message warning">
+	<p>Someone may have reserved or bought this gift.</p>
+</div>
 
 <form action="" method="post">
 
