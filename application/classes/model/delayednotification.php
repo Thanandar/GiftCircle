@@ -86,7 +86,7 @@ class Model_Delayednotification {
 
 			} else {
 				
-				$subject = Message::t('email', 'friend_rquest.subject', array(
+				$subject = Message::t('email', 'friend_request.subject', array(
 					'friend_name' => $this->owner->fullname(),
 				));
 
