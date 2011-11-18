@@ -20,7 +20,7 @@
 				<label>Expiry date</label>
 				<div class="input">
 					<input name="expiry" placeholder="eg '25/12/2012'">
-					<span class="help-inline">Optional</span>
+					<span class="help-inline">Optional (dd/mm/yyyy)</span>
 				</div>
 			</div>
 
