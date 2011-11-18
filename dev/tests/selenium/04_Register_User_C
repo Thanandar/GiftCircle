@@ -29,7 +29,7 @@
 <tr>
 	<td>type</td>
 	<td>firstname</td>
-	<td>javascript{&quot;Selenium&quot; + Math.floor(Math.random()*11111);}</td>
+	<td>javascript{&quot;Selenium&quot; + Math.floor(Math.random()*1111111);}</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -39,7 +39,7 @@
 <tr>
 	<td>type</td>
 	<td>email</td>
-	<td>javascript{&quot;Selenium+&quot; + Math.floor(Math.random()*11111) + &quot;@basecreativeagency.com&quot;;}</td>
+	<td>javascript{&quot;Selenium+&quot; + Math.floor(Math.random()*1111111) + &quot;@basecreativeagency.com&quot;;}</td>
 </tr>
 <!--Store this user's username as a variable-->
 <tr>
