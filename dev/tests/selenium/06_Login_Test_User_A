@@ -47,6 +47,11 @@
 	<td>wearebase</td>
 </tr>
 <tr>
+	<td>storeValue</td>
+	<td>password</td>
+	<td>newPW</td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>css=.btn</td>
 	<td></td>
