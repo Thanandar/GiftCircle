@@ -96,7 +96,7 @@ echo $form->open('');
             <li>
                <label>
                   <input type="checkbox" name="marketing" value="1" <?php echo @$_POST['marketing'] ? ' checked="checked" ':''; ?> />
-                  I'm happy to receive marketing communication via email
+                  I'm happy to receive the Gift Circle email newsletter featuring new retailers, offers and services.
                </label>
             </li>
          </ul>
