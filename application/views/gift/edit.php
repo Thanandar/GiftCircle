@@ -3,13 +3,9 @@
 
 	<h3><?php echo HTML::chars($gift->name); ?></h3>
 
-	<?php if ($gift->reserver_id) { ?>
-
 	<div class="alert-message warning">
-		<p>Someone has reserved or bought this gift.</p>
+		<p>Someone may have reserved or bought this gift.</p>
 	</div>
-
-	<?php } ?>
 
 	<form method="post">
 		<fieldset>
