@@ -1,12 +1,8 @@
 
-<h3>Q. So... What?</h3>
-<p><b>A.</b> Let's face it, it sucks to get the wrong gift. Ditzy mums, useless partners, interesting grandparents, and even sometimes your closest friends - Sometimes when it comes to presents they manage to go astray. And you've probably made a few mistakes in your lifetime too, even if you thought that look on your dad's face was genuine happiness.
-Here at Gift Circle we're putting a stop to bad gifts. How? With simple, useable, fun wishlists that make everyone happy.</p>
-
-<h3>Q. OK, so when's a good time to use Gift Circle?</h3>
-<p><b>A.</b> Any time there's an upcoming occasion in which the exchange of gifts is expected!</p>
-
-<h3>Q. Doesn't this take the surprise out of presents?</h3>
-<p><b>A.</b> 
-In short, no. At no point can you see whether a member of your circle has bought a gift from your list. What you will receive on the big day will remain a mystery until you start unwrapping.
-</p>
+<h3>Popular FAQs</h3>
+<p><strong>How do I view someone's gift list?</strong></p>
+<p>To view a gift list you need to be friends with the gift list creator. Then just click on the user in your 'Friends' <linked> page and you will be shown their most recent gift lists. Click the relevant gift list and start browsing for a gift. </p>
+<p><strong>How do share my list with friends and family?</strong></p>
+<p>Once you have created a list you will be given the opportunity to invite your friends to view it. All you need to do is add their e-mail address and they will get a link to your gift list.</p>
+<p><strong>What happens when I reserve an item on someone's gift list? </strong></p>
+<p>Once you've reserved an item on someone's gift list that item is no longer available for other members of the list to reserve. You can reserve as many gifts as you like but make sure that you remove them if you don't end up buying them.</p>

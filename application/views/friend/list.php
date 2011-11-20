@@ -3,6 +3,8 @@
 	
 	<?php if (count($friends)) { ?>
 
+	<p>To add friends, <a href="/list/add">first create a list</a>.</p>
+
 	<table class="zebra-striped sort">
 		<thead>
 			<tr>
@@ -48,7 +50,7 @@
 
 	<?php } else { ?>
 
-	<p>You haven't added any friends yet. <a href="/list/add">Create a circle</a> to add some friends to.</p>
+	<p>You haven't added any friends yet. <a href="/list/add">Create a list</a> to add some friends to.</p>
 
 	<?php } ?>
 

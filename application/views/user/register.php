@@ -96,7 +96,7 @@ echo $form->open('');
             <li>
                <label>
                   <input type="checkbox" name="marketing" value="1" <?php echo @$_POST['marketing'] ? ' checked="checked" ':''; ?> />
-                  I'm happy to receive the Gift Circle email newsletter featuring new retailers, offers and services.
+                  I'm happy to receive the Gift Circle email newsletter <br />featuring new retailers, offers and services.
                </label>
             </li>
          </ul>
@@ -132,5 +132,13 @@ echo $form->close();
 ?>
 </div>
 
+<div class="span4">
+<h3>Welcome</h3>
+<p>Thanks for signing up with Gift Circle. You may be here because you need to get your gift shopping organised and need to ask a few people what they want or someone's asked you for a list of gifts you'd like – lucky you!</p>
+<p>Whichever it is we're glad you're here and hope you will invite lots of people to join you. </p>
+<p>If you have any comments or suggestions please let us know at <a href="mailto:feedback@giftcircle.co.uk">feedback@giftcircle.co.uk</a></p>
+<p>Enjoy!</p>
 
+
+</div>
 
