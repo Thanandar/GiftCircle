@@ -106,8 +106,6 @@ $show_toolbar = $show_toolbar[$browser];
 
 	<p><?php echo $show_toolbar; ?></p>
 
-	<img src="http://placehold.it/300x100&amp;text=<?php echo $browser; ?> toolbar" alt="Help">
-
 </div>
 
 <div class="span16">
