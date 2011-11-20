@@ -433,3 +433,14 @@ ol.darker li {
 	float: right;
 	padding: 0 0px 0 40px;	
 }
+
+#altcontent {
+	font-size: 1.1em;
+	font-weight: normal;
+	margin: 15px 45px !important;
+}
+#altcontent span {
+	font-size: 400%;
+	font-family: serif;	
+	color: #333;
+}

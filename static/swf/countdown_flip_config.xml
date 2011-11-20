@@ -27,7 +27,7 @@
 	minutesLabel="MINUTES" 
 	secondsLabel="SECONDS" 
 	
-	displayEndMessage="true" 
+	displayEndMessage="false" 
 	endMessageText="HAVE A GREAT 2020!" 
 	endMessageTextColor="0xFFFFFF" 
 	endMessageTextAlpha="100" 

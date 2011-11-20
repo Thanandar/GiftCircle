@@ -31,13 +31,19 @@
         <img src="/img/shopping-time-left.png" height="23" alt="Christmas shopping time left..."><br />
         <div id="flashcontent">
             <div id="altcontent">
-                <h3>Wrong version or	no version of Flash detected</h3>
-                <p>You might also have <strong>JavaScript</strong> disabled. If so, please
-                    enable scripting in your browser's preferences or internet options or download
-                    the latest <a href="http://www.microsoft.com/windows/internet-explorer/download-ie.aspx">Internet Explorer</a> or <a href="http://www.mozilla.com/firefox/">Firefox</a> browser.</p>
-                <p>If you'd like to download the latest <strong>Flash</strong> plug-in, <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">click
-                    here</a>.</p>
-             </div>
+<?php
+
+  $day   = 19;     // Day of the countdown
+  $month = 12;      // Month of the countdown
+  $year  = 2011;   // Year of the countdown
+  $hour  = 23;     // Hour of the day (east coast time)
+
+  $calculation = ((mktime ($hour,0,0,$month,$day,$year) - time())/3600);
+  $hours = (int)$calculation;
+  $days  = (int)($hours/24);
+?>
+                <span><?php print $days; ?></span> days left!
+            </div>
         </div>
 	</div>
 
