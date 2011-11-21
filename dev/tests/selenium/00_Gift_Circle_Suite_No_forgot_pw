@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="01_Site_exists">01_Site_exists</a></td></tr>
+<tr><td><a href="02_Register_User_A">02_Register_User_A</a></td></tr>
+<tr><td><a href="03_Register_User_B">03_Register_User_B</a></td></tr>
+<tr><td><a href="04_Register_User_C">04_Register_User_C</a></td></tr>
+<tr><td><a href="05_Logout_Fake_User">05_Logout_Fake_User</a></td></tr>
+<tr><td><a href="06_Login_Test_User_A">06_Login_Test_User_A</a></td></tr>
+<tr><td><a href="07_Logout_Test">07_Logout_Test</a></td></tr>
+<tr><td><a href="06_Login_Test_User_A">06_Login_Test_User_A</a></td></tr>
+<tr><td><a href="09_Create_Circle_User_A">09_Create_Circle_User_A</a></td></tr>
+<tr><td><a href="09_User_A_Add_User_B_Friend">09_User_A_Add_User_B_Friend</a></td></tr>
+<tr><td><a href="11_User_B_Accepts_Friend_Request">11_User_B_Accepts_Friend_Request</a></td></tr>
+<tr><td><a href="12_User_C_Denies_Friend_Request">12_User_C_Denies_Friend_Request</a></td></tr>
+<tr><td><a href="13_User_A_Creates_List">13_User_A_Creates_List</a></td></tr>
+<tr><td><a href="14_User_A_Adds_A_Gift_From_Bookmarklet">14_User_A_Adds_A_Gift_From_Bookmarklet</a></td></tr>
+<tr><td><a href="15_User_B_Adds_Existing_Friend_To_List">15_User_B_Adds_Existing_Friend_To_List</a></td></tr>
+<tr><td><a href="16_User_B_Adds_Duplicate_Friend_To_List">16_User_B_Adds_Duplicate_Friend_To_List</a></td></tr>
+<tr><td><a href="17_Check_Friends_List_Pending">17_Check_Friends_List_Pending</a></td></tr>
+<tr><td><a href="18_User_A_Edits_An_Available_Gift">18_User_A_Edits_An_Available_Gift</a></td></tr>
+<tr><td><a href="19_User_B_Reserves_A_Gift">19_User_B_Reserves_A_Gift</a></td></tr>
+<tr><td><a href="20_User_A_Edits_Reserved_Gift">20_User_A_Edits_Reserved_Gift</a></td></tr>
+<tr><td><a href="21_User_B_Buys_Gift">21_User_B_Buys_Gift</a></td></tr>
+<tr><td><a href="22_User_A_Edits_Bought_Gift">22_User_A_Edits_Bought_Gift</a></td></tr>
+<tr><td><a href="23_User_C_Reserves_Gift_Then_User_A_Deletes_Unavailable_Gifts">23_User_C_Reserves_Gift_Then_User_A_Deletes_Unavailable_Gifts</a></td></tr>
+<tr><td><a href="24_User_B_Reserves_Then_Unreserves">24_User_B_Reserves_Then_Unreserves</a></td></tr>
+<tr><td><a href="25_User_B_Removed_From_List_Bought">25_User_B_Removed_From_List_Bought</a></td></tr>
+<tr><td><a href="26_User_B_Removed_From_List">26_User_B_Removed_From_List</a></td></tr>
+<tr><td><a href="27_User_B_Removed_From_List_Reserved">27_User_B_Removed_From_List_Reserved</a></td></tr>
+<tr><td><a href="28_User_B_Deleted_Reserved">28_User_B_Deleted_Reserved</a></td></tr>
+<tr><td><a href="29_User_B_Deleted_By_User_A">29_User_B_Deleted_By_User_A</a></td></tr>
+<tr><td><a href="30_User_B_Deleted_Bought">30_User_B_Deleted_Bought</a></td></tr>
+<tr><td><a href="31_User_A_Deletes_List_Unavailable">31_User_A_Deletes_List_Unavailable</a></td></tr>
+<tr><td><a href="32_Bookmarklet_Addition_From_Logged_Out">32_Bookmarklet_Addition_From_Logged_Out</a></td></tr>
+<tr><td><a href="33_Edit_Circle_Details">33_Edit_Circle_Details</a></td></tr>
+<tr><td><a href="32_User_A_Deletes_List">32_User_A_Deletes_List</a></td></tr>
+<tr><td><a href="34_User_A_Deletes_Account">34_User_A_Deletes_Account</a></td></tr>
+<tr><td><a href="35_User_B_Deletes_Account">35_User_B_Deletes_Account</a></td></tr>
+<tr><td><a href="36_User_C_Deletes_Account">36_User_C_Deletes_Account</a></td></tr>
+</tbody></table>
+</body>
+</html>
