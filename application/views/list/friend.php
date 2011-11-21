@@ -71,7 +71,7 @@ $reservable_gifts = 0;
 								?>
 								<a class="btn" title="Mark as bought" href="/gift/mark_as_bought/<?php echo $gift->id; ?>">Mark as bought</a>
 								or
-								<a title="Un-reserve" href="/gift/unreserve/<?php echo $gift->id; ?>" onclick="return confirm('Are you sure you want to un-reserve this product?')">remove from list</a>
+								<a title="Un-reserve" href="/gift/unreserve/<?php echo $gift->id; ?>">remove from list</a>
 								<?php
 							}
 						} else {
