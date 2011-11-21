@@ -124,6 +124,7 @@ class Controller_Friend extends Controller_Page {
 	}
 
 	public function action_request_accept() {
+		// no confirmation
 		
 		$friend = new Model_Owner($this->request->param('id'));
 
@@ -150,7 +151,6 @@ class Controller_Friend extends Controller_Page {
 	}
 
 	public function action_request_cancel() {
-
 		$friend_user = new Model_Owner($this->request->param('id'));
 
 		if (!$friend_user->is_on_my_friends_list($this->me())) {
@@ -163,16 +163,24 @@ class Controller_Friend extends Controller_Page {
 			Request::current()->redirect('');
 		}
 
-		$mes = $friend_user->friends
-			->where('email', '=', $this->me()->email)
-			->find_all();
+		if (arr::get($_POST, 'confirm')) {
 
-		foreach ($mes as $me) {
-			$me->delete();
+			$mes = $friend_user->friends
+				->where('email', '=', $this->me()->email)
+				->find_all();
+
+			foreach ($mes as $me) {
+				$me->delete();
+			}
+
+			Message::add('success', 'Successfully ignored friend request');
+			Request::current()->redirect('');
+
 		}
 
-		Message::add('success', 'Successfully cancelled friendship');
-		Request::current()->redirect('');
+		$this->template->title = 'Confirm';
+		$this->template->content = View::factory('friend/request_cancel');
+
 	}
 
 } // End Welcome
