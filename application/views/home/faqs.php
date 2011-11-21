@@ -70,4 +70,11 @@
     <li><strong>IE9</strong>: Right click  on an open area of the Internet Explorer menu near the top of your screen, then  check Favourites Bar . Alternatively, Press Alt, click View, then Toolbars. Now  click Favorites bar</li>
     <li><strong>IE7 or IE8</strong>: Click  Tools, then Toolbars. Now click Favourites Bar.</li>
   </ul>
+  <p><strong>Please make sure  you;</strong></p>
+  <p>Check you have everyone you need to have in your circle.</p>
+  <p>Double check the details you have entered – especially the  email address.</p>
+  <p>Make sure you have got a list back from everyone or why not.  If you don’t hear from them please email direct or call them. </p>
+  <p>Make sure you are satisfied with a retailers delivery and  returns policy before you buy.</p>
+  <p>Check the website has contact details including address and  phone. </p>
+  <p>Check company details are available.</p>
 </div>
