@@ -9,7 +9,7 @@ class Model_AffialteUrl {
 	}
 
 	private function fix_url($url) {
-		if (preg_match('~^https?//~', $url)) {
+		if (!preg_match('~^https?://~', $url)) {
 			$url = 'http://' . $url;
 		}
 		return $url;
