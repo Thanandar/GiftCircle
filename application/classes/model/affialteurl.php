@@ -17,7 +17,7 @@ class Model_AffialteUrl {
 
 	private function get_domain($url) {
 		$matches = array();
-		$count = preg_match('~^https?://(?:www\.)?([a-z0-9.-])~', $url, $matches);
+		$count = preg_match('~^https?://(?:www\.)?([a-z0-9.-]+)~', $url, $matches);
 		if ($count) {
 			return $matches[1];
 		}
