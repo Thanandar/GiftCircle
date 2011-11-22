@@ -127,28 +127,28 @@
 	<td></td>
 </tr>
 <tr>
-	<td>chooseOkOnNextConfirmation</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>//a[contains(., 'ignore')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>assertConfirmation</td>
-	<td>Are you sure you want to cancel this friend request?</td>
+	<td>waitForElementPresent</td>
+	<td>//input[@value=&quot;Ignore friend request&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value=&quot;Ignore friend request&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[contains(., 'cancelled friendship')]</td>
+	<td>//div[contains(., 'ignored friend request')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>//div[contains(., 'cancelled friendship')]</td>
+	<td>//div[contains(., 'ignored friend request')]</td>
 	<td></td>
 </tr>
 <tr>
