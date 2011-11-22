@@ -31,10 +31,10 @@ class Model_AffialteUrl {
 		if ($domain === false) {
 			return $this->original_url;
 		}
-return $this->original_url;
+
 		$shop = ORM::factory('shop', array(
 			'domain' => $domain,
-		))->find();
+		));
 
 		if (!$shop->loaded() || !$shop->deep_url) {
 			return $this->original_url;
