@@ -1,5 +1,5 @@
 
-<div class="span8">
+<div class="span7">
 
 <p>
 	<?php if ($continue_link) { ?>

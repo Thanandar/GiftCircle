@@ -10,7 +10,7 @@ if(isset($username)) {
 $form->error_class = 'error block';
 $form->info_class = 'info block';
 ?>
-<div class="span8">
+<div class="span7">
 
 	<?php
 	if (!empty($errors['password'])) {

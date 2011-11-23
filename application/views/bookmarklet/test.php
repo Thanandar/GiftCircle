@@ -1,4 +1,4 @@
-<div class="span8">
+<div class="span7">
 
 <p style="text-align:center">
 	<br />

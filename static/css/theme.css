@@ -9,6 +9,12 @@ body {
 .iframe body {
   padding-top: 0;
 }
+.iframe form .input {
+  margin-left: 120px;
+}
+.iframe label {
+  width: 120px;
+}
 
 h1, h2, h3 {
   letter-spacing: -2px;

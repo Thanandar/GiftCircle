@@ -1,5 +1,5 @@
 
-<div class="span8">
+<div class="span7">
 
 	<h3>Add gift details</h3>
 
