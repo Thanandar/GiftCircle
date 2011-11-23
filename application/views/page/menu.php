@@ -68,7 +68,7 @@ function menu_link($url, $text) {
 					}
 				} else { 
 					foreach (array(
-						"/"              => 'Home',
+						"/home"              => 'Home',
 						"/home/whatis"   => 'What is Gift Circle?',
 						"/home/faqs"     => 'FAQs',
 						"/user/login"    => 'Login',
