@@ -1,5 +1,5 @@
 
-<div class="span11">
+<div class="span8">
 
 	<h3>Add gift details</h3>
 
@@ -22,7 +22,7 @@
 				<div class="input">
 					<input name="name" autofocus="autofocus">
 					<?php if (!empty($errors['name'])) {
-						echo '<span class="help-inline">' . $errors['name'] . '</span>';
+						echo '<span class="help-inline"><br />' . $errors['name'] . '</span>';
 					} ?>
 				</div>
 			</div>
@@ -34,7 +34,7 @@
 					echo Form::select('category_id', $categories);
 					?>
 					<?php if (!empty($errors['cat'])) {
-						echo '<span class="help-inline">' . $errors['cat'] . '</span>';
+						echo '<span class="help-inline"><br />' . $errors['cat'] . '</span>';
 					} ?>
 				</div>
 			</div>

@@ -10,7 +10,7 @@ if(isset($username)) {
 $form->error_class = 'error block';
 $form->info_class = 'info block';
 ?>
-<div class="span11">
+<div class="span8">
 
 	<?php
 	if (!empty($errors['password'])) {
@@ -43,7 +43,7 @@ $form->info_class = 'info block';
 						'required' => 'required',
 					)); 
 					?>
-					<span class="help-inline"><a target="_top" href="/user/forgot/">Forgot your password?</a></span>
+					<span class="help-inline"><a target="_top" href="/user/forgot/"><br />Forgot your password?</a></span>
 				</div>
 			</div>			
 

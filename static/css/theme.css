@@ -7,7 +7,7 @@ body {
 }
 
 .iframe body {
-  padding-top: 50px;
+  padding-top: 0;
 }
 
 h1, h2, h3 {
@@ -213,7 +213,18 @@ a.danger {
 .currently-logged-in, .currently-logged-in a {
   color: #fff;
 }
-
+.iframe .currently-logged-in {
+  display:block;
+  float:none;
+  text-align: right;
+  border-bottom: 1px solid #ddd;
+  color: #404040;
+  margin: 10px 0;
+  padding-bottom: 10px;
+}
+.iframe .currently-logged-in a {
+  color: #0069D6;
+}
 /* delete crosses*/
 .label a {
   color: #fff;

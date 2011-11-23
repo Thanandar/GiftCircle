@@ -32,7 +32,7 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 <body>
 
 
-<div class="topbar">
+<!-- <div class="topbar">
 	<div class="fill">
 		<div class="container">
 			
@@ -41,41 +41,34 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
         		<img alt="Gift Circle" src="/img/logo-beta.png" class="brand">
         	</a>
 
-        	<div class="pull-right">
-        		<form>
-        			<p>
-
-						<?php 
-						if (Auth::instance()->logged_in()) { 
-
-							$user = Auth::instance()->get_user();
-							$name = htmlspecialchars($user->firstname . ' ' . $user->surname);
-							if (!strlen(trim($name))) {
-								$name = $user->email;
-							}
-						?>
-						<span class="currently-logged-in">
-							Logged in as 
-							<strong><?php echo $name; ?></strong>
-							|	
-       						<a href="/user/logout" target="_top">Logout</a>
-       						&nbsp;
-						</span>
-						<?php } ?>
-
-        				<button class="btn" type="button" onClick="close_iframe()">Close</button>
-        				&nbsp;&nbsp;
-        			</p>
-        		</form>
-        	</div>
 
 
 		</div>
 	</div>
-</div>
+</div> -->
+
+
 
 <div class="container content-container">
 	<div class="content">
+
+		<?php 
+		if (Auth::instance()->logged_in()) { 
+
+			$user = Auth::instance()->get_user();
+			$name = htmlspecialchars($user->firstname . ' ' . $user->surname);
+			if (!strlen(trim($name))) {
+				$name = $user->email;
+			}
+		?>
+		<span class="currently-logged-in">
+			Logged in as 
+			<strong><?php echo $name; ?></strong>
+			|	
+				<a href="/user/logout" target="_top">Logout</a>
+		</span>
+		<?php } ?>
+
 		<?php echo Message::output(); ?>
 		<div class="row">
 <!-- end of header -->
@@ -89,11 +82,6 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-26418668-1']);_gaq.push(['_t
 	</div><!-- .content -->
 </div><!-- .container -->
 
-<div class="footer">
-	<div class="container">
-		<p>&copy; 2011 Net Optimisers Ltd</p>
-	</div>
-</div>
 
 <!--[if lt IE 7 ]>
 <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
