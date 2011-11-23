@@ -50,7 +50,7 @@
 	<?php //echo View::factory('sidebar/faqs'); ?>
     
   <h3>Just got here?</h3>
-  <p>To start organising your shopping click &ldquo;New List&rdquo; then  follow steps 1-4. And don&rsquo;t forget to create your own gift list!</p>
+  <p>To start organising your shopping click &ldquo;New List&rdquo; then  follow steps 1-4.</p>
   <p>If someone invited you to join and make a gift list, accept  them as a friend and you&rsquo;re off. Create your gift list and add and invite more  people that you&rsquo;d like to exchange gifts with to join your circle.</p>
   <h3>Dashboard</h3>
   <p>Your Dashboard is your &ldquo;at a glance&rdquo; update of what&rsquo;s  happening in your circles. What events and celebrations coming up, who&rsquo;s  getting what and who wants what is all here.</p>
