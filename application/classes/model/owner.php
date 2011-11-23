@@ -23,6 +23,7 @@ class Model_Owner extends Model_User {
 			->as_array('email');
 
 		$my_friends = array_keys($my_friends);
+		$my_friends = array_map('strtolower', $my_friends);
 
 		$friends_friends = new Model_Friend();
 		$friends_friends = $friends_friends->where('email', '=', $this->email)
@@ -31,7 +32,7 @@ class Model_Owner extends Model_User {
 		$pending = array();
 
 		foreach ($friends_friends as $friend) {
-			if (!in_array($friend->creator->email, $my_friends)) {
+			if (!in_array(strtolower($friend->creator->email), $my_friends)) {
 				$pending[] = $friend->creator;
 			}
 		}

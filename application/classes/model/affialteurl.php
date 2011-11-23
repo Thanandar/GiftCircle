@@ -9,7 +9,7 @@ class Model_AffialteUrl {
 	}
 
 	private function fix_url($url) {
-		if (preg_match('~^https?//~', $url)) {
+		if (!preg_match('~^https?://~', $url)) {
 			$url = 'http://' . $url;
 		}
 		return $url;
@@ -17,7 +17,7 @@ class Model_AffialteUrl {
 
 	private function get_domain($url) {
 		$matches = array();
-		$count = preg_match('~^https?://(?:www\.)?([a-z0-9.-])~', $url, $matches);
+		$count = preg_match('~^https?://(?:www\.)?([a-z0-9.-]+)~', $url, $matches);
 		if ($count) {
 			return $matches[1];
 		}
@@ -34,7 +34,7 @@ class Model_AffialteUrl {
 
 		$shop = ORM::factory('shop', array(
 			'domain' => $domain,
-		))->find();
+		));
 
 		if (!$shop->loaded() || !$shop->deep_url) {
 			return $this->original_url;

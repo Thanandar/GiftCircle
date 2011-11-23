@@ -158,7 +158,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[contains(., 'It is possible that someone may have already purchased this gift')]</td>
+	<td>//div[contains(., 'Someone may have reserved or bought this gift.')]</td>
 	<td></td>
 </tr>
 <tr>
