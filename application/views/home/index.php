@@ -65,7 +65,7 @@
 				</li>
 				<li>
 					<h4>Let them know what you want</h4>
-					<p>Create your own gift list to get the gifts you really do want</p>
+					<p>Browse around your favourite stores from right here in Gift Circle and create your own gift list to get the gifts you want.</p>
 				</li>
 				<li>
 					<h4>Avoid spending too much</h4>
@@ -85,7 +85,7 @@
 				</li>
 				<li>
 					<h4>Choose gifts without spoiling the surprise</h4>
-					<p>Add more gifts to your list than folks in your circle. That way there's plenty to choose from without spoiling the surprise.</p>
+					<p>Nobody can see what's been bought from their own gift list and adding more gifts than people in your circle will keep you guessing.</p>
 				</li>
 				<li>
 					<h4>Save money by keeping to your budget</h4>
