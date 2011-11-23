@@ -48,7 +48,7 @@ function menu_link($url, $text) {
 <div class="topbar">
 	<div class="fill">
 		<div class="container">
-        	<a class="brand" href="/home/"><img class="brand" src="/img/logo-beta.png" alt="Gift Circle" /></a>
+        	<a class="brand" href="/"><img class="brand" src="/img/logo-beta.png" alt="Gift Circle" /></a>
 			
 			<div class="pull-right">
 				<ul class="nav">
@@ -68,7 +68,7 @@ function menu_link($url, $text) {
 					}
 				} else { 
 					foreach (array(
-						"/home"              => 'Home',
+						"/"              => 'Home',
 						"/home/whatis"   => 'What is Gift Circle?',
 						"/home/faqs"     => 'FAQs',
 						"/user/login"    => 'Login',
