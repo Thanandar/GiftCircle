@@ -53,12 +53,35 @@ class Model_Delayednotification {
 			$config->get('email-from-name')
 		);
 
-		$updates = '';
-		foreach ($this->transactions as $transaction) {
-			$updates .= "{$transaction->description}\n";
-		}
-				
+		$additions = array();
 
+		$updates = array();
+
+		foreach ($this->transactions as $transaction) {
+			if (substr($transaction->description, 0, 13) == 'Added a gift:') {
+				$additions[] = str_replace('Added a gift: ', '', " - {$transaction->description}\n");
+			} else {
+				$updates[] = str_replace('Updated a gift: ', '', " - {$transaction->description}\n");
+			}
+		}
+		
+		$additions = array_unique($additions);
+		sort($additions);
+
+		$updates = array_unique($updates);
+		sort($updates);
+
+		$transactions = '';
+
+		if (count($additions)) {
+			$transactions .= "These gifts were added:\n\n";
+			$transactions .= implode('', $additions);
+		}
+
+		if (count($updates)) {
+			$transactions .= "\nThese gifts were updated:\n\n";
+			$transactions .= implode('', $updates);
+		}
 
 		if ($this->is_registered()) {
 			
@@ -78,7 +101,7 @@ class Model_Delayednotification {
 					'firstname'     => $this->user->firstname,
 					'friend_name'   => $this->owner->fullname(),
 					'list_name'     => $this->list->name,
-					'updates'       => $updates,
+					'updates'       => $transactions,
 					'home_link'     => URL::base('http'),
 					'login_link'    => URL::base('http') . 'list/friend/' . $this->list->id,
 				), false);
