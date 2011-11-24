@@ -68,7 +68,7 @@ class Controller_User extends Useradmin_Controller_User /*Controller_Page*/ {
 				// message: save success
 				Message::add('success', __('Successfully updated details'));
 				// redirect and exit
-				$this->request->redirect('user/profile');
+				$this->request->redirect('user/profile_edit');
 				return;
 			}
 			catch (ORM_Validation_Exception $e)
