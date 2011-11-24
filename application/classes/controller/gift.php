@@ -90,10 +90,13 @@ class Controller_Gift extends Controller_Page {
 		$view->other_gifts = $list->gifts->find_all();
 
 		$view->categories = ORM::factory('category')
+			->order_by('name', 'ASC')
 			->find_all()
 			->as_array('id', 'name');
 
+		// what's this for?
 		$view->departments = ORM::factory('category')
+			->order_by('name', 'ASC')
 			->find_all();
 
 		$view->shops = ORM::factory('shop')->find_all();
@@ -138,6 +141,7 @@ class Controller_Gift extends Controller_Page {
 		$view->other_gifts = $gift->list->gifts->find_all();
 
 		$view->categories = ORM::factory('category')
+			->order_by('name', 'ASC')
 			->find_all()
 			->as_array('id', 'name');
 
@@ -204,6 +208,7 @@ class Controller_Gift extends Controller_Page {
 
 
 		$view->categories = ORM::factory('category')
+			->order_by('name', 'ASC')
 			->find_all()
 			->as_array('id', 'name');
 
