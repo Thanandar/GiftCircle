@@ -12,6 +12,11 @@ class Model_AffialteUrl {
 		if (!preg_match('~^https?://~', $url)) {
 			$url = 'http://' . $url;
 		}
+
+		// Presents for men keeps '?src=aw' in product URLs then
+		// breaks when Affilaite Window adds the tracking code.
+		$url = str_replace('?src=aw', '', $url);
+
 		return $url;
 	}
 
