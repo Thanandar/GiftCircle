@@ -53,12 +53,10 @@ $reservable_gifts = 0;
 						<?php if ($reserver->id == $me->id && $buyer->id != $me->id) { ?>
 						<a href="/gift/buy/<?php echo $gift->id; ?>"><?php echo HTML::chars($gift->name) ?></a>
 						<?php } else { ?>
-							<?php if (!$reserver->id) { ?>
+							<?php if (!$reserver->id || ($reserver->id == $me->id && $buyer->id == $me->id)) { ?>
 								<a href="/gift/details/<?php echo $gift->id; ?>"><?php echo HTML::chars($gift->name) ?></a>
 							<?php } else { ?>
-							<a href="/gift/details/<?php echo $gift->id; ?>">
 								<?php echo HTML::chars($gift->name) ?>
-							</a>
 							<?php } ?>
 						<?php } ?>
 					</td>
