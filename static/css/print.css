@@ -17,9 +17,8 @@
 	text-decoration:none !important;
 	color:#000000 !important;
 }
-.gift-shopping td, .gift-shopping th {
+.gift-shopping td {
 	padding-right:10px !important;
-	border: 1px #000000 solid !important;
 }
 .gift-shopping form {
 	display:none !important;
@@ -29,4 +28,13 @@
 }
 .gift-shopping h3 {
 	display:none !important;
+}
+.footer a {
+	display:none;	
+}
+.topbar .fill img {
+    visibility: hidden;
+}
+.topbar .fill img[alt] {
+    visibility: visible;
 }
