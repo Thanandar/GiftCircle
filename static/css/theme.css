@@ -489,5 +489,8 @@ ol.darker li {
 	.gift-shopping .mark-as-bought {
 		display:none;	
 	}
+	.gift-shopping h3 {
+		display:none;	
+	}
 	
 }
