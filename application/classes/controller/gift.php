@@ -90,10 +90,13 @@ class Controller_Gift extends Controller_Page {
 		$view->other_gifts = $list->gifts->find_all();
 
 		$view->categories = ORM::factory('category')
+			->order_by('name', 'ASC')
 			->find_all()
 			->as_array('id', 'name');
 
+		// what's this for?
 		$view->departments = ORM::factory('category')
+			->order_by('name', 'ASC')
 			->find_all();
 
 		$view->shops = ORM::factory('shop')->find_all();
@@ -138,6 +141,7 @@ class Controller_Gift extends Controller_Page {
 		$view->other_gifts = $gift->list->gifts->find_all();
 
 		$view->categories = ORM::factory('category')
+			->order_by('name', 'ASC')
 			->find_all()
 			->as_array('id', 'name');
 
@@ -204,6 +208,7 @@ class Controller_Gift extends Controller_Page {
 
 
 		$view->categories = ORM::factory('category')
+			->order_by('name', 'ASC')
 			->find_all()
 			->as_array('id', 'name');
 
@@ -231,6 +236,10 @@ class Controller_Gift extends Controller_Page {
 			$gift = new Model_Gift((int) $this->request->param('id'));
 		}
 
+		if (!$gift->reserver_id) {
+			Request::current()->redirect('gift/details/' . $gift->id);
+		}
+
 		if ($gift->reserver_id != $this->me()->id) {
 			Message::add('danger', __('You have not reserved this gift.'));
 			Request::current()->redirect('');
@@ -244,6 +253,41 @@ class Controller_Gift extends Controller_Page {
 
 		$this->template->title = 'Buy a gift';
 		$view = View::factory('gift/buy');
+		$view->gift = $gift;
+		$view->shops = $gift->category->shops->order_by('orderfield', 'DESC')->order_by('name', 'ASC')->find_all();
+		
+		$view->shopping_list = $this->shopping_list();
+
+		$this->template->content = $view;
+	}
+
+	/**
+	 * View the details of a gift no one has reserved
+	 */
+	public function action_details() {
+		$gift = new Model_Gift((int) $this->request->param('id'));
+		
+		if (!$gift->loaded()) {
+			Request::current()->redirect('gift/shopping');
+		}
+
+		if ($gift->reserver_id) {
+			// gift has been reserved
+
+			if ($gift->reserver_id != $this->me()->id) {
+				// reserved someone else
+				Message::add('danger', __('Someone else has reserved this gift.'));
+				Request::current()->redirect('gift/shopping');
+			}
+
+			// you have not bought it yet
+			if (!$gift->buyer_id) {
+				Request::current()->redirect('gift/buy/' . $gift->id);
+			}
+		}
+
+		$this->template->title = 'Gift Details';
+		$view = View::factory('gift/details');
 		$view->gift = $gift;
 		$view->shops = $gift->category->shops->order_by('orderfield', 'DESC')->order_by('name', 'ASC')->find_all();
 		
@@ -337,6 +381,22 @@ class Controller_Gift extends Controller_Page {
 		$view = View::factory('gift/unreserve');
 		$view->gift = $gift;
 		$this->template->content = $view;
+	}
+
+	public function action_reserve() {
+		$gift = new Model_Gift((int) $this->request->param('id'));
+		$list = $gift->list;
+
+		if ($gift->reserver_id) {
+			Message::add('danger', __('This gift has already been reserved'));
+			Request::current()->redirect('');
+		} 
+
+		$gift->reserver_id = $this->me()->id;
+		$gift->save();
+
+		Message::add('success', __('Successfully reserved a gift.'));
+		Request::current()->redirect('gift/buy/' . $gift->id);
 	}
 
 

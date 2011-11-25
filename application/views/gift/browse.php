@@ -55,9 +55,9 @@
 </div>
 
 
+<div class="span4">
 
 <?php if (count($other_gifts)) { ?>
-<div class="span4">
 	<h3>On your list</h3>
 	<table class="zebra-striped">
 		<thead>
@@ -78,10 +78,39 @@
 		<a class="btn" href="/list/mine/<?php echo $list->id; ?>">Manage list</a>
 	</div>
 
-</div>
 <?php } ?>
 
 
+<?php if (strpos(@$_SERVER['HTTP_REFERER'], 'bookmarklet')) { ?>
+
+	<h3>Quick help</h3>
+
+	<ul class="unstyled steps">
+
+		<li>
+			<strong>Step 1</strong>
+			<p>Give your list a name.</p>
+		</li>
+
+		<li>
+			<strong>Step 2</strong>
+			<p>Add your friends.</p>
+		</li>
+
+		<li>
+			<strong>Step 3</strong>
+			<p>Get the browser button.</p>
+		</li>
+
+		<li class="active">
+			<strong>Step 4</strong>
+			<p>Add gift ideas to your list.</p>
+		</li>
+	</ul>
+
+<?php } ?>
+
+</div>
 
 
 
@@ -144,34 +173,3 @@ $(function() {
 });
 
 </script>
-
-<?php if (strpos(@$_SERVER['HTTP_REFERER'], 'bookmarklet')) { ?>
-
-<div class="span4">
-	<h3>Quick help</h3>
-
-	<ul class="unstyled steps">
-
-		<li>
-			<strong>Step 1</strong>
-			<p>Give your list a name.</p>
-		</li>
-
-		<li>
-			<strong>Step 2</strong>
-			<p>Add your friends.</p>
-		</li>
-
-		<li>
-			<strong>Step 3</strong>
-			<p>Get the browser button.</p>
-		</li>
-
-		<li class="active">
-			<strong>Step 4</strong>
-			<p>Add gift ideas to your list.</p>
-		</li>
-	</ul>
-</div>
-
-<?php } ?>

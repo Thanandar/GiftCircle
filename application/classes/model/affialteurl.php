@@ -12,6 +12,11 @@ class Model_AffialteUrl {
 		if (!preg_match('~^https?://~', $url)) {
 			$url = 'http://' . $url;
 		}
+
+		// Presents for men keeps '?src=aw' in product URLs then
+		// breaks when Affilaite Window adds the tracking code.
+		$url = str_replace('?src=aw', '', $url);
+
 		return $url;
 	}
 
@@ -40,9 +45,18 @@ class Model_AffialteUrl {
 			return $this->original_url;
 		}
 
-		$deep_url = urlencode($this->original_url);
+		if (strpos($deep_url, '%') !== false) {
+			// if the deep url has a "%" then replace "%" with an
+			// encoded version of the user-supplied url
+			$encoded = urlencode($this->original_url);
+			$u = str_replace('%', $deep_url, $shop->deep_url);
+		} else {
+			// if there's no "%", replace "#" with a non-encded
+			// version of the url
+			$u = str_replace('#', $this->original_url, $shop->deep_url);
+		}
 
-		return str_replace('%', $deep_url, $shop->deep_url);
+		return $u;
 	}
 
 }

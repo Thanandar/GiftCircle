@@ -53,12 +53,35 @@ class Model_Delayednotification {
 			$config->get('email-from-name')
 		);
 
-		$updates = '';
-		foreach ($this->transactions as $transaction) {
-			$updates .= "{$transaction->description}\n";
-		}
-				
+		$additions = array();
 
+		$updates = array();
+
+		foreach ($this->transactions as $transaction) {
+			if (substr($transaction->description, 0, 13) == 'Added a gift:') {
+				$additions[] = str_replace('Added a gift: ', '', " {$transaction->description}\n");
+			} else {
+				$updates[] = str_replace('Updated a gift: ', '', " {$transaction->description}\n");
+			}
+		}
+		
+		$additions = array_unique($additions);
+		sort($additions);
+
+		$updates = array_unique($updates);
+		sort($updates);
+
+		$transactions = '';
+
+		if (count($additions)) {
+			$transactions .= "These gifts were added:\n";
+			$transactions .= '<ul><li>' . implode('</li><li>', $additions) . '</li></ul>';
+		}
+
+		if (count($updates)) {
+			$transactions .= "\nThese gifts were updated:\n";
+			$transactions .= '<ul><li>' . implode('</li><li>', $updates) . '</li></ul>';
+		}
 
 		if ($this->is_registered()) {
 			
@@ -71,14 +94,14 @@ class Model_Delayednotification {
 					'list_name'     => $this->list->name,
 				));
 				
-				$message = Message::t('email', 'list_update.plain', array(
+				$message = Message::t('email', 'list_update.html', array(
 					'url'           => URL::base('http'),
 					'email'         => $this->user->email,
 					'surname'       => $this->user->surname,
 					'firstname'     => $this->user->firstname,
 					'friend_name'   => $this->owner->fullname(),
 					'list_name'     => $this->list->name,
-					'updates'       => $updates,
+					'updates'       => $transactions,
 					'home_link'     => URL::base('http'),
 					'login_link'    => URL::base('http') . 'list/friend/' . $this->list->id,
 				), false);
@@ -90,7 +113,7 @@ class Model_Delayednotification {
 					'friend_name' => $this->owner->fullname(),
 				));
 
-				$message = Message::t('email', 'friend_request.plain', array(
+				$message = nl2br(Message::t('email', 'friend_request.plain', array(
 					'url'           => URL::base('http'),
 					'email'         => $this->user->email,
 					'surname'       => $this->user->surname,
@@ -98,7 +121,7 @@ class Model_Delayednotification {
 					'friend_name'   => $this->owner->fullname(),
 					'home_link'     => URL::base('http'),
 					'login_link'    => URL::base('http') . 'user/login',
-				), false);
+				), false));
 
 				
 			}
@@ -113,7 +136,7 @@ class Model_Delayednotification {
 				'friend_name' => $this->owner->fullname(),
 			));
 
-			$message = Message::t('email', 'invite.plain', array(
+			$message = nl2br(Message::t('email', 'invite.plain', array(
 				'url'           => URL::base('http'),
 				'email'         => $this->friend->email,
 				'surname'       => $this->friend->surname,
@@ -121,10 +144,9 @@ class Model_Delayednotification {
 				'friend_name'   => $this->owner->fullname(),
 				'home_link'     => URL::base('http'),
 				'register_link' => URL::base('http') . 'user/register',
-			), false);
+			), false));
 
 		}
-
 
 		if (is_object(Kohana::$log)) {
 			Kohana::$log->add(Log::INFO,
@@ -135,7 +157,7 @@ class Model_Delayednotification {
 			Kohana::$log->write();
 		}
 
-		Email::send($to, $from, $subject, $message);
+		Email::send($to, $from, $subject, $message, true);
 
 		return true;
 	}

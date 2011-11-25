@@ -32,7 +32,7 @@ $total = 0;
 		<tr>
 			<td>
 				<?php if ($bought) { ?>
-				<?php echo HTML::chars($gift->name) ?>
+				<a href="/gift/details/<?php echo $gift->id; ?>"><?php echo HTML::chars($gift->name) ?></a>
 				<?php } else { ?>
 				<a href="/gift/buy/<?php echo $gift->id; ?>"><?php echo HTML::chars($gift->name) ?></a>
 				<?php } ?>

@@ -41,7 +41,7 @@ $count = 0;
 			<td><?php echo HTML::chars($owner->firstname . ' ' . $owner->surname) ?></td>
 			<td><?php echo HTML::chars($list->name) ?></td>
 			<td><?php echo HTML::chars($gift->category->name) ?></td>
-			<td>
+			<td class="mark-as-bought">
 				<?php if (!$bought) { ?>
 					<a class="btn" title="Mark as bought" href="/gift/mark_as_bought/<?php echo $gift->id; ?>">Mark as bought</a>
 					<br />or

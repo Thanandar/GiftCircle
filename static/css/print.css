@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+/* Print Styles */
+.gift-shopping .pull-right {
+	display:none !important;
+}
+.gift-shopping .btn {
+	display:none !important;
+}
+.gift-shopping .span4 {
+	display:none !important;
+}
+.gift-shopping a {
+	text-decoration:none !important;
+	color:#000000 !important;
+}
+.gift-shopping td {
+	padding-right:10px !important;
+}
+.gift-shopping form {
+	display:none !important;
+}
+.gift-shopping .mark-as-bought {
+	display:none !important;
+}
+.gift-shopping h3 {
+	display:none !important;
+}
+.footer a {
+	display:none;	
+}
+

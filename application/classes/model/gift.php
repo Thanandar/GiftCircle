@@ -11,6 +11,10 @@ class Model_Gift extends ORM {
 
 	public function save(Validation $validation = NULL) {
 
+		$action = $this->loaded() ? 'Updated' : 'Added';
+
+		parent::save($validation);
+
 		// inform the reserver that the gift has been edited
 		// if it's not the current user that's just marked it as bought
 		if ($this->reserver_id && $this->reserver_id != Auth::instance()->get_user()->id) {
@@ -53,18 +57,13 @@ class Model_Gift extends ORM {
 
 		} else {
 			// not reserved yet
-			// 
-			if (!$this->loaded()) {
-				Model_Listtransaction::log($this->list, 'Added a gift: ' . $this->name);
-			} else {
-				Model_Listtransaction::log($this->list, 'Updated a gift: ' . $this->name);
-			}
 			
+			$link = '<a href="'.URL::base('http').'gift/details/'.$this->id.'">'.htmlspecialchars($this->name).'</a>';
+
+			Model_Listtransaction::log($this->list, $action.' a gift: '.$link);
+
 		}
 
-		//$this->affiliate_url = $this->add_tracking_to_url($this->url);
-
-		parent::save($validation);
 	}
 
 	public function affiliate_url() {

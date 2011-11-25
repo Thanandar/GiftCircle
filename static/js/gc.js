@@ -40,9 +40,14 @@ var base = (function() {
 
 loadScript(base + '/static/js/bm/jquery-and-ui.min.js', function() {
 	
+	//if (typeof window.jQuery === 'undefined') {
+		// site doesn't like jQuery
+	//	location.href = base + '/bookmarklet/?u=' + encodeURIComponent(location.href);
+	//}
+
 	var css = {
 			close:   'float:right;margin-right:30px;margin-top:10px;cursor: pointer;  display: inline-block;  background-color: #e6e6e6;  background-repeat: no-repeat;  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));  background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);  background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);  background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);  background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);  background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#ffffff\', endColorstr=\'#e6e6e6\', GradientType=0);  padding: 5px 14px 6px;  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);  color: #333;  font-size: 13px;  line-height: normal;  border: 1px solid #ccc;  border-bottom-color: #bbb;  -webkit-border-radius: 4px;  -moz-border-radius: 4px;  border-radius: 4px;  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  -webkit-transition: 0.1s linear all;  -moz-transition: 0.1s linear all;  -ms-transition: 0.1s linear all;  -o-transition: 0.1s linear all;  transition: 0.1s linear all;',
-			div:     'z-index:99999;position:absolute;top:20px;right:20px;width:470px;background:#fff;border:1px solid #000',
+			div:     'z-index:2147483647;position:absolute;top:20px;right:20px;width:470px;background:#fff;border:1px solid #000',
 			dragbar: 'height:30px;background:#00f url(\'' + base + '/static/img/drag.png\');cursor:move',
 			topbar:  'height:84px;background:#0083B1 url(\'' + base + '/img/header-bg.jpg\') repeat-x bottom',
 			logo:    'padding:15px 0 0 40px;float:left;border:0'
