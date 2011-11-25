@@ -14,7 +14,8 @@
 		bgcolor: "ffffff",
 		menu: "false",
 		quality: "high",
-		scale: "scale"
+		scale: "scale",
+		wmode: "transparent"
 	};
 
 	var attributes = {
