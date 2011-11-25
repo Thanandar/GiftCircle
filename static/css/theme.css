@@ -479,7 +479,7 @@ ol.darker li {
 		text-decoration:none;
 		color:#000000;	
 	}
-	.gift-shopping td {
+	.gift-shopping td, .gift-shopping th {
 		padding-right:10px;
 		border: 1px #000000 solid;	
 	}
