@@ -463,19 +463,19 @@ ol.darker li {
 }
 /* Print Styles */
 @media print {
-	.pull-right {
+	.gift-shopping .pull-right {
 		display:none;	
 	}
-	.btn {
+	.gift-shopping .btn {
 		display:none;	
 	}
-	.span4 {
+	.gift-shopping .span4 {
 		display:none;	
 	}
-	.topbar .fill {
+	.gift-shopping .topbar .fill {
 		background:#000000;	
 	}
-	a {
+	.gift-shopping a {
 		text-decoration:none;
 		color:#000000;	
 	}
