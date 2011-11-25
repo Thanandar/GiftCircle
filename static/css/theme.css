@@ -479,5 +479,8 @@ ol.darker li {
 		text-decoration:none;
 		color:#000000;	
 	}
+	.gift-shopping td {
+		padding-right:10px;	
+	}
 	
 }
