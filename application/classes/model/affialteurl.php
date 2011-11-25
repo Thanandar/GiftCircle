@@ -45,9 +45,18 @@ class Model_AffialteUrl {
 			return $this->original_url;
 		}
 
-		$deep_url = urlencode($this->original_url);
+		if (strpos($deep_url, '%') !== false) {
+			// if the deep url has a "%" then replace "%" with an
+			// encoded version of the user-supplied url
+			$encoded = urlencode($this->original_url);
+			$u = str_replace('%', $deep_url, $shop->deep_url);
+		} else {
+			// if there's no "%", replace "#" with a non-encded
+			// version of the url
+			$u = str_replace('#', $this->original_url, $shop->deep_url);
+		}
 
-		return str_replace('%', $deep_url, $shop->deep_url);
+		return $u;
 	}
 
 }
