@@ -17,3 +17,9 @@ td .btn {
 	float:left;
 	padding-top:10px;
 }
+.home-list h4 {
+	line-height:3 !important;	
+}
+.btn-start {
+	float:left;	
+}
