@@ -15,6 +15,7 @@ class Controller_Home extends Controller_Page {
 		$this->template->is_home = true;
 
 		$this->template->styles['static/js/fancybox/jquery.fancybox-1.3.4.css'] = 'screen';
+		$this->template->styles['static/swf/_styles/main.css'] = 'screen';
 		$this->template->scripts[] = 'static/js/fancybox/jquery.fancybox-1.3.4.pack.js';
 
 	}

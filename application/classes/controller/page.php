@@ -62,7 +62,6 @@ class Controller_Page extends Controller_Template {
 				'static/css/bootstrap.min.css' => 'screen',
 				'static/css/theme.css' => 'screen',
 				'static/css/print.css' => 'print',
-				'static/swf/_styles/main.css' => 'screen'
 				//'static/css/engage.itoggle.css' => 'screen',
 			);
 
