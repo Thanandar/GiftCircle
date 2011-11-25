@@ -464,33 +464,33 @@ ol.darker li {
 /* Print Styles */
 @media print {
 	.gift-shopping .pull-right {
-		display:none;	
+		display:none !important;	
 	}
 	.gift-shopping .btn {
-		display:none;	
+		display:none !important;	
 	}
 	.gift-shopping .span4 {
-		display:none;	
+		display:none !important;	
 	}
 	.gift-shopping .topbar .fill {
-		background:#000000;	
+		background:#000000 !important;	
 	}
 	.gift-shopping a {
-		text-decoration:none;
-		color:#000000;	
+		text-decoration:none !important;
+		color:#000000 !important;	
 	}
 	.gift-shopping td, .gift-shopping th {
-		padding-right:10px;
-		border: 1px #000000 solid;	
+		padding-right:10px !important;
+		border: 1px #000000 solid !important;	
 	}
 	.gift-shopping form {
-		display:none;	
+		display:none !important;	
 	}
 	.gift-shopping .mark-as-bought {
-		display:none;	
+		display:none !important;	
 	}
 	.gift-shopping h3 {
-		display:none;	
+		display:none !important;	
 	}
 	
 }
