@@ -461,3 +461,23 @@ ol.darker li {
 	font-family: serif;	
 	color: #333;
 }
+/* Print Styles */
+@media print {
+	.pull-right {
+		display:none;	
+	}
+	.btn {
+		display:none;	
+	}
+	.span4 {
+		display:none;	
+	}
+	.topbar .fill {
+		background:#000000;	
+	}
+	a {
+		text-decoration:none;
+		color:#000000;	
+	}
+	
+}
