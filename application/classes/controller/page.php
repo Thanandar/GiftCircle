@@ -61,6 +61,7 @@ class Controller_Page extends Controller_Template {
 				//'http://fonts.googleapis.com/css?family=Oswald' => 'screen',
 				'static/css/bootstrap.min.css' => 'screen',
 				'static/css/theme.css' => 'screen',
+				'static/css/print.css' => 'print',
 				//'static/css/engage.itoggle.css' => 'screen',
 			);
 

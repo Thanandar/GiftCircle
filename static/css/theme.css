@@ -461,36 +461,3 @@ ol.darker li {
 	font-family: serif;	
 	color: #333;
 }
-/* Print Styles */
-@media print {
-	.gift-shopping .pull-right {
-		display:none !important;	
-	}
-	.gift-shopping .btn {
-		display:none !important;	
-	}
-	.gift-shopping .span4 {
-		display:none !important;	
-	}
-	.gift-shopping .topbar .fill {
-		background:#000000 !important;	
-	}
-	.gift-shopping a {
-		text-decoration:none !important;
-		color:#000000 !important;	
-	}
-	.gift-shopping td, .gift-shopping th {
-		padding-right:10px !important;
-		border: 1px #000000 solid !important;	
-	}
-	.gift-shopping form {
-		display:none !important;	
-	}
-	.gift-shopping .mark-as-bought {
-		display:none !important;	
-	}
-	.gift-shopping h3 {
-		display:none !important;	
-	}
-	
-}
