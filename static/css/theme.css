@@ -483,10 +483,10 @@ ol.darker li {
 		padding-right:10px;
 		border: 1px #000000 solid;	
 	}
-	.form {
+	.gift-shopping .form {
 		display:none;	
 	}
-	.mark-as-bought {
+	.gift-shopping .mark-as-bought {
 		display:none;	
 	}
 	
