@@ -10,9 +10,6 @@
 .gift-shopping .span4 {
 	display:none !important;
 }
-.gift-shopping .topbar .fill {
-	background:#000000 !important;
-}
 .gift-shopping a {
 	text-decoration:none !important;
 	color:#000000 !important;
@@ -32,9 +29,4 @@
 .footer a {
 	display:none;	
 }
-.topbar .fill img {
-    visibility: hidden;
-}
-.topbar .fill img[alt] {
-    visibility: visible;
-}
+
