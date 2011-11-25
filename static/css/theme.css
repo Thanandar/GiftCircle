@@ -486,5 +486,8 @@ ol.darker li {
 	.form {
 		display:none;	
 	}
+	.mark-as-bought {
+		display:none;	
+	}
 	
 }
