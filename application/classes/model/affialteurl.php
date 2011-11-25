@@ -45,7 +45,7 @@ class Model_AffialteUrl {
 			return $this->original_url;
 		}
 
-		if (strpos($deep_url, '%') !== false) {
+		if (strpos($shop->deep_url, '%') !== false) {
 			// if the deep url has a "%" then replace "%" with an
 			// encoded version of the user-supplied url
 			$encoded = urlencode($this->original_url);
