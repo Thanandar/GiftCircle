@@ -48,6 +48,15 @@
 		</tbody>
 	</table>
 
+	<div class="well">
+
+		<?php if ($gift->url) { ?>
+		<input type="button" class="btn primary" value="Buy from the shop <?php echo HTML::chars($gift->list->owner->firstname); ?> recommended" onclick="window.open('<?php echo HTML::chars($gift->affiliate_url()); ?>')" />
+		
+		<?php } ?>
+
+		<input type="button" class="btn" value="Mark as bought" onclick="location.href='/gift/mark_as_bought/<?php echo $gift->id; ?>'" />
+	</div>
 	<hr />
 
 	<h3>Category &gt; <?php echo HTML::chars($gift->category->name); ?></h3>
@@ -66,15 +75,6 @@
 	</ul>
 
 	
-	<div class="well">
-
-		<?php if ($gift->url) { ?>
-		<input type="button" class="btn primary" value="Buy from the shop <?php echo HTML::chars($gift->list->owner->firstname); ?> recommended" onclick="window.open('<?php echo HTML::chars($gift->affiliate_url()); ?>')" />
-		
-		<?php } ?>
-
-		<input type="button" class="btn" value="Mark as bought" onclick="location.href='/gift/mark_as_bought/<?php echo $gift->id; ?>'" />
-	</div>
 
 </div>
 
