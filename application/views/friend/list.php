@@ -3,7 +3,7 @@
 	
 	<?php if (count($friends)) { ?>
 
-	<p>To add friends, <a href="/list/add">first create a list</a>.</p>
+	<p>To add friends go to <a href="/list/my">My Lists</a> select a list, select 'Add Friends'.</p>
 
 	<table class="zebra-striped sort">
 		<thead>

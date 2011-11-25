@@ -55,7 +55,7 @@
   <h3>Dashboard</h3>
   <p>Your Dashboard is your &ldquo;at a glance&rdquo; update of what&rsquo;s  happening in your circles. What events and celebrations coming up, who&rsquo;s  getting what and who wants what is all here.</p>
   <h3>Will Gift Circle  spoil my surprise?</h3>
-  <p>No because <em>you</em> can&rsquo;t see what been bought off <em>your</em> gift list - clever huh? </p>
+  <p>No because <em>you</em> can&rsquo;t see what's been bought off <em>your</em> gift list - clever huh? </p>
 <h3>What about the little  people?</h3>
   <p>We want children to have fun making and sending lists to all their  brothers and sisters and all the relatives. Its up to you as parents to decide  whether to let them have their own account or let them have their own lists  under your account. This way you have control over who&rsquo;s invited to browse the  lists. Just create a new list for them to use and you choose who to invite to  view the list – simple.</p>
 </div>
