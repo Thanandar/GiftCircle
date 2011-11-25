@@ -49,7 +49,8 @@ class Model_AffialteUrl {
 			// if the deep url has a "%" then replace "%" with an
 			// encoded version of the user-supplied url
 			$encoded = urlencode($this->original_url);
-			$u = str_replace('%', $deep_url, $shop->deep_url);
+			$u = str_replace('%', $encoded, $shop->deep_url);
+			
 		} else {
 			// if there's no "%", replace "#" with a non-encded
 			// version of the url
