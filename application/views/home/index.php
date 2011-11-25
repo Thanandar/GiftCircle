@@ -26,8 +26,6 @@
 	swfobject.embedSWF("/static/swf/countdown_flip_2days.swf", "flashcontent", "388", "74", "8.0.0", false, flashvars, params, attributes);
 
 </script>
-<link rel="stylesheet" type="text/css" href="/static/swf/_styles/main.css" />
-
 	<div id="countdown">
         <img src="/img/shopping-time-left.png" height="23" alt="Christmas shopping time left..."><br />
         <div id="flashcontent">
