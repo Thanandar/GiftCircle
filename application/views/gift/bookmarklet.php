@@ -18,7 +18,7 @@ foreach ($uas as $re => $ua) {
 	}
 }
 
-// MS use "Favourites" instead of "Bookmarks"
+// MS use "Favorites" instead of "Bookmarks"
 $is_ie = in_array($browser, array("IE7", "IE8", "IE9"));
 
 $show_toolbar = array(
@@ -28,11 +28,11 @@ $show_toolbar = array(
 
 	'Safari'   => '<p>Click on the gear icon in the top right, and tick <code>Show Bookmarks Toolbar</code>. Alternatively, Press <code>Command + B</code> (Mac) or <code>Ctrl + Shift + B</code> (Windows) at the same time.</p>',
 
-	'IE9'     => '<p>Right click on an open area of the Internet Explorer menu near the top of your screen, then check <code>Favourites Bar</code>. Alternatively, Press <code>Alt</code>, click <code>View</code>, then <code>Toolbars</code>. Now click <code>Favourites Bar</code></p>',
+	'IE9'     => '<p>Right click on an open area of the Internet Explorer menu near the top of your screen, then check <code>Favorites Bar</code>. Alternatively, Press <code>Alt</code>, click <code>View</code>, then <code>Toolbars</code>. Now click <code>Favorites Bar</code></p>',
 
-	'IE8'     => '<p>Click <code>Tools</code>, then <code>Toolbars</code>. Now click <code>Favourites Bar</code>.</p>',
+	'IE8'     => '<p>Click <code>Tools</code>, then <code>Toolbars</code>. Now click <code>Favorites Bar</code>.</p>',
 	
-	'IE7'     => '<p>Click <code>Tools</code>, then <code>Toolbars</code>. Now click <code>Favourites Bar</code>.</p>',
+	'IE7'     => '<p>Click <code>Tools</code>, then <code>Toolbars</code>. Now click <code>Favorites Bar</code>.</p>',
 
 );
 
@@ -47,7 +47,7 @@ $show_toolbar = $show_toolbar[$browser];
 
 
 <?php if ($is_ie) { ?>
-    <p>Adding the browser button to your Favourites bar will allow you to search as usual and when you find a gift you like, add it to your gift list with one click. You don't even leave the page you're on!<p>
+    <p>Adding the browser button to your Favorites bar will allow you to search as usual and when you find a gift you like, add it to your gift list with one click. You don't even leave the page you're on!<p>
 <?php } else { ?>
     <p>Adding the browser button to your Bookmark toolbar will allow you to search as usual and when you find a gift you like, add it to your gift list with one click. You don't even leave the page you're on!<p>
 <?php } ?>
@@ -59,28 +59,36 @@ $show_toolbar = $show_toolbar[$browser];
 <h3>Get the Browser Button</h3>
 
 <ol>
+		<?php if (!$is_ie) { ?>
 	<li>
-		<?php if ($is_ie) { ?>
- 			<p>Make sure your Favourites bar is enabled. <br />
- 			If you're using the Internet Explorer browser, you'll need version 7 or later.</p>
-		<?php } else { ?>
  			<p>Make sure your Bookmarks toolbar is enabled.</p>
-		<?php } ?>
 	</li>
+		<?php } ?>
 	<li>
-		<p>Drag this button to the 
+		<p>
 		<?php if ($is_ie) { ?>
-			Favourites bar 
+			Right click on this button and select 'Add to favorites...'
 		<?php } else { ?>
-			Bookmarks toolbar
+			Drag this button to the Bookmarks toolbar in your web browser
 		<?php } ?>
-		in your web browser</p>
+		</p>
 
-<p><a href="javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='<?php echo URL::base('http'); ?>static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();"  onclick="alert('Drag this button to your bookmarks toolbar');return false"><img src="/img/screen-grab/btn-<?php echo strtolower($browser); ?>.png" alt="Add to Gift Circle" /></a></p>
+<p><a href="javascript:(function(){jselem=document.createElement('SCRIPT');jselem.type='text/javascript';jselem.src='<?php echo URL::base('http'); ?>static/js/gc.js?'+(new Date()).getTime();document.getElementsByTagName('body')[0].appendChild(jselem);})();"  onclick="alert('Drag this button to your <?php if ($is_ie) { ?>favorites<?php } else { ?>bookmarks<?php } ?> toolbar');return false"><img src="/img/screen-grab/btn-<?php echo strtolower($browser); ?>.png" alt="Add to Gift Circle" /></a></p>
 	</li>
 
+		<?php if ($is_ie) { ?>
 	<li>
+		<p>Select 'Favorites Bar' from the drop down and click 'Add'</p>
+		<img src="/img/screen-grab/add-ie.png" alt="Help">
+	</li>
+		<?php } ?>
+
+	<li>
+		<?php if ($is_ie) { ?>
+		<p>Click the button you just added to check it's working</p>
+		<?php } else { ?>
 		<p>Click the button you just dragged to check it's working</p>
+		<?php } ?>
 	</li>
 
 
@@ -89,7 +97,9 @@ $show_toolbar = $show_toolbar[$browser];
 
 </ol>
 
+		<?php if (!$is_ie) { ?>
 <img src="/img/screen-grab/drag-<?php echo strtolower($browser); ?>.png" alt="Help">
+		<?php } ?>
 
 
 
@@ -99,7 +109,7 @@ $show_toolbar = $show_toolbar[$browser];
 <div class="span6">
 
 	<?php if ($is_ie) { ?>
-		<h3>Can't see the Favourites bar?</h3>
+		<h3>Can't see the Favorites bar?</h3>
 	<?php } else { ?>
 		<h3>Can't see the Bookmarks toolbar?</h3>
 	<?php } ?>

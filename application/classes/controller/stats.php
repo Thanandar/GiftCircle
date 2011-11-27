@@ -10,6 +10,7 @@ class Controller_Stats extends Controller_Page {
 
 		$email = $this->me()->email;
 
+		
 		if (strpos($email, '@basecreativeagency.com') === strpos($email, 'petermanlay')) {
 			Request::current()->redirect('home/dashboard');	
 		}
