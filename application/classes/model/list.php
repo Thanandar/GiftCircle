@@ -55,10 +55,7 @@ class Model_List extends ORM {
 		}
 
 		// // delete friends on the list
-		$friends = $this->friends->find_all();
-		foreach ($friends as $friend) {
-			$friend->delete();
-		}
+		$this->remove('friends');
 
 		return parent::delete();
 	}
