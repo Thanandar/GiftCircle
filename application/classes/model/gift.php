@@ -15,13 +15,27 @@ class Model_Gift extends ORM {
 
 		parent::save($validation);
 
-		// inform the reserver that the gift has been edited
-		// if it's not the current user that's just marked it as bought
-		if ($this->reserver_id && $this->reserver_id != Auth::instance()->get_user()->id) {
+		if ($this->reserver_id == Auth::instance()->get_user()->id) {
+			// the reserver is currently logged in
+			// and has made a change to the gift
+			// don't send any emails
+			return;
+		}
+
+		if ($this->reserver_id) {
+			// the gift owner has made a change
+			// inform the reserver immediately that the gift
+			// has been edited
+			
 			$config = Kohana::$config->load('giftcircle');
 
 			$reserver = $this->reserver;
 			$gift_owner = $this->list->owner;
+
+			if (!$reserver->email || !$gift_owner->email) {
+				// account deleted or something crazy
+				return;
+			}
 
 			$subject = Message::t('email', 'edited_gift.subject', array(
 				'owner_name' => $gift_owner->firstname.' '.$gift_owner->surname,
