@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >
 	<title><?php echo $title ?> &mdash; Gift Circle</title>
 <?php if ($metakeywords) { ?>
-	<meta name="keywords" content="<?php echo HTML::chars($metakeywords) ?>" >
+	<meta name="keywords" content="<?php echo HTML::chars($metakeywords) ?>">
 <?php } ?>
 	<link href="/favicon.ico" rel="shortcut icon" />
 <?php foreach ($styles as $file => $type) echo "\t" . HTML::style($file, array('media' => $type)), PHP_EOL ?>
