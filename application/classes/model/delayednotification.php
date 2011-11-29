@@ -8,6 +8,15 @@ class Model_Delayednotification {
 	
 	private $user;
 
+	/**
+	 * Email a friend on a list about changes on the list
+	 * 
+	 * A Delayednotification is created for each friend on each list
+	 * 
+	 * @param Model_Friendlist $friendlist   Link between friend 
+	 *                                       and list
+	 * @param array            $transactions of Listtransactions
+	 */
 	public function __construct(Model_Friendlist $friendlist, $transactions) {
 		
 		$this->friendlist   = $friendlist;
@@ -24,20 +33,45 @@ class Model_Delayednotification {
 		return $this->friend->get_user();
 	}
 
+	/**
+	 * Whether friend is friends with the list owner
+	 * 
+	 * @return bool
+	 */
 	private function is_confirmed_friend() {
-		// we know $this->owner has a friend $this->user.
-		// we what to check $this->user has a friend $this->owner
-		return $this->user->is_on_my_friends_list($this->owner);
+		// we want to check $this->user has a friend $this->owner
+		// and $this->owner has a friend $this->user
+		return $this->user->is_on_my_friends_list($this->owner) && $this->user->is_on_friends_friends_list($this->owner);
 	}
 
+	/**
+	 * Whether the friend has a user account
+	 * 
+	 * @return bool
+	 */
 	private function is_registered() {
 		return $this->user->loaded();
 	}
 
+	/**
+	 * Whether the friend has been notified about this list before
+	 * 
+	 * @return bool
+	 */
 	private function has_notified_friend_before() {
 		return ($this->friendlist->last_notification != '0000-00-00 00:00:00');
 	}
 
+	/**
+	 * Send an email to a friend
+	 * 
+	 * Will email unless it's the 2nd+ notification to an 
+	 * unconfirmed friend
+	 * 
+	 * @todo refactor
+	 * 
+	 * @return bool whether email was sent
+	 */
 	public function send() {
 		if (!$this->is_confirmed_friend()) {
 			if ($this->has_notified_friend_before()) {
