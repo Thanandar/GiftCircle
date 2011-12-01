@@ -13,6 +13,12 @@ class Model_Gift extends ORM {
 
 		$action = $this->loaded() ? 'Updated' : 'Added';
 
+		if ($this->loaded()) {
+			// get this gift from the DB again
+			// so we can check for an unreserve action
+			$original = ORM::factory('gift', $this->id);
+		}
+
 		parent::save($validation);
 
 		if ($this->reserver_id == Auth::instance()->get_user()->id) {
@@ -72,6 +78,12 @@ class Model_Gift extends ORM {
 		} else {
 			// not reserved yet
 			
+			if (isset($original) && !empty($original->reserver_id)) {
+				// there was a reserver_id but now there isn't
+				// the "update" is just someone unreserving the gift
+				return;
+			}
+
 			$link = '<a href="'.URL::base('http').'gift/details/'.$this->id.'">'.htmlspecialchars($this->name).'</a>';
 
 			Model_Listtransaction::log($this->list, $action.' a gift: '.$link);
