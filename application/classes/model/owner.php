@@ -115,7 +115,7 @@ class Model_Owner extends Model_User {
 			// get only their friends that are me
 			->where('friends_friends.email', '=', $this->email)
 			
-			->order_by('friend.surname', 'ASC')
+			->order_by('friend.firstname', 'ASC')
 
 			->find_all();		
 	}

@@ -22,7 +22,7 @@ class Controller_Friend extends Controller_Page {
 		
 		$me = new Model_Owner($this->me()->id);
 		//$view->friends = $me->confirmed_friends();
-		$view->friends = $me->friends->order_by('surname')->find_all();
+		$view->friends = $me->friends->order_by('firstname')->find_all();
 
 		$this->template->content = $view;
 	}
