@@ -11,7 +11,7 @@
      -moz-box-shadow: 0px 0px 9px #666; 
           box-shadow: 0px 0px 9px #666; 
 " >
-			<a id="video-link" href="http://player.vimeo.com/video/32096592?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1"><img src="/img/hp-video-temp.png" alt="Introduction" /></a>
+			<a id="video-link" href="http://player.vimeo.com/video/32960530?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1"><img src="/img/hp-video-temp.png" alt="Introduction" /></a>
 			<script>
 				$("#video-link").fancybox({
 					'width'				: 768,
