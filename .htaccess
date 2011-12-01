@@ -8,11 +8,11 @@ RewriteEngine On
 # Installation directory
 RewriteBase /
 
-# Protect hidden files from being viewed
-<Files .*>
-	Order Deny,Allow
-	Deny From All
-</Files>
+
+# redirect no subdmain to www. permanently
+RewriteCond %{HTTP_HOST} ^giftcircle\.co\.uk$ [NC]
+RewriteRule ^(.*)$ http://www.giftcircle.co.uk/$1 [R=301,L]
+
 
 # Protect application and system files from being viewed
 RewriteRule ^(?:application|modules|system)\b.* index.php/$0 [L]
@@ -23,3 +23,13 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 # Rewrite all other URLs to index.php/URL
 RewriteRule .* /index.php [L]
+
+
+
+# Block access to "hidden" directories whose names begin with a period. This
+# includes directories used by version control systems such as Subversion or Git.
+<IfModule mod_rewrite.c>
+  RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+

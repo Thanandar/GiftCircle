@@ -56,6 +56,7 @@ class Controller_Bookmarklet extends Controller_Page {
 		$view->url = @$_GET['u'];
 
 		$view->categories = ORM::factory('category')
+			->order_by('name', 'asc')
 			->find_all()
 			->as_array('id', 'name');
 		

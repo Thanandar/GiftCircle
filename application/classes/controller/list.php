@@ -111,8 +111,8 @@ class Controller_List extends Controller_Page {
 
 		$view = View::factory('list/mine');
 		$view->list = $list;
-		$view->gifts = $list->gifts->find_all();
-		$view->friends = $list->friends->find_all();
+		$view->gifts = $list->gifts->order_by('name', 'ASC')->find_all();
+		$view->friends = $list->friends->order_by('firstname', 'ASC')->order_by('surname', 'ASC')->find_all();
 
 		$this->template->title = 'View your list: ' . $list->name;
 		$this->template->subtitle = 'Your gift circle in detail';

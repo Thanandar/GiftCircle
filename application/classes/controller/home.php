@@ -10,6 +10,7 @@ class Controller_Home extends Controller_Page {
 
 		$this->template->title = 'Create and share gift lists with your friends and family';
 		$this->template->subtitle = '';
+		$this->template->metakeywords = 'gift ideas, gift shopping, christmas gift ideas, wedding gift ideas, wedding gift list';
 		$this->template->post_header = View::factory('home/header');
 		$this->template->content = View::factory('home/index');
 		$this->template->is_home = true;

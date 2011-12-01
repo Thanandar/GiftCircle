@@ -43,6 +43,7 @@ class Controller_Page extends Controller_Template {
 			// Initialize empty values
 			$this->template->title = '';
 			$this->template->content = '';
+			$this->template->metakeywords = '';
 
 			$this->template->styles = array();
 			$this->template->scripts = array();
