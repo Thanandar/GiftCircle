@@ -3,9 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >
-	<title><?php echo $title ?> &mdash; Gift Circle</title>
+	<title>Gift Circle &mdash; <?php echo $title ?></title>
 <?php if ($metakeywords) { ?>
 	<meta name="keywords" content="<?php echo HTML::chars($metakeywords) ?>">
+	<meta name="description" content="Gift Circle is a great tool to help you share gift lists with friends and family. Saving you time and money whilst ensuring you get the perfect gift. Just what you need for Christmas"> 
+	<meta name="robots" content="index, follow">
 <?php } ?>
 	<link href="/favicon.ico" rel="shortcut icon" />
 <?php foreach ($styles as $file => $type) echo "\t" . HTML::style($file, array('media' => $type)), PHP_EOL ?>
